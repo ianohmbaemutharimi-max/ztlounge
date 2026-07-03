@@ -1,0 +1,1715 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ============================================================
+         CRITICAL: Theme initialization - runs BEFORE any rendering
+         ============================================================ -->
+    <script>
+        (function() {
+            try {
+                var savedTheme = localStorage.getItem('zt-theme');
+                if (savedTheme === 'light') {
+                    document.documentElement.classList.add('light-mode');
+                    document.documentElement.style.colorScheme = 'light';
+                } else {
+                    document.documentElement.style.colorScheme = 'dark';
+                }
+            } catch (e) {
+                document.documentElement.style.colorScheme = 'dark';
+            }
+        })();
+    </script>
+    <noscript>
+        <link rel="stylesheet" href="../../assets/css/theme.css">
+        <style>
+            body { background: #0a0a0a; color: #ffffff; }
+        </style>
+    </noscript>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    
+    <!-- SEO -->
+    <title>Premium Lounge & Bar â€“ ZT Lounge Meru | Signature Cocktails & VIP Nightlife</title>
+    <meta name="description" content="Experience Meru's premier lounge at ZT Lounge. Signature cocktails, premium spirits, live entertainment, and VIP experiences. Book your table for an unforgettable night." />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f5f5f5" media="(prefers-color-scheme: light)" />
+    <meta name="color-scheme" content="dark light" />
+    <link rel="canonical" href="https://ztlounge.co.ke/pages/experiences/lounge.html" />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Premium Lounge & Bar â€“ ZT Lounge Meru | Signature Cocktails & VIP Nightlife" />
+    <meta property="og:description" content="Experience Meru's premier lounge at ZT Lounge. Signature cocktails, premium spirits, live entertainment, and VIP experiences." />
+    <meta property="og:image" content="https://ztlounge.co.ke/assets/images/lounge/lounge-nightlife.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://ztlounge.co.ke/pages/experiences/lounge.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ZT Lounge Meru" />
+    <meta property="og:locale" content="en_KE" />
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Premium Lounge & Bar â€“ ZT Lounge Meru" />
+    <meta name="twitter:description" content="Experience Meru's premier lounge. Signature cocktails, live entertainment, and VIP experiences." />
+    <meta name="twitter:image" content="https://ztlounge.co.ke/assets/images/lounge/lounge-nightlife.webp" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../../assets/images/branding/favicon.ico" />
+    <link rel="apple-touch-icon" href="../../assets/images/branding/apple-touch-icon.webp" />
+
+    <!-- Performance: Preconnect for Critical Resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+
+    <!-- Performance: Preload Critical Images -->
+    <link rel="preload" as="image" href="../../assets/images/lounge/lounge-nightlife.webp" fetchpriority="high" />
+    <link rel="preload" as="image" href="../../assets/images/lounge/lounge-interior.webp" fetchpriority="high" />
+    <link rel="preload" as="image" href="../../assets/images/lounge/lounge-nightlife.webp" fetchpriority="high" />
+    
+    <!-- Performance: Non-blocking Font Loading -->
+    <link 
+        rel="stylesheet" 
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" 
+        media="print" 
+        onload="this.media='all'" 
+    />
+    <noscript>
+        <link 
+            rel="stylesheet" 
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" 
+        />
+    </noscript>
+
+    <!-- Performance: Non-blocking Font Awesome -->
+    <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" 
+        media="print" 
+        onload="this.media='all'" 
+    />
+    <noscript>
+        <link 
+            rel="stylesheet" 
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" 
+        />
+    </noscript>
+
+    <!-- ==========================================================
+    THEME.CSS - SINGLE SOURCE OF TRUTH
+    ========================================================== -->
+    <link rel="stylesheet" href="../../assets/css/theme.css" />
+
+    <!-- ==========================================================
+    PAGE-SPECIFIC CSS - Lounge (following index.html pattern)
+    ========================================================== -->
+    <style>
+        /* ============================================
+           LOUNGE - PAGE-SPECIFIC STYLES
+           Following the index.html pattern
+           ============================================ */
+
+        /* Hero slides - Lounge specific */
+        .hero-slide-lounge-1 {
+            background: linear-gradient(135deg, rgba(10,10,10,0.75), rgba(10,10,10,0.4)),
+                        url('../../assets/images/lounge/lounge-nightlife.webp') center/cover no-repeat;
+        }
+
+        .hero-slide-lounge-2 {
+            background: linear-gradient(135deg, rgba(10,10,10,0.75), rgba(10,10,10,0.4)),
+                        url('../../assets/images/lounge/lounge-interior.webp') center/cover no-repeat;
+        }
+
+        .hero-slide-lounge-3 {
+            background: linear-gradient(135deg, rgba(10,10,10,0.75), rgba(10,10,10,0.4)),
+                        url('../../assets/images/lounge/lounge-nightlife.webp') center/cover no-repeat;
+        }
+
+        /* Service Cards - Lounge specific */
+        .service-card-lounge .card-tag {
+            background: rgba(201, 168, 76, 0.15);
+            color: var(--color-gold);
+        }
+
+        /* Cocktail Grid - Lounge specific */
+        .cocktail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-2xl);
+            align-items: center;
+        }
+
+        .cocktail-list {
+            display: grid;
+            gap: var(--space-md);
+        }
+
+        .cocktail-item {
+            background: var(--color-card-bg);
+            padding: var(--space-md) var(--space-lg);
+            border-radius: var(--radius-lg);
+            border-left: 3px solid var(--color-gold);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cocktail-item:hover {
+            transform: translateX(4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .cocktail-item h4 {
+            font-family: var(--font-family-serif);
+            font-size: var(--font-size-md);
+            margin-bottom: var(--space-xs);
+            color: var(--color-text);
+        }
+
+        .cocktail-item p {
+            color: var(--color-text-secondary);
+            font-size: var(--font-size-sm);
+            margin-bottom: var(--space-xs);
+        }
+
+        .cocktail-item .cocktail-price {
+            display: inline-block;
+            font-weight: 600;
+            color: var(--color-gold);
+            font-size: var(--font-size-sm);
+        }
+
+        .cocktail-image-wrapper {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--color-border);
+        }
+
+        .cocktail-image-wrapper img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Occasion Grid - Lounge specific */
+        .occasion-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: var(--space-md);
+            margin-top: var(--space-xl);
+        }
+
+        .occasion-item {
+            background: var(--color-card-bg);
+            padding: var(--space-lg) var(--space-md);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            border: 1px solid var(--color-border);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .occasion-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--color-gold);
+        }
+
+        .occasion-item .icon {
+            font-size: var(--font-size-2xl);
+            color: var(--color-gold);
+            margin-bottom: var(--space-sm);
+        }
+
+        .occasion-item h4 {
+            font-family: var(--font-family-serif);
+            font-size: var(--font-size-sm);
+            margin-bottom: var(--space-xs);
+            color: var(--color-text);
+        }
+
+        .occasion-item p {
+            color: var(--color-text-secondary);
+            font-size: var(--font-size-xs);
+            margin: 0;
+        }
+
+        /* Testimonials - Lounge specific */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-xl);
+        }
+
+        .testimonial-card {
+            background: var(--color-card-bg);
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-border);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--color-gold);
+        }
+
+        .testimonial-card .stars {
+            color: var(--color-gold);
+            margin-bottom: var(--space-sm);
+            font-size: var(--font-size-md);
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            line-height: 1.7;
+            margin-bottom: var(--space-md);
+            color: var(--color-text-secondary);
+        }
+
+        .testimonial-card .author {
+            font-weight: 600;
+            color: var(--color-text);
+        }
+
+        .testimonial-card .author span {
+            font-weight: 400;
+            color: var(--color-text-secondary);
+            font-size: var(--font-size-sm);
+        }
+
+        /* Booking Form - Lounge specific */
+        .booking-form-lounge {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--color-card-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+        }
+
+        .booking-form-lounge .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-md);
+        }
+
+        .booking-form-lounge .form-group {
+            margin-bottom: var(--space-md);
+        }
+
+        .booking-form-lounge label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: var(--space-xs);
+            color: var(--color-text);
+            font-size: var(--font-size-sm);
+        }
+
+        .booking-form-lounge .form-input,
+        .booking-form-lounge .form-select,
+        .booking-form-lounge textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            background: var(--color-bg);
+            color: var(--color-text);
+            font-size: var(--font-size-md);
+            transition: border-color 0.3s ease;
+            font-family: var(--font-family-sans);
+        }
+
+        .booking-form-lounge .form-input:focus,
+        .booking-form-lounge .form-select:focus,
+        .booking-form-lounge textarea:focus {
+            outline: none;
+            border-color: var(--color-gold);
+            box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.1);
+        }
+
+        .booking-form-lounge .form-input.error,
+        .booking-form-lounge .form-select.error,
+        .booking-form-lounge textarea.error {
+            border-color: #e74c3c;
+        }
+
+        .booking-form-lounge .form-error {
+            color: #e74c3c;
+            font-size: var(--font-size-xs);
+            margin-top: var(--space-xs);
+            display: none;
+        }
+
+        .booking-form-lounge .form-error.visible {
+            display: block;
+        }
+
+        .booking-form-lounge .form-success {
+            display: none;
+            padding: var(--space-md);
+            background: rgba(46, 204, 113, 0.1);
+            border: 1px solid #2ecc71;
+            border-radius: var(--radius-md);
+            color: #2ecc71;
+            text-align: center;
+            margin-bottom: var(--space-md);
+        }
+
+        .booking-form-lounge .form-success.visible {
+            display: block;
+        }
+
+        .booking-form-lounge .form-success i {
+            margin-right: var(--space-sm);
+        }
+
+        .booking-form-lounge textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        /* Trust Badges - Matching index style */
+        .trust-badges {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-md);
+            margin-top: var(--space-xl);
+        }
+
+        .trust-badge {
+            padding: var(--space-md);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            text-align: center;
+            background: var(--color-card-bg);
+        }
+
+        .trust-badge i {
+            color: var(--color-gold);
+            font-size: var(--font-size-xl);
+            margin-bottom: var(--space-xs);
+        }
+
+        .trust-badge p {
+            font-size: var(--font-size-sm);
+            margin: 0;
+        }
+
+        .trust-badge strong {
+            display: block;
+            font-size: var(--font-size-md);
+            color: var(--color-text);
+        }
+
+        /* Cross-sell section */
+        .cross-sell-section {
+            text-align: center;
+            padding: var(--space-xl) 0;
+        }
+
+        .cross-sell-section h2 {
+            font-family: var(--font-family-serif);
+            font-size: var(--font-size-2xl);
+            margin-bottom: var(--space-md);
+        }
+
+        .cross-sell-section p {
+            color: var(--color-text-secondary);
+            font-size: var(--font-size-md);
+            max-width: 600px;
+            margin: 0 auto var(--space-lg);
+        }
+
+        .cross-sell-section .features {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-xl);
+            margin-bottom: var(--space-xl);
+            flex-wrap: wrap;
+        }
+
+        .cross-sell-section .features span {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            color: var(--color-text-secondary);
+            font-size: var(--font-size-md);
+        }
+
+        .cross-sell-section .features span i {
+            color: var(--color-gold);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .cocktail-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-xl);
+            }
+
+            .cocktail-image-wrapper img {
+                height: 320px;
+            }
+
+            .occasion-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                min-height: calc(100vh - var(--header-height-mobile));
+            }
+            .hero-slider {
+                height: calc(100vh - var(--header-height-mobile));
+                min-height: 500px;
+            }
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            .slider-btn {
+                width: 44px;
+                height: 44px;
+                font-size: 0.9rem;
+                min-width: 44px;
+                min-height: 44px;
+            }
+            .slider-btn.prev {
+                left: 12px;
+            }
+            .slider-btn.next {
+                right: 12px;
+            }
+
+            .cocktail-image-wrapper img {
+                height: 240px;
+            }
+
+            .occasion-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .booking-form-lounge .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .trust-badges {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: var(--space-lg) auto 0;
+            }
+
+            .cross-sell-section .features {
+                flex-direction: column;
+                gap: var(--space-sm);
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            .hero-buttons .btn {
+                padding: 12px 24px;
+                font-size: 0.85rem;
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cocktail-image-wrapper img {
+                height: 200px;
+            }
+
+            .occasion-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: var(--space-sm);
+            }
+        }
+
+        /* Image Fallback */
+        .image-fallback {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            min-height: 120px;
+            color: var(--color-gold);
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            padding: 1rem;
+            text-align: center;
+            background: var(--color-card-bg);
+            border-radius: inherit;
+        }
+    </style>
+
+    <!-- Schema - Bar/Lounge -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BarOrPub",
+        "name": "ZT Lounge Bar",
+        "description": "Meru's premier lounge and bar offering signature cocktails, premium spirits, live entertainment, and luxury ambiance.",
+        "url": "https://ztlounge.co.ke/pages/experiences/lounge.html",
+        "telephone": "+254143542601",
+        "email": "ztloungemeru@gmail.com",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Opposite Ezri Hotel, Milimani",
+            "addressLocality": "Meru",
+            "addressRegion": "Meru County",
+            "postalCode": "60200",
+            "addressCountry": "KE"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 0.0476,
+            "longitude": 37.6822
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Sunday"],
+                "opens": "10:00",
+                "closes": "00:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Friday", "Saturday"],
+                "opens": "10:00",
+                "closes": "02:00"
+            }
+        ],
+        "priceRange": "$$$",
+        "servesCuisine": "Cocktails, Spirits, Wine"
+    }
+    </script>
+
+    <!-- Schema - Breadcrumb -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ztlounge.co.ke/" },
+            { "@type": "ListItem", "position": 2, "name": "Experiences", "item": "https://ztlounge.co.ke/pages/experiences/" },
+            { "@type": "ListItem", "position": 3, "name": "Lounge", "item": "https://ztlounge.co.ke/pages/experiences/lounge.html" }
+        ]
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Accessibility: Skip Navigation -->
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <!-- ===== PREMIUM HEADER (Identical to index) ===== -->
+    <header class="header" id="header" role="banner">
+        <div class="container">
+            <div class="nav-wrapper">
+                <!-- Logo -->
+                <a href="../../index.html" class="logo" aria-label="ZT Lounge Home">
+                    <img 
+                        src="../../assets/images/branding/logo.webp" 
+                        alt="ZT Lounge Meru - Premium Hospitality Logo" 
+                        class="logo-dark site-logo"
+                        height="62" 
+                        width="auto" 
+                        decoding="async" 
+                        fetchpriority="high"
+                    />
+                    <img 
+                        src="../../assets/images/branding/logo-white.webp" 
+                        alt="ZT Lounge Meru - Premium Hospitality Logo" 
+                        class="logo-light site-logo"
+                        height="62" 
+                        width="auto" 
+                        decoding="async" 
+                        fetchpriority="high"
+                    />
+                </a>
+
+                <!-- Navigation (Identical to index) -->
+                <nav class="nav-menu" id="navMenu" role="navigation" aria-label="Main navigation">
+                    <ul class="nav-list" role="menubar">
+                        <li role="none">
+                            <a href="../../index.html" role="menuitem">
+                                <i class="fas fa-home" aria-hidden="true"></i> Home
+                            </a>
+                        </li>
+                        <li role="none" aria-expanded="false">
+                            <a 
+                                role="menuitem" 
+                                aria-haspopup="true" 
+                                aria-expanded="false"
+                                aria-controls="experiences-dropdown"
+                                class="dropdown-parent"
+                                tabindex="0"
+                            >
+                                Experiences <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                            </a>
+                            <ul class="dropdown-menu" id="experiences-dropdown" role="menu">
+                                <li role="none"><a href="restaurant.html" role="menuitem">Restaurant</a></li>
+                                <li role="none"><a href="restaurant-menu.html" role="menuitem">Restaurant Menu</a></li>
+                                <li role="none"><a href="lounge.html" role="menuitem" class="active" aria-current="page">Lounge</a></li>
+                                <li role="none"><a href="vip.html" role="menuitem">VIP Cabins</a></li>
+                            </ul>
+                        </li>
+                        <li role="none" aria-expanded="false">
+                            <a 
+                                role="menuitem" 
+                                aria-haspopup="true" 
+                                aria-expanded="false"
+                                aria-controls="business-dropdown"
+                                class="dropdown-parent"
+                                tabindex="0"
+                            >
+                                Business <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                            </a>
+                            <ul class="dropdown-menu" id="business-dropdown" role="menu">
+                                <li role="none"><a href="../business/events.html" role="menuitem">Events</a></li>
+                                <li role="none"><a href="../business/conference.html" role="menuitem">Conference</a></li>
+                                <li role="none"><a href="../business/autospa.html" role="menuitem">Auto Spa</a></li>
+                            </ul>
+                        </li>
+                        <li role="none" aria-expanded="false">
+                            <a 
+                                role="menuitem" 
+                                aria-haspopup="true" 
+                                aria-expanded="false"
+                                aria-controls="contact-dropdown"
+                                class="dropdown-parent"
+                                tabindex="0"
+                            >
+                                Contact <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                            </a>
+                            <ul class="dropdown-menu" id="contact-dropdown" role="menu">
+                                <li role="none"><a href="../contact/contact.html" role="menuitem">Contact Page</a></li>
+                                <li role="none"><a href="../contact/gallery.html" role="menuitem">Gallery</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Actions (Identical to index) -->
+                <div class="nav-actions">
+                    <button
+                        class="theme-toggle"
+                        id="themeToggle"
+                        aria-label="Toggle light or dark color theme"
+                        title="Toggle theme"
+                        type="button"
+                    >
+                        <i class="fas fa-moon" aria-hidden="true"></i>
+                        <i class="fas fa-sun" aria-hidden="true"></i>
+                    </button>
+                    
+                    <a 
+                        href="tel:+254143542601" 
+                        class="header-phone" 
+                        aria-label="Call ZT Lounge at +254 143 542 601"
+                    >
+                        <i class="fas fa-phone" aria-hidden="true"></i>
+                        <span class="phone-number">+254 143 542 601</span>
+                    </a>
+                    <button 
+                        class="hamburger" 
+                        id="hamburger" 
+                        aria-label="Toggle navigation menu" 
+                        aria-expanded="false"
+                        aria-controls="navMenu"
+                        type="button"
+                    >
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main id="main" role="main">
+
+        <!-- ===== HERO - Using index slider architecture ===== -->
+        <section class="hero" id="hero" aria-label="Hero banner showcasing ZT Lounge">
+            <div class="hero-slider" role="region" aria-label="Featured images">
+                <!-- Slide 1 - Lounge Hero -->
+                <div 
+                    class="hero-slide hero-slide-lounge-1 active" 
+                    id="hero-slide-0" 
+                    role="tabpanel" 
+                    aria-labelledby="hero-dot-0" 
+                    aria-hidden="false"
+                >
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content container">
+                        <span class="hero-badge">Meru's Premier Lounge</span>
+                        <h1 class="hero-title">Luxury <span>Lounge</span> &amp; Bar</h1>
+                        <p class="hero-subtitle">Signature Cocktails &bull; Live Entertainment &bull; VIP Experiences &bull; Premium Spirits</p>
+                        <div class="hero-buttons">
+                            <a href="#booking" class="btn btn-primary btn-large">Reserve Table</a>
+                            <a href="#services" class="btn btn-secondary btn-large">Explore</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 - Lounge Interior -->
+                <div 
+                    class="hero-slide hero-slide-lounge-2" 
+                    id="hero-slide-1" 
+                    role="tabpanel" 
+                    aria-labelledby="hero-dot-1" 
+                    aria-hidden="true"
+                >
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content container">
+                        <span class="hero-badge">Sophisticated Ambiance</span>
+                        <h2 class="hero-title">Elegance <span>Reimagined</span></h2>
+                        <p class="hero-subtitle">Plush seating, warm golden lighting, and an atmosphere of refined luxury.</p>
+                        <div class="hero-buttons">
+                            <a href="#booking" class="btn btn-primary btn-large" tabindex="-1">Reserve Table</a>
+                            <a href="#services" class="btn btn-secondary btn-large" tabindex="-1">Explore</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 - Nightlife -->
+                <div 
+                    class="hero-slide hero-slide-lounge-3" 
+                    id="hero-slide-2" 
+                    role="tabpanel" 
+                    aria-labelledby="hero-dot-2" 
+                    aria-hidden="true"
+                >
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content container">
+                        <span class="hero-badge">Nightlife</span>
+                        <h2 class="hero-title">Unforgettable <span>Evenings</span></h2>
+                        <p class="hero-subtitle">Curated beats, vibrant energy, and Meru's most sophisticated nightlife destination.</p>
+                        <div class="hero-buttons">
+                            <a href="#booking" class="btn btn-primary btn-large" tabindex="-1">Reserve Table</a>
+                            <a href="#services" class="btn btn-secondary btn-large" tabindex="-1">Explore</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slider Controls -->
+                <button class="slider-btn prev" id="prevSlide" aria-label="Previous slide" type="button">
+                    <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                </button>
+                <button class="slider-btn next" id="nextSlide" aria-label="Next slide" type="button">
+                    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </button>
+
+                <!-- Dots -->
+                <div class="slider-dots" role="tablist" aria-label="Hero slides">
+                    <span class="dot active" id="hero-dot-0" data-index="0" role="tab" aria-selected="true" aria-controls="hero-slide-0" aria-label="Slide 1 - Lounge" tabindex="0"></span>
+                    <span class="dot" id="hero-dot-1" data-index="1" role="tab" aria-selected="false" aria-controls="hero-slide-1" aria-label="Slide 2 - Interior" tabindex="-1"></span>
+                    <span class="dot" id="hero-dot-2" data-index="2" role="tab" aria-selected="false" aria-controls="hero-slide-2" aria-label="Slide 3 - Nightlife" tabindex="-1"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== ABOUT - Lounge (matching index about style) ===== -->
+        <section class="about-section" id="about" aria-label="About ZT Lounge">
+            <div class="container">
+                <div class="about-short">
+                    <div class="section-tag">About the Lounge</div>
+                    <p>ZT Lounge is Meru's premier destination for sophisticated nightlife and luxury hospitality. Step into a world of signature cocktails, premium spirits, live entertainment, and an atmosphere of refined elegance. Whether you're celebrating a special occasion or unwinding after work, our expert team ensures an unforgettable experience.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SERVICES - Lounge Cards (matching index service cards) ===== -->
+        <section class="service-cards-section" id="services" aria-label="Our lounge services">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Lounge Experiences</span>
+                    <h2 class="section-title">Discover <span>ZT Lounge</span></h2>
+                    <p class="section-subtitle">Explore our premium lounge offerings</p>
+                </div>
+                <div class="service-cards-grid">
+                    <!-- Signature Cocktails -->
+                    <a href="#booking" class="service-card service-card-lounge">
+                        <img 
+                            src="../../assets/images/lounge/cocktails.webp" 
+                            alt="Signature cocktails at ZT Lounge with premium presentation and craft mixology" 
+                            class="card-image" 
+                            loading="lazy" 
+                            decoding="async"
+                        />
+                        <div class="card-content">
+                            <span class="card-tag">âœ¦ Craft</span>
+                            <h3>Signature Cocktails</h3>
+                            <p>Expertly crafted drinks using premium spirits and the freshest ingredients</p>
+                            <span class="btn btn-outline">Learn More</span>
+                        </div>
+                    </a>
+
+                    <!-- Live Entertainment -->
+                    <a href="#booking" class="service-card service-card-lounge">
+                        <img 
+                            src="../../assets/images/lounge/lounge-nightlife.webp" 
+                            alt="Live entertainment and DJ performances at ZT Lounge" 
+                            class="card-image" 
+                            loading="lazy" 
+                            decoding="async"
+                        />
+                        <div class="card-content">
+                            <span class="card-tag">âœ¦ Music</span>
+                            <h3>Live Entertainment</h3>
+                            <p>Curated performances and live DJs every weekend for an unforgettable night</p>
+                            <span class="btn btn-outline">Learn More</span>
+                        </div>
+                    </a>
+
+                    <!-- VIP Bottle Service -->
+                    <a href="#booking" class="service-card service-card-lounge">
+                        <img 
+                            src="../../assets/images/lounge/lounge-interior.webp" 
+                            alt="VIP bottle service at ZT Lounge with premium spirits and exclusive seating" 
+                            class="card-image" 
+                            loading="lazy" 
+                            decoding="async"
+                        />
+                        <div class="card-content">
+                            <span class="card-tag">âœ¦ VIP</span>
+                            <h3>VIP Bottle Service</h3>
+                            <p>Exclusive bottle service with premium spirits, mixers, and personalized attention</p>
+                            <span class="btn btn-outline">Learn More</span>
+                        </div>
+                    </a>
+
+                    <!-- Premium Spirits -->
+                    <a href="#booking" class="service-card service-card-lounge">
+                        <img 
+                            src="../../assets/images/lounge/lounge-nightlife.webp" 
+                            alt="Premium spirits selection at ZT Lounge featuring world-class whiskey and wines" 
+                            class="card-image" 
+                            loading="lazy" 
+                            decoding="async"
+                        />
+                        <div class="card-content">
+                            <span class="card-tag">âœ¦ Selection</span>
+                            <h3>Premium Spirits</h3>
+                            <p>Curated selection of world-class whiskey, wines, and premium spirits</p>
+                            <span class="btn btn-outline">Learn More</span>
+                        </div>
+                    </a>
+
+                    <!-- Private Events -->
+                    <a href="#booking" class="service-card service-card-lounge">
+                        <img 
+                            src="../../assets/images/lounge/lounge-2.webp" 
+                            alt="Private events at ZT Lounge with exclusive venue hire and personalized service" 
+                            class="card-image" 
+                            loading="lazy" 
+                            decoding="async"
+                        />
+                        <div class="card-content">
+                            <span class="card-tag">âœ¦ Private</span>
+                            <h3>Private Events</h3>
+                            <p>Exclusive venue hire for private celebrations, corporate events, and special occasions</p>
+                            <span class="btn btn-outline">Learn More</span>
+                        </div>
+                    </a>
+
+                    <!-- After-Work Unwind -->
+                    <a href="#booking" class="service-card service-card-lounge">
+                        <img 
+                            src="../../assets/images/lounge/lounge-interior.webp" 
+                            alt="After-work unwind at ZT Lounge with premium cocktails and relaxed ambiance" 
+                            class="card-image" 
+                            loading="lazy" 
+                            decoding="async"
+                        />
+                        <div class="card-content">
+                            <span class="card-tag">âœ¦ Relax</span>
+                            <h3>After-Work Unwind</h3>
+                            <p>Relax in luxury with premium drinks and sophisticated ambiance after a long day</p>
+                            <span class="btn btn-outline">Learn More</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SIGNATURE COCKTAILS - Lounge (page-specific) ===== -->
+        <section class="section-padding bg-card" aria-labelledby="cocktails-heading" style="padding: var(--space-2xl) 0;">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">The Craft</span>
+                    <h2 id="cocktails-heading" class="section-title">Signature <span>Cocktails</span></h2>
+                    <p class="section-subtitle">Our master mixologists craft each drink with precision and passion</p>
+                </div>
+                <div class="cocktail-grid">
+                    <div class="cocktail-image-wrapper">
+                        <img src="../../assets/images/lounge/cocktails.webp" alt="Signature cocktails at ZT Lounge featuring premium presentation and craft mixology" loading="lazy" />
+                    </div>
+                    <div>
+                        <div class="cocktail-list">
+                            <div class="cocktail-item">
+                                <h4>House Signature Collection</h4>
+                                <p>Exclusive blends created by our award-winning mixologists</p>
+                                <span class="cocktail-price">From KES 1,200</span>
+                            </div>
+                            <div class="cocktail-item">
+                                <h4>Premium Whiskey Selection</h4>
+                                <p>Curated from the world's finest distilleries</p>
+                                <span class="cocktail-price">From KES 1,500</span>
+                            </div>
+                            <div class="cocktail-item">
+                                <h4>Vintage Wine Cellar</h4>
+                                <p>Exquisite wines from premier vineyards</p>
+                                <span class="cocktail-price">From KES 2,000</span>
+                            </div>
+                            <div class="cocktail-item">
+                                <h4>Artisanal Mocktails</h4>
+                                <p>Sophisticated non-alcoholic creations</p>
+                                <span class="cocktail-price">From KES 800</span>
+                            </div>
+                        </div>
+                        <div class="mt-lg">
+                            <a href="#booking" class="btn btn-primary">Reserve Your Table</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== OCCASIONS - Perfect For ===== -->
+        <section class="section-padding bg-dark" aria-labelledby="occasions-heading" style="padding: var(--space-2xl) 0;">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Every Occasion</span>
+                    <h2 id="occasions-heading" class="section-title">Perfect For <span>Life's Moments</span></h2>
+                    <p class="section-subtitle">Whether intimate or grand, every gathering finds its perfect setting at ZT Lounge</p>
+                </div>
+                <div class="occasion-grid">
+                    <div class="occasion-item">
+                        <div class="icon"><i class="fas fa-heart" aria-hidden="true"></i></div>
+                        <h4>Romantic Evenings</h4>
+                        <p>Intimate date nights</p>
+                    </div>
+                    <div class="occasion-item">
+                        <div class="icon"><i class="fas fa-users" aria-hidden="true"></i></div>
+                        <h4>Friends' Gatherings</h4>
+                        <p>Celebrate together</p>
+                    </div>
+                    <div class="occasion-item">
+                        <div class="icon"><i class="fas fa-briefcase" aria-hidden="true"></i></div>
+                        <h4>Business Networking</h4>
+                        <p>Connect in style</p>
+                    </div>
+                    <div class="occasion-item">
+                        <div class="icon"><i class="fas fa-glass-cheers" aria-hidden="true"></i></div>
+                        <h4>Milestone Celebrations</h4>
+                        <p>Birthdays &amp; anniversaries</p>
+                    </div>
+                    <div class="occasion-item">
+                        <div class="icon"><i class="fas fa-wine-glass" aria-hidden="true"></i></div>
+                        <h4>After-Work Unwind</h4>
+                        <p>Relax in luxury</p>
+                    </div>
+                    <div class="occasion-item">
+                        <div class="icon"><i class="fas fa-handshake" aria-hidden="true"></i></div>
+                        <h4>Corporate Events</h4>
+                        <p>Impress your clients</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== GALLERY PREVIEW - Lounge (matching index gallery) ===== -->
+        <section class="gallery-preview" id="gallery" aria-label="Gallery preview of lounge">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Visual Journey</span>
+                    <h2 class="section-title">Lounge <span>Gallery</span></h2>
+                    <p class="section-subtitle">Take a visual tour of our luxurious lounge</p>
+                </div>
+                <div class="gallery-preview-grid">
+                    <figure class="gallery-preview-item">
+                        <img 
+                            src="../../assets/images/lounge/lounge-nightlife.webp" 
+                            alt="Luxury lounge interior with elegant seating and warm lighting at ZT Lounge" 
+                            loading="lazy" 
+                            decoding="async"
+                        />
+                    </figure>
+                    <figure class="gallery-preview-item">
+                        <img 
+                            src="../../assets/images/lounge/lounge-interior.webp" 
+                            alt="Premium lounge seating area with stylish decor and mood lighting" 
+                            loading="lazy" 
+                            decoding="async"
+                        />
+                    </figure>
+                    <figure class="gallery-preview-item">
+                        <img 
+                            src="../../assets/images/lounge/lounge-2.webp" 
+                            alt="Elegant lounge bar area with premium spirits display and comfortable seating" 
+                            loading="lazy" 
+                            decoding="async"
+                        />
+                    </figure>
+                    <figure class="gallery-preview-item">
+                        <img 
+                            src="../../assets/images/lounge/lounge-nightlife.webp" 
+                            alt="Vibrant nightlife experience at ZT Lounge with DJ and energetic atmosphere" 
+                            loading="lazy" 
+                            decoding="async"
+                        />
+                    </figure>
+                </div>
+                <div class="gallery-cta">
+                    <a href="../contact/gallery.html" class="btn btn-primary">View Full Gallery</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== TESTIMONIALS - Lounge (page-specific) ===== -->
+        <section class="section-padding bg-dark" aria-labelledby="testimonials-heading" style="padding: var(--space-2xl) 0;">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Guest Voices</span>
+                    <h2 id="testimonials-heading" class="section-title">What Our <span>Guests Say</span></h2>
+                    <p class="section-subtitle">Real experiences from our valued guests</p>
+                </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="stars" aria-hidden="true"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p>"The cocktails are incredible, the ambiance is unmatched, and the service is always impeccable. My favorite spot in Meru."</p>
+                        <div class="author">â€” Michael K., <span>Regular Guest</span></div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars" aria-hidden="true"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p>"Perfect for date nights. The live music, the atmosphere, the cocktailsâ€”everything was exceptional. We'll definitely be back."</p>
+                        <div class="author">â€” Grace N., <span>Couples Night Out</span></div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars" aria-hidden="true"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p>"ZT Lounge is my go-to for business meetings. Professional, luxurious, and the perfect ambiance to impress clients."</p>
+                        <div class="author">â€” Peter M., <span>Corporate Client</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CROSS-SELL - Complete ZT Experience ===== -->
+        <section class="section-padding bg-card" aria-labelledby="cross-sell-heading" style="padding: var(--space-2xl) 0;">
+            <div class="container">
+                <div class="cross-sell-section">
+                    <span class="section-tag">Complete Experience</span>
+                    <h2>More Than Just <span class="gold-text">A Lounge</span></h2>
+                    <p>Elevate your visit with our restaurant, VIP cabins, and private event spaces â€” all in one luxurious destination.</p>
+                    <div class="features">
+                        <span><i class="fas fa-utensils" aria-hidden="true"></i> Restaurant</span>
+                        <span><i class="fas fa-crown" aria-hidden="true"></i> VIP Cabins</span>
+                        <span><i class="fas fa-calendar-alt" aria-hidden="true"></i> Private Events</span>
+                    </div>
+                    <div class="flex flex-wrap gap-12 justify-center">
+                        <a href="restaurant.html" class="btn btn-outline-gold">Explore Restaurant</a>
+                        <a href="vip.html" class="btn btn-outline-gold">VIP Cabins</a>
+                        <a href="../business/events.html" class="btn btn-outline-gold">Events Venue</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== LOCATION - Lounge (matching index location section) ===== -->
+        <section class="location-section" id="location" aria-label="Location and contact information">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Visit Us</span>
+                    <h2 class="section-title">Our <span>Location</span></h2>
+                    <p class="section-subtitle">Find us in the heart of Milimani, Meru</p>
+                </div>
+                <div class="location-grid">
+                    <figure class="location-image">
+                        <img 
+                            src="../../assets/images/lounge/lounge-nightlife.webp" 
+                            alt="ZT Lounge - Premium lounge and bar in Milimani, Meru" 
+                            loading="lazy" 
+                            decoding="async"
+                        />
+                    </figure>
+                    <div class="location-info">
+                        <h3>ZT Lounge</h3>
+                        <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Opposite Ezri Hotel, Milimani, Meru, Kenya</p>
+                        <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+254143542601">+254 143 542 601</a></p>
+                        <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:ztloungemeru@gmail.com">ztloungemeru@gmail.com</a></p>
+                        <p><i class="fas fa-clock" aria-hidden="true"></i> Mon - Sun: 10:00 AM - 2:00 AM</p>
+                        <div class="location-cta">
+                            <a href="tel:+254143542601" class="btn btn-primary"><i class="fas fa-phone" aria-hidden="true"></i> Call Now</a>
+                            <a href="https://wa.me/254143542601?text=Hello%20ZT%20Lounge%2C%20I'd%20like%20to%20reserve%20a%20table%20at%20the%20lounge" class="btn btn-success" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp</a>
+                            <a href="https://maps.app.goo.gl/HqTbiiU4q2jRFoPg6" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Get Directions</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== BOOKING - Lounge (matching index form style) ===== -->
+        <section class="section-padding bg-card" id="booking" aria-label="Reserve your table" style="padding: var(--space-2xl) 0;">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Reserve Now</span>
+                    <h2 class="section-title">Your Table <span>Awaits</span></h2>
+                    <p class="section-subtitle">Secure your spot for an evening of luxury, craft cocktails, and unforgettable memories.</p>
+                </div>
+
+                <form class="booking-form-lounge" id="loungeBookingForm" novalidate>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" name="fullName" class="form-input" required aria-required="true" placeholder="John Doe" />
+                            <div class="form-error" id="fullNameError">Please enter your full name.</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="phoneNumber">Phone Number *</label>
+                            <input type="tel" id="phoneNumber" name="phoneNumber" class="form-input" required aria-required="true" placeholder="+254 700 000 000" />
+                            <div class="form-error" id="phoneError">Please enter a valid phone number.</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="john@example.com" />
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="guestCount">Number of Guests *</label>
+                            <select id="guestCount" name="guestCount" class="form-select" required aria-required="true">
+                                <option value="">Select guests...</option>
+                                <option value="2">2 Guests</option>
+                                <option value="4">4 Guests</option>
+                                <option value="6">6 Guests</option>
+                                <option value="8">8 Guests</option>
+                                <option value="10">10+ Guests</option>
+                            </select>
+                            <div class="form-error" id="guestError">Please select number of guests.</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="occasion">Occasion</label>
+                            <select id="occasion" name="occasion" class="form-select">
+                                <option value="date-night">Date Night</option>
+                                <option value="friends">Friends Gathering</option>
+                                <option value="business">Business Meeting</option>
+                                <option value="celebration">Celebration</option>
+                                <option value="after-work">After-Work Drinks</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="bookingDate">Preferred Date *</label>
+                            <input type="date" id="bookingDate" name="bookingDate" class="form-input" required aria-required="true" />
+                            <div class="form-error" id="dateError">Please select a date.</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="bookingTime">Preferred Time *</label>
+                            <select id="bookingTime" name="bookingTime" class="form-select" required aria-required="true">
+                                <option value="">Select time...</option>
+                                <option value="18:00">6:00 PM</option>
+                                <option value="19:00">7:00 PM</option>
+                                <option value="20:00">8:00 PM</option>
+                                <option value="21:00">9:00 PM</option>
+                                <option value="22:00">10:00 PM</option>
+                                <option value="23:00">11:00 PM</option>
+                            </select>
+                            <div class="form-error" id="timeError">Please select a time.</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="specialRequests">Special Requests</label>
+                        <textarea id="specialRequests" name="specialRequests" class="form-input" placeholder="VIP bottle service, seating preferences, dietary requirements, etc."></textarea>
+                    </div>
+
+                    <div class="form-success" id="formSuccess">
+                        <i class="fas fa-check-circle" aria-hidden="true"></i> Thank you! We'll confirm your reservation within 30 minutes.
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        <i class="fas fa-calendar-check" aria-hidden="true"></i> Submit Reservation
+                    </button>
+                    <p style="text-align: center; font-size: var(--font-size-sm); color: var(--color-text-muted); margin-top: var(--space-sm);">We'll confirm your reservation within 30 minutes</p>
+                </form>
+
+                <!-- Trust Badges -->
+                <div class="trust-badges">
+                    <div class="trust-badge">
+                        <i class="fas fa-cocktail" aria-hidden="true"></i>
+                        <strong>Signature Cocktails</strong>
+                        <p>Crafted by expert mixologists</p>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-music" aria-hidden="true"></i>
+                        <strong>Live Entertainment</strong>
+                        <p>Curated performances weekly</p>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <strong>VIP Service</strong>
+                        <p>Exclusive experiences</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FLOATING WHATSAPP (Identical to index) ===== -->
+    <div class="whatsapp-float">
+        <a 
+            href="https://wa.me/254143542601?text=Hello%20ZT%20Lounge%2C%20I'd%20like%20to%20reserve%20a%20table%20at%20the%20lounge" 
+            class="whatsapp-btn" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label="Reserve a table on WhatsApp"
+        >
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        </a>
+        <span class="whatsapp-tooltip">Reserve on WhatsApp</span>
+    </div>
+
+    <!-- ===== MOBILE STICKY CTA (Identical to index) ===== -->
+    <div class="mobile-sticky-cta" role="complementary" aria-label="Quick actions">
+        <a 
+            href="https://wa.me/254143542601?text=Hello%20ZT%20Lounge%2C%20I'd%20like%20to%20reserve%20a%20table" 
+            class="sticky-btn whatsapp-sticky" 
+            target="_blank" 
+            rel="noopener noreferrer"
+        >
+            <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp
+        </a>
+        <a href="tel:+254143542601" class="sticky-btn call-sticky">
+            <i class="fas fa-phone" aria-hidden="true"></i> Call
+        </a>
+        <a href="#booking" class="sticky-btn book-sticky">
+            <i class="fas fa-calendar-check" aria-hidden="true"></i> Reserve
+        </a>
+    </div>
+
+    <!-- ===== FOOTER (Identical to index) ===== -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../../index.html" class="logo" aria-label="ZT Lounge Home">
+                        <img 
+                            src="../../assets/images/branding/logo.webp" 
+                            alt="ZT Lounge Meru - Premium Hospitality Logo" 
+                            class="logo-dark site-logo"
+                            height="62" 
+                            width="auto" 
+                            loading="lazy" 
+                            decoding="async" 
+                        />
+                        <img 
+                            src="../../assets/images/branding/logo-white.webp" 
+                            alt="ZT Lounge Meru - Premium Hospitality Logo" 
+                            class="logo-light site-logo"
+                            height="62" 
+                            width="auto" 
+                            loading="lazy" 
+                            decoding="async" 
+                        />
+                    </a>
+                    <p>Experience premium hospitality at ZT Lounge Meru â€” fine dining, exclusive lounges, Auto Spa, and world-class service in Milimani.</p>
+                    <div class="footer-social">
+                        <a href="https://facebook.com/ztlounge" target="_blank" rel="noopener noreferrer" aria-label="Facebook page"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="https://instagram.com/ztlounge" target="_blank" rel="noopener noreferrer" aria-label="Instagram page"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="https://x.com/ztlounge_meru" target="_blank" rel="noopener noreferrer" aria-label="Twitter page"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                        <a href="https://youtube.com/@ztlounge" target="_blank" rel="noopener noreferrer" aria-label="YouTube channel"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <nav class="footer-links" aria-label="Quick links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="restaurant.html">Restaurant</a></li>
+                        <li><a href="restaurant-menu.html">Restaurant Menu</a></li>
+                        <li><a href="lounge.html">Lounge &amp; Bar</a></li>
+                        <li><a href="vip.html">VIP Cabins</a></li>
+                        <li><a href="../business/events.html">Events</a></li>
+                        <li><a href="../business/conference.html">Conference</a></li>
+                        <li><a href="../business/autospa.html">Auto Spa</a></li>
+                        <li><a href="../contact/gallery.html">Gallery</a></li>
+                        <li><a href="../contact/contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <nav class="footer-services" aria-label="Our services">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="restaurant.html">Restaurant</a></li>
+                        <li><a href="restaurant-menu.html">Restaurant Menu</a></li>
+                        <li><a href="lounge.html">Lounge &amp; Bar</a></li>
+                        <li><a href="vip.html">VIP Cabins</a></li>
+                        <li><a href="../business/events.html">Events</a></li>
+                        <li><a href="../business/conference.html">Conference</a></li>
+                        <li><a href="../business/autospa.html">Auto Spa</a></li>
+                    </ul>
+                </nav>
+                <div class="footer-contact" aria-label="Contact information">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Opposite Ezri Hotel, Milimani, Meru</li>
+                        <li><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+254143542601">+254 143 542 601</a></li>
+                        <li><i class="fab fa-whatsapp" aria-hidden="true"></i> <a href="https://wa.me/254143542601" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+                        <li><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:ztloungemeru@gmail.com">ztloungemeru@gmail.com</a></li>
+                        <li><i class="fas fa-clock" aria-hidden="true"></i> Mon - Sun: 10:00 AM - 2:00 AM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="copyrightYear">2026</span> ZT Lounge Meru. All rights reserved.</p>
+                <p class="footer-credit">Designed with <i class="fas fa-heart" aria-hidden="true"></i> for luxury</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================================
+         SHARED JAVASCRIPT (Identical to index with Lounge specific additions)
+         ============================================================ -->
+    <script>
+        /**
+         * ============================================================
+         * SHARED SITE JAVASCRIPT (Identical to index)
+         * Navigation, Theme Toggle, Hamburger, Copyright, Hero Slider
+         * ============================================================
+         */
+        document.addEventListener('DOMContentLoaded', function() {
+            // === THEME TOGGLE ===
+            var themeToggle = document.getElementById('themeToggle');
+            var html = document.documentElement;
+
+            if (themeToggle) {
+                themeToggle.addEventListener('click', function() {
+                    html.classList.toggle('light-mode');
+                    var isLight = html.classList.contains('light-mode');
+                    localStorage.setItem('zt-theme', isLight ? 'light' : 'dark');
+                    document.documentElement.style.colorScheme = isLight ? 'light' : 'dark';
+                });
+            }
+
+            // === HAMBURGER MENU ===
+            var hamburger = document.getElementById('hamburger');
+            var navMenu = document.getElementById('navMenu');
+
+            if (hamburger && navMenu) {
+                hamburger.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    this.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                    var isActive = navMenu.classList.contains('active');
+                    this.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+                });
+
+                // Mobile dropdown toggle
+                var dropdownParents = navMenu.querySelectorAll('.nav-list > li > a.dropdown-parent');
+                dropdownParents.forEach(function(link) {
+                    link.addEventListener('click', function(e) {
+                        if (window.innerWidth <= 768) {
+                            var parentLi = this.parentElement;
+                            var isExpanded = parentLi.getAttribute('aria-expanded') === 'true';
+                            
+                            var activeItems = navMenu.querySelectorAll('.nav-list > li.active-dropdown');
+                            activeItems.forEach(function(el) {
+                                if (el !== parentLi) {
+                                    el.classList.remove('active-dropdown');
+                                    el.setAttribute('aria-expanded', 'false');
+                                }
+                            });
+                            
+                            var newExpanded = !isExpanded;
+                            parentLi.classList.toggle('active-dropdown', newExpanded);
+                            parentLi.setAttribute('aria-expanded', String(newExpanded));
+                        }
+                    });
+                });
+
+                // Close menu on link click (mobile)
+                var navLinks = navMenu.querySelectorAll('a');
+                navLinks.forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        if (window.innerWidth <= 768 && !this.closest('.dropdown-menu')) {
+                            hamburger.classList.remove('active');
+                            navMenu.classList.remove('active');
+                            hamburger.setAttribute('aria-expanded', 'false');
+                        }
+                    });
+                });
+
+                // Close on Escape
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+                        hamburger.classList.remove('active');
+                        navMenu.classList.remove('active');
+                        hamburger.setAttribute('aria-expanded', 'false');
+                        hamburger.focus();
+                    }
+                });
+
+                // Close on resize to desktop
+                window.addEventListener('resize', function() {
+                    if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
+                        hamburger.classList.remove('active');
+                        navMenu.classList.remove('active');
+                        hamburger.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+
+            // === HERO SLIDER (Identical to index) ===
+            var heroSlides = document.querySelectorAll('.hero-slide');
+            var heroDots = document.querySelectorAll('.dot');
+            var heroCurrent = 0;
+            var heroInterval;
+
+            function goToHero(index) {
+                if (index < 0) index = heroSlides.length - 1;
+                if (index >= heroSlides.length) index = 0;
+                heroSlides.forEach(function(slide, i) {
+                    var isActive = i === index;
+                    slide.classList.toggle('active', isActive);
+                    slide.setAttribute('aria-hidden', String(!isActive));
+                    var interactiveElements = slide.querySelectorAll('a, button');
+                    interactiveElements.forEach(function(el) {
+                        el.tabIndex = isActive ? 0 : -1;
+                    });
+                });
+                heroDots.forEach(function(dot, i) {
+                    var isActive = i === index;
+                    dot.classList.toggle('active', isActive);
+                    dot.setAttribute('aria-selected', String(isActive));
+                    dot.tabIndex = isActive ? 0 : -1;
+                });
+                heroCurrent = index;
+            }
+
+            function nextHero() { goToHero(heroCurrent + 1); }
+            function prevHero() { goToHero(heroCurrent - 1); }
+
+            var prevSlideBtn = document.getElementById('prevSlide');
+            var nextSlideBtn = document.getElementById('nextSlide');
+
+            if (prevSlideBtn) prevSlideBtn.addEventListener('click', function() { prevHero(); resetHeroAutoplay(); });
+            if (nextSlideBtn) nextSlideBtn.addEventListener('click', function() { nextHero(); resetHeroAutoplay(); });
+
+            heroDots.forEach(function(dot, index) {
+                dot.addEventListener('click', function() {
+                    goToHero(index);
+                    resetHeroAutoplay();
+                });
+                dot.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        goToHero(index);
+                        resetHeroAutoplay();
+                    }
+                });
+            });
+
+            function startHeroAutoplay() {
+                stopHeroAutoplay();
+                heroInterval = setInterval(nextHero, 5000);
+            }
+
+            function stopHeroAutoplay() {
+                if (heroInterval) {
+                    clearInterval(heroInterval);
+                    heroInterval = null;
+                }
+            }
+
+            function resetHeroAutoplay() {
+                startHeroAutoplay();
+            }
+
+            var heroContainer = document.querySelector('.hero-slider');
+            if (heroContainer) {
+                heroContainer.addEventListener('mouseenter', stopHeroAutoplay);
+                heroContainer.addEventListener('mouseleave', startHeroAutoplay);
+                heroContainer.addEventListener('focusin', stopHeroAutoplay);
+                heroContainer.addEventListener('focusout', function(e) {
+                    if (!this.contains(e.relatedTarget)) startHeroAutoplay();
+                });
+            }
+
+            goToHero(0);
+            startHeroAutoplay();
+
+            // === COPYRIGHT YEAR ===
+            var yearEl = document.getElementById('copyrightYear');
+            if (yearEl) {
+                yearEl.textContent = new Date().getFullYear();
+            }
+
+            // === UPDATE ACTIVE NAV LINK ===
+            var currentPath = window.location.pathname;
+            var navLinks = document.querySelectorAll('.nav-list a[href]');
+            navLinks.forEach(function(link) {
+                var href = link.getAttribute('href');
+                var isActive = href === currentPath || 
+                               (href === 'lounge.html' && currentPath.includes('lounge')) ||
+                               (href === '../../index.html' && (currentPath === '/' || currentPath === '' || currentPath.includes('index')));
+                if (isActive) {
+                    link.classList.add('active');
+                    link.setAttribute('aria-current', 'page');
+                } else {
+                    link.classList.remove('active');
+                    link.removeAttribute('aria-current');
+                }
+            });
+        });
+
+        /**
+         * ============================================================
+         * LOUNGE BOOKING FORM (Unique to this page)
+         * ============================================================
+         */
+        document.addEventListener('DOMContentLoaded', function() {
+            var bookingForm = document.getElementById('loungeBookingForm');
+            if (!bookingForm) return;
+
+            // Set default date to tomorrow
+            var dateInput = document.getElementById('bookingDate');
+            if (dateInput) {
+                var tomorrow = new Date();
+                tomorrow.setDate(tomorrow.getDate() + 1);
+                dateInput.value = tomorrow.toISOString().split('T')[0];
+            }
+
+            bookingForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                // Reset previous errors
+                document.querySelectorAll('.form-error').forEach(function(el) {
+                    el.classList.remove('visible');
+                });
+                document.querySelectorAll('.form-input, .form-select').forEach(function(el) {
+                    el.classList.remove('error');
+                });
+                document.getElementById('formSuccess').classList.remove('visible');
+
+                var isValid = true;
+
+                // Validate name
+                var name = document.getElementById('fullName');
+                if (!name.value.trim()) {
+                    document.getElementById('fullNameError').classList.add('visible');
+                    name.classList.add('error');
+                    isValid = false;
+                }
+
+                // Validate phone
+                var phone = document.getElementById('phoneNumber');
+                if (!phone.value.trim() || phone.value.trim().length < 8) {
+                    document.getElementById('phoneError').classList.add('visible');
+                    phone.classList.add('error');
+                    isValid = false;
+                }
+
+                // Validate guests
+                var guests = document.getElementById('guestCount');
+                if (!guests.value) {
+                    document.getElementById('guestError').classList.add('visible');
+                    guests.classList.add('error');
+                    isValid = false;
+                }
+
+                // Validate date
+                var date = document.getElementById('bookingDate');
+                if (!date.value) {
+                    document.getElementById('dateError').classList.add('visible');
+                    date.classList.add('error');
+                    isValid = false;
+                }
+
+                // Validate time
+                var time = document.getElementById('bookingTime');
+                if (!time.value) {
+                    document.getElementById('timeError').classList.add('visible');
+                    time.classList.add('error');
+                    isValid = false;
+                }
+
+                if (!isValid) {
+                    var firstError = document.querySelector('.form-error.visible');
+                    if (firstError) {
+                        firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                    return;
+                }
+
+                // Build WhatsApp message
+                var message = 'Hello ZT Lounge, I\'d like to reserve a table at the lounge:%0A%0A' +
+                    'Name: ' + name.value.trim() + '%0A' +
+                    'Phone: ' + phone.value.trim() + '%0A' +
+                    'Email: ' + (document.getElementById('email').value.trim() || 'Not provided') + '%0A' +
+                    'Guests: ' + guests.options[guests.selectedIndex].text + '%0A' +
+                    'Occasion: ' + document.getElementById('occasion').options[document.getElementById('occasion').selectedIndex].text + '%0A' +
+                    'Date: ' + date.value + '%0A' +
+                    'Time: ' + time.options[time.selectedIndex].text + '%0A' +
+                    'Special Requests: ' + (document.getElementById('specialRequests').value.trim() || 'None');
+
+                var whatsappUrl = 'https://wa.me/254143542601?text=' + encodeURIComponent(message);
+
+                // Show success message
+                document.getElementById('formSuccess').classList.add('visible');
+
+                // Open WhatsApp and reset form
+                setTimeout(function() {
+                    window.open(whatsappUrl, '_blank');
+                    setTimeout(function() {
+                        bookingForm.reset();
+                        document.getElementById('formSuccess').classList.remove('visible');
+                        // Reset date to tomorrow
+                        if (dateInput) {
+                            var tomorrow = new Date();
+                            tomorrow.setDate(tomorrow.getDate() + 1);
+                            dateInput.value = tomorrow.toISOString().split('T')[0];
+                        }
+                    }, 3000);
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

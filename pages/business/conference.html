@@ -1,0 +1,1502 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ============================================================
+         CRITICAL: Theme initialization - runs BEFORE any rendering
+         ============================================================ -->
+    <script>
+        (function() {
+            try {
+                var savedTheme = localStorage.getItem('zt-theme');
+                if (savedTheme === 'light') {
+                    document.documentElement.classList.add('light-mode');
+                    document.documentElement.style.colorScheme = 'light';
+                } else {
+                    document.documentElement.style.colorScheme = 'dark';
+                }
+            } catch (e) {
+                document.documentElement.style.colorScheme = 'dark';
+            }
+        })();
+    </script>
+    <noscript>
+        <link rel="stylesheet" href="../../assets/css/theme.css">
+        <style>
+            body { background: #0a0a0a; color: #ffffff; }
+        </style>
+    </noscript>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    
+    <!-- SEO -->
+    <title>Premium Conference Hall Meru | ZT Lounge â€“ Corporate Meetings & Training</title>
+    <meta name="description" content="State-of-the-art conference facilities in Meru. Host corporate meetings, training, seminars, and workshops at ZT Lounge. Book your event today." />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f5f5f5" media="(prefers-color-scheme: light)" />
+    <meta name="color-scheme" content="dark light" />
+    <link rel="canonical" href="https://ztlounge.co.ke/pages/business/conference.html" />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Premium Conference Hall Meru | ZT Lounge â€“ Corporate Meetings & Training" />
+    <meta property="og:description" content="State-of-the-art conference facilities in Meru. Host corporate meetings, training, seminars, and workshops at ZT Lounge." />
+    <meta property="og:image" content="https://ztlounge.co.ke/assets/images/conference/conference-hall.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://ztlounge.co.ke/pages/business/conference.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ZT Lounge Meru" />
+    <meta property="og:locale" content="en_KE" />
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Premium Conference Hall Meru | ZT Lounge" />
+    <meta name="twitter:description" content="State-of-the-art conference facilities in Meru. Host corporate meetings, training, seminars, and workshops." />
+    <meta name="twitter:image" content="https://ztlounge.co.ke/assets/images/conference/conference-hall.webp" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../../assets/images/branding/favicon.ico" />
+    <link rel="apple-touch-icon" href="../../assets/images/branding/apple-touch-icon.webp" />
+
+    <!-- Performance: Preconnect for Critical Resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+
+    <!-- Performance: Preload Critical Images -->
+    <link rel="preload" as="image" href="../../assets/images/conference/conference-hall.webp" fetchpriority="high" />
+    <link rel="preload" as="image" href="../../assets/images/conference/corporate-meeting.webp" fetchpriority="high" />
+    <link rel="preload" as="image" href="../../assets/images/conference/conference-setup.webp" fetchpriority="high" />
+    
+    <!-- Performance: Non-blocking Font Loading -->
+    <link 
+        rel="stylesheet" 
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" 
+        media="print" 
+        onload="this.media='all'" 
+    />
+    <noscript>
+        <link 
+            rel="stylesheet" 
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" 
+        />
+    </noscript>
+
+    <!-- Performance: Non-blocking Font Awesome -->
+    <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" 
+        media="print" 
+        onload="this.media='all'" 
+    />
+    <noscript>
+        <link 
+            rel="stylesheet" 
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" 
+        />
+    </noscript>
+
+    <!-- ==========================================================
+    THEME.CSS - SINGLE SOURCE OF TRUTH
+    ========================================================== -->
+    <link rel="stylesheet" href="../../assets/css/theme.css" />
+
+    <!-- ==========================================================
+    PAGE-SPECIFIC CSS - Only unique to Conference
+    ========================================================== -->
+    <style>
+        /* ============================================
+           CONFERENCE - PAGE-SPECIFIC STYLES
+           Following the index.html pattern
+           ============================================ */
+
+        /* Hero slides - Conference specific */
+        .hero-slide-conference-1 {
+            background: linear-gradient(135deg, rgba(10,10,10,0.75), rgba(10,10,10,0.4)),
+                        url('../../assets/images/conference/conference-hall.webp') center/cover no-repeat;
+        }
+
+        .hero-slide-conference-2 {
+            background: linear-gradient(135deg, rgba(10,10,10,0.75), rgba(10,10,10,0.4)),
+                        url('../../assets/images/conference/corporate-meeting.webp') center/cover no-repeat;
+        }
+
+        .hero-slide-conference-3 {
+            background: linear-gradient(135deg, rgba(10,10,10,0.75), rgba(10,10,10,0.4)),
+                        url('../../assets/images/conference/conference-setup.webp') center/cover no-repeat;
+        }
+
+        /* Service Cards - Conference specific */
+        .service-card-conference .card-tag {
+            background: rgba(201, 168, 76, 0.15);
+            color: var(--color-gold);
+        }
+
+        /* Pricing Cards - Matching index card style */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-lg);
+        }
+
+        .pricing-card {
+            background: var(--color-card-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--color-gold);
+            box-shadow: 0 0 30px rgba(201, 168, 76, 0.15);
+        }
+
+        .pricing-card .badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--color-gold);
+            color: #000;
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: var(--font-size-xs);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .pricing-card .price {
+            font-family: var(--font-family-serif);
+            font-size: var(--font-size-2xl);
+            color: var(--color-gold);
+            margin: var(--space-sm) 0;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            padding: 0;
+            margin: var(--space-md) 0;
+            text-align: left;
+        }
+
+        .pricing-card ul li {
+            padding: var(--space-xs) 0;
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            color: var(--color-text-secondary);
+            font-size: var(--font-size-sm);
+        }
+
+        .pricing-card ul li i {
+            color: var(--color-gold);
+            width: 18px;
+        }
+
+        /* Layout Grid - Conference specific */
+        .layout-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: var(--space-md);
+            margin-top: var(--space-xl);
+        }
+
+        .layout-item {
+            background: var(--color-card-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg) var(--space-md);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .layout-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--color-gold);
+        }
+
+        .layout-item .icon {
+            font-size: var(--font-size-2xl);
+            color: var(--color-gold);
+            margin-bottom: var(--space-sm);
+        }
+
+        .layout-item h4 {
+            font-family: var(--font-family-serif);
+            font-size: var(--font-size-md);
+            margin-bottom: var(--space-xs);
+            color: var(--color-text);
+        }
+
+        .layout-item p {
+            color: var(--color-text-secondary);
+            font-size: var(--font-size-sm);
+            margin: 0;
+        }
+
+        /* Booking Form - Conference specific */
+        .booking-form-conference {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--color-card-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+        }
+
+        .booking-form-conference .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-md);
+        }
+
+        .booking-form-conference .form-group {
+            margin-bottom: var(--space-md);
+        }
+
+        .booking-form-conference label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: var(--space-xs);
+            color: var(--color-text);
+            font-size: var(--font-size-sm);
+        }
+
+        .booking-form-conference .form-input,
+        .booking-form-conference .form-select,
+        .booking-form-conference textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            background: var(--color-bg);
+            color: var(--color-text);
+            font-size: var(--font-size-md);
+            transition: border-color 0.3s ease;
+            font-family: var(--font-family-sans);
+        }
+
+        .booking-form-conference .form-input:focus,
+        .booking-form-conference .form-select:focus,
+        .booking-form-conference textarea:focus {
+            outline: none;
+            border-color: var(--color-gold);
+            box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.1);
+        }
+
+        .booking-form-conference .form-input.error,
+        .booking-form-conference .form-select.error,
+        .booking-form-conference textarea.error {
+            border-color: #e74c3c;
+        }
+
+        .booking-form-conference .form-error {
+            color: #e74c3c;
+            font-size: var(--font-size-xs);
+            margin-top: var(--space-xs);
+            display: none;
+        }
+
+        .booking-form-conference .form-error.visible {
+            display: block;
+        }
+
+        .booking-form-conference .form-success {
+            display: none;
+            padding: var(--space-md);
+            background: rgba(46, 204, 113, 0.1);
+            border: 1px solid #2ecc71;
+            border-radius: var(--radius-md);
+            color: #2ecc71;
+            text-align: center;
+            margin-bottom: var(--space-md);
+        }
+
+        .booking-form-conference .form-success.visible {
+            display: block;
+        }
+
+        .booking-form-conference .form-success i {
+            margin-right: var(--space-sm);
+        }
+
+        .booking-form-conference textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .pricing-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .layout-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                min-height: calc(100vh - var(--header-height-mobile));
+            }
+            .hero-slider {
+                height: calc(100vh - var(--header-height-mobile));
+                min-height: 500px;
+            }
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            .slider-btn {
+                width: 44px;
+                height: 44px;
+                font-size: 0.9rem;
+                min-width: 44px;
+                min-height: 44px;
+            }
+            .slider-btn.prev {
+                left: 12px;
+            }
+            .slider-btn.next {
+                right: 12px;
+            }
+            
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+            
+            .layout-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .booking-form-conference .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            .hero-buttons .btn {
+                padding: 12px 24px;
+                font-size: 0.85rem;
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .layout-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* Image Fallback */
+        .image-fallback {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            min-height: 120px;
+            color: var(--color-gold);
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            padding: 1rem;
+            text-align: center;
+            background: var(--color-card-bg);
+            border-radius: inherit;
+        }
+    </style>
+
+    <!-- Schema - Conference Center -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ConferenceCenter",
+        "name": "ZT Lounge Conference Hall",
+        "description": "State-of-the-art conference facilities in Meru for corporate meetings, training, seminars, and workshops.",
+        "url": "https://ztlounge.co.ke/pages/business/conference.html",
+        "telephone": "+254143542601",
+        "email": "ztloungemeru@gmail.com",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Opposite Ezri Hotel, Milimani",
+            "addressLocality": "Meru",
+            "addressRegion": "Meru County",
+            "postalCode": "60200",
+            "addressCountry": "KE"
+        },
+        "priceRange": "$$",
+        "amenityFeature": [
+            { "@type": "LocationFeatureSpecification", "name": "High-Speed WiFi", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "AV Equipment", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Catering Services", "value": true }
+        ]
+    }
+    </script>
+
+    <!-- Schema - Breadcrumb -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ztlounge.co.ke/" },
+            { "@type": "ListItem", "position": 2, "name": "Business", "item": "https://ztlounge.co.ke/pages/business/" },
+            { "@type": "ListItem", "position": 3, "name": "Conference", "item": "https://ztlounge.co.ke/pages/business/conference.html" }
+        ]
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Accessibility: Skip Navigation -->
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <!-- ===== PREMIUM HEADER (Identical to index) ===== -->
+    <header class="header" id="header" role="banner">
+        <div class="container">
+            <div class="nav-wrapper">
+                <!-- Logo -->
+                <a href="../../index.html" class="logo" aria-label="ZT Lounge Home">
+                    <img 
+                        src="../../assets/images/branding/logo.webp" 
+                        alt="ZT Lounge Meru - Premium Hospitality Logo" 
+                        class="logo-dark site-logo"
+                        height="62" 
+                        width="auto" 
+                        decoding="async" 
+                        fetchpriority="high"
+                    />
+                    <img 
+                        src="../../assets/images/branding/logo-white.webp" 
+                        alt="ZT Lounge Meru - Premium Hospitality Logo" 
+                        class="logo-light site-logo"
+                        height="62" 
+                        width="auto" 
+                        decoding="async" 
+                        fetchpriority="high"
+                    />
+                </a>
+
+                <!-- Navigation (Identical to index) -->
+                <nav class="nav-menu" id="navMenu" role="navigation" aria-label="Main navigation">
+                    <ul class="nav-list" role="menubar">
+                        <li role="none">
+                            <a href="../../index.html" role="menuitem">
+                                <i class="fas fa-home" aria-hidden="true"></i> Home
+                            </a>
+                        </li>
+                        <li role="none" aria-expanded="false">
+                            <a 
+                                role="menuitem" 
+                                aria-haspopup="true" 
+                                aria-expanded="false"
+                                aria-controls="experiences-dropdown"
+                                class="dropdown-parent"
+                                tabindex="0"
+                            >
+                                Experiences <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                            </a>
+                            <ul class="dropdown-menu" id="experiences-dropdown" role="menu">
+                                <li role="none"><a href="../experiences/restaurant.html" role="menuitem">Restaurant</a></li>
+                                <li role="none"><a href="../experiences/restaurant-menu.html" role="menuitem">Restaurant Menu</a></li>
+                                <li role="none"><a href="../experiences/lounge.html" role="menuitem">Lounge</a></li>
+                                <li role="none"><a href="../experiences/vip.html" role="menuitem">VIP Cabins</a></li>
+                            </ul>
+                        </li>
+                        <li role="none" aria-expanded="false">
+                            <a 
+                                role="menuitem" 
+                                aria-haspopup="true" 
+                                aria-expanded="false"
+                                aria-controls="business-dropdown"
+                                class="dropdown-parent"
+                                tabindex="0"
+                            >
+                                Business <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                            </a>
+                            <ul class="dropdown-menu" id="business-dropdown" role="menu">
+                                <li role="none"><a href="events.html" role="menuitem">Events</a></li>
+                                <li role="none"><a href="conference.html" role="menuitem" class="active" aria-current="page">Conference</a></li>
+                                <li role="none"><a href="autospa.html" role="menuitem">Auto Spa</a></li>
+                            </ul>
+                        </li>
+                        <li role="none" aria-expanded="false">
+                            <a 
+                                role="menuitem" 
+                                aria-haspopup="true" 
+                                aria-expanded="false"
+                                aria-controls="contact-dropdown"
+                                class="dropdown-parent"
+                                tabindex="0"
+                            >
+                                Contact <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                            </a>
+                            <ul class="dropdown-menu" id="contact-dropdown" role="menu">
+                                <li role="none"><a href="../contact/contact.html" role="menuitem">Contact Page</a></li>
+                                <li role="none"><a href="../contact/gallery.html" role="menuitem">Gallery</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Actions (Identical to index) -->
+                <div class="nav-actions">
+                    <button
+                        class="theme-toggle"
+                        id="themeToggle"
+                        aria-label="Toggle light or dark color theme"
+                        title="Toggle theme"
+                        type="button"
+                    >
+                        <i class="fas fa-moon" aria-hidden="true"></i>
+                        <i class="fas fa-sun" aria-hidden="true"></i>
+                    </button>
+                    
+                    <a 
+                        href="tel:+254143542601" 
+                        class="header-phone" 
+                        aria-label="Call ZT Lounge at +254 143 542 601"
+                    >
+                        <i class="fas fa-phone" aria-hidden="true"></i>
+                        <span class="phone-number">+254 143 542 601</span>
+                    </a>
+                    <button 
+                        class="hamburger" 
+                        id="hamburger" 
+                        aria-label="Toggle navigation menu" 
+                        aria-expanded="false"
+                        aria-controls="navMenu"
+                        type="button"
+                    >
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main id="main" role="main">
+
+        <!-- ===== HERO - Using index slider architecture ===== -->
+        <section class="hero" id="hero" aria-label="Hero banner showcasing ZT Lounge Conference Hall">
+            <div class="hero-slider" role="region" aria-label="Featured images">
+                <!-- Slide 1 - Conference Hall -->
+                <div 
+                    class="hero-slide hero-slide-conference-1 active" 
+                    id="hero-slide-0" 
+                    role="tabpanel" 
+                    aria-labelledby="hero-dot-0" 
+                    aria-hidden="false"
+                >
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content container">
+                        <span class="hero-badge">Corporate Events</span>
+                        <h1 class="hero-title">Premium <span>Conference</span> Hall</h1>
+                        <p class="hero-subtitle">State-of-the-art facilities &bull; Corporate Meetings &bull; Training &bull; Seminars &bull; Workshops</p>
+                        <div class="hero-buttons">
+                            <a href="#booking" class="btn btn-primary btn-large">Book Now</a>
+                            <a href="#services" class="btn btn-secondary btn-large">Explore Services</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 - Corporate Meeting -->
+                <div 
+                    class="hero-slide hero-slide-conference-2" 
+                    id="hero-slide-1" 
+                    role="tabpanel" 
+                    aria-labelledby="hero-dot-1" 
+                    aria-hidden="true"
+                >
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content container">
+                        <span class="hero-badge">Professional Environment</span>
+                        <h2 class="hero-title">Corporate <span>Meetings</span> Redefined</h2>
+                        <p class="hero-subtitle">Professional business meetings with premium AV equipment, high-speed WiFi, and dedicated support.</p>
+                        <div class="hero-buttons">
+                            <a href="#booking" class="btn btn-primary btn-large" tabindex="-1">Book Now</a>
+                            <a href="#services" class="btn btn-secondary btn-large" tabindex="-1">Explore Services</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 - Conference Setup -->
+                <div 
+                    class="hero-slide hero-slide-conference-3" 
+                    id="hero-slide-2" 
+                    role="tabpanel" 
+                    aria-labelledby="hero-dot-2" 
+                    aria-hidden="true"
+                >
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content container">
+                        <span class="hero-badge">Flexible Spaces</span>
+                        <h2 class="hero-title">Versatile <span>Event</span> Spaces</h2>
+                        <p class="hero-subtitle">From boardroom meetings to large conferences, our spaces adapt to your needs.</p>
+                        <div class="hero-buttons">
+                            <a href="#booking" class="btn btn-primary btn-large" tabindex="-1">Book Now</a>
+                            <a href="#services" class="btn btn-secondary btn-large" tabindex="-1">Explore Services</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slider Controls -->
+                <button class="slider-btn prev" id="prevSlide" aria-label="Previous slide" type="button">
+                    <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                </button>
+                <button class="slider-btn next" id="nextSlide" aria-label="Next slide" type="button">
+                    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </button>
+
+                <!-- Dots -->
+                <div class="slider-dots" role="tablist" aria-label="Hero slides">
+                    <span class="dot active" id="hero-dot-0" data-index="0" role="tab" aria-selected="true" aria-controls="hero-slide-0" aria-label="Slide 1 - Conference Hall" tabindex="0"></span>
+                    <span class="dot" id="hero-dot-1" data-index="1" role="tab" aria-selected="false" aria-controls="hero-slide-1" aria-label="Slide 2 - Corporate Meeting" tabindex="-1"></span>
+                    <span class="dot" id="hero-dot-2" data-index="2" role="tab" aria-selected="false" aria-controls="hero-slide-2" aria-label="Slide 3 - Conference Setup" tabindex="-1"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== ABOUT - Conference (matching index about style) ===== -->
+        <section class="about-section" id="about" aria-label="About ZT Lounge Conference Hall">
+            <div class="container">
+                <div class="about-short">
+                    <div class="section-tag">About Conference Hall</div>
+                    <p>ZT Lounge Meru offers state-of-the-art conference facilities designed for successful corporate meetings, training sessions, seminars, and workshops. With flexible seating arrangements, premium audiovisual equipment, high-speed internet, and professional catering services, we provide the perfect environment for your next corporate event.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SERVICES - Conference Cards (matching index service cards) ===== -->
+        <section class="service-cards-section" id="services" aria-label="Our conference services">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Conference Services</span>
+                    <h2 class="section-title">Corporate <span>Facilities</span></h2>
+                    <p class="section-subtitle">Discover our premium conference amenities</p>
+                </div>
+                <div class="service-cards-grid">
+                    <!-- Boardroom -->
+                    <a href="#booking" class="service-card service-card-conference">
+                        <img 
+                            src="../../assets/images/conference/conference-hall.webp" 
+                            alt="Premium boardroom at ZT Lounge Conference Hall with modern seating and professional ambiance" 
+                            class="card-image" 
+                            loading="lazy" 
+                            decoding="async"
+                        />
+                        <div class="card-content">
+                            <span class="card-tag">âœ¦ Executive</span>
+                            <h3>Boardroom</h3>
+                            <p>Professional boardroom setup for executive meetings and strategy sessions</p>
+                            <span class="btn btn-outline">Learn More</span>
+                        </div>
+                    </a>
+
+                    <!-- Training Room -->
+                    <a href="#booking" class="service-card service-card-conference">
+                        <img 
+                            src="../../assets/images/conference/corporate-meeting.webp" 
+                            alt="Training room at ZT Lounge Conference Hall with classroom seating and presentation equipment" 
+                            class="card-image" 
+                            loading="lazy" 
+                            decoding="async"
+                        />
+                        <div class="card-content">
+                            <span class="card-tag">âœ¦ Training</span>
+                            <h3>Training Room</h3>
+                            <p>Classroom-style setup ideal for employee training and development workshops</p>
+                            <span class="btn btn-outline">Learn More</span>
+                        </div>
+                    </a>
+
+                    <!-- Seminar Hall -->
+                    <a href="#booking" class="service-card service-card-conference">
+                        <img 
+                            src="../../assets/images/conference/conference-setup.webp" 
+                            alt="Seminar hall at ZT Lounge Conference Hall with theatre seating and stage setup" 
+                            class="card-image" 
+                            loading="lazy" 
+                            decoding="async"
+                        />
+                        <div class="card-content">
+                            <span class="card-tag">âœ¦ Seminars</span>
+                            <h3>Seminar Hall</h3>
+                            <p>Theatre-style seating for large seminars, presentations, and guest lectures</p>
+                            <span class="btn btn-outline">Learn More</span>
+                        </div>
+                    </a>
+
+                    <!-- Conference Hall -->
+                    <a href="#booking" class="service-card service-card-conference">
+                        <img 
+                            src="../../assets/images/conference/conference-2.webp" 
+                            alt="Large conference hall at ZT Lounge with capacity for 200+ guests and professional AV setup" 
+                            class="card-image" 
+                            loading="lazy" 
+                            decoding="async"
+                        />
+                        <div class="card-content">
+                            <span class="card-tag">âœ¦ Large Events</span>
+                            <h3>Conference Hall</h3>
+                            <p>Spacious conference hall for large corporate events and multi-day conferences</p>
+                            <span class="btn btn-outline">Learn More</span>
+                        </div>
+                    </a>
+
+                    <!-- Catering -->
+                    <a href="#booking" class="service-card service-card-conference">
+                        <img 
+                            src="../../assets/images/conference/conference-1.webp" 
+                            alt="Professional catering services at ZT Lounge Conference Hall with premium dining options" 
+                            class="card-image" 
+                            loading="lazy" 
+                            decoding="async"
+                        />
+                        <div class="card-content">
+                            <span class="card-tag">âœ¦ Dining</span>
+                            <h3>Catering Services</h3>
+                            <p>Premium catering with customizable menus for coffee breaks, lunches, and receptions</p>
+                            <span class="btn btn-outline">Learn More</span>
+                        </div>
+                    </a>
+
+                    <!-- AV Equipment -->
+                    <a href="#booking" class="service-card service-card-conference">
+                        <img 
+                            src="../../assets/images/conference/conference-hall.webp" 
+                            alt="State-of-the-art audiovisual equipment at ZT Lounge Conference Hall for professional presentations" 
+                            class="card-image" 
+                            loading="lazy" 
+                            decoding="async"
+                        />
+                        <div class="card-content">
+                            <span class="card-tag">âœ¦ Technology</span>
+                            <h3>AV Equipment</h3>
+                            <p>State-of-the-art audiovisual equipment including projectors, screens, and sound systems</p>
+                            <span class="btn btn-outline">Learn More</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== ROOM LAYOUTS - Conference (page-specific component) ===== -->
+        <section class="section-padding bg-card" aria-label="Room layouts" style="padding: var(--space-2xl) 0;">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Room Layouts</span>
+                    <h2 class="section-title">Flexible <span>Configurations</span></h2>
+                    <p class="section-subtitle">Adaptable spaces for any corporate event</p>
+                </div>
+                <div class="layout-grid">
+                    <div class="layout-item">
+                        <div class="icon"><i class="fas fa-users" aria-hidden="true"></i></div>
+                        <h4>Boardroom</h4>
+                        <p>20â€“30 guests</p>
+                    </div>
+                    <div class="layout-item">
+                        <div class="icon"><i class="fas fa-chalkboard" aria-hidden="true"></i></div>
+                        <h4>Classroom</h4>
+                        <p>60â€“80 guests</p>
+                    </div>
+                    <div class="layout-item">
+                        <div class="icon"><i class="fas fa-chair" aria-hidden="true"></i></div>
+                        <h4>Theatre</h4>
+                        <p>150â€“200 guests</p>
+                    </div>
+                    <div class="layout-item">
+                        <div class="icon"><i class="fas fa-arrow-right" aria-hidden="true"></i></div>
+                        <h4>U-Shape</h4>
+                        <p>30â€“40 guests</p>
+                    </div>
+                    <div class="layout-item">
+                        <div class="icon"><i class="fas fa-utensils" aria-hidden="true"></i></div>
+                        <h4>Banquet</h4>
+                        <p>100â€“120 guests</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== GALLERY PREVIEW - Conference (matching index gallery) ===== -->
+        <section class="gallery-preview" id="gallery" aria-label="Gallery preview of conference facilities">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Our Spaces</span>
+                    <h2 class="section-title">Conference <span>Gallery</span></h2>
+                    <p class="section-subtitle">Take a visual tour of our conference facilities</p>
+                </div>
+                <div class="gallery-preview-grid">
+                    <figure class="gallery-preview-item">
+                        <img 
+                            src="../../assets/images/conference/conference-hall.webp" 
+                            alt="Premium conference hall at ZT Lounge Meru with professional seating and modern lighting" 
+                            loading="lazy" 
+                            decoding="async"
+                        />
+                    </figure>
+                    <figure class="gallery-preview-item">
+                        <img 
+                            src="../../assets/images/conference/conference-2.webp" 
+                            alt="Modern conference room at ZT Lounge with state-of-the-art audiovisual equipment" 
+                            loading="lazy" 
+                            decoding="async"
+                        />
+                    </figure>
+                    <figure class="gallery-preview-item">
+                        <img 
+                            src="../../assets/images/conference/corporate-meeting.webp" 
+                            alt="Corporate business meeting in progress at ZT Lounge Conference Hall" 
+                            loading="lazy" 
+                            decoding="async"
+                        />
+                    </figure>
+                    <figure class="gallery-preview-item">
+                        <img 
+                            src="../../assets/images/conference/conference-setup.webp" 
+                            alt="Professional conference setup with presentation screen and theatre seating" 
+                            loading="lazy" 
+                            decoding="async"
+                        />
+                    </figure>
+                </div>
+                <div class="gallery-cta">
+                    <a href="../contact/gallery.html" class="btn btn-primary">View Full Gallery</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PRICING - Conference (matching index pricing) ===== -->
+        <section class="section-padding bg-dark" id="pricing" aria-label="Conference pricing" style="padding: var(--space-2xl) 0;">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Investment</span>
+                    <h2 class="section-title">Conference <span>Packages</span></h2>
+                    <p class="section-subtitle">Choose a plan that fits your corporate event needs</p>
+                </div>
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <h3 style="font-family: var(--font-family-serif); font-size: var(--font-size-lg);">Half-Day Package</h3>
+                        <p style="color: var(--color-text-secondary); font-size: var(--font-size-sm);">Morning or afternoon session</p>
+                        <div class="price">KSh 25,000</div>
+                        <ul>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Room hire (4 hours)</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> AV equipment</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Tea/coffee break</li>
+                        </ul>
+                        <a href="#booking" class="btn btn-outline-gold" style="width: 100%;">Inquire</a>
+                    </div>
+
+                    <div class="pricing-card featured">
+                        <div class="badge">Most Popular</div>
+                        <h3 style="font-family: var(--font-family-serif); font-size: var(--font-size-lg);">Full-Day Package</h3>
+                        <p style="color: var(--color-text-secondary); font-size: var(--font-size-sm);">Full-day corporate event</p>
+                        <div class="price">KSh 45,000</div>
+                        <ul>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Room hire (8 hours)</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> AV &amp; Wi-Fi</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Lunch + tea breaks</li>
+                        </ul>
+                        <a href="#booking" class="btn btn-primary" style="width: 100%;">Inquire</a>
+                    </div>
+
+                    <div class="pricing-card">
+                        <h3 style="font-family: var(--font-family-serif); font-size: var(--font-size-lg);">Executive Package</h3>
+                        <p style="color: var(--color-text-secondary); font-size: var(--font-size-sm);">Premium corporate experience</p>
+                        <div class="price">KSh 65,000</div>
+                        <ul>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Full-day room + AV</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Executive catering</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Dedicated coordinator</li>
+                        </ul>
+                        <a href="#booking" class="btn btn-outline-gold" style="width: 100%;">Inquire</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== LOCATION - Conference (matching index location section) ===== -->
+        <section class="location-section" id="location" aria-label="Location and contact information">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Visit Us</span>
+                    <h2 class="section-title">Our <span>Location</span></h2>
+                    <p class="section-subtitle">Find us in the heart of Milimani, Meru</p>
+                </div>
+                <div class="location-grid">
+                    <figure class="location-image">
+                        <img 
+                            src="../../assets/images/conference/conference-hall.webp" 
+                            alt="ZT Lounge Conference Hall - Premium corporate venue in Milimani, Meru" 
+                            loading="lazy" 
+                            decoding="async"
+                        />
+                    </figure>
+                    <div class="location-info">
+                        <h3>ZT Lounge Conference Hall</h3>
+                        <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Opposite Ezri Hotel, Milimani, Meru, Kenya</p>
+                        <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+254143542601">+254 143 542 601</a></p>
+                        <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:ztloungemeru@gmail.com">ztloungemeru@gmail.com</a></p>
+                        <p><i class="fas fa-clock" aria-hidden="true"></i> Mon - Sun: 8:00 AM - 10:00 PM</p>
+                        <div class="location-cta">
+                            <a href="tel:+254143542601" class="btn btn-primary"><i class="fas fa-phone" aria-hidden="true"></i> Call Now</a>
+                            <a href="https://wa.me/254143542601?text=Hello%20ZT%20Lounge%2C%20I'd%20like%20to%20inquire%20about%20the%20conference%20hall" class="btn btn-success" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp</a>
+                            <a href="https://maps.app.goo.gl/HqTbiiU4q2jRFoPg6" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Get Directions</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== BOOKING - Conference (matching index form style) ===== -->
+        <section class="section-padding bg-card" id="booking" aria-label="Book conference hall" style="padding: var(--space-2xl) 0;">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Book Now</span>
+                    <h2 class="section-title">Request a <span>Conference Quote</span></h2>
+                    <p class="section-subtitle">Fill in the details below and our conference team will contact you within 1 hour.</p>
+                </div>
+
+                <form class="booking-form-conference" id="conferenceBookingForm" novalidate>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" name="fullName" class="form-input" required aria-required="true" placeholder="John Doe" />
+                            <div class="form-error" id="fullNameError">Please enter your full name.</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="phoneNumber">Phone Number *</label>
+                            <input type="tel" id="phoneNumber" name="phoneNumber" class="form-input" required aria-required="true" placeholder="+254 700 000 000" />
+                            <div class="form-error" id="phoneError">Please enter a valid phone number.</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="john@example.com" />
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="eventType">Event Type *</label>
+                            <select id="eventType" name="eventType" class="form-select" required aria-required="true">
+                                <option value="">Select event type...</option>
+                                <option value="meeting">Corporate Meeting</option>
+                                <option value="training">Training Session</option>
+                                <option value="seminar">Seminar</option>
+                                <option value="conference">Conference</option>
+                                <option value="workshop">Workshop</option>
+                            </select>
+                            <div class="form-error" id="eventTypeError">Please select an event type.</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="attendees">Expected Attendees *</label>
+                            <select id="attendees" name="attendees" class="form-select" required aria-required="true">
+                                <option value="">Select number...</option>
+                                <option value="20-30">20â€“30</option>
+                                <option value="30-50">30â€“50</option>
+                                <option value="50-80">50â€“80</option>
+                                <option value="80-120">80â€“120</option>
+                                <option value="120-200">120â€“200</option>
+                                <option value="200+">200+</option>
+                            </select>
+                            <div class="form-error" id="attendeesError">Please select number of attendees.</div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="eventDate">Preferred Date *</label>
+                            <input type="date" id="eventDate" name="eventDate" class="form-input" required aria-required="true" />
+                            <div class="form-error" id="dateError">Please select a date.</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="duration">Duration *</label>
+                            <select id="duration" name="duration" class="form-select" required aria-required="true">
+                                <option value="">Select duration...</option>
+                                <option value="half-day">Half-Day (4 hours)</option>
+                                <option value="full-day">Full-Day (8 hours)</option>
+                                <option value="multi-day">Multi-Day</option>
+                            </select>
+                            <div class="form-error" id="durationError">Please select a duration.</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="specialRequests">Special Requirements</label>
+                        <textarea id="specialRequests" name="specialRequests" class="form-input" placeholder="AV needs, catering preferences, accessibility requirements, etc."></textarea>
+                    </div>
+
+                    <div class="form-success" id="formSuccess">
+                        <i class="fas fa-check-circle" aria-hidden="true"></i> Thank you! Our conference team will contact you within 1 hour.
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        <i class="fas fa-calendar-check" aria-hidden="true"></i> Submit Conference Inquiry
+                    </button>
+                    <p style="text-align: center; font-size: var(--font-size-sm); color: var(--color-text-muted); margin-top: var(--space-sm);">Our conference team will respond within 1 hour</p>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FLOATING WHATSAPP (Identical to index) ===== -->
+    <div class="whatsapp-float">
+        <a 
+            href="https://wa.me/254143542601?text=Hello%20ZT%20Lounge%2C%20I'd%20like%20to%20inquire%20about%20the%20conference%20hall" 
+            class="whatsapp-btn" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label="Inquire about conference hall on WhatsApp"
+        >
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        </a>
+        <span class="whatsapp-tooltip">Inquire on WhatsApp</span>
+    </div>
+
+    <!-- ===== MOBILE STICKY CTA (Identical to index) ===== -->
+    <div class="mobile-sticky-cta" role="complementary" aria-label="Quick actions">
+        <a 
+            href="https://wa.me/254143542601?text=Hello%20ZT%20Lounge%2C%20I'd%20like%20to%20inquire%20about%20the%20conference%20hall" 
+            class="sticky-btn whatsapp-sticky" 
+            target="_blank" 
+            rel="noopener noreferrer"
+        >
+            <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp
+        </a>
+        <a href="tel:+254143542601" class="sticky-btn call-sticky">
+            <i class="fas fa-phone" aria-hidden="true"></i> Call
+        </a>
+        <a href="#booking" class="sticky-btn book-sticky">
+            <i class="fas fa-calendar-check" aria-hidden="true"></i> Book
+        </a>
+    </div>
+
+    <!-- ===== FOOTER (Identical to index) ===== -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../../index.html" class="logo" aria-label="ZT Lounge Home">
+                        <img 
+                            src="../../assets/images/branding/logo.webp" 
+                            alt="ZT Lounge Meru - Premium Hospitality Logo" 
+                            class="logo-dark site-logo"
+                            height="62" 
+                            width="auto" 
+                            loading="lazy" 
+                            decoding="async" 
+                        />
+                        <img 
+                            src="../../assets/images/branding/logo-white.webp" 
+                            alt="ZT Lounge Meru - Premium Hospitality Logo" 
+                            class="logo-light site-logo"
+                            height="62" 
+                            width="auto" 
+                            loading="lazy" 
+                            decoding="async" 
+                        />
+                    </a>
+                    <p>Experience premium hospitality at ZT Lounge Meru â€” fine dining, exclusive lounges, Auto Spa, and world-class service in Milimani.</p>
+                    <div class="footer-social">
+                        <a href="https://facebook.com/ztlounge" target="_blank" rel="noopener noreferrer" aria-label="Facebook page"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="https://instagram.com/ztlounge" target="_blank" rel="noopener noreferrer" aria-label="Instagram page"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="https://x.com/ztlounge_meru" target="_blank" rel="noopener noreferrer" aria-label="Twitter page"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                        <a href="https://youtube.com/@ztlounge" target="_blank" rel="noopener noreferrer" aria-label="YouTube channel"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <nav class="footer-links" aria-label="Quick links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../experiences/restaurant.html">Restaurant</a></li>
+                        <li><a href="../experiences/lounge.html">Lounge &amp; Bar</a></li>
+                        <li><a href="../experiences/vip.html">VIP Cabins</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="conference.html">Conference</a></li>
+                        <li><a href="autospa.html">Auto Spa</a></li>
+                        <li><a href="../contact/gallery.html">Gallery</a></li>
+                        <li><a href="../contact/contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <nav class="footer-services" aria-label="Our services">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="../experiences/restaurant.html">Restaurant</a></li>
+                        <li><a href="../experiences/lounge.html">Lounge &amp; Bar</a></li>
+                        <li><a href="../experiences/vip.html">VIP Cabins</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="conference.html">Conference</a></li>
+                        <li><a href="autospa.html">Auto Spa</a></li>
+                    </ul>
+                </nav>
+                <div class="footer-contact" aria-label="Contact information">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Opposite Ezri Hotel, Milimani, Meru</li>
+                        <li><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+254143542601">+254 143 542 601</a></li>
+                        <li><i class="fab fa-whatsapp" aria-hidden="true"></i> <a href="https://wa.me/254143542601" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+                        <li><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:ztloungemeru@gmail.com">ztloungemeru@gmail.com</a></li>
+                        <li><i class="fas fa-clock" aria-hidden="true"></i> Mon - Sun: 10:00 AM - 2:00 AM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="copyrightYear">2026</span> ZT Lounge Meru. All rights reserved.</p>
+                <p class="footer-credit">Designed with <i class="fas fa-heart" aria-hidden="true"></i> for luxury</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================================
+         JAVASCRIPT (Identical to index with Conference specific additions)
+         ============================================================ -->
+    <script>
+        /**
+         * ============================================================
+         * SHARED SITE JAVASCRIPT (Identical to index)
+         * Navigation, Theme Toggle, Hamburger, Copyright
+         * ============================================================
+         */
+        document.addEventListener('DOMContentLoaded', function() {
+            // === THEME TOGGLE ===
+            var themeToggle = document.getElementById('themeToggle');
+            var html = document.documentElement;
+
+            if (themeToggle) {
+                themeToggle.addEventListener('click', function() {
+                    html.classList.toggle('light-mode');
+                    var isLight = html.classList.contains('light-mode');
+                    localStorage.setItem('zt-theme', isLight ? 'light' : 'dark');
+                    document.documentElement.style.colorScheme = isLight ? 'light' : 'dark';
+                });
+            }
+
+            // === HAMBURGER MENU ===
+            var hamburger = document.getElementById('hamburger');
+            var navMenu = document.getElementById('navMenu');
+
+            if (hamburger && navMenu) {
+                hamburger.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    this.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                    var isActive = navMenu.classList.contains('active');
+                    this.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+                });
+
+                // Mobile dropdown toggle
+                var dropdownParents = navMenu.querySelectorAll('.nav-list > li > a.dropdown-parent');
+                dropdownParents.forEach(function(link) {
+                    link.addEventListener('click', function(e) {
+                        if (window.innerWidth <= 768) {
+                            var parentLi = this.parentElement;
+                            var isExpanded = parentLi.getAttribute('aria-expanded') === 'true';
+                            
+                            var activeItems = navMenu.querySelectorAll('.nav-list > li.active-dropdown');
+                            activeItems.forEach(function(el) {
+                                if (el !== parentLi) {
+                                    el.classList.remove('active-dropdown');
+                                    el.setAttribute('aria-expanded', 'false');
+                                }
+                            });
+                            
+                            var newExpanded = !isExpanded;
+                            parentLi.classList.toggle('active-dropdown', newExpanded);
+                            parentLi.setAttribute('aria-expanded', String(newExpanded));
+                        }
+                    });
+                });
+
+                // Close menu on link click (mobile)
+                var navLinks = navMenu.querySelectorAll('a');
+                navLinks.forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        if (window.innerWidth <= 768 && !this.closest('.dropdown-menu')) {
+                            hamburger.classList.remove('active');
+                            navMenu.classList.remove('active');
+                            hamburger.setAttribute('aria-expanded', 'false');
+                        }
+                    });
+                });
+
+                // Close on Escape
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+                        hamburger.classList.remove('active');
+                        navMenu.classList.remove('active');
+                        hamburger.setAttribute('aria-expanded', 'false');
+                        hamburger.focus();
+                    }
+                });
+
+                // Close on resize to desktop
+                window.addEventListener('resize', function() {
+                    if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
+                        hamburger.classList.remove('active');
+                        navMenu.classList.remove('active');
+                        hamburger.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+
+            // === HERO SLIDER (Identical to index) ===
+            var heroSlides = document.querySelectorAll('.hero-slide');
+            var heroDots = document.querySelectorAll('.dot');
+            var heroCurrent = 0;
+            var heroInterval;
+
+            function goToHero(index) {
+                if (index < 0) index = heroSlides.length - 1;
+                if (index >= heroSlides.length) index = 0;
+                heroSlides.forEach(function(slide, i) {
+                    var isActive = i === index;
+                    slide.classList.toggle('active', isActive);
+                    slide.setAttribute('aria-hidden', String(!isActive));
+                    var interactiveElements = slide.querySelectorAll('a, button');
+                    interactiveElements.forEach(function(el) {
+                        el.tabIndex = isActive ? 0 : -1;
+                    });
+                });
+                heroDots.forEach(function(dot, i) {
+                    var isActive = i === index;
+                    dot.classList.toggle('active', isActive);
+                    dot.setAttribute('aria-selected', String(isActive));
+                    dot.tabIndex = isActive ? 0 : -1;
+                });
+                heroCurrent = index;
+            }
+
+            function nextHero() { goToHero(heroCurrent + 1); }
+            function prevHero() { goToHero(heroCurrent - 1); }
+
+            var prevSlideBtn = document.getElementById('prevSlide');
+            var nextSlideBtn = document.getElementById('nextSlide');
+
+            if (prevSlideBtn) prevSlideBtn.addEventListener('click', function() { prevHero(); resetHeroAutoplay(); });
+            if (nextSlideBtn) nextSlideBtn.addEventListener('click', function() { nextHero(); resetHeroAutoplay(); });
+
+            heroDots.forEach(function(dot, index) {
+                dot.addEventListener('click', function() {
+                    goToHero(index);
+                    resetHeroAutoplay();
+                });
+                dot.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        goToHero(index);
+                        resetHeroAutoplay();
+                    }
+                });
+            });
+
+            function startHeroAutoplay() {
+                stopHeroAutoplay();
+                heroInterval = setInterval(nextHero, 5000);
+            }
+
+            function stopHeroAutoplay() {
+                if (heroInterval) {
+                    clearInterval(heroInterval);
+                    heroInterval = null;
+                }
+            }
+
+            function resetHeroAutoplay() {
+                startHeroAutoplay();
+            }
+
+            var heroContainer = document.querySelector('.hero-slider');
+            if (heroContainer) {
+                heroContainer.addEventListener('mouseenter', stopHeroAutoplay);
+                heroContainer.addEventListener('mouseleave', startHeroAutoplay);
+                heroContainer.addEventListener('focusin', stopHeroAutoplay);
+                heroContainer.addEventListener('focusout', function(e) {
+                    if (!this.contains(e.relatedTarget)) startHeroAutoplay();
+                });
+            }
+
+            goToHero(0);
+            startHeroAutoplay();
+
+            // === COPYRIGHT YEAR ===
+            var yearEl = document.getElementById('copyrightYear');
+            if (yearEl) {
+                yearEl.textContent = new Date().getFullYear();
+            }
+
+            // === UPDATE ACTIVE NAV LINK ===
+            var currentPath = window.location.pathname;
+            var navLinks = document.querySelectorAll('.nav-list a[href]');
+            navLinks.forEach(function(link) {
+                var href = link.getAttribute('href');
+                var isActive = href === currentPath || 
+                               (href === 'conference.html' && currentPath.includes('conference')) ||
+                               (href === '../../index.html' && (currentPath === '/' || currentPath === '' || currentPath.includes('index')));
+                if (isActive) {
+                    link.classList.add('active');
+                    link.setAttribute('aria-current', 'page');
+                } else {
+                    link.classList.remove('active');
+                    link.removeAttribute('aria-current');
+                }
+            });
+        });
+
+        /**
+         * ============================================================
+         * CONFERENCE BOOKING FORM (Unique to this page)
+         * ============================================================
+         */
+        document.addEventListener('DOMContentLoaded', function() {
+            var bookingForm = document.getElementById('conferenceBookingForm');
+            if (!bookingForm) return;
+
+            // Set default date to tomorrow
+            var dateInput = document.getElementById('eventDate');
+            if (dateInput) {
+                var tomorrow = new Date();
+                tomorrow.setDate(tomorrow.getDate() + 1);
+                dateInput.value = tomorrow.toISOString().split('T')[0];
+            }
+
+            bookingForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                // Reset previous errors
+                document.querySelectorAll('.form-error').forEach(function(el) {
+                    el.classList.remove('visible');
+                });
+                document.querySelectorAll('.form-input, .form-select').forEach(function(el) {
+                    el.classList.remove('error');
+                });
+                document.getElementById('formSuccess').classList.remove('visible');
+
+                var isValid = true;
+
+                // Validate name
+                var name = document.getElementById('fullName');
+                if (!name.value.trim()) {
+                    document.getElementById('fullNameError').classList.add('visible');
+                    name.classList.add('error');
+                    isValid = false;
+                }
+
+                // Validate phone
+                var phone = document.getElementById('phoneNumber');
+                if (!phone.value.trim() || phone.value.trim().length < 8) {
+                    document.getElementById('phoneError').classList.add('visible');
+                    phone.classList.add('error');
+                    isValid = false;
+                }
+
+                // Validate event type
+                var eventType = document.getElementById('eventType');
+                if (!eventType.value) {
+                    document.getElementById('eventTypeError').classList.add('visible');
+                    eventType.classList.add('error');
+                    isValid = false;
+                }
+
+                // Validate attendees
+                var attendees = document.getElementById('attendees');
+                if (!attendees.value) {
+                    document.getElementById('attendeesError').classList.add('visible');
+                    attendees.classList.add('error');
+                    isValid = false;
+                }
+
+                // Validate date
+                var date = document.getElementById('eventDate');
+                if (!date.value) {
+                    document.getElementById('dateError').classList.add('visible');
+                    date.classList.add('error');
+                    isValid = false;
+                }
+
+                // Validate duration
+                var duration = document.getElementById('duration');
+                if (!duration.value) {
+                    document.getElementById('durationError').classList.add('visible');
+                    duration.classList.add('error');
+                    isValid = false;
+                }
+
+                if (!isValid) {
+                    var firstError = document.querySelector('.form-error.visible');
+                    if (firstError) {
+                        firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                    return;
+                }
+
+                // Build WhatsApp message
+                var message = 'Hello ZT Lounge, I\'d like to inquire about the conference hall:%0A%0A' +
+                    'Name: ' + name.value.trim() + '%0A' +
+                    'Phone: ' + phone.value.trim() + '%0A' +
+                    'Email: ' + (document.getElementById('email').value.trim() || 'Not provided') + '%0A' +
+                    'Event Type: ' + eventType.options[eventType.selectedIndex].text + '%0A' +
+                    'Attendees: ' + attendees.options[attendees.selectedIndex].text + '%0A' +
+                    'Date: ' + date.value + '%0A' +
+                    'Duration: ' + duration.options[duration.selectedIndex].text + '%0A' +
+                    'Special Requirements: ' + (document.getElementById('specialRequests').value.trim() || 'None');
+
+                var whatsappUrl = 'https://wa.me/254143542601?text=' + encodeURIComponent(message);
+
+                // Show success message
+                document.getElementById('formSuccess').classList.add('visible');
+
+                // Open WhatsApp and reset form
+                setTimeout(function() {
+                    window.open(whatsappUrl, '_blank');
+                    setTimeout(function() {
+                        bookingForm.reset();
+                        document.getElementById('formSuccess').classList.remove('visible');
+                        // Reset date to tomorrow
+                        if (dateInput) {
+                            var tomorrow = new Date();
+                            tomorrow.setDate(tomorrow.getDate() + 1);
+                            dateInput.value = tomorrow.toISOString().split('T')[0];
+                        }
+                    }, 3000);
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

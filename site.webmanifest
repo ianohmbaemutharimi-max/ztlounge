@@ -1,0 +1,21 @@
+{
+    "name": "ZT Lounge Meru",
+    "short_name": "ZT Lounge",
+    "description": "Meru's Premier Restaurant, Lounge & Events Destination",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#0f0f0f",
+    "theme_color": "#c9a84c",
+    "icons": [
+        {
+            "src": "images/branding/favicon.ico",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "images/branding/favicon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
