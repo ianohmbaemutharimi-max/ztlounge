@@ -1,10 +1,10 @@
-﻿/**
+/**
  * ============================================================
  * ZT Lounge Meru - Booking System
  * Enterprise-Grade Booking Component
  * Version: 2.0.0
  * 
- * Architecture: Config â†’ DOM Cache â†’ Utilities â†’ Services â†’ Components â†’ Pages
+ * Architecture: Config → DOM Cache → Utilities → Services → Components → Pages
  * 
  * Features:
  *   - Booking form with validation
@@ -782,11 +782,11 @@
 
             if (available) {
                 messageElement.className = 'availability-message success';
-                messageElement.textContent = message || 'âœ… Available - Ready to book!';
+                messageElement.textContent = message || '✅ Available - Ready to book!';
                 messageElement.setAttribute('aria-live', 'polite');
             } else {
                 messageElement.className = 'availability-message error';
-                messageElement.textContent = message || 'âŒ Not available - Please try another time';
+                messageElement.textContent = message || '❌ Not available - Please try another time';
                 messageElement.setAttribute('aria-live', 'assertive');
             }
         }
@@ -883,7 +883,7 @@
             const messageElement = DOM.availabilityMessage;
             if (messageElement) {
                 messageElement.className = 'availability-message error';
-                messageElement.textContent = `âŒ ${message}`;
+                messageElement.textContent = `❌ ${message}`;
                 messageElement.setAttribute('aria-live', 'assertive');
             } else {
                 alert(`Error: ${message}`);
@@ -1000,5 +1000,8 @@
     }
 
 })();
+
+
+
 
 

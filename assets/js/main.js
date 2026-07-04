@@ -1,27 +1,27 @@
 ﻿/**
  * ============================================================
  * ZT Lounge Meru - Enterprise Application Kernel
- * Version: 2.0.0
+ * Version: 2.1.0
  * Architecture: ZT Operating System
  * 
  * ZT OS - Zero-Touch Operating System for Enterprise Applications
  * ============================================================
  * 
  * Architecture Overview:
- * â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
- * â”‚                    ZT Namespace                       â”‚
- * â”‚  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”  â”‚
- * â”‚  â”‚              Application Kernel                â”‚  â”‚
- * â”‚  â”‚  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â” â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â” â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”  â”‚  â”‚
- * â”‚  â”‚  â”‚  Boot    â”‚ â”‚  Core    â”‚ â”‚  Services    â”‚  â”‚  â”‚
- * â”‚  â”‚  â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜ â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜ â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜  â”‚  â”‚
- * â”‚  â”‚  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â” â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â” â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”  â”‚  â”‚
- * â”‚  â”‚  â”‚Component â”‚ â”‚  Pages   â”‚ â”‚  Shared      â”‚  â”‚  â”‚
- * â”‚  â”‚  â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜ â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜ â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜  â”‚  â”‚
- * â”‚  â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜  â”‚
- * â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+ * ┌─────────────────────────────────────────────────────────┐
+ * │                    ZT Namespace                       │
+ * │  ┌─────────────────────────────────────────────────┐  │
+ * │  │              Application Kernel                │  │
+ * │  │  ┌──────────┐ ┌──────────┐ ┌──────────────┐  │  │
+ * │  │  │  Boot    │ │  Core    │ │  Services    │  │  │
+ * │  │  └──────────┘ └──────────┘ └──────────────┘  │  │
+ * │  │  ┌──────────┐ ┌──────────┐ ┌──────────────┐  │  │
+ * │  │  │Component │ │  Pages   │ │  Shared      │  │  │
+ * │  │  └──────────┘ └──────────┘ └──────────────┘  │  │
+ * │  └─────────────────────────────────────────────────┘  │
+ * └─────────────────────────────────────────────────────────┘
  * 
- * Lifecycle: Boot â†’ Core â†’ Services â†’ Components â†’ Pages â†’ Ready
+ * Lifecycle: Boot → Core → Services → Components → Pages → Ready
  * ============================================================
  */
 
@@ -36,7 +36,7 @@
     // ============================================================
     // ZT.VERSION - Semantic versioning
     // ============================================================
-    ZT.version = '2.0.0';
+    ZT.version = '2.1.0';
 
     // ============================================================
     // ZT.Config - Application configuration
@@ -45,7 +45,7 @@
         // Application
         app: {
             name: 'ZT Lounge Meru',
-            version: '2.0.0',
+            version: '2.1.0',
             environment: 'production', // 'development' | 'production'
             debug: false
         },
@@ -57,7 +57,8 @@
 
         // Hero Slider
         hero: {
-            interval: 6000,
+            initialDelay: 2500,       // First transition after 2.5s
+            interval: 6000,           // Subsequent transitions every 6s
             swipeThreshold: 50
         },
 
@@ -143,7 +144,8 @@
             },
             hero: {
                 currentSlide: 0,
-                isPlaying: true
+                isPlaying: true,
+                isPaused: false
             },
             loading: {
                 isReady: false,
@@ -285,7 +287,14 @@
     // ZT.Logger - Enterprise logging system
     // ============================================================
     ZT.Logger = {
-        _enabled: true,
+        _enabled: null, // Will be set based on config
+
+        /**
+         * Initialize logger with config
+         */
+        init: function() {
+            this._enabled = ZT.Config.app.debug || ZT.Config.app.environment === 'development';
+        },
 
         /**
          * Enable/disable logging
@@ -302,7 +311,7 @@
          */
         info: function(message, data) {
             if (!this._enabled) return;
-            console.log(`[ZT] â„¹ï¸ ${message}`, data || '');
+            console.log(`[ZT] ℹ️ ${message}`, data || '');
         },
 
         /**
@@ -312,7 +321,7 @@
          */
         warn: function(message, data) {
             if (!this._enabled) return;
-            console.warn(`[ZT] âš ï¸ ${message}`, data || '');
+            console.warn(`[ZT] ⚠️ ${message}`, data || '');
         },
 
         /**
@@ -322,7 +331,7 @@
          */
         error: function(message, data) {
             if (!this._enabled) return;
-            console.error(`[ZT] âŒ ${message}`, data || '');
+            console.error(`[ZT] ❌ ${message}`, data || '');
         },
 
         /**
@@ -333,10 +342,13 @@
         debug: function(message, data) {
             if (!this._enabled) return;
             if (ZT.Config.app.environment === 'development') {
-                console.debug(`[ZT] ðŸž ${message}`, data || '');
+                console.debug(`[ZT] 🐞 ${message}`, data || '');
             }
         }
     };
+
+    // Initialize logger
+    ZT.Logger.init();
 
     // ============================================================
     // ZT.Storage - Centralized storage service
@@ -412,41 +424,22 @@
     };
 
     // ============================================================
-    // ZT.DOM - DOM Cache with memoization
+    // ZT.DOM - DOM Cache with lazy loading
     // ============================================================
     ZT.DOM = {
         _cache: {},
         _initialized: false,
 
         /**
-         * Initialize DOM cache
+         * Initialize DOM cache (lazy loading)
          */
         init: function() {
             if (this._initialized) return;
-            this._cacheSelectors();
             this._initialized = true;
         },
 
         /**
-         * Cache all selectors from config
-         */
-        _cacheSelectors: function() {
-            const selectors = ZT.Config.selectors;
-            Object.keys(selectors).forEach(function(key) {
-                const selector = selectors[key];
-                if (selector) {
-                    try {
-                        const elements = document.querySelectorAll(selector);
-                        this._cache[key] = elements.length === 1 ? elements[0] : elements;
-                    } catch (e) {
-                        ZT.Logger.warn('DOM cache failed', { key, selector, error: e });
-                    }
-                }
-            }.bind(this));
-        },
-
-        /**
-         * Get cached element(s) by selector key
+         * Get cached element(s) by selector key (lazy loading)
          * @param {string} key - Selector key from config
          * @returns {Element|NodeList} Cached element(s)
          */
@@ -475,8 +468,16 @@
                 delete this._cache[key];
             } else {
                 this._cache = {};
-                this._cacheSelectors();
             }
+        },
+
+        /**
+         * Check if a selector exists in the DOM
+         * @param {string} selector - CSS selector
+         * @returns {boolean} True if element exists
+         */
+        exists: function(selector) {
+            return document.querySelector(selector) !== null;
         }
     };
 
@@ -630,19 +631,38 @@
         // Theme Service
         Theme: {
             _initialized: false,
+            _handlers: {},
 
             init: function() {
                 if (this._initialized) return;
                 
                 const toggle = ZT.DOM.get('themeToggle');
                 if (toggle) {
-                    toggle.addEventListener('click', this._handleToggle.bind(this));
+                    // Bind once and store reference
+                    this._handlers.toggleHandler = this._handleToggle.bind(this);
+                    toggle.addEventListener('click', this._handlers.toggleHandler);
                     this._updateToggleIcon();
                 }
                 
-                ZT.Events.on('zt-theme-changed', this._onThemeChanged.bind(this));
+                this._handlers.themeChangedHandler = this._onThemeChanged.bind(this);
+                ZT.Events.on('zt-theme-changed', this._handlers.themeChangedHandler);
+                
                 this._initialized = true;
                 ZT.Logger.info('Theme service initialized');
+            },
+
+            destroy: function() {
+                const toggle = ZT.DOM.get('themeToggle');
+                if (toggle && this._handlers.toggleHandler) {
+                    toggle.removeEventListener('click', this._handlers.toggleHandler);
+                }
+                
+                if (this._handlers.themeChangedHandler) {
+                    ZT.Events.off('zt-theme-changed', this._handlers.themeChangedHandler);
+                }
+                
+                this._handlers = {};
+                this._initialized = false;
             },
 
             _handleToggle: function() {
@@ -696,16 +716,25 @@
         Scroll: {
             _initialized: false,
             _scrollY: 0,
+            _handlers: {},
 
             init: function() {
                 if (this._initialized) return;
                 
                 this._scrollY = window.scrollY;
-                const handler = ZT.Utils.throttle(this._handleScroll.bind(this), 100);
-                window.addEventListener('scroll', handler, { passive: true });
+                this._handlers.scrollHandler = ZT.Utils.throttle(this._handleScroll.bind(this), 100);
+                window.addEventListener('scroll', this._handlers.scrollHandler, { passive: true });
                 
                 this._initialized = true;
                 ZT.Logger.info('Scroll service initialized');
+            },
+
+            destroy: function() {
+                if (this._handlers.scrollHandler) {
+                    window.removeEventListener('scroll', this._handlers.scrollHandler);
+                }
+                this._handlers = {};
+                this._initialized = false;
             },
 
             _handleScroll: function() {
@@ -724,16 +753,25 @@
             _width: 0,
             _height: 0,
             _breakpoint: 'desktop',
+            _handlers: {},
 
             init: function() {
                 if (this._initialized) return;
                 
                 this._updateDimensions();
-                const handler = ZT.Utils.debounce(this._handleResize.bind(this), 250);
-                window.addEventListener('resize', handler);
+                this._handlers.resizeHandler = ZT.Utils.debounce(this._handleResize.bind(this), 250);
+                window.addEventListener('resize', this._handlers.resizeHandler);
                 
                 this._initialized = true;
                 ZT.Logger.info('Resize service initialized');
+            },
+
+            destroy: function() {
+                if (this._handlers.resizeHandler) {
+                    window.removeEventListener('resize', this._handlers.resizeHandler);
+                }
+                this._handlers = {};
+                this._initialized = false;
             },
 
             _handleResize: function() {
@@ -786,6 +824,7 @@
         // Navigation Service
         Navigation: {
             _initialized: false,
+            _handlers: {},
 
             init: function() {
                 if (this._initialized) return;
@@ -796,6 +835,20 @@
                 
                 this._initialized = true;
                 ZT.Logger.info('Navigation service initialized');
+            },
+
+            destroy: function() {
+                // Clean up click handlers on navigation links
+                const links = ZT.DOM.get('navLink');
+                if (links && this._handlers.navClickHandlers) {
+                    links.forEach(function(link, index) {
+                        if (this._handlers.navClickHandlers[index]) {
+                            link.removeEventListener('click', this._handlers.navClickHandlers[index]);
+                        }
+                    }.bind(this));
+                }
+                this._handlers = {};
+                this._initialized = false;
             },
 
             _setActiveLink: function() {
@@ -839,8 +892,10 @@
                 const links = ZT.DOM.get('navLink');
                 if (!links) return;
                 
-                links.forEach(function(link) {
-                    link.addEventListener('click', function() {
+                this._handlers.navClickHandlers = [];
+                
+                links.forEach(function(link, index) {
+                    const handler = function() {
                         const navMenu = ZT.DOM.get('navMenu');
                         const hamburger = ZT.DOM.get('hamburger');
                         if (navMenu && navMenu.classList.contains('active')) {
@@ -851,8 +906,11 @@
                             }
                             document.body.style.overflow = '';
                         }
-                    });
-                });
+                    };
+                    
+                    this._handlers.navClickHandlers[index] = handler;
+                    link.addEventListener('click', handler);
+                }.bind(this));
             }
         }
     };
@@ -864,6 +922,7 @@
         // Header Component
         Header: {
             _initialized: false,
+            _handlers: {},
 
             init: function() {
                 if (this._initialized) return;
@@ -877,14 +936,53 @@
                 ZT.Logger.info('Header component initialized');
             },
 
+            destroy: function() {
+                this._releaseFocus();
+                
+                // Clean up scroll handler
+                if (this._handlers.scrollHandler) {
+                    ZT.Events.off('zt-scroll', this._handlers.scrollHandler);
+                }
+                
+                // Clean up document click handler
+                if (this._handlers.documentClickHandler) {
+                    document.removeEventListener('click', this._handlers.documentClickHandler);
+                }
+                
+                // Clean up document keydown handler
+                if (this._handlers.documentKeydownHandler) {
+                    document.removeEventListener('keydown', this._handlers.documentKeydownHandler);
+                }
+                
+                // Clean up resize handler
+                if (this._handlers.resizeHandler) {
+                    ZT.Events.off('zt-resize', this._handlers.resizeHandler);
+                }
+                
+                // Clean up dropdown click handler
+                if (this._handlers.dropdownClickHandler) {
+                    document.removeEventListener('click', this._handlers.dropdownClickHandler);
+                }
+                
+                // Clean up focus trap
+                if (this._handlers.focusTrapHandler) {
+                    document.removeEventListener('keydown', this._handlers.focusTrapHandler);
+                }
+                
+                this._handlers = {};
+                this._initialized = false;
+            },
+
             _initScrollEffect: function() {
                 const header = ZT.DOM.get('header');
                 if (!header) return;
 
-                ZT.Events.on('zt-scroll', function(data) {
+                this._handlers.scrollHandler = function(data) {
                     const isScrolled = data.scrollY > ZT.Config.header.scrollThreshold;
                     header.classList.toggle('scrolled', isScrolled);
-                });
+                };
+
+                ZT.Events.on('zt-scroll', this._handlers.scrollHandler);
             },
 
             _initMobileMenu: function() {
@@ -916,35 +1014,47 @@
                     this._releaseFocus();
                 }.bind(this);
 
-                hamburger.addEventListener('click', toggleMenu);
+                // Store hamburger click handler
+                this._handlers.hamburgerHandler = toggleMenu;
+                hamburger.addEventListener('click', this._handlers.hamburgerHandler);
 
-                navMenu.querySelectorAll('a').forEach(function(link) {
-                    link.addEventListener('click', function() {
+                // Store nav link click handlers
+                this._handlers.navLinkHandlers = [];
+                navMenu.querySelectorAll('a').forEach(function(link, index) {
+                    const handler = function() {
                         if (ZT.Services.Resize.isMobile()) {
                             closeMenu();
                         }
-                    });
-                });
+                    };
+                    this._handlers.navLinkHandlers[index] = handler;
+                    link.addEventListener('click', handler);
+                }.bind(this));
 
-                document.addEventListener('click', function(e) {
+                // Store document click handler
+                this._handlers.documentClickHandler = function(e) {
                     const header = ZT.DOM.get('header');
                     if (header && !header.contains(e.target) && navMenu.classList.contains('active')) {
                         closeMenu();
                     }
-                });
+                };
+                document.addEventListener('click', this._handlers.documentClickHandler);
 
-                document.addEventListener('keydown', function(e) {
+                // Store document keydown handler
+                this._handlers.documentKeydownHandler = function(e) {
                     if (e.key === 'Escape' && navMenu.classList.contains('active')) {
                         closeMenu();
                         hamburger.focus();
                     }
-                });
+                };
+                document.addEventListener('keydown', this._handlers.documentKeydownHandler);
 
-                ZT.Events.on('zt-resize', function() {
+                // Store resize handler
+                this._handlers.resizeHandler = function() {
                     if (ZT.Services.Resize.isDesktop() && navMenu.classList.contains('active')) {
                         closeMenu();
                     }
-                });
+                };
+                ZT.Events.on('zt-resize', this._handlers.resizeHandler);
             },
 
             _trapFocus: function(container) {
@@ -956,7 +1066,7 @@
                 
                 firstFocusable.focus();
                 
-                const handler = function(e) {
+                this._handlers.focusTrapHandler = function(e) {
                     if (e.key !== 'Tab') return;
                     if (e.shiftKey) {
                         if (document.activeElement === firstFocusable) {
@@ -971,14 +1081,13 @@
                     }
                 };
                 
-                document.addEventListener('keydown', handler);
-                this._focusTrapHandler = handler;
+                document.addEventListener('keydown', this._handlers.focusTrapHandler);
             },
 
             _releaseFocus: function() {
-                if (this._focusTrapHandler) {
-                    document.removeEventListener('keydown', this._focusTrapHandler);
-                    this._focusTrapHandler = null;
+                if (this._handlers.focusTrapHandler) {
+                    document.removeEventListener('keydown', this._handlers.focusTrapHandler);
+                    delete this._handlers.focusTrapHandler;
                 }
             },
 
@@ -986,8 +1095,11 @@
                 const dropdownParents = ZT.DOM.get('dropdownParent');
                 if (!dropdownParents) return;
 
-                dropdownParents.forEach(function(link) {
-                    link.addEventListener('keydown', function(e) {
+                this._handlers.dropdownKeydownHandlers = [];
+                this._handlers.dropdownClickHandlers = [];
+
+                dropdownParents.forEach(function(link, index) {
+                    const keydownHandler = function(e) {
                         if (ZT.Services.Resize.isMobile()) return;
                         
                         if (e.key === 'Enter' || e.key === ' ') {
@@ -1007,9 +1119,9 @@
                                 if (firstItem) firstItem.focus();
                             }
                         }
-                    });
+                    };
 
-                    link.addEventListener('click', function(e) {
+                    const clickHandler = function(e) {
                         if (ZT.Services.Resize.isMobile()) {
                             e.preventDefault();
                             const parentLi = this.parentElement;
@@ -1026,23 +1138,33 @@
                             parentLi.classList.toggle('active-dropdown', newExpanded);
                             parentLi.setAttribute('aria-expanded', String(newExpanded));
                         }
-                    });
-                });
+                    };
+
+                    this._handlers.dropdownKeydownHandlers[index] = keydownHandler;
+                    this._handlers.dropdownClickHandlers[index] = clickHandler;
+                    
+                    link.addEventListener('keydown', keydownHandler);
+                    link.addEventListener('click', clickHandler);
+                }.bind(this));
 
                 const dropdownMenus = ZT.DOM.get('dropdownMenu');
                 if (!dropdownMenus) return;
 
-                dropdownMenus.forEach(function(menu) {
+                this._handlers.dropdownMenuKeydownHandlers = [];
+
+                dropdownMenus.forEach(function(menu, menuIndex) {
                     const items = menu.querySelectorAll('a');
-                    items.forEach(function(item, index) {
-                        item.addEventListener('keydown', function(e) {
+                    const menuHandlers = [];
+                    
+                    items.forEach(function(item, itemIndex) {
+                        const handler = function(e) {
                             if (e.key === 'ArrowDown') {
                                 e.preventDefault();
-                                const next = items[index + 1] || items[0];
+                                const next = items[itemIndex + 1] || items[0];
                                 next.focus();
                             } else if (e.key === 'ArrowUp') {
                                 e.preventDefault();
-                                const prev = items[index - 1] || items[items.length - 1];
+                                const prev = items[itemIndex - 1] || items[items.length - 1];
                                 prev.focus();
                             } else if (e.key === 'Escape') {
                                 e.preventDefault();
@@ -1058,11 +1180,15 @@
                                     }
                                 }
                             }
-                        });
+                        };
+                        menuHandlers[itemIndex] = handler;
+                        item.addEventListener('keydown', handler);
                     });
-                });
+                    
+                    this._handlers.dropdownMenuKeydownHandlers[menuIndex] = menuHandlers;
+                }.bind(this));
 
-                document.addEventListener('click', function(e) {
+                this._handlers.dropdownClickHandler = function(e) {
                     if (ZT.Services.Resize.isMobile()) return;
                     
                     document.querySelectorAll('.nav-list > li[aria-expanded="true"]').forEach(function(parent) {
@@ -1070,15 +1196,19 @@
                             parent.setAttribute('aria-expanded', 'false');
                         }
                     });
-                });
+                };
+
+                document.addEventListener('click', this._handlers.dropdownClickHandler);
             },
 
             _initAnchorScroll: function() {
                 const anchorLinks = ZT.DOM.get('anchorLink');
                 if (!anchorLinks) return;
 
-                anchorLinks.forEach(function(anchor) {
-                    anchor.addEventListener('click', function(e) {
+                this._handlers.anchorScrollHandlers = [];
+
+                anchorLinks.forEach(function(anchor, index) {
+                    const handler = function(e) {
                         const href = this.getAttribute('href');
                         if (!href || href === '#') return;
 
@@ -1088,8 +1218,11 @@
                         e.preventDefault();
                         const offset = ZT.Utils.getHeaderOffset();
                         ZT.Utils.scrollToElement(target, offset);
-                    });
-                });
+                    };
+                    
+                    this._handlers.anchorScrollHandlers[index] = handler;
+                    anchor.addEventListener('click', handler);
+                }.bind(this));
             }
         },
 
@@ -1097,7 +1230,10 @@
         HeroSlider: {
             _initialized: false,
             _currentSlide: 0,
+            _slideTimeout: null,
             _slideInterval: null,
+            _isPaused: false,
+            _handlers: {},
 
             init: function() {
                 if (this._initialized) return;
@@ -1119,12 +1255,95 @@
 
                 const hero = ZT.DOM.get('hero');
                 if (hero) {
-                    hero.addEventListener('mouseenter', () => this._stopAutoPlay());
-                    hero.addEventListener('mouseleave', () => this._startAutoPlay());
+                    this._handlers.mouseEnterHandler = () => this._pauseAutoPlay();
+                    this._handlers.mouseLeaveHandler = () => this._resumeAutoPlay();
+                    hero.addEventListener('mouseenter', this._handlers.mouseEnterHandler);
+                    hero.addEventListener('mouseleave', this._handlers.mouseLeaveHandler);
                 }
+
+                // Pause when tab is hidden
+                this._handlers.visibilityHandler = () => {
+                    if (document.hidden) {
+                        this._pauseAutoPlay();
+                    } else {
+                        this._resumeAutoPlay();
+                    }
+                };
+                document.addEventListener('visibilitychange', this._handlers.visibilityHandler);
+
+                // Pause when window loses focus
+                this._handlers.blurHandler = () => this._pauseAutoPlay();
+                this._handlers.focusHandler = () => this._resumeAutoPlay();
+                window.addEventListener('blur', this._handlers.blurHandler);
+                window.addEventListener('focus', this._handlers.focusHandler);
                 
                 this._initialized = true;
                 ZT.Logger.info('Hero slider component initialized');
+            },
+
+            destroy: function() {
+                this._stopAutoPlay();
+                
+                const hero = ZT.DOM.get('hero');
+                if (hero) {
+                    if (this._handlers.mouseEnterHandler) {
+                        hero.removeEventListener('mouseenter', this._handlers.mouseEnterHandler);
+                    }
+                    if (this._handlers.mouseLeaveHandler) {
+                        hero.removeEventListener('mouseleave', this._handlers.mouseLeaveHandler);
+                    }
+                }
+
+                if (this._handlers.visibilityHandler) {
+                    document.removeEventListener('visibilitychange', this._handlers.visibilityHandler);
+                }
+                
+                if (this._handlers.blurHandler) {
+                    window.removeEventListener('blur', this._handlers.blurHandler);
+                }
+                
+                if (this._handlers.focusHandler) {
+                    window.removeEventListener('focus', this._handlers.focusHandler);
+                }
+
+                // Clean up dot click handlers
+                if (this._handlers.dotClickHandlers) {
+                    this._dots.forEach(function(dot, index) {
+                        if (this._handlers.dotClickHandlers[index]) {
+                            dot.removeEventListener('click', this._handlers.dotClickHandlers[index]);
+                        }
+                    }.bind(this));
+                }
+
+                // Clean up dot keydown handlers
+                if (this._handlers.dotKeydownHandlers) {
+                    this._dots.forEach(function(dot, index) {
+                        if (this._handlers.dotKeydownHandlers[index]) {
+                            dot.removeEventListener('keydown', this._handlers.dotKeydownHandlers[index]);
+                        }
+                    }.bind(this));
+                }
+
+                // Clean up prev/next button handlers
+                const prevBtn = ZT.DOM.get('prevSlide');
+                if (prevBtn && this._handlers.prevHandler) {
+                    prevBtn.removeEventListener('click', this._handlers.prevHandler);
+                }
+
+                const nextBtn = ZT.DOM.get('nextSlide');
+                if (nextBtn && this._handlers.nextHandler) {
+                    nextBtn.removeEventListener('click', this._handlers.nextHandler);
+                }
+
+                // Clean up slider keydown handler
+                const slider = ZT.DOM.get('heroSlider');
+                if (slider && this._handlers.sliderKeydownHandler) {
+                    slider.removeEventListener('keydown', this._handlers.sliderKeydownHandler);
+                }
+
+                this._handlers = {};
+                this._initialized = false;
+                ZT.Logger.info('Hero slider destroyed');
             },
 
             _goTo: function(index) {
@@ -1166,17 +1385,45 @@
 
             _startAutoPlay: function() {
                 if (this._slides.length <= 1) return;
+                if (this._isPaused) return;
+                
                 this._stopAutoPlay();
-                this._slideInterval = setInterval(() => this._next(), ZT.Config.hero.interval);
-                ZT.State.set('hero.isPlaying', true);
+                
+                // First transition after initialDelay (2.5s)
+                this._slideTimeout = setTimeout(() => {
+                    this._next();
+                    // Then continue with regular interval (6s)
+                    this._slideInterval = setInterval(() => this._next(), ZT.Config.hero.interval);
+                    ZT.State.set('hero.isPlaying', true);
+                }, ZT.Config.hero.initialDelay);
             },
 
             _stopAutoPlay: function() {
+                if (this._slideTimeout) {
+                    clearTimeout(this._slideTimeout);
+                    this._slideTimeout = null;
+                }
                 if (this._slideInterval) {
                     clearInterval(this._slideInterval);
                     this._slideInterval = null;
-                    ZT.State.set('hero.isPlaying', false);
                 }
+                ZT.State.set('hero.isPlaying', false);
+            },
+
+            _pauseAutoPlay: function() {
+                if (this._isPaused) return;
+                this._isPaused = true;
+                this._stopAutoPlay();
+                ZT.State.set('hero.isPaused', true);
+                ZT.Logger.debug('Hero slider paused');
+            },
+
+            _resumeAutoPlay: function() {
+                if (!this._isPaused) return;
+                this._isPaused = false;
+                this._startAutoPlay();
+                ZT.State.set('hero.isPaused', false);
+                ZT.Logger.debug('Hero slider resumed');
             },
 
             _resetAutoPlay: function() {
@@ -1185,40 +1432,51 @@
             },
 
             _bindEvents: function() {
+                // Dot click handlers
+                this._handlers.dotClickHandlers = [];
+                this._handlers.dotKeydownHandlers = [];
+                
                 this._dots.forEach((dot, index) => {
-                    dot.addEventListener('click', () => {
+                    const clickHandler = () => {
                         this._goTo(index);
                         this._resetAutoPlay();
-                    });
-                    dot.addEventListener('keydown', (e) => {
+                    };
+                    const keydownHandler = (e) => {
                         if (e.key === 'Enter' || e.key === ' ') {
                             e.preventDefault();
                             this._goTo(index);
                             this._resetAutoPlay();
                         }
-                    });
+                    };
+                    
+                    this._handlers.dotClickHandlers[index] = clickHandler;
+                    this._handlers.dotKeydownHandlers[index] = keydownHandler;
+                    
+                    dot.addEventListener('click', clickHandler);
+                    dot.addEventListener('keydown', keydownHandler);
                 });
 
                 const prevBtn = ZT.DOM.get('prevSlide');
-                const nextBtn = ZT.DOM.get('nextSlide');
-                
                 if (prevBtn) {
-                    prevBtn.addEventListener('click', () => {
+                    this._handlers.prevHandler = () => {
                         this._prev();
                         this._resetAutoPlay();
-                    });
+                    };
+                    prevBtn.addEventListener('click', this._handlers.prevHandler);
                 }
 
+                const nextBtn = ZT.DOM.get('nextSlide');
                 if (nextBtn) {
-                    nextBtn.addEventListener('click', () => {
+                    this._handlers.nextHandler = () => {
                         this._next();
                         this._resetAutoPlay();
-                    });
+                    };
+                    nextBtn.addEventListener('click', this._handlers.nextHandler);
                 }
 
                 const slider = ZT.DOM.get('heroSlider');
                 if (slider) {
-                    slider.addEventListener('keydown', (e) => {
+                    this._handlers.sliderKeydownHandler = (e) => {
                         if (e.key === 'ArrowLeft') {
                             e.preventDefault();
                             this._prev();
@@ -1228,7 +1486,8 @@
                             this._next();
                             this._resetAutoPlay();
                         }
-                    });
+                    };
+                    slider.addEventListener('keydown', this._handlers.sliderKeydownHandler);
 
                     let touchStartX = 0;
                     let touchStartY = 0;
@@ -1258,6 +1517,10 @@
 
             getCurrentIndex: function() {
                 return this._currentSlide;
+            },
+
+            isPaused: function() {
+                return this._isPaused;
             }
         },
 
@@ -1307,6 +1570,14 @@
                 ZT.Logger.info('Scroll reveal component initialized');
             },
 
+            destroy: function() {
+                if (this._observer) {
+                    this._observer.disconnect();
+                    this._observer = null;
+                }
+                this._initialized = false;
+            },
+
             _setupElements: function(elements) {
                 elements.forEach(function(el) {
                     const isPreview = el.closest('.gallery-preview') || el.closest('.gallery-preview-grid');
@@ -1349,6 +1620,10 @@
                 
                 this._initialized = true;
                 ZT.Logger.info('Copyright component initialized');
+            },
+
+            destroy: function() {
+                this._initialized = false;
             }
         }
     };
@@ -1369,6 +1644,12 @@
                 
                 this._initialized = true;
                 ZT.Logger.info('Home page controller initialized');
+            },
+
+            destroy: function() {
+                ZT.Components.HeroSlider.destroy();
+                ZT.Components.ScrollReveal.destroy();
+                this._initialized = false;
             }
         },
 
@@ -1383,6 +1664,11 @@
                 
                 this._initialized = true;
                 ZT.Logger.info('Restaurant page controller initialized');
+            },
+
+            destroy: function() {
+                ZT.Components.ScrollReveal.destroy();
+                this._initialized = false;
             }
         },
 
@@ -1397,6 +1683,11 @@
                 
                 this._initialized = true;
                 ZT.Logger.info('Gallery page controller initialized');
+            },
+
+            destroy: function() {
+                ZT.Components.ScrollReveal.destroy();
+                this._initialized = false;
             }
         },
 
@@ -1411,6 +1702,11 @@
                 
                 this._initialized = true;
                 ZT.Logger.info('Conference page controller initialized');
+            },
+
+            destroy: function() {
+                ZT.Components.ScrollReveal.destroy();
+                this._initialized = false;
             }
         },
 
@@ -1425,6 +1721,11 @@
                 
                 this._initialized = true;
                 ZT.Logger.info('Events page controller initialized');
+            },
+
+            destroy: function() {
+                ZT.Components.ScrollReveal.destroy();
+                this._initialized = false;
             }
         },
 
@@ -1439,6 +1740,11 @@
                 
                 this._initialized = true;
                 ZT.Logger.info('Contact page controller initialized');
+            },
+
+            destroy: function() {
+                ZT.Components.ScrollReveal.destroy();
+                this._initialized = false;
             }
         },
 
@@ -1453,6 +1759,49 @@
                 
                 this._initialized = true;
                 ZT.Logger.info('AutoSpa page controller initialized');
+            },
+
+            destroy: function() {
+                ZT.Components.ScrollReveal.destroy();
+                this._initialized = false;
+            }
+        },
+
+        // Lounge Page Controller
+        Lounge: {
+            _initialized: false,
+
+            init: function() {
+                if (this._initialized) return;
+                
+                ZT.Components.ScrollReveal.init();
+                
+                this._initialized = true;
+                ZT.Logger.info('Lounge page controller initialized');
+            },
+
+            destroy: function() {
+                ZT.Components.ScrollReveal.destroy();
+                this._initialized = false;
+            }
+        },
+
+        // VIP Page Controller
+        VIP: {
+            _initialized: false,
+
+            init: function() {
+                if (this._initialized) return;
+                
+                ZT.Components.ScrollReveal.init();
+                
+                this._initialized = true;
+                ZT.Logger.info('VIP page controller initialized');
+            },
+
+            destroy: function() {
+                ZT.Components.ScrollReveal.destroy();
+                this._initialized = false;
             }
         }
     };
@@ -1464,6 +1813,8 @@
         _initialized: false,
         _bootTime: 0,
         _isReady: false,
+        _components: [],
+        _services: [],
 
         /**
          * Start the application
@@ -1559,10 +1910,17 @@
         _initServices: function() {
             ZT.Logger.info('Services initialization...');
             
-            ZT.Services.Resize.init();
-            ZT.Services.Scroll.init();
-            ZT.Services.Theme.init();
-            ZT.Services.Navigation.init();
+            const services = [
+                ZT.Services.Resize,
+                ZT.Services.Scroll,
+                ZT.Services.Theme,
+                ZT.Services.Navigation
+            ];
+            
+            services.forEach(function(service) {
+                service.init();
+                this._services.push(service);
+            }.bind(this));
         },
 
         /**
@@ -1571,8 +1929,15 @@
         _initComponents: function() {
             ZT.Logger.info('Components initialization...');
             
-            ZT.Components.Header.init();
-            ZT.Components.Copyright.init();
+            const components = [
+                ZT.Components.Header,
+                ZT.Components.Copyright
+            ];
+            
+            components.forEach(function(component) {
+                component.init();
+                this._components.push(component);
+            }.bind(this));
         },
 
         /**
@@ -1595,7 +1960,9 @@
                 conference: ZT.Pages.Conference,
                 events: ZT.Pages.Events,
                 contact: ZT.Pages.Contact,
-                autospa: ZT.Pages.AutoSpa
+                autospa: ZT.Pages.AutoSpa,
+                lounge: ZT.Pages.Lounge,
+                vip: ZT.Pages.VIP
             };
             
             (PageRegistry[page] || PageRegistry.home).init();
@@ -1612,7 +1979,7 @@
             }
             
             const pageName = path.split('/').pop()?.replace('.html', '') || 'home';
-            const validPages = ['restaurant', 'gallery', 'conference', 'events', 'contact', 'autospa'];
+            const validPages = ['restaurant', 'gallery', 'conference', 'events', 'contact', 'autospa', 'lounge', 'vip'];
             
             return validPages.includes(pageName) ? pageName : 'home';
         },
@@ -1636,7 +2003,7 @@
          */
         restart: function() {
             ZT.Logger.info('Restarting application...');
-            this._initialized = false;
+            this.destroy();
             this.start();
         },
 
@@ -1645,8 +2012,22 @@
          */
         destroy: function() {
             ZT.Logger.info('Destroying application...');
-            this._initialized = false;
-            this._isReady = false;
+            
+            // Destroy all components
+            this._components.forEach(function(component) {
+                if (component.destroy) {
+                    component.destroy();
+                }
+            });
+            this._components = [];
+            
+            // Destroy all services
+            this._services.forEach(function(service) {
+                if (service.destroy) {
+                    service.destroy();
+                }
+            });
+            this._services = [];
             
             // Cleanup observers
             if (ZT.Components.ScrollReveal._observer) {
@@ -1657,9 +2038,15 @@
             if (ZT.Components.HeroSlider._slideInterval) {
                 clearInterval(ZT.Components.HeroSlider._slideInterval);
             }
+            if (ZT.Components.HeroSlider._slideTimeout) {
+                clearTimeout(ZT.Components.HeroSlider._slideTimeout);
+            }
             
             // Remove event listeners
             ZT.Events._events = {};
+            
+            this._initialized = false;
+            this._isReady = false;
             
             ZT.Logger.info('Application destroyed');
         },
@@ -1717,5 +2104,3 @@
     // window.ZT is already defined at the top of this file
 
 })();
-
-

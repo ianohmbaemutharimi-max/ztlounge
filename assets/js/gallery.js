@@ -1,21 +1,26 @@
-﻿/**
+/**
  * ============================================================
- * ZT Lounge Meru - Gallery JavaScript
- * Enterprise-Grade Gallery System
- * Version: 2.0.0
+ * ZT Lounge Meru - Hero Slider
+ * Enterprise-Grade Hero Carousel System
+ * Version: 1.0.0
  * 
- * Architecture: Config â†’ DOM Cache â†’ Utilities â†’ Modules â†’ Engine
+ * Architecture: Config → DOM Cache → Utilities → Engine → Integration
  * 
  * Features:
- *   - Lightbox with keyboard/touch support
- *   - Gallery filtering
- *   - Lazy loading
- *   - Image validation
- *   - Responsive images
- *   - Accessibility support
+ *   - Autoplay with smooth fade transitions
+ *   - Navigation controls (prev/next/dots)
+ *   - Pause on hover, focus, touch, blur, and tab visibility
+ *   - Keyboard navigation (Arrow keys, Home, End)
+ *   - Touch swipe support with intelligent pause
+ *   - Respects prefers-reduced-motion
+ *   - Accessibility support (ARIA labels, roles)
+ *   - Performance optimized
+ *   - Duplicate initialization prevention
+ *   - Defensive state management
+ *   - Comprehensive lifecycle management
  * 
- * Dependencies: ZT Kernel (main.js)
- * Integration: ZT.Components.Gallery
+ * Dependencies: ZT Kernel (main.js) - Optional
+ * Integration: ZT.Components.HeroSlider
  * ============================================================
  */
 
@@ -23,161 +28,102 @@
     'use strict';
 
     // ============================================================
-    // 1. CONFIGURATION - Centralized, type-safe constants
+    // 1. CONFIGURATION - Type-safe constants (DO NOT MODIFY RUNTIME)
     // ============================================================
     const CONFIG = Object.freeze({
-        lazyLoadThreshold: 0.01,
-        lazyLoadRootMargin: '100px 0px',
-        lightboxAnimationDuration: 300,
-        galleryAnimationDelay: 50,
-        preloadAdjacentCount: 2,
+        // Timing (in milliseconds)
+        initialDelay: 2500,        // First slide shows for 2.5s before transitioning
+        autoplayInterval: 6000,    // Each slide shows for 6s
+        transitionDuration: 1000,  // Fade transition takes 1s
+        reducedMotionInterval: 8000, // Longer interval for reduced motion
+        reducedMotionTransition: 0,  // No transition for reduced motion
+        touchPauseDelay: 300,      // Delay before resuming after touch
+        
+        // Behavior
+        pauseOnHover: true,
+        pauseOnFocus: true,
+        pauseWhenHidden: true,
+        pauseWhenBlurred: true,    // Pause when window loses focus
+        pauseOnTouch: true,        // Pause during touch interaction
         keyboardNavigation: true,
-        smoothScroll: true,
         touchSwipe: true,
-
-        // Selectors - Support both homepage and full gallery
-        gallerySelectors: [
-            '.gallery-grid',
-            '.gallery-preview-grid',
-            '.service-cards-grid',
-            '.location-grid'
-        ].join(', '),
-        itemSelectors: [
-            '.gallery-item',
-            '.gallery-preview-item',
-            '.service-card',
-            '.location-image'
-        ].join(', '),
-        lightboxSelectors: [
-            '.gallery-item img',
-            '.gallery-preview-item img',
-            '.service-detail-image img',
-            '.about-image img',
-            '.service-card img',
-            '.location-image img',
-            '.card-image',
-            '.feature-card img',
-            '.pricing-card img',
-            '.room-image',
-            '.food-image',
-            '[data-lightbox]'
-        ].join(', '),
-
-        // Image Design System Rules
-        imageRules: {
-            'image-hero': { aspectRatio: '16:9', minWidth: 1200, maxWidth: 1920 },
-            'image-gallery': { aspectRatio: '1:1', minWidth: 400, maxWidth: 800 },
-            'image-service': { aspectRatio: '16:10', minWidth: 600, maxWidth: 800 },
-            'image-room': { aspectRatio: '16:9', minWidth: 800, maxWidth: 1200 },
-            'image-team': { aspectRatio: '3:4', minWidth: 400, maxWidth: 600 },
-            'image-food': { aspectRatio: '1:1', minWidth: 400, maxWidth: 800 },
-            'image-testimonial': { aspectRatio: '1:1', minWidth: 60, maxWidth: 80 },
-            // Homepage image classes
-            'card-image': { aspectRatio: '16:10', minWidth: 400, maxWidth: 800 },
-            'location-image': { aspectRatio: '4:3', minWidth: 600, maxWidth: 1200 },
-            'site-logo': { aspectRatio: 'auto', minWidth: 40, maxWidth: 200 },
-            'gallery-preview-item': { aspectRatio: '4:3', minWidth: 300, maxWidth: 600 },
-            'hero-slide': { aspectRatio: '16:9', minWidth: 1200, maxWidth: 1920 },
-            'feature-card': { aspectRatio: '1:1', minWidth: 200, maxWidth: 400 },
-            'pricing-card': { aspectRatio: '16:10', minWidth: 300, maxWidth: 600 }
-        },
-
-        // Responsive breakpoints
-        breakpoints: {
-            mobile: 480,
-            tablet: 768,
-            laptop: 1024,
-            desktop: 1200
-        },
-
-        galleryColumns: {
-            mobile: 2,
-            tablet: 3,
-            laptop: 4,
-            desktop: 4
-        }
+        autoHeight: false,         // Set to true for dynamic height
+        
+        // Selectors (Update these to match your HTML)
+        sliderSelector: '.hero-slider',
+        slideSelector: '.hero-slide',
+        dotSelector: '.hero-dot',
+        prevSelector: '.hero-prev',
+        nextSelector: '.hero-next',
+        indicatorSelector: '.hero-indicator',
+        contentSelector: '.hero-content',
+        
+        // Classes
+        activeClass: 'active',
+        transitioningClass: 'transitioning',
+        pausedClass: 'paused',
+        reducedMotionClass: 'reduced-motion'
     });
 
     // ============================================================
-    // 2. DOM CACHE - Single source of truth with lazy loading
+    // 2. DOM CACHE - Lazy loading with caching
     // ============================================================
     const DOM = {
         _cache: {},
+        _initialized: false,
         
-        /**
-         * Get cached element or query and cache
-         * @param {string} key - Cache key
-         * @param {string} selector - CSS selector
-         * @param {boolean} multiple - Whether to return multiple elements
-         * @returns {Element|NodeList|null} Cached element(s)
-         */
-        get: function(key, selector, multiple) {
+        get: function(key, selector, multiple = false) {
             if (!this._cache[key]) {
                 try {
                     const elements = document.querySelectorAll(selector);
                     this._cache[key] = multiple ? elements : (elements.length === 1 ? elements[0] : elements);
                 } catch (e) {
-                    console.warn('DOM cache failed for key:', key, e);
+                    console.warn('[HeroSlider] DOM cache failed for key:', key, e);
                     return null;
                 }
             }
             return this._cache[key];
         },
-
-        // Lightbox
-        get lightbox() { return this.get('lightbox', '#lightbox', false); },
-        get lightboxImg() { return this.get('lightboxImg', '#lightbox-img', false); },
-        get lightboxCaption() { return this.get('lightboxCaption', '#lightbox-caption', false); },
-        get lightboxCounter() { return this.get('lightboxCounter', '#lightbox-counter', false); },
-        get closeLightbox() { return this.get('closeLightbox', '#close-lightbox', false); },
-        get prevLightbox() { return this.get('prevLightbox', '#prev-lightbox', false); },
-        get nextLightbox() { return this.get('nextLightbox', '#next-lightbox', false); },
         
-        // Gallery
-        get filterButtons() { return this.get('filterButtons', '.gallery-filter button', true); },
-        get galleryItems() { return this.get('galleryItems', CONFIG.itemSelectors, true); },
-        get galleryCounter() { return this.get('galleryCounter', '#gallery-counter', false); },
-        get galleryGrids() { return this.get('galleryGrids', CONFIG.gallerySelectors, true); },
+        // Main elements
+        get slider() { return this.get('slider', CONFIG.sliderSelector, false); },
+        get slides() { return this.get('slides', CONFIG.slideSelector, true); },
         
-        // Images
-        get allImages() { return this.get('allImages', 'img', true); },
-        get lazyImages() { return this.get('lazyImages', 'img[data-src]', true); },
-        get heroImages() { return this.get('heroImages', '.image-hero, .hero-slide', true); },
-        get galleryImages() { return this.get('galleryImages', '.image-gallery, .gallery-item img, .gallery-preview-item img', true); },
-        get serviceImages() { return this.get('serviceImages', '.image-service, .service-card img, .card-image', true); },
-        get roomImages() { return this.get('roomImages', '.image-room, .vip-card img', true); },
-        get logoImages() { return this.get('logoImages', '.site-logo', true); },
-        get locationImages() { return this.get('locationImages', '.location-image img', true); },
+        // Controls
+        get dots() { return this.get('dots', CONFIG.dotSelector, true); },
+        get prevBtn() { return this.get('prevBtn', CONFIG.prevSelector, false); },
+        get nextBtn() { return this.get('nextBtn', CONFIG.nextSelector, false); },
+        get indicator() { return this.get('indicator', CONFIG.indicatorSelector, false); },
         
-        // Lightbox triggers
-        get lightboxTriggers() { return this.get('lightboxTriggers', CONFIG.lightboxSelectors, true); }
+        // Content
+        get contents() { return this.get('contents', CONFIG.contentSelector, true); },
+        
+        // Clear cache method
+        clearCache: function() {
+            this._cache = {};
+            this._initialized = false;
+        }
     };
 
     // ============================================================
-    // 3. UTILITIES - Shared helper functions (uses ZT.Utils if available)
+    // 3. UTILITIES - Shared helper functions
     // ============================================================
     const Utils = {
         /**
-         * Debounce utility - uses ZT.Utils if available
+         * Debounce - limits function calls
          */
         debounce: function(func, wait) {
-            if (window.ZT && ZT.Utils && ZT.Utils.debounce) {
-                return ZT.Utils.debounce(func, wait);
-            }
             let timeout;
             return function(...args) {
                 clearTimeout(timeout);
                 timeout = setTimeout(() => func.apply(this, args), wait);
             };
         },
-
+        
         /**
-         * Throttle utility - uses ZT.Utils if available
+         * Throttle - ensures function executes at most once per interval
          */
         throttle: function(func, limit) {
-            if (window.ZT && ZT.Utils && ZT.Utils.throttle) {
-                return ZT.Utils.throttle(func, limit);
-            }
             let inThrottle;
             return function(...args) {
                 if (!inThrottle) {
@@ -187,1151 +133,956 @@
                 }
             };
         },
-
-        /**
-         * Get image dimensions
-         */
-        getImageDimensions: function(img) {
-            return new Promise((resolve) => {
-                if (img.complete && img.naturalWidth > 0) {
-                    resolve({ width: img.naturalWidth, height: img.naturalHeight });
-                } else {
-                    img.addEventListener('load', function() {
-                        resolve({ width: this.naturalWidth, height: this.naturalHeight });
-                    }, { once: true });
-                    img.addEventListener('error', function() {
-                        resolve({ width: 0, height: 0 });
-                    }, { once: true });
-                }
-            });
-        },
-
-        /**
-         * Check if element is in viewport
-         */
-        isInViewport: function(el) {
-            const rect = el.getBoundingClientRect();
-            return (
-                rect.top >= 0 &&
-                rect.left >= 0 &&
-                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-            );
-        },
-
-        /**
-         * Get image caption from element
-         */
-        getImageCaption: function(img) {
-            return img.getAttribute('data-caption') || 
-                   img.getAttribute('alt') || 
-                   img.title || 
-                   'ZT Lounge Meru';
-        },
-
-        /**
-         * Format counter
-         */
-        formatCounter: function(current, total) {
-            return (current + 1) + ' / ' + total;
-        },
-
-        /**
-         * Preload image
-         */
-        preloadImage: function(src) {
-            return new Promise((resolve, reject) => {
-                const img = new Image();
-                img.onload = () => resolve(img);
-                img.onerror = () => reject(new Error('Failed to load image: ' + src));
-                img.src = src;
-            });
-        },
-
-        /**
-         * Get touch swipe direction
-         */
-        getTouchDirection: function(startX, startY, endX, endY) {
-            const dx = endX - startX;
-            const dy = endY - startY;
-            const absDx = Math.abs(dx);
-            const absDy = Math.abs(dy);
-            
-            if (Math.max(absDx, absDy) < 50) return null;
-            
-            if (absDx > absDy) {
-                return dx > 0 ? 'right' : 'left';
-            } else {
-                return dy > 0 ? 'down' : 'up';
-            }
-        },
-
-        /**
-         * Get current breakpoint
-         */
-        getBreakpoint: function(width) {
-            if (width <= CONFIG.breakpoints.mobile) return 'mobile';
-            if (width <= CONFIG.breakpoints.tablet) return 'tablet';
-            if (width <= CONFIG.breakpoints.laptop) return 'laptop';
-            return 'desktop';
-        },
-
-        /**
-         * Dispatch custom event - uses ZT.Events if available
-         */
-        dispatchEvent: function(eventName, detail) {
-            if (window.ZT && ZT.Events && ZT.Events.emit) {
-                ZT.Events.emit(eventName, detail);
-            } else {
-                const event = new CustomEvent(eventName, { detail, bubbles: true });
-                document.dispatchEvent(event);
-            }
-        },
-
-        /**
-         * Parse aspect ratio string
-         */
-        parseAspectRatio: function(ratio) {
-            if (ratio === 'auto') return null;
-            const parts = ratio.split(':');
-            return parseFloat(parts[0]) / parseFloat(parts[1]);
-        },
-
+        
         /**
          * Check if reduced motion is preferred
          */
         prefersReducedMotion: function() {
             return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         },
-
+        
         /**
-         * Log message - uses ZT.Logger if available
+         * Check if document is visible
          */
-        log: function(message, data) {
-            if (window.ZT && ZT.Logger && ZT.Logger.info) {
-                ZT.Logger.info(message, data);
-            } else if (window.console) {
-                console.log('[Gallery]', message, data || '');
+        isDocumentVisible: function() {
+            return !document.hidden;
+        },
+        
+        /**
+         * Check if window has focus
+         */
+        isWindowFocused: function() {
+            return document.hasFocus();
+        },
+        
+        /**
+         * Dispatch custom event
+         */
+        dispatchEvent: function(eventName, detail = {}) {
+            try {
+                const event = new CustomEvent(`heroslider:${eventName}`, { 
+                    detail, 
+                    bubbles: true 
+                });
+                document.dispatchEvent(event);
+            } catch (e) {
+                // Silent fail for older browsers
             }
         },
-
+        
         /**
-         * Log warning - uses ZT.Logger if available
+         * Get element's computed style
          */
-        warn: function(message, data) {
-            if (window.ZT && ZT.Logger && ZT.Logger.warn) {
-                ZT.Logger.warn(message, data);
+        getStyle: function(element, property) {
+            return window.getComputedStyle(element).getPropertyValue(property);
+        },
+        
+        /**
+         * Log with prefix
+         */
+        log: function(message, data = null) {
+            if (window.ZT && ZT.Logger && ZT.Logger.info) {
+                ZT.Logger.info(`[HeroSlider] ${message}`, data);
             } else if (window.console) {
-                console.warn('[Gallery]', message, data || '');
+                console.log(`[HeroSlider] ${message}`, data || '');
+            }
+        },
+        
+        /**
+         * Warn with prefix
+         */
+        warn: function(message, data = null) {
+            if (window.ZT && ZT.Logger && ZT.Logger.warn) {
+                ZT.Logger.warn(`[HeroSlider] ${message}`, data);
+            } else if (window.console) {
+                console.warn(`[HeroSlider] ${message}`, data || '');
             }
         }
     };
 
     // ============================================================
-    // 4. IMAGE DESIGN SYSTEM - Image validation
+    // 4. HERO SLIDER ENGINE
     // ============================================================
-    class ImageDesignSystem {
-        constructor() {
-            this.rules = CONFIG.imageRules;
-        }
-
+    class HeroSlider {
         /**
-         * Validate a single image
-         * @param {HTMLImageElement} img - Image element
-         * @returns {Promise} Validation result
+         * Initialize the hero slider
+         * @param {Element} sliderElement - Optional slider element
          */
-        async validateImage(img) {
-            // Find matching rule
-            let className = '';
-            const classList = img.className.split(' ');
-            for (const cls of classList) {
-                if (this.rules[cls]) {
-                    className = cls;
-                    break;
-                }
+        constructor(sliderElement = null) {
+            // Guard against duplicate initialization
+            if (sliderElement && sliderElement._heroSlider) {
+                Utils.warn('Hero slider already initialized on this element');
+                return sliderElement._heroSlider;
             }
             
-            const rule = this.rules[className];
+            // Validate DOM elements
+            this.slider = sliderElement || DOM.slider;
+            this.slides = this.slider ? this.slider.querySelectorAll(CONFIG.slideSelector) : DOM.slides;
             
-            if (!rule) {
-                return { valid: true, message: 'No specific rule for this image class' };
-            }
-
-            try {
-                const { width, height } = await Utils.getImageDimensions(img);
-                
-                if (width === 0 || height === 0) {
-                    return {
-                        valid: false,
-                        message: 'Image dimensions could not be determined',
-                        severity: 'warning'
-                    };
-                }
-
-                const aspectRatio = width / height;
-                const expectedRatio = Utils.parseAspectRatio(rule.aspectRatio);
-                
-                let valid = true;
-                const messages = [];
-
-                if (width < rule.minWidth) {
-                    valid = false;
-                    messages.push(`Width (${width}px) below minimum (${rule.minWidth}px)`);
-                }
-
-                if (width > rule.maxWidth) {
-                    valid = false;
-                    messages.push(`Width (${width}px) exceeds maximum (${rule.maxWidth}px)`);
-                }
-
-                if (expectedRatio !== null) {
-                    const ratioDiff = Math.abs(aspectRatio - expectedRatio) / expectedRatio;
-                    if (ratioDiff > 0.1) {
-                        valid = false;
-                        messages.push(`Aspect ratio (${aspectRatio.toFixed(2)}) differs from expected (${rule.aspectRatio})`);
-                    }
-                }
-
-                return {
-                    valid,
-                    message: messages.join('; ') || 'Image meets design system requirements',
-                    severity: valid ? 'success' : 'error',
-                    dimensions: { width, height },
-                    expected: rule,
-                    className: className
-                };
-            } catch (e) {
-                return {
-                    valid: false,
-                    message: 'Error validating image: ' + e.message,
-                    severity: 'error'
-                };
-            }
-        }
-
-        /**
-         * Audit all images on the page
-         * @returns {Promise} Audit results
-         */
-        async auditImages() {
-            const results = [];
-            const images = document.querySelectorAll(
-                '[class*="image-"], .card-image, .location-image, .site-logo, ' +
-                '.gallery-preview-item, .hero-slide, .feature-card, .pricing-card'
-            );
-            
-            for (const img of images) {
-                const result = await this.validateImage(img);
-                results.push({
-                    element: img,
-                    src: img.src || img.style.backgroundImage,
-                    className: img.className,
-                    ...result
+            if (!this.slider || !this.slides || this.slides.length < 2) {
+                Utils.warn('Hero slider: Insufficient slides or no slider found', {
+                    slider: !!this.slider,
+                    slides: this.slides ? this.slides.length : 0
                 });
-            }
-
-            return results;
-        }
-    }
-
-    // ============================================================
-    // 5. LAZY LOADING SYSTEM
-    // ============================================================
-    class LazyLoader {
-        constructor() {
-            this.observer = null;
-            this.images = [];
-            this.loadedCount = 0;
-            this._init();
-        }
-
-        _init() {
-            if ('IntersectionObserver' in window) {
-                this.observer = new IntersectionObserver(
-                    this._handleIntersection.bind(this),
-                    {
-                        threshold: CONFIG.lazyLoadThreshold,
-                        rootMargin: CONFIG.lazyLoadRootMargin
-                    }
-                );
-                this._setupLazyImages();
-            } else {
-                this._loadAllImages();
-            }
-        }
-
-        _setupLazyImages() {
-            const lazyImages = DOM.lazyImages;
-            
-            if (lazyImages) {
-                lazyImages.forEach(img => {
-                    if (img.src && !img.src.startsWith('data:')) return;
-                    this.images.push(img);
-                    this.observer.observe(img);
-                });
-            }
-
-            // Also support background images
-            document.querySelectorAll('[data-bg]').forEach(el => {
-                const bg = el.getAttribute('data-bg');
-                if (bg) {
-                    el.style.backgroundImage = `url(${bg})`;
-                }
-            });
-        }
-
-        _handleIntersection(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    this._loadImage(img);
-                    this.observer.unobserve(img);
-                }
-            });
-        }
-
-        _loadImage(img) {
-            if (img.dataset.src) {
-                const src = img.dataset.src;
-                
-                img.style.opacity = '0.3';
-                
-                Utils.preloadImage(src)
-                    .then(() => {
-                        img.src = src;
-                        img.removeAttribute('data-src');
-                        img.style.opacity = '1';
-                        img.classList.add('image-loaded');
-                        this.loadedCount++;
-                        Utils.dispatchEvent('lazy:loaded', { img, src });
-                    })
-                    .catch(() => {
-                        if (img.dataset.fallback) {
-                            img.src = img.dataset.fallback;
-                        }
-                        img.removeAttribute('data-src');
-                        img.style.opacity = '1';
-                        Utils.dispatchEvent('lazy:error', { img, src });
-                    });
-            } else if (img.src) {
-                img.classList.add('image-loaded');
-                this.loadedCount++;
-            }
-        }
-
-        _loadAllImages() {
-            this.images.forEach(img => this._loadImage(img));
-        }
-
-        getStats() {
-            return {
-                total: this.images.length,
-                loaded: this.loadedCount,
-                pending: this.images.length - this.loadedCount
-            };
-        }
-    }
-
-    // ============================================================
-    // 6. GALLERY FILTER SYSTEM
-    // ============================================================
-    class GalleryFilter {
-        constructor() {
-            this.buttons = DOM.filterButtons;
-            this.items = DOM.galleryItems;
-            this.counter = DOM.galleryCounter;
-            this.currentFilter = 'all';
-            this.isAnimating = false;
-            this._init();
-        }
-
-        _init() {
-            if (!this.buttons || !this.buttons.length || !this.items || !this.items.length) return;
-            
-            this.buttons.forEach(button => {
-                button.addEventListener('click', this._handleClick.bind(this));
-                button.addEventListener('keydown', this._handleKeydown.bind(this));
-            });
-            
-            this._updateCounter();
-        }
-
-        _handleClick(event) {
-            const button = event.currentTarget;
-            const filter = button.getAttribute('data-filter');
-            
-            if (this.isAnimating || filter === this.currentFilter) return;
-            
-            this._applyFilter(filter, button);
-        }
-
-        _handleKeydown(event) {
-            if (event.key === 'Enter' || event.key === ' ') {
-                event.preventDefault();
-                this._handleClick(event);
-            }
-        }
-
-        _applyFilter(filter, activeButton) {
-            this.isAnimating = true;
-            this.currentFilter = filter;
-            
-            this.buttons.forEach(btn => btn.classList.remove('active'));
-            if (activeButton) {
-                activeButton.classList.add('active');
-            } else {
-                const matchingButton = Array.from(this.buttons).find(
-                    btn => btn.getAttribute('data-filter') === filter
-                );
-                if (matchingButton) matchingButton.classList.add('active');
+                return;
             }
             
-            this.items.forEach((item, index) => {
-                const category = item.getAttribute('data-category');
-                const shouldShow = filter === 'all' || category === filter;
-                
-                if (shouldShow) {
-                    this._showItem(item, index);
-                } else {
-                    this._hideItem(item, index);
-                }
-            });
+            // Store reference on element to prevent duplicate initialization
+            this.slider._heroSlider = this;
             
-            setTimeout(() => {
-                this._updateCounter();
-                this.isAnimating = false;
-                Utils.dispatchEvent('gallery:filtered', { filter });
-            }, CONFIG.galleryAnimationDelay * 8 + 400);
-        }
-
-        _showItem(item, index) {
-            item.style.display = 'block';
-            item.style.opacity = '0';
-            item.style.transform = 'scale(0.95) translateY(20px)';
-            
-            // Force reflow for animation
-            void item.offsetWidth;
-            
-            setTimeout(() => {
-                item.style.transition = `opacity 0.5s ease ${index * 0.05}s, transform 0.5s ease ${index * 0.05}s`;
-                item.style.opacity = '1';
-                item.style.transform = 'scale(1) translateY(0)';
-            }, CONFIG.galleryAnimationDelay);
-        }
-
-        _hideItem(item, index) {
-            item.style.transition = `opacity 0.4s ease ${index * 0.03}s, transform 0.4s ease ${index * 0.03}s`;
-            item.style.opacity = '0';
-            item.style.transform = 'scale(0.95) translateY(20px)';
-            
-            setTimeout(() => {
-                item.style.display = 'none';
-            }, CONFIG.galleryAnimationDelay * 6 + 400);
-        }
-
-        _updateCounter() {
-            if (!this.counter) return;
-            
-            const visibleItems = Array.from(this.items).filter(
-                item => item.style.display !== 'none'
-            ).length;
-            
-            const total = this.items.length;
-            const filterName = this.currentFilter !== 'all' ? ` (${this.currentFilter})` : '';
-            
-            this.counter.textContent = `${visibleItems} of ${total} photos${filterName}`;
-            this.counter.setAttribute('aria-label', 
-                `Showing ${visibleItems} of ${total} gallery items${filterName}`
-            );
-        }
-
-        getState() {
-            return {
-                currentFilter: this.currentFilter,
-                totalItems: this.items ? this.items.length : 0,
-                visibleItems: this.items ? Array.from(this.items).filter(
-                    item => item.style.display !== 'none'
-                ).length : 0
-            };
-        }
-    }
-
-    // ============================================================
-    // 7. LIGHTBOX SYSTEM
-    // ============================================================
-    class Lightbox {
-        constructor() {
-            this.element = DOM.lightbox;
-            this.img = DOM.lightboxImg;
-            this.caption = DOM.lightboxCaption;
-            this.counter = DOM.lightboxCounter;
-            this.closeBtn = DOM.closeLightbox;
-            this.prevBtn = DOM.prevLightbox;
-            this.nextBtn = DOM.nextLightbox;
-            
-            this.images = [];
+            // Core state
             this.currentIndex = 0;
-            this.isOpen = false;
-            this.isAnimating = false;
+            this.totalSlides = this.slides.length;
+            this.isTransitioning = false;
+            this.isPaused = false;
+            this.isDestroyed = false;
+            this.autoplayTimer = null;
+            this.transitionTimer = null;
+            this.touchResumeTimer = null;
+            
+            // Compute runtime values based on reduced motion preference
+            this.reducedMotion = Utils.prefersReducedMotion();
+            this.transitionDuration = this.reducedMotion
+                ? CONFIG.reducedMotionTransition
+                : CONFIG.transitionDuration;
+            this.autoplayInterval = this.reducedMotion
+                ? CONFIG.reducedMotionInterval
+                : CONFIG.autoplayInterval;
+            
+            // DOM references
+            this.dots = DOM.dots;
+            this.prevBtn = DOM.prevBtn;
+            this.nextBtn = DOM.nextBtn;
+            this.indicator = DOM.indicator;
+            this.contents = DOM.contents;
+            
+            // Touch state
+            this.touchStartX = 0;
+            this.touchStartY = 0;
+            this.isTouching = false;
+            
+            // Bind methods
+            this._boundHandleKeydown = this._handleKeydown.bind(this);
+            this._boundHandleVisibility = this._handleVisibility.bind(this);
+            this._boundHandleWindowBlur = this._handleWindowBlur.bind(this);
+            this._boundHandleWindowFocus = this._handleWindowFocus.bind(this);
+            this._boundHandleResize = this._handleResize.bind(this);
+            this._boundHandleTouchStart = this._handleTouchStart.bind(this);
+            this._boundHandleTouchMove = this._handleTouchMove.bind(this);
+            this._boundHandleTouchEnd = this._handleTouchEnd.bind(this);
+            
+            // Initialize
+            this._init();
+        }
+        
+        /**
+         * Internal initialization
+         */
+        _init() {
+            Utils.log('Initializing hero slider', { 
+                total: this.totalSlides,
+                reducedMotion: this.reducedMotion,
+                transitionDuration: this.transitionDuration,
+                autoplayInterval: this.autoplayInterval
+            });
+            
+            // Apply reduced motion class if needed
+            if (this.reducedMotion) {
+                this.slider.classList.add(CONFIG.reducedMotionClass);
+            }
+            
+            // Setup initial state
+            this._setupSlides();
+            this._setupControls();
+            this._setupDots();
+            this._setupKeyboard();
+            this._setupTouch();
+            this._setupVisibility();
+            this._setupWindowFocus();
+            this._setupResize();
+            
+            // Start autoplay
+            this._startAutoplay(CONFIG.initialDelay);
+            
+            // Dispatch ready event
+            Utils.dispatchEvent('ready', { 
+                total: this.totalSlides,
+                reducedMotion: this.reducedMotion
+            });
+            
+            Utils.log('Hero slider ready', { 
+                total: this.totalSlides, 
+                reducedMotion: this.reducedMotion 
+            });
+        }
+        
+        /**
+         * Setup initial slide states
+         */
+        _setupSlides() {
+            this.slides.forEach((slide, index) => {
+                // Remove existing active class
+                slide.classList.remove(CONFIG.activeClass);
+                
+                // Set initial opacity and z-index
+                if (index === 0) {
+                    slide.classList.add(CONFIG.activeClass);
+                    slide.style.opacity = '1';
+                    slide.style.zIndex = '2';
+                    slide.style.pointerEvents = 'auto';
+                } else {
+                    slide.style.opacity = '0';
+                    slide.style.zIndex = '1';
+                    slide.style.pointerEvents = 'none';
+                }
+                
+                // Add transition for smooth fading
+                if (!this.reducedMotion) {
+                    slide.style.transition = `opacity ${this.transitionDuration}ms ease-in-out`;
+                } else {
+                    slide.style.transition = 'none';
+                }
+            });
+            
+            // Update indicator
+            this._updateIndicator(0);
+        }
+        
+        /**
+         * Setup control buttons
+         */
+        _setupControls() {
+            // Previous button
+            if (this.prevBtn) {
+                this.prevBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    this.prev();
+                });
+                this.prevBtn.setAttribute('aria-label', 'Previous slide');
+                this.prevBtn.setAttribute('role', 'button');
+            }
+            
+            // Next button
+            if (this.nextBtn) {
+                this.nextBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    this.next();
+                });
+                this.nextBtn.setAttribute('aria-label', 'Next slide');
+                this.nextBtn.setAttribute('role', 'button');
+            }
+            
+            // Pause on hover
+            if (CONFIG.pauseOnHover) {
+                this.slider.addEventListener('mouseenter', () => this.pause());
+                this.slider.addEventListener('mouseleave', () => this.resume());
+            }
+            
+            // Pause on focus
+            if (CONFIG.pauseOnFocus) {
+                const focusable = this.slider.querySelectorAll('button, a, [tabindex]');
+                focusable.forEach(el => {
+                    el.addEventListener('focusin', () => this.pause());
+                    el.addEventListener('focusout', () => this.resume());
+                });
+            }
+        }
+        
+        /**
+         * Setup dot indicators
+         */
+        _setupDots() {
+            // If dots don't exist in markup, create them
+            if (!this.dots || this.dots.length === 0) {
+                this._createDots();
+                return;
+            }
+            
+            // Setup existing dots
+            this.dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => this.goTo(index));
+                dot.setAttribute('role', 'button');
+                dot.setAttribute('aria-label', `Go to slide ${index + 1}`);
+                dot.setAttribute('tabindex', '0');
+                
+                // Keyboard support for dots
+                dot.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        this.goTo(index);
+                    }
+                });
+            });
+            
+            // Update active state
+            this._updateDots(0);
+        }
+        
+        /**
+         * Create dot indicators dynamically
+         */
+        _createDots() {
+            const indicator = this.indicator || this.slider.querySelector('.hero-indicator');
+            if (!indicator) return;
+            
+            // Clear existing dots
+            indicator.innerHTML = '';
+            
+            // Create new dots
+            for (let i = 0; i < this.totalSlides; i++) {
+                const dot = document.createElement('button');
+                dot.className = CONFIG.dotSelector.replace('.', '');
+                dot.setAttribute('data-index', i);
+                dot.setAttribute('role', 'button');
+                dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+                dot.setAttribute('tabindex', '0');
+                
+                dot.addEventListener('click', () => this.goTo(i));
+                dot.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        this.goTo(i);
+                    }
+                });
+                
+                indicator.appendChild(dot);
+            }
+            
+            // Update reference
+            this.dots = indicator.querySelectorAll(CONFIG.dotSelector);
+            this._updateDots(0);
+        }
+        
+        /**
+         * Setup keyboard navigation
+         */
+        _setupKeyboard() {
+            if (!CONFIG.keyboardNavigation) return;
+            document.addEventListener('keydown', this._boundHandleKeydown);
+        }
+        
+        /**
+         * Handle keyboard events
+         * @param {KeyboardEvent} e 
+         */
+        _handleKeydown(e) {
+            // Only handle if slider is visible
+            if (!this._isSliderVisible()) return;
+            
+            // Check if we're in an input/textarea
+            const target = e.target;
+            if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA') {
+                return;
+            }
+            
+            switch (e.key) {
+                case 'ArrowLeft':
+                    e.preventDefault();
+                    this.prev();
+                    break;
+                case 'ArrowRight':
+                    e.preventDefault();
+                    this.next();
+                    break;
+                case 'Home':
+                    e.preventDefault();
+                    this.goTo(0);
+                    break;
+                case 'End':
+                    e.preventDefault();
+                    this.goTo(this.totalSlides - 1);
+                    break;
+            }
+        }
+        
+        /**
+         * Setup touch swipe support with intelligent pause
+         */
+        _setupTouch() {
+            if (!CONFIG.touchSwipe || !this.slider) return;
+            
+            this.slider.addEventListener('touchstart', this._boundHandleTouchStart, { passive: true });
+            this.slider.addEventListener('touchmove', this._boundHandleTouchMove, { passive: false });
+            this.slider.addEventListener('touchend', this._boundHandleTouchEnd, { passive: true });
+            this.slider.addEventListener('touchcancel', this._boundHandleTouchEnd, { passive: true });
+        }
+        
+        /**
+         * Handle touch start
+         * @param {TouchEvent} e 
+         */
+        _handleTouchStart(e) {
+            const touch = e.touches[0];
+            this.touchStartX = touch.clientX;
+            this.touchStartY = touch.clientY;
+            this.isTouching = true;
+            
+            // Pause during touch interaction
+            if (CONFIG.pauseOnTouch) {
+                this.pause();
+            }
+        }
+        
+        /**
+         * Handle touch move
+         * @param {TouchEvent} e 
+         */
+        _handleTouchMove(e) {
+            if (!this.touchStartX || !this.touchStartY || !this.isTouching) return;
+            
+            const touch = e.touches[0];
+            const dx = touch.clientX - this.touchStartX;
+            const dy = touch.clientY - this.touchStartY;
+            
+            // Only handle horizontal swipes
+            if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 50) {
+                e.preventDefault();
+                
+                if (dx > 0) {
+                    this.prev();
+                } else {
+                    this.next();
+                }
+                
+                // Reset touch start to prevent multiple triggers
+                this.touchStartX = touch.clientX;
+                this.touchStartY = touch.clientY;
+            }
+        }
+        
+        /**
+         * Handle touch end
+         */
+        _handleTouchEnd() {
+            this.isTouching = false;
             this.touchStartX = 0;
             this.touchStartY = 0;
             
-            this._init();
-        }
-
-        _init() {
-            this._setupImageTriggers();
-            this._setupControls();
-            
-            if (CONFIG.keyboardNavigation) {
-                this._setupKeyboardNavigation();
-            }
-            
-            if (CONFIG.touchSwipe) {
-                this._setupTouchSupport();
+            // Resume after a short delay to prevent immediate transition
+            if (CONFIG.pauseOnTouch) {
+                clearTimeout(this.touchResumeTimer);
+                this.touchResumeTimer = setTimeout(() => {
+                    this.resume();
+                }, CONFIG.touchPauseDelay);
             }
         }
-
-        _setupImageTriggers() {
-            const triggers = DOM.lightboxTriggers;
-            
-            if (!triggers || !triggers.length) return;
-            
-            triggers.forEach(img => {
-                img.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    this._openFromImage(img);
-                });
-                
-                img.setAttribute('role', 'button');
-                img.setAttribute('tabindex', '0');
-                img.addEventListener('keydown', (e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        this._openFromImage(img);
-                    }
-                });
-            });
+        
+        /**
+         * Setup visibility change handling
+         */
+        _setupVisibility() {
+            if (!CONFIG.pauseWhenHidden) return;
+            document.addEventListener('visibilitychange', this._boundHandleVisibility);
         }
-
-        _openFromImage(clickedImg) {
-            // Find all images in the same container
-            const containers = document.querySelectorAll(
-                '.gallery-grid, .gallery-preview-grid, .service-cards-grid, ' +
-                '.location-grid, .service-detail-grid, .about-grid, ' +
-                '.image-grid, .feature-grid, .pricing-grid'
-            );
-            
-            let parent = null;
-            for (const container of containers) {
-                if (container.contains(clickedImg)) {
-                    parent = container;
-                    break;
+        
+        /**
+         * Handle visibility change - defensive
+         */
+        _handleVisibility() {
+            if (document.hidden) {
+                if (!this.isPaused) {
+                    this.pause();
+                    Utils.log('Document hidden - autoplay paused');
+                }
+            } else {
+                if (this.isPaused && Utils.isWindowFocused()) {
+                    this.resume();
+                    Utils.log('Document visible - autoplay resumed');
                 }
             }
+        }
+        
+        /**
+         * Setup window focus handling
+         */
+        _setupWindowFocus() {
+            if (!CONFIG.pauseWhenBlurred) return;
+            window.addEventListener('blur', this._boundHandleWindowBlur);
+            window.addEventListener('focus', this._boundHandleWindowFocus);
+        }
+        
+        /**
+         * Handle window blur - defensive
+         */
+        _handleWindowBlur() {
+            if (!this.isPaused) {
+                this.pause();
+                Utils.log('Window lost focus - autoplay paused');
+            }
+        }
+        
+        /**
+         * Handle window focus - defensive
+         */
+        _handleWindowFocus() {
+            if (this.isPaused && Utils.isDocumentVisible()) {
+                this.resume();
+                Utils.log('Window gained focus - autoplay resumed');
+            }
+        }
+        
+        /**
+         * Setup resize handling
+         */
+        _setupResize() {
+            if (!CONFIG.autoHeight) return;
             
-            if (parent) {
-                const allImgs = parent.querySelectorAll('img');
-                this.images = Array.from(allImgs).map(i => i.getAttribute('src') || i.src);
-                const index = this.images.indexOf(clickedImg.getAttribute('src') || clickedImg.src);
-                if (index !== -1) this._open(index);
+            const debouncedResize = Utils.debounce(this._boundHandleResize, 250);
+            window.addEventListener('resize', debouncedResize);
+        }
+        
+        /**
+         * Handle resize
+         */
+        _handleResize() {
+            if (CONFIG.autoHeight) {
+                this._updateHeight();
+            }
+        }
+        
+        /**
+         * Navigate to specific slide
+         * @param {number} index - Target slide index
+         */
+        goTo(index) {
+            // Validation
+            if (this.isTransitioning) return;
+            if (index === this.currentIndex) return;
+            if (index < 0 || index >= this.totalSlides) return;
+            
+            const currentSlide = this.slides[this.currentIndex];
+            const nextSlide = this.slides[index];
+            
+            if (!currentSlide || !nextSlide) return;
+            
+            // Reset autoplay
+            this._resetAutoplay();
+            
+            // Start transition
+            this.isTransitioning = true;
+            this.slider.classList.add(CONFIG.transitioningClass);
+            
+            // Update ARIA
+            currentSlide.setAttribute('aria-hidden', 'true');
+            
+            // Fade out current
+            currentSlide.style.opacity = '0';
+            currentSlide.style.pointerEvents = 'none';
+            currentSlide.classList.remove(CONFIG.activeClass);
+            
+            // Fade in next
+            nextSlide.style.opacity = '1';
+            nextSlide.style.pointerEvents = 'auto';
+            nextSlide.classList.add(CONFIG.activeClass);
+            nextSlide.setAttribute('aria-hidden', 'false');
+            
+            // Update state
+            const previousIndex = this.currentIndex;
+            this.currentIndex = index;
+            
+            // Update UI
+            this._updateDots(index);
+            this._updateIndicator(index);
+            
+            // Update height if needed
+            if (CONFIG.autoHeight) {
+                this._updateHeight();
+            }
+            
+            // Cleanup after transition
+            clearTimeout(this.transitionTimer);
+            this.transitionTimer = setTimeout(() => {
+                this.isTransitioning = false;
+                this.slider.classList.remove(CONFIG.transitioningClass);
+                
+                // Dispatch event
+                Utils.dispatchEvent('changed', {
+                    from: previousIndex,
+                    to: this.currentIndex,
+                    total: this.totalSlides
+                });
+                
+                Utils.log('Slide changed', {
+                    from: previousIndex,
+                    to: this.currentIndex
+                });
+            }, this.transitionDuration + 50);
+        }
+        
+        /**
+         * Go to next slide
+         */
+        next() {
+            if (this.isDestroyed) return;
+            const nextIndex = (this.currentIndex + 1) % this.totalSlides;
+            this.goTo(nextIndex);
+        }
+        
+        /**
+         * Go to previous slide
+         */
+        prev() {
+            if (this.isDestroyed) return;
+            const prevIndex = (this.currentIndex - 1 + this.totalSlides) % this.totalSlides;
+            this.goTo(prevIndex);
+        }
+        
+        /**
+         * Pause autoplay - defensive
+         */
+        pause() {
+            if (this.isPaused || this.isDestroyed) return;
+            
+            this.isPaused = true;
+            this._clearAutoplay();
+            this.slider.classList.add(CONFIG.pausedClass);
+            
+            Utils.dispatchEvent('paused');
+            Utils.log('Autoplay paused');
+        }
+        
+        /**
+         * Resume autoplay - defensive
+         */
+        resume() {
+            if (!this.isPaused || this.isDestroyed) return;
+            
+            this.isPaused = false;
+            this.slider.classList.remove(CONFIG.pausedClass);
+            this._startAutoplay(this.autoplayInterval);
+            
+            Utils.dispatchEvent('resumed');
+            Utils.log('Autoplay resumed');
+        }
+        
+        /**
+         * Toggle autoplay pause state
+         */
+        togglePause() {
+            if (this.isPaused) {
+                this.resume();
             } else {
-                const group = clickedImg.getAttribute('data-lightbox-group');
-                if (group) {
-                    const groupImages = document.querySelectorAll(
-                        `[data-lightbox-group="${group}"]`
-                    );
-                    this.images = Array.from(groupImages).map(i => i.getAttribute('src') || i.src);
-                    const index = this.images.indexOf(clickedImg.getAttribute('src') || clickedImg.src);
-                    if (index !== -1) this._open(index);
+                this.pause();
+            }
+        }
+        
+        /**
+         * Start autoplay after delay
+         * @param {number} delay - Delay in milliseconds
+         */
+        _startAutoplay(delay) {
+            this._clearAutoplay();
+            
+            // Don't autoplay if destroyed or paused
+            if (this.isDestroyed || this.isPaused) return;
+            
+            this.autoplayTimer = setTimeout(() => {
+                if (!this.isPaused && !this.isDestroyed) {
+                    this.next();
+                    this._startAutoplay(this.autoplayInterval);
+                }
+            }, delay);
+        }
+        
+        /**
+         * Clear autoplay timer
+         */
+        _clearAutoplay() {
+            if (this.autoplayTimer) {
+                clearTimeout(this.autoplayTimer);
+                this.autoplayTimer = null;
+            }
+        }
+        
+        /**
+         * Reset autoplay timer
+         */
+        _resetAutoplay() {
+            if (!this.isPaused && !this.isDestroyed) {
+                this._clearAutoplay();
+                this._startAutoplay(this.autoplayInterval);
+            }
+        }
+        
+        /**
+         * Update dot indicators
+         * @param {number} index - Active slide index
+         */
+        _updateDots(index) {
+            if (!this.dots || this.dots.length === 0) return;
+            
+            this.dots.forEach((dot, i) => {
+                const isActive = i === index;
+                dot.classList.toggle(CONFIG.activeClass, isActive);
+                dot.setAttribute('aria-selected', isActive ? 'true' : 'false');
+                
+                if (isActive) {
+                    dot.setAttribute('aria-current', 'true');
                 } else {
-                    this.images = [clickedImg.getAttribute('src') || clickedImg.src];
-                    this._open(0);
-                }
-            }
-        }
-
-        _open(index) {
-            if (this.isOpen || this.isAnimating) return;
-            if (!this.images || this.images.length === 0) return;
-            
-            this.currentIndex = Math.max(0, Math.min(index, this.images.length - 1));
-            this.isOpen = true;
-            
-            if (this.element) {
-                this.element.classList.add('active');
-            }
-            document.body.style.overflow = 'hidden';
-            
-            this._loadImage(this.currentIndex);
-            this._updateControls();
-            this._preloadAdjacentImages();
-            
-            Utils.dispatchEvent('lightbox:opened', { 
-                index: this.currentIndex, 
-                total: this.images.length 
-            });
-        }
-
-        _loadImage(index) {
-            if (this.isAnimating) return;
-            
-            const src = this.images[index];
-            if (!src || !this.img) return;
-            
-            this.isAnimating = true;
-            this.img.style.opacity = '0.3';
-            
-            Utils.preloadImage(src)
-                .then(() => {
-                    this.img.src = src;
-                    this.img.alt = this._getImageCaption(index);
-                    this._updateCaption(index);
-                    this._updateCounter(index);
-                    this.img.style.opacity = '1';
-                    this.isAnimating = false;
-                    this._preloadAdjacentImages();
-                })
-                .catch(() => {
-                    this.img.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%23f0edea" width="400" height="400"/%3E%3Ctext x="50%25" y="50%25" font-family="sans-serif" font-size="20" fill="%23999" text-anchor="middle" dy=".3em"%3EImage unavailable%3C/text%3E%3C/svg%3E';
-                    this.img.alt = 'Image unavailable';
-                    this.isAnimating = false;
-                });
-        }
-
-        _getImageCaption(index) {
-            const src = this.images[index];
-            const imgElement = document.querySelector(`img[src="${src}"]`);
-            if (imgElement) return Utils.getImageCaption(imgElement);
-            return 'ZT Lounge Meru - Gallery image ' + (index + 1);
-        }
-
-        _updateCaption(index) {
-            if (this.caption) {
-                const caption = this._getImageCaption(index);
-                this.caption.textContent = caption;
-                this.caption.setAttribute('aria-label', caption);
-            }
-        }
-
-        _updateCounter(index) {
-            if (this.counter && this.images.length > 1) {
-                this.counter.textContent = Utils.formatCounter(index, this.images.length);
-                this.counter.setAttribute('aria-label', 
-                    'Image ' + (index + 1) + ' of ' + this.images.length
-                );
-            }
-        }
-
-        _updateControls() {
-            if (this.images.length <= 1) {
-                if (this.prevBtn) this.prevBtn.style.display = 'none';
-                if (this.nextBtn) this.nextBtn.style.display = 'none';
-            } else {
-                if (this.prevBtn) this.prevBtn.style.display = 'block';
-                if (this.nextBtn) this.nextBtn.style.display = 'block';
-            }
-        }
-
-        _preloadAdjacentImages() {
-            const count = CONFIG.preloadAdjacentCount;
-            for (let i = 1; i <= count; i++) {
-                const nextIndex = (this.currentIndex + i) % this.images.length;
-                if (nextIndex !== this.currentIndex) {
-                    Utils.preloadImage(this.images[nextIndex]).catch(() => {});
-                }
-                
-                const prevIndex = (this.currentIndex - i + this.images.length) % this.images.length;
-                if (prevIndex !== this.currentIndex) {
-                    Utils.preloadImage(this.images[prevIndex]).catch(() => {});
-                }
-            }
-        }
-
-        _close() {
-            if (!this.isOpen || this.isAnimating) return;
-            
-            this.isOpen = false;
-            if (this.element) {
-                this.element.classList.remove('active');
-            }
-            document.body.style.overflow = '';
-            
-            Utils.dispatchEvent('lightbox:closed', { index: this.currentIndex });
-        }
-
-        _navigate(direction) {
-            if (this.images.length === 0 || this.isAnimating) return;
-            
-            const newIndex = (this.currentIndex + direction + this.images.length) % this.images.length;
-            if (newIndex === this.currentIndex) return;
-            
-            this.currentIndex = newIndex;
-            this._loadImage(this.currentIndex);
-            this._updateCounter(this.currentIndex);
-            this._updateCaption(this.currentIndex);
-            this._preloadAdjacentImages();
-            
-            Utils.dispatchEvent('lightbox:navigated', { 
-                direction, 
-                index: this.currentIndex 
-            });
-        }
-
-        _setupControls() {
-            if (this.closeBtn) {
-                this.closeBtn.addEventListener('click', () => this._close());
-            }
-            
-            if (this.prevBtn) {
-                this.prevBtn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    this._navigate(-1);
-                });
-            }
-            
-            if (this.nextBtn) {
-                this.nextBtn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    this._navigate(1);
-                });
-            }
-            
-            if (this.element) {
-                this.element.addEventListener('click', (e) => {
-                    if (e.target === this.element) this._close();
-                });
-            }
-        }
-
-        _setupKeyboardNavigation() {
-            document.addEventListener('keydown', (e) => {
-                if (!this.isOpen) return;
-                
-                switch (e.key) {
-                    case 'Escape':
-                        e.preventDefault();
-                        this._close();
-                        break;
-                    case 'ArrowLeft':
-                        e.preventDefault();
-                        this._navigate(-1);
-                        break;
-                    case 'ArrowRight':
-                        e.preventDefault();
-                        this._navigate(1);
-                        break;
+                    dot.removeAttribute('aria-current');
                 }
             });
         }
-
-        _setupTouchSupport() {
-            if (this.element) {
-                this.element.addEventListener('touchstart', (e) => {
-                    const touch = e.touches[0];
-                    this.touchStartX = touch.clientX;
-                    this.touchStartY = touch.clientY;
-                }, { passive: true });
-                
-                this.element.addEventListener('touchmove', (e) => {
-                    if (!this.touchStartX || !this.touchStartY) return;
-                    
-                    const touch = e.touches[0];
-                    const direction = Utils.getTouchDirection(
-                        this.touchStartX, 
-                        this.touchStartY,
-                        touch.clientX, 
-                        touch.clientY
-                    );
-                    
-                    if (direction === 'left') {
-                        this._navigate(1);
-                        this.touchStartX = touch.clientX;
-                        this.touchStartY = touch.clientY;
-                    } else if (direction === 'right') {
-                        this._navigate(-1);
-                        this.touchStartX = touch.clientX;
-                        this.touchStartY = touch.clientY;
-                    }
-                }, { passive: true });
-            }
+        
+        /**
+         * Update slide counter indicator
+         * @param {number} index - Active slide index
+         */
+        _updateIndicator(index) {
+            if (!this.indicator) return;
+            
+            const text = `${index + 1} / ${this.totalSlides}`;
+            this.indicator.textContent = text;
+            this.indicator.setAttribute('aria-label', `Slide ${index + 1} of ${this.totalSlides}`);
         }
-
+        
+        /**
+         * Update slider height based on active slide content
+         */
+        _updateHeight() {
+            if (!CONFIG.autoHeight) return;
+            
+            const activeSlide = this.slides[this.currentIndex];
+            if (!activeSlide) return;
+            
+            const height = activeSlide.scrollHeight;
+            this.slider.style.height = `${height}px`;
+        }
+        
+        /**
+         * Check if slider is visible in viewport
+         * @returns {boolean}
+         */
+        _isSliderVisible() {
+            if (!this.slider) return false;
+            
+            const rect = this.slider.getBoundingClientRect();
+            const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+            
+            return rect.top < windowHeight && rect.bottom > 0;
+        }
+        
+        /**
+         * Get current state
+         * @returns {Object} Current slider state
+         */
         getState() {
             return {
-                isOpen: this.isOpen,
                 currentIndex: this.currentIndex,
-                totalImages: this.images.length
+                totalSlides: this.totalSlides,
+                isTransitioning: this.isTransitioning,
+                isPaused: this.isPaused,
+                isDestroyed: this.isDestroyed,
+                isTouching: this.isTouching,
+                reducedMotion: this.reducedMotion,
+                transitionDuration: this.transitionDuration,
+                autoplayInterval: this.autoplayInterval,
+                windowFocused: Utils.isWindowFocused(),
+                documentVisible: Utils.isDocumentVisible()
             };
         }
-    }
-
-    // ============================================================
-    // 8. GALLERY ANIMATION SYSTEM - CSS-based animations
-    // ============================================================
-    class GalleryAnimation {
-        constructor() {
-            this.grids = DOM.galleryGrids;
-            this._init();
-        }
-
-        _init() {
-            if (!this.grids || !this.grids.length) return;
-            
-            this.grids.forEach(grid => {
-                const items = grid.querySelectorAll(
-                    '.gallery-item, .gallery-preview-item, .service-card'
-                );
-                
-                // Skip if already visible (homepage preview)
-                const isPreview = grid.closest('.gallery-preview') || 
-                                 grid.closest('.gallery-preview-grid');
-                
-                items.forEach((item, index) => {
-                    if (!isPreview && !Utils.prefersReducedMotion()) {
-                        // Add classes instead of inline styles
-                        item.classList.add('gallery-item-hidden');
-                        item.dataset.animationIndex = index;
-                    }
-                });
-                
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            const visibleItems = entry.target.querySelectorAll(
-                                '.gallery-item, .gallery-preview-item, .service-card'
-                            );
-                            visibleItems.forEach((item, index) => {
-                                if (item.classList.contains('gallery-item-hidden')) {
-                                    setTimeout(() => {
-                                        item.classList.remove('gallery-item-hidden');
-                                        item.classList.add('gallery-item-visible');
-                                    }, index * 80);
-                                }
-                            });
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, {
-                    threshold: 0.1,
-                    rootMargin: '0px 0px -50px 0px'
-                });
-                
-                observer.observe(grid);
-            });
-        }
-    }
-
-    // ============================================================
-    // 9. RESPONSIVE IMAGE HANDLER
-    // ============================================================
-    class ResponsiveImageHandler {
-        constructor() {
-            this._init();
-        }
-
-        _init() {
-            const debouncedResize = Utils.debounce(this._handleResize.bind(this), 250);
-            window.addEventListener('resize', debouncedResize);
-            this._handleResize();
-        }
-
-        _handleResize() {
-            const width = window.innerWidth;
-            const breakpoint = Utils.getBreakpoint(width);
-            
-            document.documentElement.setAttribute('data-breakpoint', breakpoint);
-            this._updateGalleryGrid(breakpoint);
-            this._updateResponsiveImages(breakpoint);
-        }
-
-        _updateResponsiveImages(breakpoint) {
-            document.querySelectorAll('img[data-srcset]').forEach(img => {
-                const srcset = img.getAttribute('data-srcset-' + breakpoint);
-                if (srcset) {
-                    img.srcset = srcset;
-                }
-            });
-        }
-
-        _updateGalleryGrid(breakpoint) {
-            const grids = document.querySelectorAll('.gallery-grid, .gallery-preview-grid');
-            const columns = CONFIG.galleryColumns;
-            
-            grids.forEach(grid => {
-                grid.style.gridTemplateColumns = 'repeat(' + (columns[breakpoint] || 4) + ', 1fr)';
-            });
-        }
-    }
-
-    // ============================================================
-    // 10. ACCESSIBILITY ENHANCER
-    // ============================================================
-    class AccessibilityEnhancer {
-        constructor() {
-            this._init();
-        }
-
-        _init() {
-            this._validateAltText();
-            this._enhanceControls();
-            this._setupFocusManagement();
-            this._setupAriaLive();
-        }
-
-        _validateAltText() {
-            document.querySelectorAll('img').forEach(img => {
-                if (!img.hasAttribute('alt')) {
-                    img.setAttribute('alt', '');
-                }
-            });
-        }
-
-        _enhanceControls() {
-            document.querySelectorAll('.gallery-filter button').forEach(btn => {
-                const filter = btn.getAttribute('data-filter');
-                btn.setAttribute('role', 'tab');
-                btn.setAttribute('aria-selected', btn.classList.contains('active') ? 'true' : 'false');
-                btn.setAttribute('aria-controls', 'gallery-' + filter);
-            });
-            
-            const lightboxControls = [
-                { id: 'close-lightbox', label: 'Close lightbox' },
-                { id: 'prev-lightbox', label: 'Previous image' },
-                { id: 'next-lightbox', label: 'Next image' }
-            ];
-            
-            lightboxControls.forEach(({ id, label }) => {
-                const el = document.getElementById(id);
-                if (el) {
-                    el.setAttribute('aria-label', label);
-                    el.setAttribute('role', 'button');
-                }
-            });
-        }
-
-        _setupFocusManagement() {
-            document.addEventListener('lightbox:opened', () => {
-                const focusableElements = document.querySelectorAll(
-                    '#lightbox button, #lightbox [role="button"]'
-                );
-                if (focusableElements.length > 0) {
-                    focusableElements[0].focus();
-                }
-            });
-        }
-
-        _setupAriaLive() {
-            const counter = document.getElementById('gallery-counter');
-            if (counter) {
-                counter.setAttribute('aria-live', 'polite');
-                counter.setAttribute('aria-atomic', 'true');
-            }
-        }
-    }
-
-    // ============================================================
-    // 11. PERFORMANCE MONITOR
-    // ============================================================
-    class PerformanceMonitor {
-        constructor() {
-            this.metrics = {
-                imagesLoaded: 0,
-                totalImages: 0,
-                layoutShifts: 0,
-                largestContentfulPaint: 0
-            };
-            this._init();
-        }
-
-        _init() {
-            if ('PerformanceObserver' in window) {
-                try {
-                    const lcpObserver = new PerformanceObserver((entryList) => {
-                        const entries = entryList.getEntries();
-                        const lastEntry = entries[entries.length - 1];
-                        this.metrics.largestContentfulPaint = lastEntry.startTime;
-                    });
-                    lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
-                    
-                    const clsObserver = new PerformanceObserver((entryList) => {
-                        for (const entry of entryList.getEntries()) {
-                            if (!entry.hadRecentInput) {
-                                this.metrics.layoutShifts += entry.value;
-                            }
-                        }
-                    });
-                    clsObserver.observe({ entryTypes: ['layout-shift'] });
-                } catch (e) {
-                    // PerformanceObserver not fully supported
-                }
-            }
-            
-            this.metrics.totalImages = document.querySelectorAll('img').length;
-            
-            // Listen for lazy loaded images
-            document.addEventListener('lazy:loaded', () => {
-                this.metrics.imagesLoaded++;
-            });
-        }
-
-        getReport() {
-            return {
-                ...this.metrics,
-                loadProgress: this.metrics.totalImages > 0 ? 
-                    (this.metrics.imagesLoaded / this.metrics.totalImages * 100).toFixed(1) : 0
-            };
-        }
-    }
-
-    // ============================================================
-    // 12. GALLERY ENGINE - Orchestrates all gallery modules
-    // ============================================================
-    const GalleryEngine = {
-        _initialized: false,
-        _components: {},
-
+        
         /**
-         * Initialize gallery engine
+         * Destroy the slider and cleanup
          */
-        init: function() {
-            if (this._initialized) return;
+        destroy() {
+            if (this.isDestroyed) return;
+            
+            Utils.log('Destroying hero slider');
+            
+            this.isDestroyed = true;
+            this._clearAutoplay();
+            clearTimeout(this.touchResumeTimer);
+            
+            // Remove event listeners
+            document.removeEventListener('keydown', this._boundHandleKeydown);
+            document.removeEventListener('visibilitychange', this._boundHandleVisibility);
+            window.removeEventListener('blur', this._boundHandleWindowBlur);
+            window.removeEventListener('focus', this._boundHandleWindowFocus);
+            
+            // Remove touch listeners
+            if (this.slider) {
+                this.slider.removeEventListener('touchstart', this._boundHandleTouchStart);
+                this.slider.removeEventListener('touchmove', this._boundHandleTouchMove);
+                this.slider.removeEventListener('touchend', this._boundHandleTouchEnd);
+                this.slider.removeEventListener('touchcancel', this._boundHandleTouchEnd);
+            }
+            
+            // Reset slides
+            this.slides.forEach((slide) => {
+                slide.style.opacity = '';
+                slide.style.zIndex = '';
+                slide.style.pointerEvents = '';
+                slide.style.transition = '';
+                slide.classList.remove(CONFIG.activeClass, CONFIG.transitioningClass);
+            });
+            
+            // Reset slider
+            this.slider.classList.remove(
+                CONFIG.pausedClass,
+                CONFIG.transitioningClass,
+                CONFIG.reducedMotionClass
+            );
+            
+            // Reset dots
+            if (this.dots) {
+                this.dots.forEach((dot) => {
+                    dot.classList.remove(CONFIG.activeClass);
+                    dot.removeAttribute('aria-selected');
+                    dot.removeAttribute('aria-current');
+                });
+            }
+            
+            // Remove reference from element
+            if (this.slider) {
+                delete this.slider._heroSlider;
+            }
+            
+            Utils.dispatchEvent('destroyed');
+            Utils.log('Hero slider destroyed');
+        }
+    }
+
+    // ============================================================
+    // 5. ENGINE ORCHESTRATOR
+    // ============================================================
+    const HeroSliderEngine = {
+        _initialized: false,
+        _slider: null,
+        _instances: [],
+        
+        /**
+         * Initialize hero slider
+         * @param {string|Element} selector - Custom selector or element
+         * @returns {HeroSlider|null} Slider instance
+         */
+        init: function(selector = null) {
+            // Guard against duplicate initialization
+            if (this._initialized && !selector) {
+                Utils.warn('Hero slider engine already initialized');
+                return this._slider;
+            }
+            
+            const targetSelector = selector || CONFIG.sliderSelector;
+            let sliderElement = typeof targetSelector === 'string' 
+                ? document.querySelector(targetSelector)
+                : targetSelector;
+            
+            if (!sliderElement) {
+                Utils.warn('Hero slider: No slider element found', { selector: targetSelector });
+                return null;
+            }
+            
+            // Check if this specific element already has a slider instance
+            if (sliderElement._heroSlider) {
+                Utils.log('Slider already initialized on this element');
+                return sliderElement._heroSlider;
+            }
             
             try {
-                this._components = {
-                    lazyLoader: new LazyLoader(),
-                    galleryFilter: new GalleryFilter(),
-                    lightbox: new Lightbox(),
-                    galleryAnimation: new GalleryAnimation(),
-                    responsiveImages: new ResponsiveImageHandler(),
-                    accessibility: new AccessibilityEnhancer(),
-                    designSystem: new ImageDesignSystem(),
-                    performance: new PerformanceMonitor()
-                };
-
-                this._setupGlobalListeners();
-                this._runAudit();
+                const slider = new HeroSlider(sliderElement);
                 
-                this._initialized = true;
-                this._logStartup();
-                
-                Utils.dispatchEvent('gallery:ready');
+                // Only store if valid instance was created
+                if (slider && slider.slider) {
+                    this._slider = slider;
+                    this._instances.push(slider);
+                    this._initialized = true;
+                    
+                    Utils.log('Hero slider engine initialized');
+                    return slider;
+                } else {
+                    Utils.warn('Hero slider initialization failed - invalid instance');
+                    return null;
+                }
                 
             } catch (e) {
-                Utils.warn('Gallery initialization failed', e);
+                Utils.warn('Hero slider initialization failed', e);
+                return null;
             }
         },
-
+        
         /**
-         * Setup global event listeners
+         * Get current slider instance
+         * @returns {HeroSlider|null}
          */
-        _setupGlobalListeners: function() {
-            // Re-run audit after images load
-            window.addEventListener('load', () => {
-                setTimeout(() => this._runAudit(), 1000);
-            });
+        getSlider: function() {
+            return this._slider;
         },
-
+        
         /**
-         * Run image audit
+         * Get all slider instances
+         * @returns {Array}
          */
-        _runAudit: function() {
-            this._components.designSystem.auditImages()
-                .then(results => {
-                    const errors = results.filter(r => !r.valid);
-                    if (errors.length > 0) {
-                        Utils.warn('Found ' + errors.length + ' images not matching design system', { errors });
-                    }
-                    Utils.dispatchEvent('gallery:auditComplete', { results, errors });
-                })
-                .catch(() => {
-                    // Silent fail for audit
-                });
+        getInstances: function() {
+            return this._instances;
         },
-
+        
         /**
-         * Log startup
-         */
-        _logStartup: function() {
-            Utils.log('Gallery System initialized');
-            Utils.log('Performance:', this._components.performance.getReport());
-        },
-
-        /**
-         * Get component
-         * @param {string} name - Component name
-         * @returns {Object} Component instance
-         */
-        getComponent: function(name) {
-            return this._components[name] || null;
-        },
-
-        /**
-         * Get all components
-         * @returns {Object} All components
-         */
-        getComponents: function() {
-            return this._components;
-        },
-
-        /**
-         * Get performance report
-         * @returns {Object} Performance metrics
-         */
-        getPerformanceReport: function() {
-            return this._components.performance.getReport();
-        },
-
-        /**
-         * Check if gallery is initialized
+         * Check if engine is initialized
          * @returns {boolean}
          */
         isInitialized: function() {
             return this._initialized;
+        },
+        
+        /**
+         * Destroy all sliders
+         */
+        destroyAll: function() {
+            this._instances.forEach(slider => slider.destroy());
+            this._instances = [];
+            this._slider = null;
+            this._initialized = false;
+            Utils.log('All hero sliders destroyed');
         }
     };
 
     // ============================================================
-    // 13. INTEGRATION WITH ZT KERNEL
+    // 6. INTEGRATION WITH ZT KERNEL
     // ============================================================
-    
-    // Register gallery with ZT namespace if available
     if (window.ZT) {
         if (!ZT.Components) {
             ZT.Components = {};
         }
-        ZT.Components.Gallery = GalleryEngine;
-        Utils.log('Gallery registered with ZT kernel');
+        ZT.Components.HeroSlider = HeroSliderEngine;
+        Utils.log('Hero slider registered with ZT kernel');
     } else {
         // Fallback: expose globally
-        window.ZTGallery = GalleryEngine;
+        window.ZTHeroSlider = HeroSliderEngine;
     }
 
     // ============================================================
-    // 14. BOOTSTRAP - Wait for DOM to be ready
+    // 7. AUTO-BOOTSTRAP
     // ============================================================
-    
-    // If ZT kernel exists, let it handle initialization
-    if (window.ZT && ZT.Kernel && ZT.Kernel.isReady) {
-        // Wait for kernel to be ready
-        if (ZT.Kernel.isReady()) {
-            GalleryEngine.init();
-        } else {
-            ZT.Events.on('zt-ready', function() {
-                GalleryEngine.init();
-            });
+    const bootstrap = function() {
+        // Check if ZT kernel should handle initialization
+        if (window.ZT && ZT.Kernel && ZT.Kernel.isReady && ZT.Kernel.isReady()) {
+            HeroSliderEngine.init();
+            return;
         }
-    } else {
+        
+        // Wait for ZT kernel if available
+        if (window.ZT && ZT.Events) {
+            ZT.Events.on('zt-ready', function() {
+                HeroSliderEngine.init();
+            });
+            return;
+        }
+        
         // Standalone initialization
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', function() {
-                GalleryEngine.init();
+                HeroSliderEngine.init();
             });
         } else {
-            GalleryEngine.init();
+            // DOM already loaded
+            HeroSliderEngine.init();
         }
-    }
+    };
+    
+    // Execute bootstrap
+    bootstrap();
 
 })();
-
-
