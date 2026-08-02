@@ -1,0 +1,46 @@
+# ============================================================
+# ZT Lounge Public Website - .gitignore
+# ============================================================
+
+# Environment files (NEVER commit secrets)
+.env.local
+.env.*.local
+.env.production
+.env.staging
+
+# Allow .env.example to be tracked
+!.env.example
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+
+# IDE & Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Backups & archives
+backup/
+*.zip
+*.tar.gz
+*.rar
+
+# Logs
+*.log
+npm-debug.log*
+
+# Cache
+.cache/
+.temp/
+tmp/

@@ -1,0 +1,39 @@
+/**
+ * ============================================================
+ * ZT Lounge Design System - Sections: About
+ * ============================================================
+ */
+
+.about-section {
+  padding: var(--spacing-20) 0;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-12);
+  align-items: center;
+}
+
+.about-image {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.about-text {
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+}
+
+/* About responsive */
+@media (max-width: 768px) {
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+}

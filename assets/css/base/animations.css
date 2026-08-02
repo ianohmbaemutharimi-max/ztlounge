@@ -1,0 +1,61 @@
+/**
+ * ============================================================
+ * ZT Lounge Design System - Animations
+ * Centralized animations and transitions
+ * ============================================================
+ */
+
+/* Fade animations */
+.fade-in {
+  opacity: 1;
+  transition: opacity var(--transition-normal);
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+/* Slide animations */
+.slide-up {
+  transform: translateY(0);
+  transition: transform var(--transition-normal);
+}
+
+.slide-down {
+  transform: translateY(0);
+  transition: transform var(--transition-normal);
+}
+
+/* Scale animations */
+.scale-in {
+  transform: scale(1);
+  transition: transform var(--transition-normal);
+}
+
+.scale-out {
+  transform: scale(0.95);
+  transition: transform var(--transition-normal);
+}
+
+/* Hover transitions */
+.hover-lift {
+  transition: transform var(--transition-fast);
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+}
+
+.hover-scale {
+  transition: transform var(--transition-fast);
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* Focus styles */
+.focus-visible:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
