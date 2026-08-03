@@ -1079,10 +1079,23 @@
         });
     </script>
 
-    <!-- ============================================================
-         SUPABASE & CMS ARCHITECTURE
-         Loaded after inline scripts to enhance content from database
-         ============================================================ -->
+     <!-- ===== TESTIMONIALS (Populated from Supabase testimonials table) ===== -->
+     <section class="testimonials-section section" id="testimonials" aria-label="Customer testimonials">
+         <div class="container">
+             <div class="section-header">
+                 <span class="section-tag">What Our Guests Say</span>
+                 <h2 class="section-title">Guest <span>Experiences</span></h2>
+             </div>
+             <div class="testimonials-container">
+                 <!-- Populated by content-loader.js from Supabase testimonials table -->
+             </div>
+         </div>
+     </section>
+
+     <!-- ============================================================
+          SUPABASE & CMS ARCHITECTURE
+          Loaded after inline scripts to enhance content from database
+          ============================================================ -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="assets/js/config/env.js"></script>
     <script src="assets/js/config/supabase.config.js"></script>
