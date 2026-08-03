@@ -1,263 +1,197 @@
 /**
- * Form Handling
- * Handles all booking/reservation forms across the site
- * Supports: reservationForm, loungeBookingForm, contactForm, vipBookingForm, eventBookingForm, conferenceBookingForm, autospaBookingForm
+ * ============================================================
+ * ZT Lounge Meru - Forms
+ * Handles booking + contact form submission to Supabase
+ * Version: 1.0.0
+ * ============================================================
+ * Submits to Supabase bookings/contact_messages tables.
+ * Falls back to WhatsApp if Supabase is unavailable.
+ * ============================================================
  */
+
 (function() {
     'use strict';
-    
+
     /**
-     * Submit form data to Supabase for persistence
-     * Falls back gracefully if Supabase is unavailable
-     * @param {HTMLElement} form - The form element
-     * @param {string} formId - The form identifier
+     * Submit a booking to Supabase via BookingRepository
+     * @param {Object} data - Booking form data
+     * @returns {Promise<Object>} Result
      */
-    function submitToSupabase(form, formId) {
-        var client = null;
-        try {
-            client = window.SupabaseClient && window.SupabaseClient.getClient();
-            if (!client) return; // Silent fallback
-        } catch (e) {
-            return; // Graceful fallback
+    function submitBooking(data) {
+        if (window.BookingRepository && window.BookingRepository.insert) {
+            return window.BookingRepository.insert(data).then(function(result) {
+                return { success: true, data: result };
+            }).catch(function(error) {
+                console.warn('[Forms] Supabase booking failed, falling back to WhatsApp:', error.message);
+                return { success: false, error: error };
+            });
         }
-
-        // Use correct table names from SupabaseConfig
-        var tableName = window.SupabaseConfig && window.SupabaseConfig.tables ? 
-            window.SupabaseConfig.tables.contactMessages : 'contact_messages';
-        var isBooking = formId !== 'contactForm';
-        if (isBooking) {
-            tableName = window.SupabaseConfig && window.SupabaseConfig.tables ? 
-                window.SupabaseConfig.tables.bookings : 'bookings';
-        }
-
-        // Gather form data
-        var formData = {
-            name: (form.querySelector('#fullName') || {}).value || '',
-            email: (form.querySelector('#email') || {}).value || '',
-            phone: (form.querySelector('#phoneNumber') || {}).value || '',
-            service: getSelectValue(form.querySelector('#service')),
-            guests: (form.querySelector('#guestCount') || {}).value || null,
-            date: (form.querySelector('#bookingDate') || form.querySelector('#eventDate') || form.querySelector('#appointmentDate') || {}).value || null,
-            time: getSelectValue(form.querySelector('#bookingTime')) || (form.querySelector('#appointmentTime') || {}).value || null,
-            occasion: getSelectValue(form.querySelector('#occasion')),
-            special_requests: (form.querySelector('#specialRequests') || {}).value || '',
-            form_type: formId,
-            source: window.location.pathname
-        };
-
-        // Only submit if we have at least a name
-        if (!formData.name && !formData.phone) return;
-
-        client.from(tableName).insert([formData]).select().then(function(result) {
-            if (result.error) {
-                console.warn('[Forms] Supabase insert failed:', result.error.message);
-            }
-        }).catch(function(err) {
-            // Silent catch - WhatsApp is the primary channel
-            console.warn('[Forms] Supabase submission error:', err.message);
-        });
+        return Promise.resolve({ success: false, error: new Error('BookingRepository not available') });
     }
 
     /**
-     * Safely get selected value from a select element
-     * @param {HTMLElement|null} selectEl
-     * @returns {string}
+     * Submit a contact message to Supabase
+     * @param {Object} data - Contact form data
+     * @returns {Promise<Object>} Result
      */
-    function getSelectValue(selectEl) {
-        if (!selectEl || !selectEl.options) return '';
-        return selectEl.options[selectEl.selectedIndex] ? selectEl.options[selectEl.selectedIndex].text : '';
+    function submitContact(data) {
+        if (!window.supabaseClient) {
+            return Promise.resolve({ success: false, error: new Error('Supabase client not initialized') });
+        }
+        return window.supabaseClient.from('contact_messages')
+            .insert({
+                full_name: data.fullName,
+                phone: data.phone || null,
+                email: data.email || null,
+                subject: data.subject || null,
+                message: data.message
+            })
+            .select()
+            .single()
+            .then(function(result) {
+                if (result.error) throw result.error;
+                return { success: true, data: result.data };
+            })
+            .catch(function(error) {
+                console.warn('[Forms] Supabase contact failed:', error.message);
+                return { success: false, error: error };
+            });
     }
-    
-    document.addEventListener('DOMContentLoaded', function() {
-        var formIds = [
-            'reservationForm', 
-            'loungeBookingForm', 
-            'contactForm', 
-            'vipBookingForm', 
-            'eventBookingForm', 
-            'conferenceBookingForm', 
-            'autospaBookingForm'
-        ];
-        
-        formIds.forEach(function(formId) {
-            var form = document.getElementById(formId);
-            if (!form) return;
-            
-            // Handle different date input IDs for different forms
-            var dateInput = form.querySelector('#bookingDate') || form.querySelector('#eventDate') || form.querySelector('#appointmentDate');
-            
-            // Set default date to tomorrow
-            if (dateInput) {
-                var tomorrow = new Date();
-                tomorrow.setDate(tomorrow.getDate() + 1);
-                dateInput.value = tomorrow.toISOString().split('T')[0];
-            }
-            
-            form.addEventListener('submit', function(e) {
+
+    /**
+     * Build WhatsApp fallback URL
+     * @param {string} phoneRaw - Raw phone number
+     * @param {string} message - Message text
+     * @returns {string} WhatsApp URL
+     */
+    function buildWhatsAppUrl(phoneRaw, message) {
+        return 'https://wa.me/' + phoneRaw + '?text=' + encodeURIComponent(message);
+    }
+
+    /**
+     * Initialize all forms on the page
+     */
+    function init() {
+        // Restaurant reservation form
+        var restaurantForm = document.getElementById('reservationForm');
+        if (restaurantForm) {
+            restaurantForm.addEventListener('submit', function(e) {
                 e.preventDefault();
-                
-                // Reset previous errors
-                form.querySelectorAll('.form-error').forEach(function(el) {
-                    el.classList.remove('visible');
-                });
-                form.querySelectorAll('.form-input, .form-select').forEach(function(el) {
-                    el.classList.remove('error');
-                });
-                var successEl = form.querySelector('#formSuccess');
-                if (successEl) successEl.classList.remove('visible');
-                
-                var isValid = true;
-                
-                // Validate name (if exists on form)
-                var name = form.querySelector('#fullName');
-                if (name && !name.value.trim()) {
-                    var nameError = form.querySelector('#fullNameError');
-                    if (nameError) nameError.classList.add('visible');
-                    name.classList.add('error');
-                    isValid = false;
-                }
-                
-                // Validate phone
-                var phone = form.querySelector('#phoneNumber');
-                if (phone && (!phone.value.trim() || phone.value.trim().length < 8)) {
-                    var phoneError = form.querySelector('#phoneError');
-                    if (phoneError) phoneError.classList.add('visible');
-                    phone.classList.add('error');
-                    isValid = false;
-                }
-                
-                // Validate service/event type/cabin package (various forms)
-                var serviceType = form.querySelector('#service') || form.querySelector('#eventType') || form.querySelector('#cabinPackage');
-                if (serviceType && serviceType.hasAttribute('required') && !serviceType.value) {
-                    var serviceError = form.querySelector('#serviceError') || form.querySelector('#eventTypeError') || form.querySelector('#packageError');
-                    if (serviceError) serviceError.classList.add('visible');
-                    serviceType.classList.add('error');
-                    isValid = false;
-                }
-                
-                // Validate guests/attendees/vehicle type
-                var guestSelector = form.querySelector('#guestCount') || form.querySelector('#attendees') || form.querySelector('#vehicleType');
-                if (guestSelector && guestSelector.hasAttribute('required') && !guestSelector.value) {
-                    var guestError = form.querySelector('#guestError') || form.querySelector('#attendeesError') || form.querySelector('#vehicleError');
-                    if (guestError) guestError.classList.add('visible');
-                    guestSelector.classList.add('error');
-                    isValid = false;
-                }
-                
-                // Validate date
-                var date = form.querySelector('#bookingDate') || form.querySelector('#eventDate') || form.querySelector('#appointmentDate');
-                if (date && date.hasAttribute('required') && !date.value) {
-                    var dateError = form.querySelector('#dateError');
-                    if (dateError) dateError.classList.add('visible');
-                    date.classList.add('error');
-                    isValid = false;
-                }
-                
-                // Validate time (including appointmentTime for autospa)
-                var time = form.querySelector('#bookingTime') || form.querySelector('#eventTime') || form.querySelector('#appointmentTime') || form.querySelector('#time');
-                if (time && time.nodeName === 'SELECT' && time.hasAttribute('required') && !time.value) {
-                    var timeError = form.querySelector('#timeError') || form.querySelector('#durationError');
-                    if (timeError) timeError.classList.add('visible');
-                    time.classList.add('error');
-                    isValid = false;
-                }
-                
-                // Validate duration (conference specific)
-                var durationEl = form.querySelector('#duration');
-                if (durationEl && durationEl.hasAttribute('required') && !durationEl.value) {
-                    var durationError = form.querySelector('#durationError');
-                    if (durationError) durationError.classList.add('visible');
-                    durationEl.classList.add('error');
-                    isValid = false;
-                }
-                
-                if (!isValid) {
-                    var firstError = form.querySelector('.form-error.visible');
-                    if (firstError) {
-                        firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    }
+                var form = this;
+                var submitBtn = form.querySelector('button[type="submit"]');
+                var originalText = submitBtn ? submitBtn.textContent : '';
+
+                // Basic validation
+                var name = form.querySelector('#fullName, [name="fullName"]');
+                var phone = form.querySelector('#phoneNumber, [name="phoneNumber"]');
+                var date = form.querySelector('#bookingDate, [name="bookingDate"]');
+                if (!name || !name.value.trim() || !phone || !phone.value.trim() || !date || !date.value) {
+                    alert('Please fill in all required fields.');
                     return;
                 }
-                
-                // Submit to Supabase (if available) for data persistence
-                submitToSupabase(form, formId);
-                
-                // Build WhatsApp message based on form type
-                var message = '';
-                
-                if (formId === 'reservationForm') {
-                    message = 'Hello ZT Lounge, I\'d like to make a table reservation:%0A%0A';
-                } else if (formId === 'loungeBookingForm') {
-                    message = 'Hello ZT Lounge, I\'d like to reserve a table at the lounge:%0A%0A';
-                } else if (formId === 'contactForm') {
-                    message = 'Hello ZT Lounge, I\'d like to make a booking:%0A%0A';
-                } else if (formId === 'vipBookingForm') {
-                    message = 'Hello ZT Lounge, I\'d like to book a VIP cabin:%0A%0A';
-                } else if (formId === 'eventBookingForm') {
-                    message = 'Hello ZT Lounge, I\'d like to plan an event:%0A%0A';
-                } else if (formId === 'conferenceBookingForm') {
-                    message = 'Hello ZT Lounge, I\'d like to inquire about the conference hall:%0A%0A';
-                } else if (formId === 'autospaBookingForm') {
-                    message = 'Hello ZT Lounge, I\'d like to book an auto spa appointment:%0A%0A';
+
+                // Show loading state
+                if (submitBtn) {
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Submitting...';
                 }
-                
-                if (name) message += 'Name: ' + name.value.trim() + '%0A';
-                
-                var email = form.querySelector('#email');
-                if (email) message += 'Email: ' + (email.value.trim() || 'Not provided') + '%0A';
-                
-                if (phone) message += 'Phone: ' + phone.value.trim() + '%0A';
-                
-                if (serviceType && serviceType.options[serviceType.selectedIndex]) {
-                    message += 'Service: ' + serviceType.options[serviceType.selectedIndex].text + '%0A';
-                }
-                
-                if (guestSelector && guestSelector.options[guestSelector.selectedIndex]) {
-                    var guestText = guestSelector.options[guestSelector.selectedIndex].text;
-                    message += 'Guests: ' + guestText + '%0A';
-                }
-                
-                var occasionEl = form.querySelector('#occasion');
-                if (occasionEl && occasionEl.options[occasionEl.selectedIndex]) {
-                    message += 'Occasion: ' + occasionEl.options[occasionEl.selectedIndex].text + '%0A';
-                }
-                
-                if (date) message += 'Date: ' + date.value + '%0A';
-                
-                var timeValue = '';
-                if (time && time.nodeName === 'SELECT') {
-                    timeValue = time.options[time.selectedIndex] ? time.options[time.selectedIndex].text : time.value;
-                } else if (time) {
-                    timeValue = time.value || 'Not specified';
-                }
-                message += 'Time: ' + (timeValue || 'Not specified') + '%0A';
-                
-                if (durationEl && durationEl.value && durationEl.options[durationEl.selectedIndex]) {
-                    message += 'Duration: ' + durationEl.options[durationEl.selectedIndex].text + '%0A';
-                }
-                
-                var specialRequests = form.querySelector('#specialRequests');
-                message += 'Special Requests: ' + (specialRequests ? (specialRequests.value.trim() || 'None') : 'None');
-                
-                var whatsappUrl = 'https://wa.me/254143542601?text=' + encodeURIComponent(message.replace(/%0A/g, '\n'));
-                
-                // Show success message
-                if (successEl) successEl.classList.add('visible');
-                
-                // Open WhatsApp and reset form
-                setTimeout(function() {
-                    window.open(whatsappUrl, '_blank');
-                    setTimeout(function() {
+
+                var data = {
+                    fullName: name.value.trim(),
+                    phone: phone.value.trim(),
+                    email: (form.querySelector('#email, [name="email"]') || {}).value || '',
+                    serviceId: null,
+                    date: date.value,
+                    time: (form.querySelector('#bookingTime, [name="bookingTime"]') || {}).value || null,
+                    guests: parseInt((form.querySelector('#guestCount, [name="guestCount"]') || {}).value || '1', 10),
+                    occasion: (form.querySelector('#occasion, [name="occasion"]') || {}).value || '',
+                    specialRequests: (form.querySelector('#specialRequests, [name="specialRequests"]') || {}).value || ''
+                };
+
+                submitBooking(data).then(function(result) {
+                    if (result.success) {
+                        // Show success message
+                        var successEl = form.querySelector('.form-success, #formSuccess');
+                        if (successEl) successEl.classList.add('visible');
                         form.reset();
-                        if (successEl) successEl.classList.remove('visible');
-                        if (dateInput) {
-                            var tomorrow = new Date();
-                            tomorrow.setDate(tomorrow.getDate() + 1);
-                            dateInput.value = tomorrow.toISOString().split('T')[0];
-                        }
-                    }, 3000);
-                }, 1000);
+                    } else {
+                        // Fallback to WhatsApp
+                        var phoneRaw = (window.BusinessConfig && window.BusinessConfig.phoneRaw) || '254143542601';
+                        var message = 'Hello ZT Lounge, I\'d like to make a booking:\n\n' +
+                            'Name: ' + data.fullName + '\n' +
+                            'Phone: ' + data.phone + '\n' +
+                            'Date: ' + data.date + '\n' +
+                            'Guests: ' + data.guests + '\n' +
+                            (data.specialRequests ? 'Special Requests: ' + data.specialRequests : '');
+                        window.open(buildWhatsAppUrl(phoneRaw, message), '_blank');
+                    }
+
+                    // Reset button
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = originalText;
+                    }
+                });
             });
-        });
-    });
+        }
+
+        // Contact form
+        var contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                var form = this;
+                var submitBtn = form.querySelector('button[type="submit"]');
+                var originalText = submitBtn ? submitBtn.textContent : '';
+
+                var name = form.querySelector('#fullName, [name="fullName"]');
+                var phone = form.querySelector('#phoneNumber, [name="phoneNumber"]');
+                var email = form.querySelector('#email, [name="email"]');
+                var message = form.querySelector('#specialRequests, [name="specialRequests"], textarea');
+
+                if (!name || !name.value.trim() || !message || !message.value.trim()) {
+                    alert('Please fill in your name and message.');
+                    return;
+                }
+
+                if (submitBtn) {
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Sending...';
+                }
+
+                var data = {
+                    fullName: name.value.trim(),
+                    phone: phone ? phone.value.trim() : '',
+                    email: email ? email.value.trim() : '',
+                    subject: 'Website Contact Form',
+                    message: message.value.trim()
+                };
+
+                submitContact(data).then(function(result) {
+                    if (result.success) {
+                        var successEl = form.querySelector('.form-success, #formSuccess');
+                        if (successEl) successEl.classList.add('visible');
+                        form.reset();
+                    } else {
+                        // Fallback to WhatsApp
+                        var phoneRaw = (window.BusinessConfig && window.BusinessConfig.phoneRaw) || '254143542601';
+                        var waMessage = 'Hello ZT Lounge, I\'d like to make an inquiry:\n\n' +
+                            'Name: ' + data.fullName + '\n' +
+                            'Phone: ' + data.phone + '\n' +
+                            'Email: ' + data.email + '\n' +
+                            'Message: ' + data.message;
+                        window.open(buildWhatsAppUrl(phoneRaw, waMessage), '_blank');
+                    }
+
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = originalText;
+                    }
+                });
+            });
+        }
+    }
+
+    // Initialize on DOM ready
+    document.addEventListener('DOMContentLoaded', init);
 })();
