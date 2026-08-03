@@ -403,6 +403,59 @@
     }
 
     /**
+     * Generate JSON-LD structured data from business_settings
+     * Injects LocalBusiness + Restaurant schema dynamically
+     */
+    function generateJSONLD() {
+        if (!window.BusinessService) return;
+
+        window.BusinessService.getBusiness().then(function(biz) {
+            if (!biz) return;
+
+            var name = biz.business_name || biz.businessName || 'ZT Lounge Meru';
+            var phone = biz.phone || '+254 143 542 601';
+            var email = biz.email || 'ztloungemeru@gmail.com';
+            var address = biz.address || 'Milimani Road, Meru, Kenya';
+            var city = biz.city || 'Meru';
+            var country = biz.country || 'Kenya';
+            var lat = biz.latitude || 0.0476;
+            var lng = biz.longitude || 37.6822;
+            var url = 'https://ztlounge.co.ke/';
+
+            // Remove any existing dynamic JSON-LD (keep static ones)
+            var existing = document.querySelectorAll('script[data-dynamic-jsonld]');
+            existing.forEach(function(s) { s.parentNode.removeChild(s); });
+
+            var schema = {
+                "@context": "https://schema.org",
+                "@type": "LocalBusiness",
+                "name": name,
+                "url": url,
+                "telephone": phone,
+                "email": email,
+                "priceRange": "$$$",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": address,
+                    "addressLocality": city,
+                    "addressCountry": country
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": lat,
+                    "longitude": lng
+                }
+            };
+
+            var script = document.createElement('script');
+            script.type = 'application/ld+json';
+            script.setAttribute('data-dynamic-jsonld', 'true');
+            script.textContent = JSON.stringify(schema);
+            document.head.appendChild(script);
+        });
+    }
+
+    /**
      * Initialize content loading on DOM ready
      */
     document.addEventListener('DOMContentLoaded', function() {
@@ -414,5 +467,6 @@
         populateServices();
         populateTestimonials();
         populateBusinessInfo();
+        generateJSONLD();
     });
 })();
