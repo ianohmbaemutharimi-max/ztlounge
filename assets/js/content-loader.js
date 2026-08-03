@@ -205,7 +205,8 @@
 
     /**
      * Populate menu from MenuRepository (Supabase-first)
-     * Targets .menu-category / .menu-item containers
+     * Updates in-place .menu-item-card elements to preserve visual design.
+     * Matches DB category name to existing .menu-category section headings.
      */
     function populateMenu() {
         if (!window.MenuRepository) return;
@@ -213,38 +214,46 @@
         window.MenuRepository.getMenu().then(function(menuData) {
             if (!menuData || !menuData.categories || !menuData.categories.length) return;
 
-            var menuContainer = document.querySelector('.menu-container, .menu-section, .menu-grid');
-            if (!menuContainer) return;
+            var categories = document.querySelectorAll('.menu-category');
+            if (!categories || categories.length === 0) return;
 
-            // If there's a dedicated menu render target, use it
-            var renderTarget = document.querySelector('[data-menu-render]');
-            if (renderTarget) {
-                renderTarget.innerHTML = '';
-                menuData.categories.forEach(function(category) {
-                    var catEl = document.createElement('div');
-                    catEl.className = 'menu-category';
-                    var catTitle = document.createElement('h3');
-                    catTitle.textContent = category.name || '';
-                    catEl.appendChild(catTitle);
+            menuData.categories.forEach(function(category) {
+                var catName = (category.name || '').toLowerCase();
 
-                    (category.items || []).forEach(function(item) {
-                        var itemEl = document.createElement('div');
-                        itemEl.className = 'menu-item';
-                        var nameEl = document.createElement('h4');
-                        nameEl.textContent = item.name || '';
-                        var descEl = document.createElement('p');
-                        descEl.textContent = item.description || '';
-                        var priceEl = document.createElement('span');
-                        priceEl.className = 'price';
-                        priceEl.textContent = item.price ? 'KES ' + Number(item.price).toLocaleString() : '';
-                        itemEl.appendChild(nameEl);
-                        itemEl.appendChild(descEl);
-                        itemEl.appendChild(priceEl);
-                        catEl.appendChild(itemEl);
-                    });
-                    renderTarget.appendChild(catEl);
+                // Find matching .menu-category section by heading text
+                var catSection = null;
+                categories.forEach(function(sec) {
+                    var heading = sec.querySelector('.menu-category-title');
+                    var headingText = heading ? heading.textContent.toLowerCase() : '';
+                    // Match "Signature Grills" -> section titled "Signature Grills", etc.
+                    if (headingText.indexOf(catName) !== -1) {
+                        catSection = sec;
+                    }
                 });
-            }
+                if (!catSection) return;
+
+                var cards = catSection.querySelectorAll('.menu-item-card');
+                var items = category.items || [];
+
+                items.forEach(function(item, index) {
+                    var card = cards[index];
+                    if (!card) return;
+
+                    var h3 = card.querySelector('h3');
+                    if (h3 && item.name) h3.textContent = item.name;
+
+                    var p = card.querySelector('p');
+                    if (p && item.description) p.textContent = item.description;
+
+                    var priceTag = card.querySelector('.price-tag');
+                    if (priceTag && item.price) {
+                        priceTag.textContent = 'KES ' + Number(item.price).toLocaleString();
+                    }
+
+                    var img = card.querySelector('.menu-item-image');
+                    if (img && item.image_url) img.src = item.image_url;
+                });
+            });
         });
     }
 
