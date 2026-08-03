@@ -1,19 +1,19 @@
 /**
  * ============================================================
  * ZT Lounge Meru - Booking Repository
- * Abstraction layer for booking configuration
- * Version: 1.0.0
+ * Abstraction layer for booking configuration + submission
+ * Version: 2.0.0
  * ============================================================
- * 
+ *
  * Public Interface:
  * - BookingRepository.getGuestOptions()
  * - BookingRepository.getTimes(pageId)
  * - BookingRepository.getOccasions(pageId)
  * - BookingRepository.getServiceOptions()
  * - BookingRepository.getSuccessMessage(formType)
- * 
- * Data Source: booking.config.js (Configuration file)
- * Future: Will return Supabase data without changing the interface
+ * - BookingRepository.insert(bookingData)
+ *
+ * Data Source: Supabase (customers + bookings tables) with local config fallback
  * ============================================================
  */
 
@@ -71,12 +71,73 @@ window.BookingRepository = (function() {
         return messages[formType] || messages.contact || '';
     }
 
+    /**
+     * Insert a booking into Supabase.
+     * Creates/links a customer, then inserts the booking.
+     * @param {Object} data - { fullName, email, phone, serviceId, date, time, guests, occasion, specialRequests }
+     * @returns {Promise<Object>} { customer, booking }
+     */
+    function insert(data) {
+        if (!window.supabaseClient) {
+            return Promise.reject(new Error('Supabase client not initialized'));
+        }
+
+        var client = window.supabaseClient;
+
+        // Step 1: Find or create customer
+        return client.from('customers')
+            .select('id')
+            .eq('phone', data.phone)
+            .maybeSingle()
+            .then(function(customerResult) {
+                if (customerResult.error) throw customerResult.error;
+
+                if (customerResult.data) {
+                    return customerResult.data.id;
+                }
+
+                // Create new customer
+                return client.from('customers')
+                    .insert({
+                        full_name: data.fullName,
+                        phone: data.phone,
+                        email: data.email || null
+                    })
+                    .select('id')
+                    .single()
+                    .then(function(insertResult) {
+                        if (insertResult.error) throw insertResult.error;
+                        return insertResult.data.id;
+                    });
+            })
+            .then(function(customerId) {
+                // Step 2: Insert booking
+                return client.from('bookings')
+                    .insert({
+                        customer_id: customerId,
+                        service_id: data.serviceId || null,
+                        booking_date: data.date,
+                        start_time: data.time || null,
+                        guests: data.guests || 1,
+                        status: 'pending',
+                        special_requests: data.specialRequests || null
+                    })
+                    .select()
+                    .single()
+                    .then(function(bookingResult) {
+                        if (bookingResult.error) throw bookingResult.error;
+                        return { customerId: customerId, booking: bookingResult.data };
+                    });
+            });
+    }
+
     // Public API
     return {
         getGuestOptions: getGuestOptions,
         getTimes: getTimes,
         getOccasions: getOccasions,
         getServiceOptions: getServiceOptions,
-        getSuccessMessage: getSuccessMessage
+        getSuccessMessage: getSuccessMessage,
+        insert: insert
     };
 })();
