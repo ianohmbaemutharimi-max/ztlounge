@@ -44,7 +44,13 @@ window.BusinessRepository = (function() {
             latitude: item.latitude || 0,
             longitude: item.longitude || 0,
             opening_hours: item.opening_hours || item.hours || {},
-            logo_url: item.logo_url || item.logo || ''
+            logo_url: item.logo_url || item.logo || '',
+            whatsapp: item.whatsapp || '',
+            facebook: item.facebook || '',
+            instagram: item.instagram || '',
+            twitter: item.twitter || '',
+            youtube: item.youtube || '',
+            google_maps_url: item.google_maps_url || ''
         };
     }
 
@@ -200,12 +206,20 @@ window.BusinessRepository = (function() {
     function getContact() {
         return getAll().then(function(settings) {
             if (!settings) return null;
+            var config = window.BusinessConfig || {};
             return {
                 phone: settings.phone,
                 phoneRaw: settings.phoneRaw,
                 email: settings.email,
                 address: settings.address,
-                hours: settings.hours
+                hours: settings.hours,
+                social: {
+                    facebook: settings.facebook || config.social && config.social.facebook || '',
+                    instagram: settings.instagram || config.social && config.social.instagram || '',
+                    twitter: settings.twitter || config.social && config.social.twitter || '',
+                    youtube: settings.youtube || config.social && config.social.youtube || '',
+                    whatsapp: settings.whatsapp || config.social && config.social.whatsapp || ''
+                }
             };
         });
     }

@@ -48,7 +48,8 @@ window.BusinessService = (function() {
                 phone: contact.phone || '',
                 phoneRaw: contact.phoneRaw || formatPhoneRaw(contact.phone),
                 email: contact.email || '',
-                address: contact.address || {}
+                address: contact.address || {},
+                social: contact.social || {}
             };
         });
     }
