@@ -69,6 +69,66 @@
     }
 
     /**
+     * Validate a Kenyan phone number
+     * Accepts +2547XXXXXXXX, 07XXXXXXXX, or 2547XXXXXXXX
+     * @param {string} value - Phone number string
+     * @returns {boolean} True if valid
+     */
+    function isValidKenyanPhone(value) {
+        var cleaned = value.replace(/[\s\-()]/g, '');
+        return /^(?:\+254|254|0)?7[0-9]{8}$/.test(cleaned);
+    }
+
+    /**
+     * Validate an email address (if supplied)
+     * @param {string} value - Email string
+     * @returns {boolean} True if empty or valid
+     */
+    function isValidEmailOptional(value) {
+        if (!value || !value.trim()) return true;
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
+    }
+
+    /**
+     * Validate booking date is today or in the future
+     * @param {string} dateValue - Date string (YYYY-MM-DD)
+     * @param {string} timeValue - Optional time string (HH:MM)
+     * @returns {boolean} True if valid
+     */
+    function isValidBookingDateTime(dateValue, timeValue) {
+        if (!dateValue) return false;
+        var today = new Date();
+        today.setHours(0, 0, 0, 0);
+        var date = new Date(dateValue + 'T00:00:00');
+        if (isNaN(date.getTime())) return false;
+        if (date < today) return false; // no past dates
+        if (date.getTime() === today.getTime() && timeValue) {
+            // Same day: time must be in the future
+            var now = new Date();
+            var timeParts = timeValue.split(':');
+            var booking = new Date(now);
+            booking.setHours(parseInt(timeParts[0], 10), parseInt(timeParts[1], 10), 0, 0);
+            if (booking <= now) return false;
+        }
+        return true;
+    }
+
+    /**
+     * Show an inline or alert error message
+     * @param {Object} form - Form element
+     * @param {string} message - Error message
+     */
+    function showError(form, message) {
+        var errorEl = form.querySelector('.form-error-msg, #formError');
+        if (errorEl) {
+            errorEl.textContent = message;
+            errorEl.classList.add('visible');
+            return;
+        }
+        alert(message);
+    }
+
+    /**
      * Initialize all forms on the page
      */
     function init() {
@@ -81,16 +141,20 @@
                 var submitBtn = form.querySelector('button[type="submit"]');
                 var originalText = submitBtn ? submitBtn.textContent : '';
 
-                // Basic validation
+                // Collect + validate ALL fields BEFORE disabling the button
                 var name = form.querySelector('#fullName, [name="fullName"]');
                 var phone = form.querySelector('#phoneNumber, [name="phoneNumber"]');
                 var date = form.querySelector('#bookingDate, [name="bookingDate"]');
-                if (!name || !name.value.trim() || !phone || !phone.value.trim() || !date || !date.value) {
-                    alert('Please fill in all required fields.');
-                    return;
-                }
+                var time = (form.querySelector('#bookingTime, [name="bookingTime"]') || {}).value || null;
+                var emailVal = (form.querySelector('#email, [name="email"]') || {}).value || '';
 
-                // Show loading state
+                if (!name || !name.value.trim()) { showError(form, 'Please enter your full name.'); return; }
+                if (!phone || !phone.value.trim()) { showError(form, 'Please enter your phone number.'); return; }
+                if (!isValidKenyanPhone(phone.value.trim())) { showError(form, 'Please enter a valid Kenyan phone number (e.g. +254 7XX XXX XXX).'); return; }
+                if (!isValidEmailOptional(emailVal)) { showError(form, 'Please enter a valid email address.'); return; }
+                if (!date || !isValidBookingDateTime(date.value, time)) { showError(form, 'Please select a valid date in the future.'); return; }
+
+                // Show loading state (only after validation passes)
                 if (submitBtn) {
                     submitBtn.disabled = true;
                     submitBtn.textContent = 'Submitting...';
@@ -99,10 +163,10 @@
                 var data = {
                     fullName: name.value.trim(),
                     phone: phone.value.trim(),
-                    email: (form.querySelector('#email, [name="email"]') || {}).value || '',
+                    email: emailVal,
                     serviceId: null,
                     date: date.value,
-                    time: (form.querySelector('#bookingTime, [name="bookingTime"]') || {}).value || null,
+                    time: time,
                     guests: parseInt((form.querySelector('#guestCount, [name="guestCount"]') || {}).value || '1', 10),
                     occasion: (form.querySelector('#occasion, [name="occasion"]') || {}).value || '',
                     specialRequests: (form.querySelector('#specialRequests, [name="specialRequests"]') || {}).value || ''
