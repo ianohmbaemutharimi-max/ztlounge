@@ -1,6 +1,9 @@
 /**
  * Loads content from configuration files and populates the DOM
- * Version: 1.0.0
+ * Version: 1.1.0
+ * ============================================================
+ * Supabase-first content loader.
+ * Populates DOM from repositories (which read Supabase, falling back to config).
  * ============================================================
  */
 
@@ -126,21 +129,122 @@
             if (!faqContainer) return;
 
             faqContainer.innerHTML = '';
-            
+
             faqData.forEach(function(item) {
                 var itemEl = document.createElement('div');
                 itemEl.className = 'faq-item';
-                
+
                 var strong = document.createElement('strong');
                 strong.textContent = item.question || item.question_text || '';
                 itemEl.appendChild(strong);
-                
+
                 var p = document.createElement('p');
                 p.textContent = item.answer || item.answer_text || '';
                 itemEl.appendChild(p);
-                
+
                 faqContainer.appendChild(itemEl);
             });
+        });
+    }
+
+    /**
+     * Populate homepage service cards from ServicesRepository (Supabase-first)
+     * Targets .service-cards-grid .service-card
+     */
+    function populateServiceCards() {
+        if (!window.ServicesRepository) return;
+
+        window.ServicesRepository.getAll().then(function(servicesData) {
+            if (!servicesData || !servicesData.length) return;
+
+            var grid = document.querySelector('.service-cards-grid');
+            if (!grid) return;
+
+            var cards = grid.querySelectorAll('.service-card');
+            if (cards.length === 0) return;
+
+            // Map services by slug to update matching cards
+            servicesData.forEach(function(service) {
+                var slug = service.slug || '';
+                var card = null;
+
+                // Match by href or by order
+                if (service.href) {
+                    card = grid.querySelector('.service-card[href="' + service.href + '"]');
+                }
+                if (!card) {
+                    // Fallback: match by index
+                    var idx = service.display_order || 0;
+                    card = cards[idx];
+                }
+                if (!card) return;
+
+                var img = card.querySelector('.card-image');
+                if (img && service.image_url) {
+                    img.src = service.image_url;
+                    img.alt = service.alt_text || service.name || '';
+                }
+
+                var tag = card.querySelector('.card-tag');
+                if (tag && service.tag) {
+                    tag.textContent = '\u2726 ' + service.tag;
+                }
+
+                var h3 = card.querySelector('h3');
+                if (h3 && service.name) {
+                    h3.textContent = service.name;
+                }
+
+                var p = card.querySelector('p');
+                if (p && service.description) {
+                    p.textContent = service.description;
+                }
+            });
+        });
+    }
+
+    /**
+     * Populate menu from MenuRepository (Supabase-first)
+     * Targets .menu-category / .menu-item containers
+     */
+    function populateMenu() {
+        if (!window.MenuRepository) return;
+
+        window.MenuRepository.getMenu().then(function(menuData) {
+            if (!menuData || !menuData.categories || !menuData.categories.length) return;
+
+            var menuContainer = document.querySelector('.menu-container, .menu-section, .menu-grid');
+            if (!menuContainer) return;
+
+            // If there's a dedicated menu render target, use it
+            var renderTarget = document.querySelector('[data-menu-render]');
+            if (renderTarget) {
+                renderTarget.innerHTML = '';
+                menuData.categories.forEach(function(category) {
+                    var catEl = document.createElement('div');
+                    catEl.className = 'menu-category';
+                    var catTitle = document.createElement('h3');
+                    catTitle.textContent = category.name || '';
+                    catEl.appendChild(catTitle);
+
+                    (category.items || []).forEach(function(item) {
+                        var itemEl = document.createElement('div');
+                        itemEl.className = 'menu-item';
+                        var nameEl = document.createElement('h4');
+                        nameEl.textContent = item.name || '';
+                        var descEl = document.createElement('p');
+                        descEl.textContent = item.description || '';
+                        var priceEl = document.createElement('span');
+                        priceEl.className = 'price';
+                        priceEl.textContent = item.price ? 'KES ' + Number(item.price).toLocaleString() : '';
+                        itemEl.appendChild(nameEl);
+                        itemEl.appendChild(descEl);
+                        itemEl.appendChild(priceEl);
+                        catEl.appendChild(itemEl);
+                    });
+                    renderTarget.appendChild(catEl);
+                });
+            }
         });
     }
 
@@ -161,27 +265,27 @@
                 }
             }
 
-             if (servicesData.features) {
-                 var featuresContainer = document.querySelector('.features-grid, .features-list');
-                 if (featuresContainer) {
-                     featuresContainer.innerHTML = '';
-                     servicesData.features.forEach(function(feature) {
-                         var featureEl = document.createElement('div');
-                         featureEl.className = 'feature-item';
-                         
-                         var icon = document.createElement('i');
-                         icon.className = feature.icon || 'fa-star';
-                         icon.setAttribute('aria-hidden', 'true');
-                         featureEl.appendChild(icon);
-                         
-                         var span = document.createElement('span');
-                         span.textContent = feature.name || feature.title || '';
-                         featureEl.appendChild(span);
-                         
-                         featuresContainer.appendChild(featureEl);
-                     });
-                 }
-             }
+            if (servicesData.features) {
+                var featuresContainer = document.querySelector('.features-grid, .features-list');
+                if (featuresContainer) {
+                    featuresContainer.innerHTML = '';
+                    servicesData.features.forEach(function(feature) {
+                        var featureEl = document.createElement('div');
+                        featureEl.className = 'feature-item';
+
+                        var icon = document.createElement('i');
+                        icon.className = feature.icon || 'fa-star';
+                        icon.setAttribute('aria-hidden', 'true');
+                        featureEl.appendChild(icon);
+
+                        var span = document.createElement('span');
+                        span.textContent = feature.name || feature.title || '';
+                        featureEl.appendChild(span);
+
+                        featuresContainer.appendChild(featureEl);
+                    });
+                }
+            }
         });
     }
 
@@ -203,24 +307,22 @@
             data.forEach(function(item) {
                 var itemEl = document.createElement('div');
                 itemEl.className = 'testimonial-item';
-                
+
                 var quote = document.createElement('blockquote');
-                // Use canonical field name 'comment', with fallback for backwards compatibility
                 quote.textContent = item.comment || item.content || item.text || item.review || '';
                 itemEl.appendChild(quote);
-                
+
                 var author = document.createElement('cite');
-                author.textContent = item.author || '';
+                author.textContent = item.customer_name || item.author || '';
                 itemEl.appendChild(author);
-                
-                // Use canonical field name 'occupation', with fallback for backwards compatibility
+
                 if (item.occupation || item.role || item.title) {
                     var role = document.createElement('span');
                     role.className = 'testimonial-role';
                     role.textContent = item.occupation || item.role || item.title || '';
                     itemEl.appendChild(role);
                 }
-                
+
                 container.appendChild(itemEl);
             });
         });
@@ -265,6 +367,19 @@
                     link.href = 'mailto:' + contact.email;
                 });
             }
+
+            // Update social links
+            if (contact.social) {
+                var social = contact.social;
+                var socialLinks = document.querySelectorAll('.footer-social a');
+                socialLinks.forEach(function(link) {
+                    var label = (link.getAttribute('aria-label') || '').toLowerCase();
+                    if (label.includes('facebook') && social.facebook) link.href = social.facebook;
+                    if (label.includes('instagram') && social.instagram) link.href = social.instagram;
+                    if (label.includes('twitter') && social.twitter) link.href = social.twitter;
+                    if (label.includes('youtube') && social.youtube) link.href = social.youtube;
+                });
+            }
         });
 
         window.BusinessService.getHours().then(function(hours) {
@@ -272,7 +387,6 @@
             var hoursEls = document.querySelectorAll('[data-hours]');
             hoursEls.forEach(function(el) {
                 var key = el.getAttribute('data-hours');
-                // Support both opening_hours and hours (backwards compatibility)
                 var hoursValue = hours.opening_hours || hours.hours || hours;
                 if (hoursValue && hoursValue[key]) el.textContent = hoursValue[key];
             });
@@ -286,6 +400,8 @@
         populateHero();
         populateGallery();
         populateFAQ();
+        populateServiceCards();
+        populateMenu();
         populateServices();
         populateTestimonials();
         populateBusinessInfo();
