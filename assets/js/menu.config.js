@@ -21,7 +21,7 @@ window.MenuConfig = Object.freeze({
             name: "Signature Nyama Choma",
             description: "Slow-grilled to perfection, juicy, flavorful, and unforgettable.",
             price: "KES 1,800",
-            image: "assets/images/menu/nyama-choma.webp",
+            image: "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/menu/nyama-choma.webp",
             alt: "Signature Nyama Choma slow-grilled to perfection"
         },
         {
@@ -29,7 +29,7 @@ window.MenuConfig = Object.freeze({
             name: "ZT Signature Pilau",
             description: "Aromatic basmati rice cooked with special spices and herbs.",
             price: "KES 650",
-            image: "assets/images/menu/signature-pilau.webp",
+            image: "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/menu/signature-pilau.webp",
             alt: "ZT Signature Pilau aromatic basmati rice"
         },
         {
@@ -37,7 +37,7 @@ window.MenuConfig = Object.freeze({
             name: "Premium Beef Steak",
             description: "Prime cuts grilled to your preference. Tender & juicy.",
             price: "KES 1,650",
-            image: "assets/images/menu/beef-steak.webp",
+            image: "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/menu/beef-steak.webp",
             alt: "Premium Beef Steak prime cuts grilled to preference"
         }
     ],

@@ -53,8 +53,8 @@ window.BusinessConfig = Object.freeze({
 
     // Branding
     logo: {
-        dark: 'assets/images/branding/logo.webp',
-        light: 'assets/images/branding/logo-white.webp',
+        dark: 'https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/branding/logo.webp',
+        light: 'https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/branding/logo-white.webp',
         alt: 'ZT Lounge Meru - Premium Hospitality Logo'
     },
 

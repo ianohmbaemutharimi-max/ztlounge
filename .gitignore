@@ -3,6 +3,8 @@
 # ============================================================
 
 # Environment files (NEVER commit secrets)
+.env
+.env.*
 .env.local
 .env.*.local
 .env.production
@@ -44,3 +46,4 @@ npm-debug.log*
 .cache/
 .temp/
 tmp/
+*.tsbuildinfo

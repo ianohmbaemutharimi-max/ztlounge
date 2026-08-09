@@ -377,8 +377,8 @@
             }
 
             try {
-                // Simulate API call
-                const result = await this._simulateAvailabilityCheck(params);
+                // Query real bookings for the requested date/time
+                const result = await this._checkRealAvailability(params);
                 
                 // Cache result
                 this._availabilityCache[cacheKey] = result;
@@ -405,11 +405,20 @@
                 // Validate data
                 this._validateBookingData(bookingData);
                 
-                // Generate reference
-                const reference = Utils.generateReference();
+                // Persist via BookingRepository
+                const result = await window.BookingRepository.insert({
+                    fullName: bookingData.name,
+                    email: bookingData.email,
+                    phone: bookingData.phone,
+                    serviceId: bookingData.serviceId || null,
+                    date: bookingData.date,
+                    time: bookingData.time,
+                    guests: bookingData.guests,
+                    specialRequests: bookingData.specialRequests || null
+                });
                 
-                // Simulate API call
-                const result = await this._simulateSubmit(bookingData, reference);
+                // Use the real database booking ID as the reference
+                const reference = result.booking.id;
                 
                 this.state.set('isConfirmed', true);
                 this.state.set('bookingReference', reference);
@@ -423,7 +432,7 @@
                 return {
                     success: true,
                     reference: reference,
-                    data: result
+                    data: result.booking
                 };
                 
             } catch (e) {
@@ -449,8 +458,8 @@
          */
         async getTimeSlots(service, date) {
             try {
-                // Simulate API call
-                const slots = await this._simulateTimeSlots(service, date);
+                // Query real bookings for the date to determine available slots
+                const slots = await this._getRealTimeSlots(service, date);
                 return slots;
             } catch (e) {
                 Utils.error('Time slots fetch failed', e);
@@ -499,59 +508,83 @@
         }
 
         /**
-         * Simulate availability check
+         * Check real availability by querying the bookings table
          */
-        _simulateAvailabilityCheck(params) {
-            return new Promise((resolve) => {
-                setTimeout(() => {
-                    // Simulate random availability
-                    const available = Math.random() > 0.2;
-                    resolve({
-                        available,
-                        message: available ? 'Available for booking' : 'Not available',
-                        slots: available ? ['10:00', '12:00', '14:00', '16:00', '18:00'] : []
+        _checkRealAvailability(params) {
+            if (!window.supabaseClient) {
+                return Promise.resolve({ available: true, message: 'Availability check unavailable', slots: [] });
+            }
+
+            return window.supabaseClient
+                .from('bookings')
+                .select('id, start_time, guests')
+                .eq('booking_date', params.date)
+                .eq('start_time', params.time)
+                .in('status', ['pending', 'confirmed'])
+                .then(function(result) {
+                    if (result.error) throw result.error;
+
+                    // Count total guests already booked for this slot
+                    var bookedGuests = 0;
+                    (result.data || []).forEach(function(b) {
+                        bookedGuests += (b.guests || 1);
                     });
-                }, 500);
-            });
+
+                    // Max guests per slot (configurable, default 20)
+                    var maxGuests = 20;
+                    var available = bookedGuests + (params.guests || 1) <= maxGuests;
+
+                    return {
+                        available: available,
+                        message: available ? 'Available for booking' : 'Slot is fully booked',
+                        slots: []
+                    };
+                })
+                .catch(function(e) {
+                    Utils.error('Availability query failed', e);
+                    return { available: true, message: 'Availability check unavailable', slots: [] };
+                });
         }
 
         /**
-         * Simulate booking submission
+         * Get real time slots by querying existing bookings for the date
          */
-        _simulateSubmit(data, reference) {
-            return new Promise((resolve) => {
-                setTimeout(() => {
-                    resolve({
-                        reference: reference,
-                        status: 'confirmed',
-                        message: 'Booking confirmed',
-                        details: data
-                    });
-                }, 800);
-            });
-        }
+        _getRealTimeSlots(service, date) {
+            if (!window.supabaseClient) {
+                return Promise.resolve([]);
+            }
 
-        /**
-         * Simulate time slots
-         */
-        _simulateTimeSlots(service, date) {
-            return new Promise((resolve) => {
-                setTimeout(() => {
-                    const slots = [
-                        { time: '10:00', available: true },
-                        { time: '11:00', available: true },
-                        { time: '12:00', available: Math.random() > 0.3 },
-                        { time: '13:00', available: Math.random() > 0.4 },
-                        { time: '14:00', available: true },
-                        { time: '15:00', available: Math.random() > 0.2 },
-                        { time: '16:00', available: true },
-                        { time: '17:00', available: Math.random() > 0.5 },
-                        { time: '18:00', available: true },
-                        { time: '19:00', available: Math.random() > 0.3 }
-                    ];
-                    resolve(slots);
-                }, 300);
-            });
+            return window.supabaseClient
+                .from('bookings')
+                .select('start_time, guests')
+                .eq('booking_date', date)
+                .in('status', ['pending', 'confirmed'])
+                .then(function(result) {
+                    if (result.error) throw result.error;
+
+                    // Build a map of booked times → guest counts
+                    var booked = {};
+                    (result.data || []).forEach(function(b) {
+                        if (!booked[b.start_time]) booked[b.start_time] = 0;
+                        booked[b.start_time] += (b.guests || 1);
+                    });
+
+                    // Standard time slots
+                    var allSlots = ['10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00'];
+                    var maxGuests = 20;
+
+                    return allSlots.map(function(time) {
+                        var bookedCount = booked[time] || 0;
+                        return {
+                            time: time,
+                            available: bookedCount < maxGuests
+                        };
+                    });
+                })
+                .catch(function(e) {
+                    Utils.error('Time slots query failed', e);
+                    return [];
+                });
         }
     }
 
@@ -847,13 +880,25 @@
             
             if (detailsElement) {
                 const state = this.service.state.getState();
-                detailsElement.innerHTML = `
-                    <p><strong>Name:</strong> ${result.data.name}</p>
-                    <p><strong>Service:</strong> ${CONFIG.services[state.selectedService]?.label || state.selectedService}</p>
-                    <p><strong>Date:</strong> ${Utils.formatDate(state.selectedDate)}</p>
-                    <p><strong>Time:</strong> ${Utils.formatTime(state.selectedTime)}</p>
-                    <p><strong>Guests:</strong> ${state.guestCount}</p>
-                `;
+                // Use createElement + textContent to prevent XSS from user input
+                detailsElement.innerHTML = '';
+                
+                const rows = [
+                    ['Name:', result.data.full_name || result.data.name || ''],
+                    ['Service:', CONFIG.services[state.selectedService]?.label || state.selectedService],
+                    ['Date:', Utils.formatDate(state.selectedDate)],
+                    ['Time:', Utils.formatTime(state.selectedTime)],
+                    ['Guests:', String(state.guestCount)]
+                ];
+                
+                rows.forEach(function(row) {
+                    const p = document.createElement('p');
+                    const strong = document.createElement('strong');
+                    strong.textContent = row[0] + ' ';
+                    p.appendChild(strong);
+                    p.appendChild(document.createTextNode(row[1]));
+                    detailsElement.appendChild(p);
+                });
             }
 
             modal.classList.add('active');

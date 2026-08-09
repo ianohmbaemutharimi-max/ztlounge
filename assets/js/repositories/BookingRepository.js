@@ -72,10 +72,89 @@ window.BookingRepository = (function() {
     }
 
     /**
-     * Insert a booking into Supabase.
-     * Creates/links a customer, then inserts the booking.
-     * @param {Object} data - { fullName, email, phone, serviceId, date, time, guests, occasion, specialRequests }
-     * @returns {Promise<Object>} { customer, booking }
+     * Generate a unique booking reference (e.g. ZT-8F3K2M9Q).
+     * @returns {string} Booking reference
+     */
+    function generateBookingNumber() {
+        var chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'; // no ambiguous chars
+        var ref = '';
+        for (var i = 0; i < 8; i++) {
+            ref += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+        return 'ZT-' + ref;
+    }
+
+    /**
+     * Resolve a service by slug from the live services table.
+     * @param {Object} client - Supabase client
+     * @param {string} slug - Service slug (restaurant, lounge, vip, events, conference, autospa)
+     * @returns {Promise<{id: string, duration_minutes: number}>}
+     */
+    function resolveService(client, slug) {
+        return client.from('services')
+            .select('id, duration_minutes')
+            .eq('slug', slug)
+            .eq('is_active', true)
+            .maybeSingle()
+            .then(function(result) {
+                if (result.error) throw result.error;
+                if (!result.data) {
+                    throw new Error('Service not found for slug: ' + slug);
+                }
+                return { id: result.data.id, duration_minutes: result.data.duration_minutes || 60 };
+            });
+    }
+
+    /**
+     * Add minutes to a "HH:MM" time string.
+     * @param {string} time - "HH:MM" 24-hour
+     * @param {number} minutes - Minutes to add
+     * @returns {string} "HH:MM" 24-hour
+     */
+    function addMinutes(time, minutes) {
+        var parts = String(time).split(':');
+        var h = parseInt(parts[0], 10) || 0;
+        var m = parseInt(parts[1], 10) || 0;
+        var total = h * 60 + m + minutes;
+        total = ((total % 1440) + 1440) % 1440; // wrap around midnight
+        var hh = String(Math.floor(total / 60)).padStart(2, '0');
+        var mm = String(total % 60).padStart(2, '0');
+        return hh + ':' + mm;
+    }
+
+    /**
+     * Check whether the requested time slot overlaps an existing non-cancelled booking.
+     * @param {Object} client - Supabase client
+     * @param {string} date - Booking date (YYYY-MM-DD)
+     * @param {string} startTime - "HH:MM" start
+     * @param {string} endTime - "HH:MM" end
+     * @returns {Promise<string|null>} Error message if a clash exists, otherwise null
+     */
+    function checkAvailability(client, date, startTime, endTime) {
+        // Overlap condition: existing.start_time < requested.end_time AND existing.end_time > requested.start_time
+        return client.from('bookings')
+            .select('booking_number, start_time, end_time')
+            .eq('booking_date', date)
+            .lt('start_time', endTime)
+            .gt('end_time', startTime)
+            .neq('status', 'cancelled')
+            .limit(5)
+            .then(function(result) {
+                if (result.error) throw result.error;
+                if (result.data && result.data.length > 0) {
+                    var clash = result.data[0];
+                    return 'The requested time slot (' + startTime + '–' + endTime + ') is already booked (ref ' + clash.booking_number + '). Please choose another time.';
+                }
+                return null;
+            });
+    }
+
+    /**
+     * Insert a booking into Supabase atomically via the create_booking RPC.
+     * The RPC handles: service resolution, availability check, customer find/create,
+     * booking_number generation, end_time derivation, and booking insert — all in one transaction.
+     * @param {Object} data - { fullName, email, phone, serviceSlug, date, time, guests, occasion, specialRequests }
+     * @returns {Promise<Object>} { customerId, booking }
      */
     function insert(data) {
         if (!window.supabaseClient) {
@@ -83,52 +162,50 @@ window.BookingRepository = (function() {
         }
 
         var client = window.supabaseClient;
+        var serviceSlug = data.serviceSlug || 'restaurant';
+        var startTime = data.time || '12:00';
 
-        // Step 1: Find or create customer
-        return client.from('customers')
-            .select('id')
-            .eq('phone', data.phone)
-            .maybeSingle()
-            .then(function(customerResult) {
-                if (customerResult.error) throw customerResult.error;
+        // The create_booking RPC has no dedicated occasion parameter/column,
+        // so merge the occasion into special_requests to preserve the input.
+        var specialRequests = data.specialRequests || '';
+        if (data.occasion) {
+            var occasionText = 'Occasion: ' + data.occasion;
+            specialRequests = specialRequests
+                ? specialRequests + ' | ' + occasionText
+                : occasionText;
+        }
 
-                if (customerResult.data) {
-                    return customerResult.data.id;
+        // Call the atomic RPC. All validation, availability, customer creation,
+        // and booking insertion happen inside a single DB transaction.
+        return client.rpc('create_booking', {
+            p_full_name: data.fullName,
+            p_phone: data.phone,
+            p_booking_date: data.date,
+            p_start_time: startTime,
+            p_guests: data.guests || 1,
+            p_email: data.email || null,
+            p_service_slug: serviceSlug,
+            p_special_requests: specialRequests || null
+        }).then(function(result) {
+            if (result.error) throw result.error;
+            if (!result.data) throw new Error('Booking creation failed: no data returned');
+
+            var booking = result.data;
+            return {
+                customerId: booking.customer_id,
+                booking: {
+                    id: booking.booking_id,
+                    booking_number: booking.booking_number,
+                    customer_id: booking.customer_id,
+                    service_id: booking.service_id,
+                    booking_date: booking.booking_date,
+                    start_time: booking.start_time,
+                    end_time: booking.end_time,
+                    guests: booking.guests,
+                    status: booking.status
                 }
-
-                // Create new customer
-                return client.from('customers')
-                    .insert({
-                        full_name: data.fullName,
-                        phone: data.phone,
-                        email: data.email || null
-                    })
-                    .select('id')
-                    .single()
-                    .then(function(insertResult) {
-                        if (insertResult.error) throw insertResult.error;
-                        return insertResult.data.id;
-                    });
-            })
-            .then(function(customerId) {
-                // Step 2: Insert booking
-                return client.from('bookings')
-                    .insert({
-                        customer_id: customerId,
-                        service_id: data.serviceId || null,
-                        booking_date: data.date,
-                        start_time: data.time || null,
-                        guests: data.guests || 1,
-                        status: 'pending',
-                        special_requests: data.specialRequests || null
-                    })
-                    .select()
-                    .single()
-                    .then(function(bookingResult) {
-                        if (bookingResult.error) throw bookingResult.error;
-                        return { customerId: customerId, booking: bookingResult.data };
-                    });
-            });
+            };
+        });
     }
 
     // Public API

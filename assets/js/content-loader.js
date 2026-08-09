@@ -98,7 +98,7 @@
 
                     var img = gridItem.querySelector('img');
                     if (img && item.image) {
-                        img.src = item.image;
+                        img.src = window.AssetUrl ? window.AssetUrl.resolve(item.image) : item.image;
                         img.alt = item.alt || item.label || '';
                     }
 
@@ -181,7 +181,7 @@
 
                 var img = card.querySelector('.card-image');
                 if (img && service.image_url) {
-                    img.src = service.image_url;
+                    img.src = window.AssetUrl ? window.AssetUrl.resolve(service.image_url) : service.image_url;
                     img.alt = service.alt_text || service.name || '';
                 }
 
@@ -251,7 +251,7 @@
                     }
 
                     var img = card.querySelector('.menu-item-image');
-                    if (img && item.image_url) img.src = item.image_url;
+                    if (img && item.image_url) img.src = window.AssetUrl ? window.AssetUrl.resolve(item.image_url) : item.image_url;
                 });
             });
         });

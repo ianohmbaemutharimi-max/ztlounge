@@ -1,3 +1,4 @@
+
 /**
  * ============================================================
  * ZT Lounge Meru - Supabase Client
@@ -97,6 +98,9 @@ window.SupabaseClient = (function() {
                     }
                 }
             });
+            
+            // Expose client globally for repositories
+            window.supabaseClient = client;
             
             // Test connection
             client.from('business_settings').select('id').limit(1).then(function(result) {

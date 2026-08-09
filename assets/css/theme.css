@@ -1578,39 +1578,39 @@ select:focus-visible,
    ========================================================== */
 
 .hero-slide-restaurant-1 {
-    background-image: url('../../assets/images/restaurant/interior.webp');
+    background-image: url('https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/restaurant/interior.webp');
 }
 
 .hero-slide-restaurant-2 {
-    background-image: url('../../assets/images/restaurant/outdoor-dining.webp');
+    background-image: url('https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/restaurant/outdoor-dining.webp');
 }
 
 .hero-slide-restaurant-3 {
-    background-image: url('../../assets/images/restaurant/open-kitchen.webp');
+    background-image: url('https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/restaurant/open-kitchen.webp');
 }
 
 .hero-slide-lounge-1 {
-    background-image: url('../../assets/images/lounge/interior.webp');
+    background-image: url('https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/lounge/lounge-interior.webp');
 }
 
 .hero-slide-lounge-2 {
-    background-image: url('../../assets/images/lounge/bar.webp');
+    background-image: url('https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/lounge/lounge-bar.webp');
 }
 
 .hero-slide-lounge-3 {
-    background-image: url('../../assets/images/lounge/entertainment.webp');
+    background-image: url('https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/lounge/lounge-nightlife.webp');
 }
 
 .hero-slide-vip-1 {
-    background-image: url('../../assets/images/vip/cabin.webp');
+    background-image: url('https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/vip/vip-cabin-luxury.webp');
 }
 
 .hero-slide-vip-2 {
-    background-image: url('../../assets/images/vip/interior.webp');
+    background-image: url('https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/vip/vip-interior.webp');
 }
 
 .hero-slide-vip-3 {
-    background-image: url('../../assets/images/vip/amenities.webp');
+    background-image: url('https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/vip/vip-premium-seating.webp');
 }
 
 /* ==========================================================

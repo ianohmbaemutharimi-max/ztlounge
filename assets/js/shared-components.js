@@ -32,8 +32,8 @@
                 default: 'Mon - Sun: 10:00 AM - 2:00 AM'
             },
             logo: { 
-                dark: 'assets/images/branding/logo.webp', 
-                light: 'assets/images/branding/logo-white.webp',
+                dark: 'https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/branding/logo.webp', 
+                light: 'https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/branding/logo-white.webp',
                 alt: 'ZT Lounge Meru - Premium Hospitality Logo'
             }
         };
@@ -116,8 +116,8 @@
                 '<div class="footer-grid">' +
                     '<div class="footer-brand">' +
                         '<a href="/" class="logo" aria-label="ZT Lounge Home">' +
-                            '<img src="assets/images/branding/logo.webp" alt="ZT Lounge Meru - Premium Hospitality Logo" class="logo-dark site-logo" height="62" width="auto" loading="lazy" decoding="async" />' +
-                            '<img src="assets/images/branding/logo-white.webp" alt="ZT Lounge Meru - Premium Hospitality Logo" class="logo-light site-logo" height="62" width="auto" loading="lazy" decoding="async" />' +
+                            '<img src="https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/branding/logo.webp" alt="ZT Lounge Meru - Premium Hospitality Logo" class="logo-dark site-logo" height="62" width="auto" loading="lazy" decoding="async" />' +
+                            '<img src="https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/branding/logo-white.webp" alt="ZT Lounge Meru - Premium Hospitality Logo" class="logo-light site-logo" height="62" width="auto" loading="lazy" decoding="async" />' +
                         '</a>' +
                         '<p>Experience premium hospitality at ZT Lounge Meru — fine dining, exclusive lounges, pool table entertainment, Auto Spa, and world-class service in Milimani.</p>' +
                         '<div class="footer-social">' +
