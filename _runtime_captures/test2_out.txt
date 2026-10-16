@@ -1,0 +1,6 @@
+Testing Chrome headless on http://localhost:8080/...
+  TIMEOUT with flags: ['--headless', '--disable-gpu', '--no-sandbox', '--dump-dom']
+  TIMEOUT with flags: ['--headless=new', '--disable-gpu', '--no-sandbox', '--dump-dom', '--virtual-time-budget=10000']
+  TIMEOUT with flags: ['--headless', '--disable-gpu', '--no-sandbox', '--dump-dom', '--virtual-time-budget=10000', '--disable-web-security']
+
+All approaches failed. Falling back to static HTML analysis.

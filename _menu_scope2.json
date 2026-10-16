@@ -1,0 +1,99 @@
+﻿[
+  {
+    "page": "restaurant-menu",
+    "status": 200,
+    "connRefused": 30,
+    "errors": [],
+    "expected": 11,
+    "countMatches": false,
+    "pageKey": "restaurant-menu",
+    "categories": [],
+    "itemCount": 0,
+    "itemNames": [],
+    "prices": [],
+    "images": [],
+    "leakedFromOtherVenues": [],
+    "emptyCategoryBlocks": 0,
+    "menuPriceSpans": []
+  },
+  {
+    "page": "lounge",
+    "status": 200,
+    "connRefused": 1,
+    "errors": [],
+    "expected": 2,
+    "countMatches": true,
+    "pageKey": "lounge",
+    "categories": [
+      "Fast Foods"
+    ],
+    "itemCount": 2,
+    "itemNames": [
+      "Signature Cocktail",
+      "Cocktail Selection"
+    ],
+    "prices": [
+      "KES 750",
+      "KES 850"
+    ],
+    "images": [
+      "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/menu-images/signature-cocktail.webp",
+      "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/menu-images/cocktail.webp"
+    ],
+    "leakedFromOtherVenues": [
+      "Cocktail Selection",
+      "Signature Cocktail"
+    ],
+    "emptyCategoryBlocks": 0,
+    "menuPriceSpans": []
+  },
+  {
+    "page": "restaurant",
+    "status": 200,
+    "connRefused": 3,
+    "errors": [],
+    "expected": 0,
+    "countMatches": true,
+    "pageKey": "restaurant",
+    "categories": [],
+    "itemCount": 0,
+    "itemNames": [],
+    "prices": [],
+    "images": [],
+    "leakedFromOtherVenues": [],
+    "emptyCategoryBlocks": 0,
+    "menuPriceSpans": [
+      {
+        "wanted": "Signature Nyama Choma",
+        "rendered": "KES 1,800"
+      },
+      {
+        "wanted": "ZT Signature Pilau",
+        "rendered": "KES 650"
+      },
+      {
+        "wanted": "Premium Beef Steak",
+        "rendered": "KES 1,650"
+      }
+    ]
+  },
+  {
+    "page": "home",
+    "status": 200,
+    "connRefused": 3,
+    "errors": [
+      "Failed to load resource: the server responded with a status of 404 (File not found)"
+    ],
+    "expected": 0,
+    "countMatches": true,
+    "pageKey": "home",
+    "categories": [],
+    "itemCount": 0,
+    "itemNames": [],
+    "prices": [],
+    "images": [],
+    "leakedFromOtherVenues": [],
+    "emptyCategoryBlocks": 0,
+    "menuPriceSpans": []
+  }
+]

@@ -1,0 +1,65 @@
+
+===== content-loader.js populate functions =====
+  line 148: function populateBusinessInfo()
+  line 301: function populateHero()
+  line 436: function populateGallery()
+  line 554: function populateHomepageGalleryPreview()
+  line 626: function populateFAQ()
+  line 659: function populateServiceCards()
+  line 733: function populateCategoryServices()
+  line 854: function populateMenu()
+  line 958: function populateServices()
+  line 999: function populateTestimonials()
+  line 1118: function populateServicePrices()
+  line 1229: function populateServiceCatalog()
+  line 1488: function populatePromotions()
+  line 1561: function populateMembership()
+
+-- init wiring (calls of populate*) --
+  populateBusinessInfo() x1
+  populateHero() x1
+  populateGallery() x2
+  populateHomepageGalleryPreview() x1
+  populateFAQ() x1
+  populateServiceCards() x1
+  populateCategoryServices() x1
+  populateMenu() x1
+  populateServices() x1
+  populateTestimonials() x1
+  populateServicePrices() x1
+  populateServiceCatalog() x1
+  populatePromotions() x1
+  populateMembership() x1
+
+===== ServicesRepository public API =====
+  L198: return getByPage(pageId).then(function(cfg) {
+  L251: return getByPage('home').then(function(cfg) {
+  L262: return getByPage(pageId).then(function(cfg) {
+  L351: return getByPage(pageId).then(function(cfg) {
+
+===== ServicesRepository return block =====
+return {
+        getAll: getAll,
+        getByPage: getByPage,
+        getByPageGrouped: getByPageGrouped,
+        getServices: getServices,
+        getExperiences: getExperiences,
+        getFeatures: getFeatures,
+        getChargesBySlug: getChargesBySlug,
+        slugForPage: slugForPage
+    };
+})();
+
+===== MediaResolver API =====
+  function getClient()
+  function fetchAssets()
+  function loadMissing()
+  function applyResolved()
+  function resolveCollection()
+  function resolveSingle()
+return {
+        resolveCollection: resolveCollection,
+        resolveSingle: resolveSingle,
+        clearCache: function() { cache = {}; }
+    };
+})();

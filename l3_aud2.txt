@@ -1,0 +1,126 @@
+
+===== populateServices (lines 958-994) =====
+  L962: window.ServicesRepository.getByPage(pageId).then(function(servicesData) {
+  L966: var grid = document.querySelector('.experience-highlights-grid, .experience-grid');
+  L973: var featuresContainer = document.querySelector('.features-grid, .features-list');
+  L975: featuresContainer.innerHTML = '';
+
+===== populateServicePrices (lines 1118-1200) =====
+  L1122: var chargePlaceholders = document.querySelectorAll('[data-charge-name]');
+  L1164: var unitEl = el.parentElement && el.parentElement.querySelector('[data-charge-unit]');
+  L1177: var menuPlaceholders = document.querySelectorAll('[data-menu-name]');
+
+===== populateServiceCatalog (lines 1229-1299) =====
+  L1243: var grid = document.querySelector('[data-service-catalog]');
+  L1244: var optionsSelect = document.querySelector('select[data-charge-options]');
+  L1245: var emptyEl = document.querySelector('[data-service-empty]');
+  L1277: grid.innerHTML = list.map(function(charge) {
+  L1283: return '<article class="service-card service-card-catalog">' +
+
+===== populateCategoryServices (lines 733-839) =====
+  L734: if (!window.ServicesRepository || !window.ServicesRepository.getByPageGrouped) {
+  L736: window.CMSReport.warn('CategoryServices', 'populateCategoryServices', 'MISSING_DEPENDENCY', 'window.ServicesRepository.getByPageGrouped');
+  L744: var grids = document.querySelectorAll('[data-category-grid]');
+  L745: var empties = document.querySelectorAll('[data-category-empty]');
+  L748: window.ServicesRepository.getByPageGrouped(pageId).then(function(grouped) {
+  L765: var empty = document.querySelector(
+  L772: grid.innerHTML = '';
+  L780: grid.innerHTML = matched.map(function(service) {
+  L781: var media = service.image_url
+  L782: ? '<img class="card-image" src="' + escCatalog(service.image_url) + '" alt="' +
+  L788: return '<article class="service-card service-card-catalog">' +
+  L794: '<a href="#booking-cta" class="btn btn-outline">Book Now</a>' +
+  L828: var ld = document.getElementById('grooming-catalog-jsonld');
+
+===== PAGE restaurant (pages/experiences/restaurant.html) =====
+  service-card class occurrences: 0
+  hardcoded supabase storage URLs: 13
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/restaurant/interior.webp
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/restaurant/outdoor-dining.webp
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/restaurant/open-kitchen.webp
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/restaurant/family-area.webp
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/vip/vip-private-dining.webp
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/restaurant/interior-ambience.webp
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/vip/vip-family-lounge.webp
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/menu/nyama-choma.webp
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/menu/signature-pilau.webp
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/menu/beef-steak.webp
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/lounge/lounge-interior-main.webp
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/vip/vip-premium-seating.webp
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/events/event-1.webp
+  local /assets/images/ refs: 0
+  renderer hints: content-loader, populateHero
+  <img> tags: 12
+  CSS background urls: 3
+
+===== PAGE lounge (pages/experiences/lounge.html) =====
+  service-card class occurrences: 8
+  grid: class="service-cards-grid"
+  hardcoded supabase storage URLs: 6
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/lounge/lounge-bar.webp
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/lounge/lounge-interior-main.webp
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/lounge/private-lounge.webp
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/menu/cocktail.webp
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/lounge/lounge-bottle.webp
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/lounge/pool-table.webp
+  local /assets/images/ refs: 0
+  renderer hints: content-loader, populateHero
+  <img> tags: 12
+  CSS background urls: 3
+
+===== PAGE vip (pages/experiences/vip.html) =====
+  service-card class occurrences: 8
+  grid: class="service-cards-grid"
+  hardcoded supabase storage URLs: 8
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/vip/vip-lounge-main.webp
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/vip/vip-lounge-wide.webp
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/vip/vip-private-suite.webp
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/vip/vip-private-dining.webp
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/vip/vip-fireplace-lounge.webp
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/vip/vip-tv-lounge.webp
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/vip/vip-family-lounge.webp
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/vip/vip-premium-seating.webp
+  local /assets/images/ refs: 0
+  renderer hints: content-loader, populateHero, populated, populateServiceCatalog
+  <img> tags: 12
+  CSS background urls: 3
+
+===== PAGE events (pages/business/events.html) =====
+  service-card class occurrences: 8
+  grid: class="service-cards-grid"
+  hardcoded supabase storage URLs: 5
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/events/birthday.webp
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/events/event-1.webp
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/events/wedding.webp
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/events/celebration.webp
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/events/event-2.webp
+  local /assets/images/ refs: 0
+  renderer hints: content-loader, populateHero, populated, populateServiceCatalog
+  <img> tags: 11
+  CSS background urls: 3
+
+===== PAGE conference (pages/business/conference.html) =====
+  service-card class occurrences: 8
+  grid: class="service-cards-grid-conference"
+  hardcoded supabase storage URLs: 5
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/conference/conference-hall.webp
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/conference/corporate-meeting.webp
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/conference/conference-setup.webp
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/conference/conference-2.webp
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/conference/conference-1.webp
+  local /assets/images/ refs: 0
+  renderer hints: content-loader, populateHero, populateServiceCards
+  <img> tags: 11
+  CSS background urls: 3
+
+===== PAGE grooming (pages/business/grooming-care.html) =====
+  service-card class occurrences: 6
+  grid: class="service-cards-grid barbershop-grid"
+  grid: class="service-cards-grid autospa-grid"
+  grid: class="service-cards-grid carpet-cleaning-grid"
+  hardcoded supabase storage URLs: 1
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/autospa/car-detailing.webp
+  local /assets/images/ refs: 0
+  renderer hints: content-loader, populateHero, data-category-grid
+  <img> tags: 1
+  CSS background urls: 0

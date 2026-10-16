@@ -1,0 +1,9 @@
+﻿{
+  "status": 200,
+  "refused": 23,
+  "dom": {
+    "hasRepo": false,
+    "cats": [],
+    "items": []
+  }
+}

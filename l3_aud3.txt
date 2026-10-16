@@ -1,0 +1,36 @@
+===== PAGE restaurant (pages/experiences/restaurant.html) =====
+  service-card class occurrences: 0
+  hardcoded supabase storage URLs: 13
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/restaurant/interior.webp
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/restaurant/outdoor-dining.webp
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/restaurant/open-kitchen.webp
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/restaurant/family-area.webp
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/vip/vip-private-dining.webp
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/restaurant/interior-ambience.webp
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/vip/vip-family-lounge.webp
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/menu/nyama-choma.webp
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/menu/signature-pilau.webp
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/menu/beef-steak.webp
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/lounge/lounge-interior-main.webp
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/vip/vip-premium-seating.webp
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/events/event-1.webp
+  local /assets/images/ refs: 0
+  renderer hints: content-loader, populateHero
+  <img> tags: 12
+  CSS background urls: 3
+
+===== PAGE lounge (pages/experiences/lounge.html) =====
+  service-card class occurrences: 8
+  grid: class="service-cards-grid"
+  hardcoded supabase storage URLs: 6
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/lounge/lounge-bar.webp
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/lounge/lounge-interior-main.webp
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/lounge/private-lounge.webp
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/menu/cocktail.webp
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/lounge/lounge-bottle.webp
+    https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/lounge/pool-table.webp
+  local /assets/images/ refs: 0
+  renderer hints: content-loader, populateHero
+  <img> tags: 12
+  CSS background urls: 3
+

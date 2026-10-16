@@ -1,0 +1,275 @@
+=== LOOP 2 PER-PAGE MEDIA VERIFICATION (read-only) ===
+Run: 2026-09-20T10:13:49.167Z
+
+--- DB: services canonical vs legacy (order=display_order) ---
+media_assets rows resolved: 11 / 11
+media_assets columns: id, bucket, path, public_url, original_name, mime_type, file_size, width, height, alt_text, title, content_hash, uploaded_by, created_at, updated_at, description
+
+SLUG                      ORD ACTIVE HREF
+restaurant                0   true   pages/experiences/restaurant.html
+    canonical = https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/gallery-images/gallery-11.webp
+    legacy    = https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/interior.webp
+    winner    = CANONICAL *** CANONICAL != LEGACY (decisive) ***
+classic-haircut           0   true   (none)
+    canonical = (none)
+    legacy    = (none)
+    winner    = NONE
+lounge-bar                1   true   pages/experiences/lounge.html
+    canonical = https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/lounge-interior-main.webp
+    legacy    = https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/lounge-interior-main.webp
+    winner    = CANONICAL
+carpet-deep-cleaning      1   true   (none)
+    canonical = https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/carpet-cleaning/carpet-deep-cleaning.webp
+    legacy    = (none)
+    winner    = CANONICAL
+vip-cabins                2   true   pages/experiences/vip.html
+    canonical = https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/vip-fireplace-lounge.webp
+    legacy    = https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/vip-fireplace-lounge.webp
+    winner    = CANONICAL
+beard-trim-shape          2   true   (none)
+    canonical = https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/barbershop/beard-trim-shape.webp
+    legacy    = (none)
+    winner    = CANONICAL
+sofa-upholstery-cleaning  2   true   (none)
+    canonical = https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/carpet-cleaning/sofa-upholstery-cleaning.webp
+    legacy    = (none)
+    winner    = CANONICAL
+haircut-beard-grooming    3   true   (none)
+    canonical = https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/barbershop/haircut-beard-grooming.webp
+    legacy    = (none)
+    winner    = CANONICAL
+events                    3   true   pages/business/events.html
+    canonical = https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/wedding.webp
+    legacy    = https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/wedding.webp
+    winner    = CANONICAL
+mattress-cleaning         3   true   (none)
+    canonical = https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/carpet-cleaning/mattress-cleaning.webp
+    legacy    = (none)
+    winner    = CANONICAL
+conference                4   true   pages/business/conference.html
+    canonical = https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/conference-hall.webp
+    legacy    = https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/conference-hall.webp
+    winner    = CANONICAL
+auto-spa                  5   true   pages/business/autospa.html
+    canonical = https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/car-detailing.webp
+    legacy    = https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/car-detailing.webp
+    winner    = CANONICAL
+
+=== BLACK-BOX: BROWSER RENDER PER PAGE ===
+
+### Homepage  /index.html
+  http=200
+  hero slides: 2
+    [hero-slide-0] https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/hero-images/hero-restaurant.webp
+        -> SUPABASE-OTHER
+    [hero-slide-1] https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/hero-images/hero-lounge.webp
+        -> SUPABASE-OTHER
+  hero id uniqueness: 2/2 OK
+  service cards (.service-cards-grid .service-card): 6
+    Restaurant           href=pages/experiences/restaurant.html CANONICAL(media_id) [restaurant ord=0]
+        https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/gallery-images/gallery-11.webp
+    Lounge & Bar         href=pages/experiences/lounge.html    CANONICAL(media_id) [lounge-bar ord=1]
+        https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/lounge-interior-main.webp
+    VIP Cabins           href=pages/experiences/vip.html       CANONICAL(media_id) [vip-cabins ord=2]
+        https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/vip-fireplace-lounge.webp
+    Events               href=pages/business/events.html       CANONICAL(media_id) [events ord=3]
+        https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/wedding.webp
+    Conference           href=pages/business/conference.html   CANONICAL(media_id) [conference ord=4]
+        https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/conference-hall.webp
+    Auto Spa             href=pages/business/grooming-care.html#autospa-services CANONICAL(media_id) [auto-spa ord=5]
+        https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/car-detailing.webp
+  DB nav order (display_order asc): ["restaurant","lounge-bar","vip-cabins","events","conference","auto-spa"]
+  duplicate card images: none
+  cards using local /assets/images/: none
+  rendered-DOM stale markers: none
+  console errors: 0
+
+### Restaurant  /pages/experiences/restaurant.html
+  http=200
+  hero slides: 2
+    [hero-slide-0] https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/hero-images/hero-restaurant.webp
+        -> SUPABASE-OTHER
+    [hero-slide-1] https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/gallery-images/gallery-02.webp
+        -> SUPABASE-OTHER
+  hero id uniqueness: 2/2 OK
+  service cards (.service-cards-grid .service-card): 0
+  DB nav order (display_order asc): ["restaurant","lounge-bar","vip-cabins","events","conference","auto-spa"]
+  duplicate card images: none
+  cards using local /assets/images/: none
+  rendered-DOM stale markers: none
+  console errors: 0
+
+### Restaurant Menu  /pages/experiences/restaurant-menu.html
+  http=200
+  hero slides: 0
+  hero id uniqueness: 0/0 OK
+  service cards (.service-cards-grid .service-card): 6
+    Restaurant           href=pages/experiences/restaurant.html CANONICAL(media_id) [restaurant ord=0]
+        https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/gallery-images/gallery-11.webp
+    Lounge & Bar         href=pages/experiences/lounge.html    CANONICAL(media_id) [lounge-bar ord=1]
+        https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/lounge-interior-main.webp
+    VIP Cabins           href=pages/experiences/vip.html       CANONICAL(media_id) [vip-cabins ord=2]
+        https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/vip-fireplace-lounge.webp
+    Events               href=pages/business/events.html       CANONICAL(media_id) [events ord=3]
+        https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/wedding.webp
+    Conference           href=pages/business/conference.html   CANONICAL(media_id) [conference ord=4]
+        https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/conference-hall.webp
+    Auto Spa             href=pages/business/grooming-care.html#autospa-services CANONICAL(media_id) [auto-spa ord=5]
+        https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/car-detailing.webp
+  DB nav order (display_order asc): ["restaurant","lounge-bar","vip-cabins","events","conference","auto-spa"]
+  duplicate card images: none
+  cards using local /assets/images/: none
+  rendered-DOM stale markers: none
+  console errors: 0
+
+### Lounge & Bar  /pages/experiences/lounge.html
+  http=200
+  hero slides: 1
+    [hero-slide-0] https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/lounge-interior-main.webp
+        -> CANONICAL(media_id) (lounge-bar)
+  hero id uniqueness: 1/1 OK
+  service cards (.service-cards-grid .service-card): 6
+    Restaurant           href=pages/experiences/restaurant.html CANONICAL(media_id) [restaurant ord=0]
+        https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/gallery-images/gallery-11.webp
+    Lounge & Bar         href=pages/experiences/lounge.html    CANONICAL(media_id) [lounge-bar ord=1]
+        https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/lounge-interior-main.webp
+    VIP Cabins           href=pages/experiences/vip.html       CANONICAL(media_id) [vip-cabins ord=2]
+        https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/vip-fireplace-lounge.webp
+    Events               href=pages/business/events.html       CANONICAL(media_id) [events ord=3]
+        https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/wedding.webp
+    Conference           href=pages/business/conference.html   CANONICAL(media_id) [conference ord=4]
+        https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/conference-hall.webp
+    Auto Spa             href=pages/business/grooming-care.html#autospa-services CANONICAL(media_id) [auto-spa ord=5]
+        https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/car-detailing.webp
+  DB nav order (display_order asc): ["restaurant","lounge-bar","vip-cabins","events","conference","auto-spa"]
+  duplicate card images: none
+  cards using local /assets/images/: none
+  rendered-DOM stale markers: none
+  console errors: 0
+
+### VIP Cabins  /pages/experiences/vip.html
+  http=200
+  hero slides: 1
+    [hero-slide-0] https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/vip-fireplace-lounge.webp
+        -> CANONICAL(media_id) (vip-cabins)
+  hero id uniqueness: 1/1 OK
+  service cards (.service-cards-grid .service-card): 6
+    Restaurant           href=pages/experiences/restaurant.html CANONICAL(media_id) [restaurant ord=0]
+        https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/gallery-images/gallery-11.webp
+    Lounge & Bar         href=pages/experiences/lounge.html    CANONICAL(media_id) [lounge-bar ord=1]
+        https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/lounge-interior-main.webp
+    VIP Cabins           href=pages/experiences/vip.html       CANONICAL(media_id) [vip-cabins ord=2]
+        https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/vip-fireplace-lounge.webp
+    Events               href=pages/business/events.html       CANONICAL(media_id) [events ord=3]
+        https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/wedding.webp
+    Conference           href=pages/business/conference.html   CANONICAL(media_id) [conference ord=4]
+        https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/conference-hall.webp
+    Auto Spa             href=pages/business/grooming-care.html#autospa-services CANONICAL(media_id) [auto-spa ord=5]
+        https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/car-detailing.webp
+  DB nav order (display_order asc): ["restaurant","lounge-bar","vip-cabins","events","conference","auto-spa"]
+  duplicate card images: none
+  cards using local /assets/images/: none
+  rendered-DOM stale markers: none
+  console errors: 0
+
+### Events  /pages/business/events.html
+  http=200
+  hero slides: 1
+    [hero-slide-0] https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/wedding.webp
+        -> CANONICAL(media_id) (events)
+  hero id uniqueness: 1/1 OK
+  service cards (.service-cards-grid .service-card): 6
+    Restaurant           href=pages/experiences/restaurant.html CANONICAL(media_id) [restaurant ord=0]
+        https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/gallery-images/gallery-11.webp
+    Lounge & Bar         href=pages/experiences/lounge.html    CANONICAL(media_id) [lounge-bar ord=1]
+        https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/lounge-interior-main.webp
+    VIP Cabins           href=pages/experiences/vip.html       CANONICAL(media_id) [vip-cabins ord=2]
+        https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/vip-fireplace-lounge.webp
+    Events               href=pages/business/events.html       CANONICAL(media_id) [events ord=3]
+        https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/wedding.webp
+    Conference           href=pages/business/conference.html   CANONICAL(media_id) [conference ord=4]
+        https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/conference-hall.webp
+    Auto Spa             href=pages/business/grooming-care.html#autospa-services CANONICAL(media_id) [auto-spa ord=5]
+        https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/car-detailing.webp
+  DB nav order (display_order asc): ["restaurant","lounge-bar","vip-cabins","events","conference","auto-spa"]
+  duplicate card images: none
+  cards using local /assets/images/: none
+  rendered-DOM stale markers: none
+  console errors: 0
+
+### Conference  /pages/business/conference.html
+  http=200
+  hero slides: 1
+    [hero-slide-0] https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/conference-hall.webp
+        -> CANONICAL(media_id) (conference)
+  hero id uniqueness: 1/1 OK
+  service cards (.service-cards-grid .service-card): 0
+  DB nav order (display_order asc): ["restaurant","lounge-bar","vip-cabins","events","conference","auto-spa"]
+  duplicate card images: none
+  cards using local /assets/images/: none
+  rendered-DOM stale markers: none
+  console errors: 0
+
+### Grooming & Care  /pages/business/grooming-care.html
+  http=200
+  hero slides: 1
+    [hero-slide-0] https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/car-detailing.webp
+        -> CANONICAL(media_id) (auto-spa)
+  hero id uniqueness: 1/1 OK
+  service cards (.service-cards-grid .service-card): 7
+    Classic Haircut      href=(none)                           NONE
+        (no img)
+    Beard Trim & Shape   href=(none)                           CANONICAL(media_id) [beard-trim-shape ord=2]
+        https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/barbershop/beard-trim-shape.webp
+    Haircut & Beard Grooming href=(none)                           CANONICAL(media_id) [haircut-beard-grooming ord=3]
+        https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/barbershop/haircut-beard-grooming.webp
+    Auto Spa             href=(none)                           CANONICAL(media_id) [auto-spa ord=5]
+        https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/car-detailing.webp
+    Carpet Deep Cleaning href=(none)                           CANONICAL(media_id) [carpet-deep-cleaning ord=1]
+        https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/carpet-cleaning/carpet-deep-cleaning.webp
+    Sofa & Upholstery Cleaning href=(none)                           CANONICAL(media_id) [sofa-upholstery-cleaning ord=2]
+        https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/carpet-cleaning/sofa-upholstery-cleaning.webp
+    Mattress Cleaning    href=(none)                           CANONICAL(media_id) [mattress-cleaning ord=3]
+        https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/carpet-cleaning/mattress-cleaning.webp
+  DB nav order (display_order asc): ["restaurant","lounge-bar","vip-cabins","events","conference","auto-spa"]
+  duplicate card images: none
+  cards using local /assets/images/: none
+  category sections: 3
+    section[0] data-category-id=(none) items=3
+    section[1] data-category-id=(none) items=1
+    section[2] data-category-id=(none) items=3
+  rendered-DOM stale markers: none
+  console errors: 0
+
+### Auto Spa  /pages/business/autospa.html
+  http=404
+  hero slides: 0
+  hero id uniqueness: 0/0 OK
+  service cards (.service-cards-grid .service-card): 0
+  DB nav order (display_order asc): ["restaurant","lounge-bar","vip-cabins","events","conference","auto-spa"]
+  duplicate card images: none
+  cards using local /assets/images/: none
+  rendered-DOM stale markers: none
+  console errors: 1
+      ERROR: Failed to load resource: the server responded with a status of 404 (Not Found)
+
+### Gallery  /pages/contact/gallery.html
+  http=200
+  LOAD FAILED: page.$$: Target crashed 
+
+### Contact  /pages/contact/contact.html
+  LOAD FAILED: page.waitForTimeout: Target page, context or browser has been closed
+
+=== PAGE SUMMARY ===
+PAGE                HTTP  HERO  CARDS  CONSOLE-ERR
+Homepage            200   2     6      0   /index.html
+Restaurant          200   2     0      0   /pages/experiences/restaurant.html
+Restaurant Menu     200   0     6      0   /pages/experiences/restaurant-menu.html
+Lounge & Bar        200   1     6      0   /pages/experiences/lounge.html
+VIP Cabins          200   1     6      0   /pages/experiences/vip.html
+Events              200   1     6      0   /pages/business/events.html
+Conference          200   1     0      0   /pages/business/conference.html
+Grooming & Care     200   1     7      0   /pages/business/grooming-care.html
+Auto Spa            404   0     0      1   /pages/business/autospa.html
+Gallery             -1    0     0      0   /pages/contact/gallery.html
+Contact             -1    0     0      8   /pages/contact/contact.html

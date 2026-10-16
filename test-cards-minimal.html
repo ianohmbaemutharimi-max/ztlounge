@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Test - Minimal Structure</title>
+    <link rel="stylesheet" href="assets/css/theme.css?v=20261008-2">
+    <style>
+        body {
+            background: #0a0a0a;
+            padding: 40px 20px;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-grid" data-membership-grid data-count="4">
+        <!-- Bronze -->
+        <article class="zt-member-card" data-tier="bronze">
+            <div class="zt-member-card-header">
+                <h3 class="zt-member-card-title">Bronze</h3>
+            </div>
+            <div class="zt-member-card-body">
+                <div class="zt-member-price-value">KSh 5,000</div>
+                <button type="button" class="zt-member-cta-secondary">View Benefits</button>
+            </div>
+        </article>
+
+        <!-- Silver -->
+        <article class="zt-member-card" data-tier="silver">
+            <div class="zt-member-card-header">
+                <h3 class="zt-member-card-title">Silver</h3>
+            </div>
+            <div class="zt-member-card-body">
+                <div class="zt-member-price-value">KSh 10,000</div>
+                <button type="button" class="zt-member-cta-secondary">View Benefits</button>
+            </div>
+        </article>
+
+        <!-- Gold -->
+        <article class="zt-member-card" data-tier="gold">
+            <div class="zt-member-card-header">
+                <h3 class="zt-member-card-title">Gold</h3>
+            </div>
+            <div class="zt-member-card-body">
+                <div class="zt-member-price-value">KSh 20,000</div>
+                <button type="button" class="zt-member-cta-secondary">View Benefits</button>
+            </div>
+        </article>
+
+        <!-- Platinum -->
+        <article class="zt-member-card" data-tier="platinum">
+            <div class="zt-member-card-header">
+                <h3 class="zt-member-card-title">Platinum</h3>
+            </div>
+            <div class="zt-member-card-body">
+                <div class="zt-member-price-value">KSh 30,000</div>
+                <button type="button" class="zt-member-cta-secondary">View Benefits</button>
+            </div>
+        </article>
+    </div>
+</body>
+</html>

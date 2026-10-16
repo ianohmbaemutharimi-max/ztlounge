@@ -1,0 +1,105 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\zt lounge\\zt-lounge-demo\\zt-lounge-admin\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "d:/zt",
+      "lounge/zt-lounge-demo/zt-lounge-admin/tests/e2e/restaurant-service-information.spec.ts"
+    ],
+    "configFile": "D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\playwright.config.js",
+    "rootDir": "D:/zt lounge/zt-lounge-demo/zt-lounge/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {},
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/zt lounge/zt-lounge-demo/zt-lounge/test-results",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {},
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "D:/zt lounge/zt-lounge-demo/zt-lounge/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "html",
+        {
+          "open": "never"
+        }
+      ],
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.62.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [],
+  "errors": [
+    {
+      "message": "Error: Playwright Test did not expect test.describe() to be called here.\nMost common reasons include:\n- You are calling test.describe() in a configuration file.\n- You are calling test.describe() in a file that is imported by the configuration file.\n- You have two different versions of @playwright/test. This usually happens\n  when one of the dependencies in your package.json depends on @playwright/test.\n- You are calling test.describe() from an async test.describe() block. Only sync ones are supported.",
+      "stack": "Error: Playwright Test did not expect test.describe() to be called here.\nMost common reasons include:\n- You are calling test.describe() in a configuration file.\n- You are calling test.describe() in a file that is imported by the configuration file.\n- You have two different versions of @playwright/test. This usually happens\n  when one of the dependencies in your package.json depends on @playwright/test.\n- You are calling test.describe() from an async test.describe() block. Only sync ones are supported.\n    at _TestTypeImpl._currentSuite (D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\node_modules\\playwright\\lib\\common\\index.js:2235:13)\n    at _TestTypeImpl._describe (D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\node_modules\\playwright\\lib\\common\\index.js:2277:24)\n    at Function.describe (D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\node_modules\\playwright\\lib\\common\\index.js:1169:12)\n    at Object.<anonymous> (D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\tests\\admin-media-gateway.spec.js:10:6)",
+      "location": {
+        "file": "D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\tests\\admin-media-gateway.spec.js",
+        "column": 6,
+        "line": 10
+      },
+      "snippet": "\u001b[90m   at \u001b[39madmin-media-gateway.spec.js:10\n\n\u001b[0m \u001b[90m  8 |\u001b[39m \u001b[36mconst\u001b[39m \u001b[33mADMIN_URL\u001b[39m \u001b[33m=\u001b[39m \u001b[32m'http://localhost:3000'\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m  9 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 10 |\u001b[39m test\u001b[33m.\u001b[39mdescribe(\u001b[32m'Admin - Exclusive Media Gateway'\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m    |\u001b[39m      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 11 |\u001b[39m     \u001b[36mlet\u001b[39m consoleErrors \u001b[33m=\u001b[39m []\u001b[33m;\u001b[39m\n \u001b[90m 12 |\u001b[39m\n \u001b[90m 13 |\u001b[39m     test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m"
+    },
+    {
+      "message": "Error: Playwright Test did not expect test.describe() to be called here.\nMost common reasons include:\n- You are calling test.describe() in a configuration file.\n- You are calling test.describe() in a file that is imported by the configuration file.\n- You have two different versions of @playwright/test. This usually happens\n  when one of the dependencies in your package.json depends on @playwright/test.\n- You are calling test.describe() from an async test.describe() block. Only sync ones are supported.",
+      "stack": "Error: Playwright Test did not expect test.describe() to be called here.\nMost common reasons include:\n- You are calling test.describe() in a configuration file.\n- You are calling test.describe() in a file that is imported by the configuration file.\n- You have two different versions of @playwright/test. This usually happens\n  when one of the dependencies in your package.json depends on @playwright/test.\n- You are calling test.describe() from an async test.describe() block. Only sync ones are supported.\n    at _TestTypeImpl._currentSuite (D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\node_modules\\playwright\\lib\\common\\index.js:2235:13)\n    at _TestTypeImpl._describe (D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\node_modules\\playwright\\lib\\common\\index.js:2277:24)\n    at Function.describe (D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\node_modules\\playwright\\lib\\common\\index.js:1169:12)\n    at Object.<anonymous> (D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\tests\\website-media-gateway.spec.js:10:6)",
+      "location": {
+        "file": "D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\tests\\website-media-gateway.spec.js",
+        "column": 6,
+        "line": 10
+      },
+      "snippet": "\u001b[90m   at \u001b[39mwebsite-media-gateway.spec.js:10\n\n\u001b[0m \u001b[90m  8 |\u001b[39m \u001b[36mconst\u001b[39m \u001b[33mBASE_URL\u001b[39m \u001b[33m=\u001b[39m \u001b[32m'http://localhost:8000'\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m  9 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 10 |\u001b[39m test\u001b[33m.\u001b[39mdescribe(\u001b[32m'Website - Exclusive Media Gateway'\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m    |\u001b[39m      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 11 |\u001b[39m     \u001b[36mlet\u001b[39m consoleErrors \u001b[33m=\u001b[39m []\u001b[33m;\u001b[39m\n \u001b[90m 12 |\u001b[39m\n \u001b[90m 13 |\u001b[39m     test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m"
+    },
+    {
+      "message": "Error: No tests found.\nMake sure that arguments are regular expressions matching test files.\nYou may need to escape symbols like \"$\" or \"*\" and quote the arguments.",
+      "stack": "Error: No tests found.\nMake sure that arguments are regular expressions matching test files.\nYou may need to escape symbols like \"$\" or \"*\" and quote the arguments."
+    }
+  ],
+  "stats": {
+    "startTime": "2026-10-14T11:28:24.396Z",
+    "duration": 1351.9210000000003,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

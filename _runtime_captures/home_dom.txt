@@ -1,0 +1,1071 @@
+[12568:10648:0916/212311.817:ERROR:chrome\updater\ipc\update_service_dialer_win.cc:75] Failed to open named pipe server process 3872: Access is denied. (0x5)
+[12568:16736:0916/212311.830:ERROR:chrome\updater\ipc\update_service_dialer_win.cc:75] Failed to open named pipe server process 3872: Access is denied. (0x5)
+[12568:14680:0916/212312.164:ERROR:chrome\updater\ipc\update_service_dialer_win.cc:75] Failed to open named pipe server process 16640: Access is denied. (0x5)
+[12568:9584:0916/212312.185:ERROR:chrome\updater\ipc\update_service_dialer_win.cc:75] Failed to open named pipe server process 16640: Access is denied. (0x5)
+[12568:9584:0916/212312.540:ERROR:chrome\updater\ipc\update_service_dialer_win.cc:75] Failed to open named pipe server process 3736: Access is denied. (0x5)
+[12568:16736:0916/212315.090:ERROR:chrome\updater\ipc\update_service_dialer_win.cc:75] Failed to open named pipe server process 3200: Access is denied. (0x5)
+[12568:1784:0916/212342.018:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[12568:1784:0916/212342.025:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: PHONE_REGISTRATION_ERROR
+<!DOCTYPE html>
+<html lang="en" style="color-scheme: dark;"><head>
+
+    <!-- ============================================================
+         CRITICAL: Theme initialization - runs BEFORE any rendering
+         ============================================================ -->
+    <script>
+        (function() {
+            try {
+                var savedTheme = localStorage.getItem('zt-theme');
+                if (savedTheme === 'light') {
+                    document.documentElement.classList.add('light-mode');
+                    document.documentElement.style.colorScheme = 'light';
+                } else {
+                    document.documentElement.style.colorScheme = 'dark';
+                }
+            } catch (e) {
+                document.documentElement.style.colorScheme = 'dark';
+            }
+        })();
+    </script>
+    <noscript>
+        <link rel="stylesheet" href="assets/css/theme.css">
+<style>
+            body { background: #0a0a0a; color: #ffffff; }
+        </style>
+    </noscript>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    
+    <!-- SEO -->
+    <title>ZT Lounge Meru - Premium Dining, VIP Cabins, Auto Spa &amp; Events</title>
+    <meta name="description" content="Experience premium dining, luxury VIP cabins, lounge &amp; bar, conference facilities, and professional auto spa services at ZT Lounge Meru.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#f5f5f5" media="(prefers-color-scheme: light)">
+    <meta name="color-scheme" content="dark light">
+    <link rel="canonical" href="https://ztlounge.co.ke/">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="ZT Lounge Meru - Premium Dining, VIP Cabins, Auto Spa &amp; Events">
+    <meta property="og:description" content="Experience premium dining, luxury VIP cabins, lounge &amp; bar, conference facilities, and professional auto spa services at ZT Lounge Meru.">
+    <meta property="og:image" content="">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://ztlounge.co.ke/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ZT Lounge Meru">
+    <meta property="og:locale" content="en_KE">
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ZT Lounge Meru - Premium Dining, VIP Cabins, Auto Spa &amp; Events">
+    <meta name="twitter:description" content="Experience premium dining, luxury VIP cabins, lounge &amp; bar, conference facilities, and professional auto spa services at ZT Lounge Meru.">
+    <meta name="twitter:image" content="">
+
+    <!-- Favicon - Single Declaration -->
+    <link rel="icon" type="image/x-icon" href="data:,">
+    <link rel="apple-touch-icon" href="data:,">
+
+    <!-- Performance: Preconnect for Critical Resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
+    <!-- Performance: Preload Critical Images -->
+    
+    <!-- Performance: Non-blocking Font Loading -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" media="all" onload="this.media='all'">
+    <noscript>
+        <link 
+            rel="stylesheet" 
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" 
+        />
+    </noscript>
+
+    <!-- Performance: Non-blocking Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="all" onload="this.media='all'">
+    <noscript>
+    </noscript>
+
+    <!-- ==========================================================
+    THEME.CSS - SINGLE SOURCE OF TRUTH
+    ========================================================== -->
+    <link rel="stylesheet" href="assets/css/theme.css">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "ZT Lounge Meru",
+  "image": "",
+  "url": "https://ztlounge.co.ke/",
+  "telephone": "+254143542601",
+  "priceRange": "$$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Opposite Ezri Hotel, Milimani, Meru",
+    "addressLocality": "Meru",
+    "addressRegion": "Meru County",
+    "postalCode": "60200",
+    "addressCountry": "KE"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 0.0476,
+    "longitude": 37.6822
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "opens": "10:00",
+    "closes": "02:00"
+  }
+}</script>
+
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "ZT Lounge Meru",
+  "url": "https://ztlounge.co.ke/",
+  "image": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/restaurant/hero-restaurant.webp",
+  "description": "Meru's premier restaurant, lounge and events destination offering fine dining, VIP cabins, conference facilities and auto spa.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Opposite Ezri Hotel, Milimani, Meru",
+    "addressLocality": "Meru",
+    "addressRegion": "Meru County",
+    "postalCode": "60200",
+    "addressCountry": "KE"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 0.0476,
+    "longitude": 37.6822
+  },
+  "hasMap": "https://maps.app.goo.gl/HqTbiiU4q2jRFoPg6",
+  "telephone": "+254143542601",
+  "email": "ztloungemeru@gmail.com",
+  "priceRange": "$$$",
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "opens": "10:00",
+    "closes": "02:00"
+  },
+  "servesCuisine": [
+    "African",
+    "International",
+    "Grill"
+  ],
+  "acceptsReservations": "Yes",
+  "paymentAccepted": "Cash, M-Pesa, Credit Card",
+  "currenciesAccepted": "KES"
+}</script>
+
+    <!-- ==========================================================
+    HOMEPAGE-ONLY CSS - HERO SLIDER & EXCLUSIVE STYLES
+    ========================================================== -->
+    <style>
+        
+       
+        
+        @media (max-width: 768px) {
+            .hero {
+                min-height: calc(100vh - var(--header-height-mobile));
+            }
+            .hero-slider {
+                height: calc(100vh - var(--header-height-mobile));
+                min-height: 500px;
+            }
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            .slider-btn {
+                width: 44px;
+                height: 44px;
+                font-size: 0.9rem;
+                min-width: 44px;
+                min-height: 44px;
+            }
+            .slider-btn.prev {
+                left: 12px;
+            }
+            .slider-btn.next {
+                right: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            .hero-buttons .btn {
+                padding: 12px 24px;
+                font-size: 0.85rem;
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Image Fallback */
+        .image-fallback {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            min-height: 120px;
+            color: var(--color-gold);
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            padding: 1rem;
+            text-align: center;
+            background: var(--color-card-bg);
+            border-radius: inherit;
+        }
+    </style>
+<style id="zt-promo-styles">.zt-promo-stickers{position:fixed;bottom:16px;left:16px;z-index:990;display:flex;flex-direction:column;gap:8px;max-width:250px}
+.zt-promo-sticker{display:flex;flex-direction:column;gap:2px;padding:10px 14px;border-radius:12px;background:linear-gradient(135deg,#d4af37,#b8912a);color:#1a1405;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.35);font-weight:700;opacity:0;transform:translateX(-120%);transition:opacity .4s ease,transform .4s ease}
+.zt-promo-sticker.zt-promo-visible{opacity:1;transform:translateX(0)}
+.zt-promo-sticker:hover{filter:brightness(1.06)}
+.zt-promo-sticker-discount{font-size:13px;letter-spacing:.4px}
+.zt-promo-sticker-title{font-size:12px;font-weight:600;opacity:.92;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.promotions-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px;margin-top:32px}
+.zt-promo-card{background:var(--card-bg,#15151a);border:1px solid rgba(212,175,55,.25);border-radius:16px;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease}
+.zt-promo-card:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.zt-promo-card img{width:100%;height:170px;object-fit:cover;display:block}
+.zt-promo-card-body{padding:16px 18px 20px}
+.zt-promo-discount{display:inline-block;padding:4px 10px;border-radius:999px;background:rgba(212,175,55,.15);color:#d4af37;font-weight:800;font-size:13px;letter-spacing:.5px}
+.zt-promo-title{margin:10px 0 6px;font-size:18px;color:#fff}
+.zt-promo-desc{margin:0 0 10px;font-size:14px;color:#a8a29e;line-height:1.5}
+.zt-promo-dates{margin:0;font-size:12px;color:#78716c}
+.zt-promo-section-hidden{display:none!important}</style><style id="zt-membership-styles">.membership-fee-banner{margin:8px auto 0;max-width:640px;text-align:center;padding:12px 20px;border-radius:14px;background:rgba(212,175,55,.12);border:1px solid rgba(212,175,55,.35)}
+.membership-fee-banner b{color:#d4af37;font-weight:800}
+.membership-fee-banner span{color:#a8a29e}
+.membership-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px;margin-top:36px;align-items:stretch}
+.zt-member-card{display:flex;flex-direction:column;background:var(--card-bg,#15151a);border:1px solid rgba(212,175,55,.25);border-radius:18px;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease;height:100%}
+.zt-member-card:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.zt-member-card img.zt-member-media{width:100%;height:180px;object-fit:cover;display:block}
+.zt-member-card-body{padding:20px 22px 24px;display:flex;flex-direction:column;flex:1}
+.zt-member-name{margin:0;font-family:var(--font-family-display,Georgia,serif);font-size:22px;color:#fff}
+.zt-member-price{margin:10px 0 2px;font-size:28px;font-weight:800;color:#d4af37;line-height:1.1}
+.zt-member-price small{display:block;font-size:13px;font-weight:500;color:#78716c;letter-spacing:.3px}
+.zt-member-desc{margin:10px 0 14px;font-size:14px;color:#a8a29e;line-height:1.55}
+.zt-member-benefits-title{margin:0 0 10px;font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#78716c;font-weight:700}
+.zt-member-benefits{list-style:none;margin:0 0 18px;padding:0;display:grid;gap:8px}
+.zt-member-benefits li{padding-left:16px;position:relative;font-size:14px;color:#e7e5e4;line-height:1.45}
+.zt-member-benefits li::before{content:"✓";position:absolute;left:0;top:0;color:#d4af37;font-weight:800}
+.zt-member-cta{margin-top:auto;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border-radius:12px;background:linear-gradient(135deg,#d4af37,#b8912a);color:#1a1405;text-decoration:none;font-weight:700;font-size:15px;transition:filter .2s ease}
+.zt-member-cta:hover{filter:brightness(1.08)}
+.membership-disclaimer{margin:36px auto 0;max-width:860px;padding:18px 22px;border-radius:14px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03)}
+.membership-disclaimer p{margin:0 0 10px;font-size:12px;line-height:1.6;color:#a8a29e}
+.membership-disclaimer p:last-child{margin-bottom:0}
+.membership-disclaimer p strong{color:#e7e5e4;font-size:13px;text-transform:uppercase;letter-spacing:.6px}
+.zt-member-section-hidden{display:none!important}</style><script type="application/ld+json" data-dynamic-jsonld="true">{"@context":"https://schema.org","@type":"LocalBusiness","name":"ZT Lounge Meru","url":"https://ztlounge.co.ke/","telephone":"+254 143 542 601","email":"ztloungemeru@gmail.com","priceRange":"$$$","address":{"@type":"PostalAddress","streetAddress":"Milimani Road, Meru, Kenya","addressLocality":"Meru","addressCountry":"Kenya"},"geo":{"@type":"GeoCoordinates","latitude":0.0476,"longitude":37.6822}}</script></head>
+
+<body data-page="home">
+    <!-- Accessibility: Skip Navigation -->
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <!-- ===== PREMIUM HEADER ===== -->
+    <header class="header" id="header" role="banner">
+        <div class="container">
+            <div class="nav-wrapper">
+                <!-- Logo - Image Only, No Duplicate Text -->
+                <a href="index.html" class="logo" aria-label="ZT Lounge Home">
+                    <!-- Dark theme logo -->
+                    <img src="https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/branding/logo.webp" alt="ZT Lounge Meru - Premium Hospitality Logo" class="logo-dark site-logo" width="auto" decoding="async" fetchpriority="high">
+                    <!-- Light theme logo -->
+                    <img src="https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/branding/logo-white.webp" alt="ZT Lounge Meru - Premium Hospitality Logo" class="logo-light site-logo" width="auto" decoding="async" fetchpriority="high">
+                </a>
+
+                <!-- Navigation -->
+                <nav class="nav-menu" id="navMenu" role="navigation" aria-label="Main navigation">
+                    <ul class="nav-list" role="menubar">
+                        <!-- HOME - First & Always Visible -->
+                        <li role="none">
+                            <a href="index.html" role="menuitem" class="active" aria-current="page">
+                                <i class="fas fa-home" aria-hidden="true"></i> Home
+                            </a>
+                        </li>
+                        
+                        <!-- Experiences Dropdown -->
+                        <li role="none" aria-expanded="false">
+                            <a role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="experiences-dropdown" class="dropdown-parent" tabindex="0">
+                                Experiences <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                            </a>
+                            <ul class="dropdown-menu" id="experiences-dropdown" role="menu">
+                                <li role="none"><a href="pages/experiences/restaurant.html" role="menuitem">Restaurant</a></li>
+<li role="none"><a href="pages/experiences/restaurant-menu.html" role="menuitem">Restaurant Menu</a></li>
+                                <li role="none"><a href="pages/experiences/lounge.html" role="menuitem">Lounge</a></li>
+                                <li role="none"><a href="pages/experiences/vip.html" role="menuitem">VIP Cabins</a></li>
+                            </ul>
+                        </li>
+                        
+                        <!-- Business Dropdown -->
+                        <li role="none" aria-expanded="false">
+                            <a role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="business-dropdown" class="dropdown-parent" tabindex="0">
+                                Business <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                            </a>
+                            <ul class="dropdown-menu" id="business-dropdown" role="menu">
+                                <li role="none"><a href="pages/business/events.html" role="menuitem">Events</a></li>
+                                <li role="none"><a href="pages/business/conference.html" role="menuitem">Conference</a></li>
+                                <li role="none"><a href="pages/business/grooming-care.html" role="menuitem">Grooming &amp; Care</a></li>
+                            </ul>
+                        </li>
+                        
+                        <!-- Contact Dropdown -->
+                        <li role="none" aria-expanded="false">
+                            <a role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="contact-dropdown" class="dropdown-parent" tabindex="0">
+                                Contact <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                            </a>
+                            <ul class="dropdown-menu" id="contact-dropdown" role="menu">
+                                <li role="none"><a href="pages/contact/contact.html" role="menuitem">Contact Page</a></li>
+                                <li role="none"><a href="pages/contact/gallery.html" role="menuitem">Gallery</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Actions -->
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle light or dark color theme" title="Toggle theme" type="button">
+                        <i class="fas fa-moon" aria-hidden="true"></i>
+                        <i class="fas fa-sun" aria-hidden="true"></i>
+                    </button>
+                    
+                                        <a href="tel:254143542601" class="header-phone" data-phone-link="" aria-label="Call ZT Lounge at +254 143 542 601">
+                        <i class="fas fa-phone" aria-hidden="true"></i>
+                        <span class="phone-number" data-phone="">+254143542601</span>
+                    </a>
+                    <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu" type="button">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main id="main" role="main">
+
+        <!-- ===== HERO ===== -->
+        <section class="hero" id="hero" aria-label="Hero banner showcasing ZT Lounge Meru">
+            <div class="hero-slider" role="region" aria-label="Featured images" data-hero-state="ok" data-hero-page="home" data-hero-count="2">
+                <!-- CMS hero slides are generated from hero_slides by content-loader.js populateHero() -->
+
+                <div class="hero-slide" id="hero-slide-0" data-index="0" role="tabpanel" aria-labelledby="hero-dot-0" aria-hidden="true" style="background-image: url(&quot;https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/assets/images/branding/2480ca41-c4ed-4d96-9ebe-bf0060363d7e.webp&quot;); background-color: rgb(26, 26, 26);"><div class="hero-overlay"></div><div class="hero-content container"><span class="hero-badge">Meru's Finest</span><h1 class="hero-title">ZT Lounge Meru <span class="hero-highlight">Premium Dining • VIP Cabins • Pool Table • Lounge &amp; Bar • Events • Conference • Auto Spa</span></h1><p class="hero-subtitle">Experience premium hospitality at ZT Lounge Meru</p><div class="hero-buttons"><a class="btn btn-primary btn-large" href="#services" tabindex="-1">Explore Services</a><a class="btn btn-secondary btn-large" href="pages/contact/contact.html" tabindex="-1">Contact Us</a></div></div></div><div class="hero-slide active" id="hero-slide-1" data-index="1" role="tabpanel" aria-labelledby="hero-dot-1" aria-hidden="false" style="background-image: url(&quot;https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/hero-images/hero-lounge.webp&quot;); background-color: rgb(26, 26, 26);"><div class="hero-overlay"></div><div class="hero-content container"><span class="hero-badge">Night Experience</span><h2 class="hero-title">best place <span class="hero-highlight">From sunset cocktails to late-night entertainment</span></h2><p class="hero-subtitle">Experience Meru's finest hospitality</p><div class="hero-buttons"><a class="btn btn-primary btn-large" href="#services" tabindex="0">Explore Services</a><a class="btn btn-secondary btn-large" href="pages/contact/contact.html" tabindex="0">Contact Us</a></div></div></div><button class="slider-btn prev" id="prevSlide" aria-label="Previous slide" type="button">
+                    <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                </button>
+                <button class="slider-btn next" id="nextSlide" aria-label="Next slide" type="button">
+                    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </button>
+                <div class="slider-dots" role="tablist" aria-label="Hero slides"><span class="dot" id="hero-dot-0" data-index="0" role="tab" aria-selected="false" aria-controls="hero-slide-0" aria-label="Slide 1" tabindex="-1"></span><span class="dot active" id="hero-dot-1" data-index="1" role="tab" aria-selected="true" aria-controls="hero-slide-1" aria-label="Slide 2" tabindex="0"></span></div>
+            </div>
+        </section>
+
+        <!-- ===== ABOUT ===== -->
+        <section class="about-section" id="about" aria-label="About ZT Lounge">
+            <div class="container">
+                <div class="about-short">
+                    <div class="section-tag">About ZT Lounge</div>
+                    <p>ZT Lounge Meru brings together premium dining, VIP experiences, pool table entertainment, celebrations, conference facilities, and professional auto spa services in one destination. Located in the heart of Milimani, we redefine luxury hospitality in Meru.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SERVICES - ALL ORIGINAL LINKS PRESERVED ===== -->
+        <section class="service-cards-section" id="services" aria-label="Our services">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Our Services</span>
+                    <h2 class="section-title">Explore <span>ZT Lounge</span></h2>
+                    <p class="section-subtitle">Discover our premium hospitality experiences</p>
+                </div>
+                <div class="service-cards-grid">
+                    <!-- Restaurant -->
+                    <a href="pages/experiences/restaurant.html" class="service-card">
+                        <img src="https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/interior.webp" alt="Fine dining restaurant at ZT Lounge with elegant table setting and ambient lighting" class="card-image" loading="lazy" decoding="async">
+                        <div class="card-content">
+                            <span class="card-tag">✦ Signature</span>
+                            <h3>Restaurant</h3>
+                            <p>ZT BLACKBOX DESCRIPTION 1788269588211</p>
+                            <span class="btn btn-outline">Explore</span>
+                        </div>
+                    </a>
+                    
+                    <!-- Lounge & Bar -->
+                    <a href="pages/experiences/lounge.html" class="service-card">
+                        <img src="https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/lounge-interior-main.webp" alt="Luxury lounge and bar at ZT Lounge with premium seating and sophisticated atmosphere" class="card-image" loading="lazy" decoding="async">
+                        <div class="card-content">
+                            <span class="card-tag">✦ Nightlife</span>
+                            <h3>Lounge &amp; Bar</h3>
+                            <p>Premium cocktails, live entertainment, and sophisticated atmosphere</p>
+                            <span class="btn btn-outline">Explore</span>
+                        </div>
+                    </a>
+                    
+                    <!-- VIP Cabins -->
+                    <a href="pages/experiences/vip.html" class="service-card">
+                        <img src="https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/vip-fireplace-lounge.webp" alt="Luxury VIP cabin at ZT Lounge with private dining and exclusive amenities" class="card-image" loading="lazy" decoding="async">
+                        <div class="card-content">
+                            <span class="card-tag">✦ Private</span>
+                            <h3>VIP Cabins</h3>
+                            <p>Private, exclusive cabins for intimate dining and celebrations</p>
+                            <span class="btn btn-outline">Explore</span>
+                        </div>
+                    </a>
+                    
+                    <!-- Events -->
+                    <a href="pages/business/events.html" class="service-card">
+                        <img src="https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/wedding.webp" alt="Elegant event setup at ZT Lounge with floral arrangements and celebratory decor" class="card-image" loading="lazy" decoding="async">
+                        <div class="card-content">
+                            <span class="card-tag">✦ Celebrations</span>
+                            <h3>Events</h3>
+                            <p>Weddings, birthdays, graduations, and private celebrations</p>
+                            <span class="btn btn-outline">Explore</span>
+                        </div>
+                    </a>
+                    
+                    <!-- Conference -->
+                    <a href="pages/business/conference.html" class="service-card">
+                        <img src="https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/conference-hall.webp" alt="Modern conference hall at ZT Lounge with state-of-the-art audiovisual equipment" class="card-image" loading="lazy" decoding="async">
+                        <div class="card-content">
+                            <span class="card-tag">✦ Corporate</span>
+                            <h3>Conference</h3>
+                            <p>State-of-the-art facilities for corporate meetings and seminars</p>
+                            <span class="btn btn-outline">Explore</span>
+                        </div>
+                    </a>
+                    
+                    <!-- Grooming & Care (Auto Spa + Barbershop + Carpet Cleaning) -->
+                    <a href="pages/business/grooming-care.html" class="service-card">
+                        <img src="https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/autospa/car-detailing.webp" alt="Professional grooming and care services - auto spa and barbershop at ZT Lounge" class="card-image" loading="lazy" decoding="async">
+                        <div class="card-content">
+                            <span class="card-tag">âœ¦ Premium</span>
+                            <h3>Grooming &amp; Care</h3>
+                            <p>Premium vehicle detailing and professional personal grooming services</p>
+                            <span class="btn btn-outline">Explore</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PROMOTIONS GROUP (canonical: public.promotions) ===== -->
+        <section class="promotions-section zt-promo-section-hidden" id="promotions" aria-label="Current promotions at ZT Lounge">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Current Offers</span>
+                    <h2 class="section-title">Promotions <span>&amp; Specials</span></h2>
+                    <p class="section-subtitle">Exclusive offers for our guests â€” don't miss out</p>
+                </div>
+                <!-- Populated by content-loader from PromotionRepository
+                     (canonical public.promotions; eligible + show_on_homepage=true,
+                     display_order ASC). Hidden entirely when none are eligible. -->
+                <div class="promotions-grid" id="promotions-grid"></div>
+            </div>
+        </section>
+
+        <!-- ===== MEMBERSHIP PROGRAM (canonical: public.membership_plans + membership_plan_benefits) ===== -->
+        <section class="membership-section" id="membership" aria-label="ZT Lounge Membership Program">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Membership</span>
+                    <h2 class="section-title">ZT Lounge <span>Membership Program</span></h2>
+                    <p class="section-subtitle">Annual loyalty memberships designed for regular guests who want added value, priority access and exclusive ZT Lounge experiences</p>
+                </div>
+                <!-- Registration fee banner (server reads canonical membership_plans.registration_fee) -->
+                <div class="membership-fee-banner" id="membership-fee-banner"><b>Registration Fee: KSh 1,000</b><span>&nbsp;· applies to all membership levels</span></div>
+                <!-- Populated by content-loader from MembershipRepository
+                     (canonical public.membership_plans; is_active=true only,
+                     display_order ASC, benefits attached). Hidden entirely when
+                     no plans are published. Bronze is inactive and never appears. -->
+                <div class="membership-grid" id="membership-grid"><article class="zt-member-card" data-membership-plan-id="d627ec76-5a18-45a0-ad98-cf66ec16db51"><div class="zt-member-card-body"><h3 class="zt-member-name">Bronze</h3><p class="zt-member-price">KSh 5,000<small>per year</small></p><p class="zt-member-benefits-title">Membership Benefits</p><ul class="zt-member-benefits"><li>3% discount on selected food and beverage purchases.</li><li>Standard table reservations.</li><li>Access to selected membership promotions.</li><li>Birthday benefit during your birthday month.</li><li>Personalized Bronze membership card.</li><li>Recognition as a ZT Lounge Bronze Member.</li></ul><a class="zt-member-cta" href="https://wa.me/254143542601?text=Hello%20ZT%20Lounge%2C%20I%20would%20like%20to%20enquire%20about%20the%20Bronze%20membership." target="_blank" rel="noopener noreferrer" data-membership-cta="Bronze">Enquire Now</a></div></article><article class="zt-member-card" data-membership-plan-id="422d0676-7757-445f-ae42-4000ae58cdec"><div class="zt-member-card-body"><h3 class="zt-member-name">Silver</h3><p class="zt-member-price">KSh 10,000<small>per year</small></p><p class="zt-member-desc">Designed for regular customers who want added benefits and better value during their visits.</p><p class="zt-member-benefits-title">Membership Benefits</p><ul class="zt-member-benefits"><li>5% discount on selected food and beverage purchases.</li><li>Priority table reservations.</li><li>Early notification of selected promotions and special events.</li><li>Birthday benefit during your birthday month.</li><li>Access to selected members-only offers.</li><li>Personalized membership card.</li><li>Priority assistance with reservations and bookings.</li><li>Recognition as a ZT Lounge Silver Member.</li></ul><a class="zt-member-cta" href="https://wa.me/254143542601?text=Hello%20ZT%20Lounge%2C%20I%20would%20like%20to%20enquire%20about%20the%20Silver%20membership." target="_blank" rel="noopener noreferrer" data-membership-cta="Silver">Enquire Now</a></div></article><article class="zt-member-card" data-membership-plan-id="7fe75f06-d365-4c7f-b4c9-fdabd9a07ff7"><div class="zt-member-card-body"><h3 class="zt-member-name">Gold</h3><p class="zt-member-price">KSh 20,000<small>per year</small></p><p class="zt-member-desc">Designed for customers who visit frequently and want enhanced privileges and priority access.</p><p class="zt-member-benefits-title">Membership Benefits</p><ul class="zt-member-benefits"><li>10% discount on selected food and beverage purchases.</li><li>Priority table reservations.</li><li>Priority booking for VIP lounges, subject to availability.</li><li>Birthday benefit during your birthday month.</li><li>Access to selected members-only promotions and events.</li><li>Guest privileges on selected offers.</li><li>Personalized Gold membership card.</li><li>Priority assistance with reservations and bookings.</li><li>Early access to selected ZT Lounge events and promotions.</li><li>Recognition as a valued ZT Lounge Gold Member.</li></ul><a class="zt-member-cta" href="https://wa.me/254143542601?text=Hello%20ZT%20Lounge%2C%20I%20would%20like%20to%20enquire%20about%20the%20Gold%20membership." target="_blank" rel="noopener noreferrer" data-membership-cta="Gold">Enquire Now</a></div></article><article class="zt-member-card" data-membership-plan-id="8eb6d7b2-14da-4b9a-8c04-1c03842d64a9"><div class="zt-member-card-body"><h3 class="zt-member-name">Platinum</h3><p class="zt-member-price">KSh 30,000<small>per year</small></p><p class="zt-member-desc">Our premium membership for customers who want the highest level of priority service and exclusive ZT Lounge experiences.</p><p class="zt-member-benefits-title">Membership Benefits</p><ul class="zt-member-benefits"><li>10% discount on selected food and beverage purchases.</li><li>Highest priority for table reservations.</li><li>Priority booking for VIP lounges, subject to availability.</li><li>Dedicated contact for reservations and bookings.</li><li>Premium birthday benefit during your birthday month.</li><li>Access to selected exclusive member events and experiences.</li><li>Guest privileges on selected offers.</li><li>Personalized Platinum membership card.</li><li>Early notification of special events, promotions, and VIP experiences.</li><li>Priority assistance during major events, subject to venue capacity.</li><li>Recognition as a Platinum ZT Lounge Member.</li></ul><a class="zt-member-cta" href="https://wa.me/254143542601?text=Hello%20ZT%20Lounge%2C%20I%20would%20like%20to%20enquire%20about%20the%20Platinum%20membership." target="_blank" rel="noopener noreferrer" data-membership-cta="Platinum">Enquire Now</a></div></article></div>
+                <!-- Mandatory legal disclaimer â€” always visible, never hidden -->
+                <div class="membership-disclaimer" id="membership-disclaimer">
+                    <p><strong>Membership Disclaimer</strong></p>
+                    <p>Membership at ZT Lounge is strictly a customer loyalty and benefits program. Payment for any membership package does not make the member a director, shareholder, partner, investor, employee, manager, or representative of ZT Lounge or its parent company. Membership does not grant the member any management rights, voting rights, decision-making authority, access to company management, authority to represent the company, or participation in the management or operation of the business. Membership fees do not constitute an investment in the company and do not entitle the member to any shares, dividends, ownership interest, or percentage of the company's profits. Membership benefits are personal to the registered member and are subject to ZT Lounge's membership terms and conditions. ZT Lounge reserves the right to amend membership benefits, subject to applicable terms and communication to members.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== GALLERY PREVIEW ===== -->
+        <section class="gallery-preview" id="gallery" aria-label="Gallery preview of ZT Lounge spaces">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Our Spaces</span>
+                    <h2 class="section-title">Photo <span>Gallery</span></h2>
+                    <p class="section-subtitle">Take a visual tour of our luxurious facilities</p>
+                </div>
+                <div class="gallery-preview-grid">
+                    <!-- Homepage gallery preview = canonical CMS mounts.
+                         Populated by content-loader.js → GalleryRepository
+                         (active → is_featured → display_order ASC → first 4)
+                         → MediaResolver (media_assets.public_url).
+                         No hardcoded gallery URLs are kept as source of truth. -->
+                    <figure class="gallery-preview-item" data-gallery-id="018ae57b-ce61-442b-bc6c-e1fea7c87367">
+                        <img alt="Luxurious VIP cabin with modern amenities" loading="lazy" decoding="async" src="https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/gallery-images/gallery-02.webp">
+                    </figure>
+                    <figure class="gallery-preview-item" style="display: none;">
+                        <img alt="" loading="lazy" decoding="async">
+                    </figure>
+                    <figure class="gallery-preview-item" style="display: none;">
+                        <img alt="" loading="lazy" decoding="async">
+                    </figure>
+                    <figure class="gallery-preview-item" style="display: none;">
+                        <img alt="" loading="lazy" decoding="async">
+                    </figure>
+                </div>
+                <div class="gallery-cta">
+                    <a href="pages/contact/gallery.html" class="btn btn-primary">View Full Gallery</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== LOCATION ===== -->
+        <section class="location-section" id="location" aria-label="Location and contact information">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Visit Us</span>
+                    <h2 class="section-title">Our <span>Location</span></h2>
+                    <p class="section-subtitle">Find us in the heart of Milimani, Meru</p>
+                </div>
+                <div class="location-grid">
+                    <figure class="location-image">
+                        <img src="https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/restaurant/hero-restaurant.webp" alt="ZT Lounge Meru - Luxury hospitality destination in Milimani with premium dining and entertainment" loading="lazy" decoding="async">
+                    </figure>
+                    <div class="location-info">
+                        <h3>ZT Lounge Meru</h3>
+                        <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> <span data-business-address="">Opposite Ezri Hotel, Milimani, Meru</span></p>
+                        <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+254143542601">+254 143 542 601</a></p>
+                                                <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:254143542601" data-phone-link="">+254 143 542 601</a></p>
+                        <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:ztloungemeru@gmail.com" data-email-link="">ztloungemeru@gmail.com</a></p>
+                        <p><i class="fas fa-clock" aria-hidden="true"></i> <span data-hours="default">[object Object]</span></p>
+                        <div class="location-cta">
+                            <a href="tel:254143542601" class="btn btn-primary" data-phone-link=""><i class="fas fa-phone" aria-hidden="true"></i> Call Now</a>
+                            <a href="https://wa.me/254143542601?text=Hello%20ZT%20Lounge%2C%20I'd%20like%20to%20visit" class="btn btn-success" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp</a>
+                            <a href="https://maps.app.goo.gl/HqTbiiU4q2jRFoPg6" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" data-map-link="">Get Directions</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== TESTIMONIALS (Populated from Supabase testimonials table) ===== -->
+        <section class="testimonials-section section" id="testimonials" aria-label="Customer testimonials">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">What Our Guests Say</span>
+                    <h2 class="section-title">Guest <span>Experiences</span></h2>
+                </div>
+                <div class="testimonials-container">
+                    <!-- Populated by content-loader.js from Supabase testimonials table -->
+                <div class="testimonial-item"><blockquote>An exceptional dining experience! The Nyama Choma was the best I've ever had.</blockquote><cite>James M.</cite><span class="testimonial-role">Nairobi</span></div><div class="testimonial-item"><blockquote>The VIP cabin made our anniversary celebration absolutely magical.</blockquote><cite>Sarah K.</cite><span class="testimonial-role">Meru</span></div><div class="testimonial-item"><blockquote>Professional conference facilities with outstanding service.</blockquote><cite>David O.</cite><span class="testimonial-role">Nakuru</span></div></div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FLOATING WHATSAPP ===== -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/254143542601?text=Hello%20ZT%20Lounge%2C%20I'd%20like%20to%20make%20a%20booking" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp to make a booking or inquiry">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        </a>
+        <span class="whatsapp-tooltip">Chat With Us</span>
+    </div>
+
+    <!-- ===== MOBILE STICKY CTA ===== -->
+    <div class="mobile-sticky-cta" role="complementary" aria-label="Quick actions">
+        <a href="https://wa.me/254143542601?text=Hello%20ZT%20Lounge%2C%20I'd%20like%20to%20book" class="sticky-btn whatsapp-sticky" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp
+        </a>
+        <a href="tel:+254143542601" class="sticky-btn call-sticky">
+            <i class="fas fa-phone" aria-hidden="true"></i> Call
+        </a>
+        <a href="pages/contact/contact.html" class="sticky-btn book-sticky">
+            <i class="fas fa-calendar-check" aria-hidden="true"></i> Book
+        </a>
+    </div>
+
+    <!-- ===== FOOTER - ALL ORIGINAL LINKS PRESERVED ===== -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo" aria-label="ZT Lounge Home">
+                        <img src="https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/branding/logo.webp" alt="ZT Lounge Meru - Premium Hospitality Logo" class="logo-dark site-logo" width="auto" loading="lazy" decoding="async">
+                        <img src="https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/branding/logo-white.webp" alt="ZT Lounge Meru - Premium Hospitality Logo" class="logo-light site-logo" width="auto" loading="lazy" decoding="async">
+                    </a>
+                    <p>Experience premium hospitality at ZT Lounge Meru â€” fine dining, exclusive lounges, pool table entertainment, Auto Spa, and world-class service in Milimani.</p>
+                    <div class="footer-social">
+                        <a href="https://facebook.com/ztlounge" target="_blank" rel="noopener noreferrer" aria-label="Facebook page"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="https://instagram.com/ztlounge" target="_blank" rel="noopener noreferrer" aria-label="Instagram page"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="https://x.com/ztlounge_meru" target="_blank" rel="noopener noreferrer" aria-label="Twitter page"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                        <a href="https://youtube.com/@ztlounge" target="_blank" rel="noopener noreferrer" aria-label="YouTube channel"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <nav class="footer-links" aria-label="Quick links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="pages/experiences/restaurant.html">Restaurant</a></li>
+                        <li><a href="pages/experiences/lounge.html">Lounge &amp; Bar</a></li>
+                        <li><a href="pages/experiences/vip.html">VIP Cabins</a></li>
+                        <li><a href="pages/business/events.html">Events</a></li>
+                        <li><a href="pages/business/conference.html">Conference</a></li>
+                        <li><a href="pages/business/grooming-care.html">Grooming &amp; Care</a></li>
+                        <li><a href="pages/contact/gallery.html">Gallery</a></li>
+                        <li><a href="pages/contact/contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <nav class="footer-services" aria-label="Our services">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="pages/experiences/restaurant.html">Restaurant</a></li>
+                        <li><a href="pages/experiences/lounge.html">Lounge &amp; Bar</a></li>
+                        <li><a href="pages/experiences/vip.html">VIP Cabins</a></li>
+                        <li><a href="pages/business/events.html">Events</a></li>
+                        <li><a href="pages/business/conference.html">Conference</a></li>
+                        <li><a href="pages/business/grooming-care.html">Grooming &amp; Care</a></li>
+                    </ul>
+                </nav>
+                <div class="footer-contact" aria-label="Contact information">
+                    <h4>Contact Info</h4>
+                    <ul>
+                                                <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> <span data-footer-address="">Opposite Ezri Hotel, Milimani, Meru</span></li>
+                        <li><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:254143542601" data-phone-link="">+254 143 542 601</a></li>
+                        <li><i class="fab fa-whatsapp" aria-hidden="true"></i> <a href="+254143542601" data-whatsapp="" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+                        <li><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:ztloungemeru@gmail.com" data-email-link="">ztloungemeru@gmail.com</a></li>
+                        <li><i class="fas fa-clock" aria-hidden="true"></i> <span data-hours="default">[object Object]</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© <span id="copyrightYear">2026</span> ZT Lounge Meru. All rights reserved.</p>
+                <p class="footer-credit">Designed with <i class="fas fa-heart" aria-hidden="true"></i> for luxury</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // Theme is already applied via inline script in 
+        // This prevents FOUC completely
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // === THEME TOGGLE ===
+            var themeToggle = document.getElementById('themeToggle');
+            var html = document.documentElement;
+            
+            if (themeToggle) {
+                themeToggle.addEventListener('click', function() {
+                    html.classList.toggle('light-mode');
+                    var isLight = html.classList.contains('light-mode');
+                    localStorage.setItem('zt-theme', isLight ? 'light' : 'dark');
+                    document.documentElement.style.colorScheme = isLight ? 'light' : 'dark';
+                });
+            }
+
+            // === HAMBURGER MENU ===
+            var hamburger = document.getElementById('hamburger');
+            var navMenu = document.getElementById('navMenu');
+            var navList = document.querySelector('.nav-list');
+            var focusTrapActive = false;
+            var focusTrapHandler = null;
+            
+            if (hamburger && navMenu) {
+                hamburger.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    this.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                    var isActive = navMenu.classList.contains('active');
+                    this.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+                    
+                    if (isActive) {
+                        trapFocus(navMenu);
+                    } else {
+                        releaseFocus();
+                    }
+                });
+
+                // Close menu on any link click (mobile)
+                var navLinks = navMenu.querySelectorAll('a');
+                navLinks.forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        if (window.innerWidth <= 768) {
+                            // // closeMobileMenu();
+                        }
+                    });
+                });
+
+                // Close on Escape
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+                        // // closeMobileMenu();
+                        hamburger.focus();
+                    }
+                });
+
+                // Close on backdrop click
+                document.addEventListener('click', function(e) {
+                    if (navMenu.classList.contains('active') && 
+                        !navMenu.contains(e.target) && 
+                        !hamburger.contains(e.target)) {
+                        // // closeMobileMenu();
+                    }
+                });
+
+                function closeMobileMenu() {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    hamburger.setAttribute('aria-expanded', 'false');
+                    releaseFocus();
+                }
+
+                // === FOCUS TRAPPING ===
+                function getFocusableElements(container) {
+                    return container.querySelectorAll(
+                        'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex="0"]'
+                    );
+                }
+
+                function trapFocus(container) {
+                    if (focusTrapActive) return;
+                    
+                    var focusableElements = getFocusableElements(container);
+                    if (focusableElements.length === 0) return;
+                    
+                    var firstFocusable = focusableElements[0];
+                    var lastFocusable = focusableElements[focusableElements.length - 1];
+                    focusTrapActive = true;
+                    
+                    firstFocusable.focus();
+                    
+                    focusTrapHandler = function(e) {
+                        if (e.key !== 'Tab') return;
+                        if (e.shiftKey) {
+                            if (document.activeElement === firstFocusable) {
+                                // e.preventDefault();
+                                lastFocusable.focus();
+                            }
+                        } else {
+                            if (document.activeElement === lastFocusable) {
+                                // e.preventDefault();
+                                firstFocusable.focus();
+                            }
+                        }
+                    };
+                    
+                    document.addEventListener('keydown', focusTrapHandler);
+                }
+
+                function releaseFocus() {
+                    if (focusTrapHandler) {
+                        document.removeEventListener('keydown', focusTrapHandler);
+                        focusTrapHandler = null;
+                    }
+                    focusTrapActive = false;
+                }
+
+                // === MOBILE DROPDOWN TOGGLE ===
+                var dropdownParents = navMenu.querySelectorAll('.nav-list > li > a.dropdown-parent');
+                dropdownParents.forEach(function(link) {
+                    link.addEventListener('click', function(e) {
+                        if (window.innerWidth <= 768) {
+                            // e.preventDefault();
+                            var parentLi = this.parentElement;
+                            var isExpanded = parentLi.getAttribute('aria-expanded') === 'true';
+                            
+                            // Close other dropdowns
+                            var activeItems = navMenu.querySelectorAll('.nav-list > li.active-dropdown');
+                            activeItems.forEach(function(el) {
+                                if (el !== parentLi) {
+                                    el.classList.remove('active-dropdown');
+                                    el.setAttribute('aria-expanded', 'false');
+                                }
+                            });
+                            
+                            var newExpanded = !isExpanded;
+                            parentLi.classList.toggle('active-dropdown', newExpanded);
+                            parentLi.setAttribute('aria-expanded', String(newExpanded));
+                        }
+                    });
+
+                    // === KEYBOARD NAVIGATION FOR DROPDOWNS ===
+                    link.addEventListener('keydown', function(e) {
+                        if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+                            // e.preventDefault();
+                            var menu = this.parentElement.querySelector('.dropdown-menu');
+                            if (menu) {
+                                // Ensure dropdown is open on desktop
+                                var parentLi = this.parentElement;
+                                if (window.innerWidth > 768) {
+                                    parentLi.setAttribute('aria-expanded', 'true');
+                                }
+                                var firstItem = menu.querySelector('a');
+                                if (firstItem) {
+                                    firstItem.focus();
+                                }
+                            }
+                        }
+                    });
+                });
+
+                // Arrow key navigation within dropdown
+                var dropdownMenus = document.querySelectorAll('.dropdown-menu');
+                dropdownMenus.forEach(function(menu) {
+                    var items = menu.querySelectorAll('a');
+                    items.forEach(function(item, index) {
+                        item.addEventListener('keydown', function(e) {
+                            if (e.key === 'ArrowDown') {
+                                // e.preventDefault();
+                                var next = items[index + 1] || items[0];
+                                next.focus();
+                            } else if (e.key === 'ArrowUp') {
+                                // e.preventDefault();
+                                var prev = items[index - 1] || items[items.length - 1];
+                                prev.focus();
+                            } else if (e.key === 'Escape') {
+                                // e.preventDefault();
+                                var parentLink = this.closest('li')?.parentElement?.previousElementSibling;
+                                if (parentLink && parentLink.classList.contains('dropdown-parent')) {
+                                    parentLink.focus();
+                                    var parentLi = parentLink.parentElement;
+                                    if (window.innerWidth <= 768) {
+                                        parentLi.classList.remove('active-dropdown');
+                                        parentLi.setAttribute('aria-expanded', 'false');
+                                    } else {
+                                        parentLi.setAttribute('aria-expanded', 'false');
+                                    }
+                                }
+                            }
+                        });
+                    });
+                });
+
+                // Close menu on resize to desktop
+                window.addEventListener('resize', function() {
+                    if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
+                        // // closeMobileMenu();
+                    }
+                });
+            }
+
+            // === HERO SLIDER ===
+            // Live accessors - the canonical renderer (content-loader.js
+            // populateHero) generates hero slide/dot DOM from hero_slides after
+            // this block runs, so no stale NodeList snapshot may be held.
+            function getHeroSlides() { return document.querySelectorAll('.hero-slider .hero-slide'); }
+            function getHeroDots() { return document.querySelectorAll('.slider-dots .dot'); }
+            var heroCurrent = 0;
+            var heroInterval;
+
+            function goToHero(index) {
+                var heroSlides = getHeroSlides();
+                var heroDots = getHeroDots();
+                if (!heroSlides.length) return;
+                if (index < 0) index = heroSlides.length - 1;
+                if (index >= heroSlides.length) index = 0;
+                heroSlides.forEach(function(slide, i) {
+                    var isActive = i === index;
+                    slide.classList.toggle('active', isActive);
+                    slide.setAttribute('aria-hidden', String(!isActive));
+                    var interactiveElements = slide.querySelectorAll('a, button');
+                    interactiveElements.forEach(function(el) {
+                        el.tabIndex = isActive ? 0 : -1;
+                    });
+                });
+                heroDots.forEach(function(dot, i) {
+                    var isActive = i === index;
+                    dot.classList.toggle('active', isActive);
+                    dot.setAttribute('aria-selected', String(isActive));
+                    dot.tabIndex = isActive ? 0 : -1;
+                });
+                heroCurrent = index;
+            }
+
+            function nextHero() { goToHero(heroCurrent + 1); }
+            function prevHero() { goToHero(heroCurrent - 1); }
+
+            var prevSlideBtn = document.getElementById('prevSlide');
+            var nextSlideBtn = document.getElementById('nextSlide');
+            
+            if (prevSlideBtn) prevSlideBtn.addEventListener('click', function() { prevHero(); resetHeroAutoplay(); });
+            if (nextSlideBtn) nextSlideBtn.addEventListener('click', function() { nextHero(); resetHeroAutoplay(); });
+            
+            function bindHeroDots() {
+                getHeroDots().forEach(function(dot, index) {
+                    dot.addEventListener('click', function() {
+                        goToHero(index);
+                        resetHeroAutoplay();
+                    });
+                    dot.addEventListener('keydown', function(e) {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            // e.preventDefault();
+                            goToHero(index);
+                            resetHeroAutoplay();
+                        }
+                    });
+                });
+            }
+
+            function startHeroAutoplay() {
+                stopHeroAutoplay();
+                heroInterval = setInterval(nextHero, 5000);
+            }
+
+            function stopHeroAutoplay() {
+                if (heroInterval) {
+                    clearInterval(heroInterval);
+                    heroInterval = null;
+                }
+            }
+
+            function resetHeroAutoplay() {
+                startHeroAutoplay();
+            }
+
+            var heroContainer = document.querySelector('.hero-slider');
+            if (heroContainer) {
+                heroContainer.addEventListener('mouseenter', stopHeroAutoplay);
+                heroContainer.addEventListener('mouseleave', startHeroAutoplay);
+                heroContainer.addEventListener('focusin', stopHeroAutoplay);
+                heroContainer.addEventListener('focusout', function(e) {
+                    if (!this.contains(e.relatedTarget)) startHeroAutoplay();
+                });
+            }
+
+            function initHeroSlider() {
+                if (!getHeroSlides().length) {
+                    stopHeroAutoplay();
+                    return;
+                }
+                bindHeroDots();
+                goToHero(0);
+                startHeroAutoplay();
+            }
+
+            // Initialise for the pre-render state and re-initialise immediately
+            // after the canonical renderer has produced the DB-driven slides.
+            initHeroSlider();
+            document.addEventListener('hero:rendered', initHeroSlider);
+
+            // === COPYRIGHT YEAR ===
+            var yearEl = document.getElementById('copyrightYear');
+            if (yearEl) {
+                yearEl.textContent = new Date().getFullYear();
+            }
+
+            // === UPDATE ACTIVE NAV LINK ===
+            var currentPath = window.location.pathname;
+            var navLinks = document.querySelectorAll('.nav-list a[href]');
+            navLinks.forEach(function(link) {
+                var href = link.getAttribute('href');
+                if (href === currentPath || (href === 'index.html' && (currentPath === '/' || currentPath === '' || currentPath === '/index.html'))) {
+                    link.classList.add('active');
+                    link.setAttribute('aria-current', 'page');
+                } else {
+                    link.classList.remove('active');
+                    link.removeAttribute('aria-current');
+                }
+            });
+
+            // === DESKTOP DROPDOWN KEYBOARD ACCESS ===
+            // On desktop, allow Enter/Space to toggle dropdown
+            var desktopDropdownParents = document.querySelectorAll('.nav-list > li > a.dropdown-parent');
+            desktopDropdownParents.forEach(function(link) {
+                link.addEventListener('keydown', function(e) {
+                    if (window.innerWidth > 768) {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            // e.preventDefault();
+                            var parentLi = this.parentElement;
+                            var isExpanded = parentLi.getAttribute('aria-expanded') === 'true';
+                            parentLi.setAttribute('aria-expanded', String(!isExpanded));
+                        }
+                    }
+                });
+            });
+
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth > 768) {
+                    var dropdownParents = document.querySelectorAll('.nav-list > li[aria-expanded="true"]');
+                    dropdownParents.forEach(function(parent) {
+                        if (!parent.contains(e.target)) {
+                            parent.setAttribute('aria-expanded', 'false');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+
+     <!-- ============================================================
+          SUPABASE & CMS ARCHITECTURE
+          Loaded after inline scripts to enhance content from database
+          ============================================================ -->
+    <script src="assets/js/lib/supabase-js.js" defer=""></script>
+    <script src="assets/js/config/env.js" defer=""></script>
+    <script src="assets/js/config/supabase.config.js" defer=""></script>
+    <script src="assets/js/asset-url.js" defer=""></script>
+    <script src="assets/js/lib/supabase.js" defer=""></script>
+    <!-- Hardening (Phase 17/18): canonical page identity, structured diagnostics, UUID page resolver -->
+    <script src="assets/js/lib/page-identity.js" defer=""></script>
+    <script src="assets/js/lib/cms-report.js" defer=""></script>
+    <script src="assets/js/repositories/PageResolver.js" defer=""></script>
+    <script src="assets/js/repositories/MediaResolver.js" defer=""></script>
+    <script src="assets/js/lib/BaseRepository.js" defer=""></script>
+    <script src="assets/js/business-config.js" defer=""></script>
+    <script src="assets/js/repositories/BusinessRepository.js" defer=""></script>
+    <script src="assets/js/branding-init.js" defer=""></script>
+    <script src="assets/js/repositories/HeroRepository.js" defer=""></script>
+    <script src="assets/js/repositories/ServicesRepository.js" defer=""></script>
+    <script src="assets/js/repositories/GalleryRepository.js" defer=""></script>
+    <script src="assets/js/repositories/MenuRepository.js" defer=""></script>
+    <script src="assets/js/repositories/FAQRepository.js" defer=""></script>
+    <script src="assets/js/repositories/TestimonialsRepository.js" defer=""></script>
+    <script src="assets/js/repositories/PromotionRepository.js" defer=""></script>
+    <script src="assets/js/repositories/BookingRepository.js" defer=""></script>
+    <script src="assets/js/repositories/ContactRepository.js" defer=""></script>
+    <script src="assets/js/repositories/MembershipRepository.js" defer=""></script>
+    <script src="assets/js/membership.config.js" defer=""></script>
+    <script src="assets/js/repositories/SEORepository.js" defer=""></script>
+    <script src="assets/js/services/BusinessService.js" defer=""></script>
+    <script src="assets/js/hero.config.js" defer=""></script>
+    <script src="assets/js/services.config.js" defer=""></script>
+    <script src="assets/js/gallery.config.js" defer=""></script>
+    <script src="assets/js/menu.config.js" defer=""></script>
+    <script src="assets/js/faq.config.js" defer=""></script>
+    <script src="assets/js/testimonials.config.js" defer=""></script>
+    <script src="assets/js/booking.config.js" defer=""></script>
+    <script src="assets/js/contact.config.js" defer=""></script>
+    <script src="assets/js/seo.config.js" defer=""></script>
+    <script src="assets/js/content-loader.js" defer=""></script>
+
+
+</body></html>

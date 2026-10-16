@@ -1,0 +1,49 @@
+﻿{
+  "GET /login": {
+    "status": 200,
+    "finalUrl": "/login",
+    "hasMenuTable": 0,
+    "h1": "Admin Login",
+    "pageSelectCount": 0,
+    "toggleCount": 0
+  },
+  "GET /dashboard": {
+    "status": 200,
+    "finalUrl": "/login?redirect=%2Fdashboard",
+    "hasMenuTable": 0,
+    "h1": "Admin Login",
+    "pageSelectCount": 0,
+    "toggleCount": 0
+  },
+  "GET /dashboard/menu": {
+    "status": 200,
+    "finalUrl": "/login?redirect=%2Fdashboard%2Fmenu",
+    "hasMenuTable": 0,
+    "h1": "Admin Login",
+    "pageSelectCount": 0,
+    "toggleCount": 0
+  },
+  "GET /dashboard/services": {
+    "status": 200,
+    "finalUrl": "/login?redirect=%2Fdashboard%2Fservices",
+    "hasMenuTable": 0,
+    "h1": "Admin Login",
+    "pageSelectCount": 0,
+    "toggleCount": 0
+  },
+  "GET /api/admin/menu-items": {
+    "status": 401,
+    "body": "{\"error\":\"Unauthorized\"}"
+  },
+  "GET /api/admin/menu-categories": {
+    "status": 401,
+    "body": "{\"error\":\"Unauthorized\"}"
+  },
+  "GET /api/admin/website-pages": {
+    "status": 401,
+    "body": "{\"error\":\"Unauthorized\"}"
+  },
+  "consoleErrorSample": [
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+  ]
+}

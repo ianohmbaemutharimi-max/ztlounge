@@ -1,0 +1,3058 @@
+{
+  "out": {
+    "home": {
+      "route": "/index.html",
+      "initialDark": {
+        "label": "home/dark-fresh",
+        "htmlClass": "",
+        "colorScheme": "dark",
+        "ztThemeLS": null,
+        "shellVersion": "2.0.0",
+        "headerCount": 1,
+        "footerCount": 0,
+        "headerBg": "rgba(10, 10, 10, 0.92)",
+        "bodyBg": "rgb(10, 10, 10)",
+        "headerLogoDark": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 45,
+            "h": 45
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "headerLogoLight": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "none",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 0,
+            "h": 0
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "footerLogoDark": {
+          "present": false
+        },
+        "footerLogoLight": {
+          "present": false
+        },
+        "favicon": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "appleTouch": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "themeTogglePresent": true
+      },
+      "afterToggleLight": {
+        "label": "home/light-toggled",
+        "htmlClass": "light-mode",
+        "colorScheme": "light",
+        "ztThemeLS": "light",
+        "shellVersion": "2.0.0",
+        "headerCount": 1,
+        "footerCount": 0,
+        "headerBg": "rgba(255, 255, 255, 0.95)",
+        "bodyBg": "rgb(245, 245, 245)",
+        "headerLogoDark": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "none",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 0,
+            "h": 0
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "headerLogoLight": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 45,
+            "h": 45
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "footerLogoDark": {
+          "present": false
+        },
+        "footerLogoLight": {
+          "present": false
+        },
+        "favicon": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "appleTouch": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "themeTogglePresent": true
+      },
+      "reloadLight": {
+        "label": "home/light-reload",
+        "htmlClass": "light-mode",
+        "colorScheme": "light",
+        "ztThemeLS": "light",
+        "shellVersion": "2.0.0",
+        "headerCount": 1,
+        "footerCount": 0,
+        "headerBg": "rgba(255, 255, 255, 0.95)",
+        "bodyBg": "rgb(245, 245, 245)",
+        "headerLogoDark": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "none",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 0,
+            "h": 0
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "headerLogoLight": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 45,
+            "h": 45
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "footerLogoDark": {
+          "present": false
+        },
+        "footerLogoLight": {
+          "present": false
+        },
+        "favicon": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "appleTouch": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "themeTogglePresent": true
+      },
+      "backToDark": {
+        "label": "home/dark-again",
+        "htmlClass": "",
+        "colorScheme": "dark",
+        "ztThemeLS": "dark",
+        "shellVersion": "2.0.0",
+        "headerCount": 1,
+        "footerCount": 0,
+        "headerBg": "rgba(10, 10, 10, 0.92)",
+        "bodyBg": "rgb(10, 10, 10)",
+        "headerLogoDark": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 45,
+            "h": 45
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "headerLogoLight": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "none",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 0,
+            "h": 0
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "footerLogoDark": {
+          "present": false
+        },
+        "footerLogoLight": {
+          "present": false
+        },
+        "favicon": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "appleTouch": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "themeTogglePresent": true
+      }
+    },
+    "lounge": {
+      "route": "/pages/experiences/lounge.html",
+      "initialDark": {
+        "label": "lounge/dark-fresh",
+        "htmlClass": "",
+        "colorScheme": "dark",
+        "ztThemeLS": null,
+        "shellVersion": "2.0.0",
+        "headerCount": 1,
+        "footerCount": 0,
+        "headerBg": "rgba(10, 10, 10, 0.92)",
+        "bodyBg": "rgb(10, 10, 10)",
+        "headerLogoDark": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 45,
+            "h": 45
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "headerLogoLight": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "none",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 0,
+            "h": 0
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "footerLogoDark": {
+          "present": false
+        },
+        "footerLogoLight": {
+          "present": false
+        },
+        "favicon": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "appleTouch": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "themeTogglePresent": true
+      },
+      "afterToggleLight": {
+        "label": "lounge/light-toggled",
+        "htmlClass": "light-mode",
+        "colorScheme": "light",
+        "ztThemeLS": "light",
+        "shellVersion": "2.0.0",
+        "headerCount": 1,
+        "footerCount": 0,
+        "headerBg": "rgba(255, 255, 255, 0.95)",
+        "bodyBg": "rgb(245, 245, 245)",
+        "headerLogoDark": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "none",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 0,
+            "h": 0
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "headerLogoLight": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 45,
+            "h": 45
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "footerLogoDark": {
+          "present": false
+        },
+        "footerLogoLight": {
+          "present": false
+        },
+        "favicon": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "appleTouch": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "themeTogglePresent": true
+      },
+      "reloadLight": {
+        "label": "lounge/light-reload",
+        "htmlClass": "light-mode",
+        "colorScheme": "light",
+        "ztThemeLS": "light",
+        "shellVersion": "2.0.0",
+        "headerCount": 1,
+        "footerCount": 0,
+        "headerBg": "rgba(255, 255, 255, 0.95)",
+        "bodyBg": "rgb(245, 245, 245)",
+        "headerLogoDark": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "none",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 0,
+            "h": 0
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "headerLogoLight": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 45,
+            "h": 45
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "footerLogoDark": {
+          "present": false
+        },
+        "footerLogoLight": {
+          "present": false
+        },
+        "favicon": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "appleTouch": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "themeTogglePresent": true
+      },
+      "backToDark": {
+        "label": "lounge/dark-again",
+        "htmlClass": "",
+        "colorScheme": "dark",
+        "ztThemeLS": "dark",
+        "shellVersion": "2.0.0",
+        "headerCount": 1,
+        "footerCount": 0,
+        "headerBg": "rgba(10, 10, 10, 0.92)",
+        "bodyBg": "rgb(10, 10, 10)",
+        "headerLogoDark": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 45,
+            "h": 45
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "headerLogoLight": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "none",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 0,
+            "h": 0
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "footerLogoDark": {
+          "present": false
+        },
+        "footerLogoLight": {
+          "present": false
+        },
+        "favicon": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "appleTouch": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "themeTogglePresent": true
+      }
+    },
+    "restaurant-menu": {
+      "route": "/pages/experiences/restaurant-menu.html",
+      "initialDark": {
+        "label": "restaurant-menu/dark-fresh",
+        "htmlClass": "",
+        "colorScheme": "dark",
+        "ztThemeLS": null,
+        "shellVersion": "2.0.0",
+        "headerCount": 1,
+        "footerCount": 0,
+        "headerBg": "rgba(10, 10, 10, 0.92)",
+        "bodyBg": "rgb(10, 10, 10)",
+        "headerLogoDark": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 45,
+            "h": 45
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "headerLogoLight": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "none",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 0,
+            "h": 0
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "footerLogoDark": {
+          "present": false
+        },
+        "footerLogoLight": {
+          "present": false
+        },
+        "favicon": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "appleTouch": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "themeTogglePresent": true
+      },
+      "afterToggleLight": {
+        "label": "restaurant-menu/light-toggled",
+        "htmlClass": "light-mode",
+        "colorScheme": "light",
+        "ztThemeLS": "light",
+        "shellVersion": "2.0.0",
+        "headerCount": 1,
+        "footerCount": 0,
+        "headerBg": "rgba(255, 255, 255, 0.95)",
+        "bodyBg": "rgb(245, 245, 245)",
+        "headerLogoDark": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "none",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 0,
+            "h": 0
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "headerLogoLight": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 45,
+            "h": 45
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "footerLogoDark": {
+          "present": false
+        },
+        "footerLogoLight": {
+          "present": false
+        },
+        "favicon": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "appleTouch": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "themeTogglePresent": true
+      },
+      "reloadLight": {
+        "label": "restaurant-menu/light-reload",
+        "htmlClass": "light-mode",
+        "colorScheme": "light",
+        "ztThemeLS": "light",
+        "shellVersion": "2.0.0",
+        "headerCount": 1,
+        "footerCount": 0,
+        "headerBg": "rgba(255, 255, 255, 0.95)",
+        "bodyBg": "rgb(245, 245, 245)",
+        "headerLogoDark": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "none",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 0,
+            "h": 0
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "headerLogoLight": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 45,
+            "h": 45
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "footerLogoDark": {
+          "present": false
+        },
+        "footerLogoLight": {
+          "present": false
+        },
+        "favicon": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "appleTouch": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "themeTogglePresent": true
+      },
+      "backToDark": {
+        "label": "restaurant-menu/dark-again",
+        "htmlClass": "",
+        "colorScheme": "dark",
+        "ztThemeLS": "dark",
+        "shellVersion": "2.0.0",
+        "headerCount": 1,
+        "footerCount": 0,
+        "headerBg": "rgba(10, 10, 10, 0.92)",
+        "bodyBg": "rgb(10, 10, 10)",
+        "headerLogoDark": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 45,
+            "h": 45
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "headerLogoLight": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "none",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 0,
+            "h": 0
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "footerLogoDark": {
+          "present": false
+        },
+        "footerLogoLight": {
+          "present": false
+        },
+        "favicon": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "appleTouch": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "themeTogglePresent": true
+      }
+    },
+    "contact": {
+      "route": "/pages/contact/contact.html",
+      "initialDark": {
+        "label": "contact/dark-fresh",
+        "htmlClass": "",
+        "colorScheme": "dark",
+        "ztThemeLS": null,
+        "shellVersion": "2.0.0",
+        "headerCount": 1,
+        "footerCount": 0,
+        "headerBg": "rgba(10, 10, 10, 0.92)",
+        "bodyBg": "rgb(10, 10, 10)",
+        "headerLogoDark": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 45,
+            "h": 45
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "headerLogoLight": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "none",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 0,
+            "h": 0
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "footerLogoDark": {
+          "present": false
+        },
+        "footerLogoLight": {
+          "present": false
+        },
+        "favicon": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "appleTouch": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "themeTogglePresent": true
+      },
+      "afterToggleLight": {
+        "label": "contact/light-toggled",
+        "htmlClass": "light-mode",
+        "colorScheme": "light",
+        "ztThemeLS": "light",
+        "shellVersion": "2.0.0",
+        "headerCount": 1,
+        "footerCount": 0,
+        "headerBg": "rgba(255, 255, 255, 0.95)",
+        "bodyBg": "rgb(245, 245, 245)",
+        "headerLogoDark": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "none",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 0,
+            "h": 0
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "headerLogoLight": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 45,
+            "h": 45
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "footerLogoDark": {
+          "present": false
+        },
+        "footerLogoLight": {
+          "present": false
+        },
+        "favicon": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "appleTouch": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "themeTogglePresent": true
+      },
+      "reloadLight": {
+        "label": "contact/light-reload",
+        "htmlClass": "light-mode",
+        "colorScheme": "light",
+        "ztThemeLS": "light",
+        "shellVersion": "2.0.0",
+        "headerCount": 1,
+        "footerCount": 0,
+        "headerBg": "rgba(255, 255, 255, 0.95)",
+        "bodyBg": "rgb(245, 245, 245)",
+        "headerLogoDark": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "none",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 0,
+            "h": 0
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "headerLogoLight": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 45,
+            "h": 45
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "footerLogoDark": {
+          "present": false
+        },
+        "footerLogoLight": {
+          "present": false
+        },
+        "favicon": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "appleTouch": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "themeTogglePresent": true
+      },
+      "backToDark": {
+        "label": "contact/dark-again",
+        "htmlClass": "",
+        "colorScheme": "dark",
+        "ztThemeLS": "dark",
+        "shellVersion": "2.0.0",
+        "headerCount": 1,
+        "footerCount": 0,
+        "headerBg": "rgba(10, 10, 10, 0.92)",
+        "bodyBg": "rgb(10, 10, 10)",
+        "headerLogoDark": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 45,
+            "h": 45
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "headerLogoLight": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "none",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 0,
+            "h": 0
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "footerLogoDark": {
+          "present": false
+        },
+        "footerLogoLight": {
+          "present": false
+        },
+        "favicon": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "appleTouch": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "themeTogglePresent": true
+      }
+    },
+    "restaurant": {
+      "route": "/pages/experiences/restaurant.html",
+      "initialDark": {
+        "label": "restaurant/dark-fresh",
+        "htmlClass": "",
+        "colorScheme": "dark",
+        "ztThemeLS": null,
+        "shellVersion": "2.0.0",
+        "headerCount": 1,
+        "footerCount": 0,
+        "headerBg": "rgba(10, 10, 10, 0.92)",
+        "bodyBg": "rgb(10, 10, 10)",
+        "headerLogoDark": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 45,
+            "h": 45
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "headerLogoLight": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "none",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 0,
+            "h": 0
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "footerLogoDark": {
+          "present": false
+        },
+        "footerLogoLight": {
+          "present": false
+        },
+        "favicon": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "appleTouch": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "themeTogglePresent": true
+      },
+      "afterToggleLight": {
+        "label": "restaurant/light-toggled",
+        "htmlClass": "light-mode",
+        "colorScheme": "light",
+        "ztThemeLS": "light",
+        "shellVersion": "2.0.0",
+        "headerCount": 1,
+        "footerCount": 0,
+        "headerBg": "rgba(255, 255, 255, 0.95)",
+        "bodyBg": "rgb(245, 245, 245)",
+        "headerLogoDark": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "none",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 0,
+            "h": 0
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "headerLogoLight": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 45,
+            "h": 45
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "footerLogoDark": {
+          "present": false
+        },
+        "footerLogoLight": {
+          "present": false
+        },
+        "favicon": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "appleTouch": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "themeTogglePresent": true
+      },
+      "reloadLight": {
+        "label": "restaurant/light-reload",
+        "htmlClass": "light-mode",
+        "colorScheme": "light",
+        "ztThemeLS": "light",
+        "shellVersion": "2.0.0",
+        "headerCount": 1,
+        "footerCount": 0,
+        "headerBg": "rgba(255, 255, 255, 0.95)",
+        "bodyBg": "rgb(245, 245, 245)",
+        "headerLogoDark": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "none",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 0,
+            "h": 0
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "headerLogoLight": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 45,
+            "h": 45
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "footerLogoDark": {
+          "present": false
+        },
+        "footerLogoLight": {
+          "present": false
+        },
+        "favicon": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "appleTouch": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "themeTogglePresent": true
+      },
+      "backToDark": {
+        "label": "restaurant/dark-again",
+        "htmlClass": "",
+        "colorScheme": "dark",
+        "ztThemeLS": "dark",
+        "shellVersion": "2.0.0",
+        "headerCount": 1,
+        "footerCount": 0,
+        "headerBg": "rgba(10, 10, 10, 0.92)",
+        "bodyBg": "rgb(10, 10, 10)",
+        "headerLogoDark": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 45,
+            "h": 45
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "headerLogoLight": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "none",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 0,
+            "h": 0
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "footerLogoDark": {
+          "present": false
+        },
+        "footerLogoLight": {
+          "present": false
+        },
+        "favicon": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "appleTouch": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "themeTogglePresent": true
+      }
+    },
+    "vip": {
+      "route": "/pages/experiences/vip.html",
+      "initialDark": {
+        "label": "vip/dark-fresh",
+        "htmlClass": "",
+        "colorScheme": "dark",
+        "ztThemeLS": null,
+        "shellVersion": "2.0.0",
+        "headerCount": 1,
+        "footerCount": 0,
+        "headerBg": "rgba(10, 10, 10, 0.92)",
+        "bodyBg": "rgb(10, 10, 10)",
+        "headerLogoDark": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 45,
+            "h": 45
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "headerLogoLight": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "none",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 0,
+            "h": 0
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "footerLogoDark": {
+          "present": false
+        },
+        "footerLogoLight": {
+          "present": false
+        },
+        "favicon": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "appleTouch": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "themeTogglePresent": true
+      },
+      "afterToggleLight": {
+        "label": "vip/light-toggled",
+        "htmlClass": "light-mode",
+        "colorScheme": "light",
+        "ztThemeLS": "light",
+        "shellVersion": "2.0.0",
+        "headerCount": 1,
+        "footerCount": 0,
+        "headerBg": "rgba(255, 255, 255, 0.95)",
+        "bodyBg": "rgb(245, 245, 245)",
+        "headerLogoDark": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "none",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 0,
+            "h": 0
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "headerLogoLight": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 45,
+            "h": 45
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "footerLogoDark": {
+          "present": false
+        },
+        "footerLogoLight": {
+          "present": false
+        },
+        "favicon": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "appleTouch": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "themeTogglePresent": true
+      },
+      "reloadLight": {
+        "label": "vip/light-reload",
+        "htmlClass": "light-mode",
+        "colorScheme": "light",
+        "ztThemeLS": "light",
+        "shellVersion": "2.0.0",
+        "headerCount": 1,
+        "footerCount": 0,
+        "headerBg": "rgba(255, 255, 255, 0.95)",
+        "bodyBg": "rgb(245, 245, 245)",
+        "headerLogoDark": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "none",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 0,
+            "h": 0
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "headerLogoLight": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 45,
+            "h": 45
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "footerLogoDark": {
+          "present": false
+        },
+        "footerLogoLight": {
+          "present": false
+        },
+        "favicon": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "appleTouch": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "themeTogglePresent": true
+      },
+      "backToDark": {
+        "label": "vip/dark-again",
+        "htmlClass": "",
+        "colorScheme": "dark",
+        "ztThemeLS": "dark",
+        "shellVersion": "2.0.0",
+        "headerCount": 1,
+        "footerCount": 0,
+        "headerBg": "rgba(10, 10, 10, 0.92)",
+        "bodyBg": "rgb(10, 10, 10)",
+        "headerLogoDark": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 45,
+            "h": 45
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "headerLogoLight": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "none",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 0,
+            "h": 0
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "footerLogoDark": {
+          "present": false
+        },
+        "footerLogoLight": {
+          "present": false
+        },
+        "favicon": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "appleTouch": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "themeTogglePresent": true
+      }
+    },
+    "events": {
+      "route": "/pages/business/events.html",
+      "initialDark": {
+        "label": "events/dark-fresh",
+        "htmlClass": "",
+        "colorScheme": "dark",
+        "ztThemeLS": null,
+        "shellVersion": "2.0.0",
+        "headerCount": 1,
+        "footerCount": 0,
+        "headerBg": "rgba(10, 10, 10, 0.92)",
+        "bodyBg": "rgb(10, 10, 10)",
+        "headerLogoDark": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 45,
+            "h": 45
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "headerLogoLight": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "none",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 0,
+            "h": 0
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "footerLogoDark": {
+          "present": false
+        },
+        "footerLogoLight": {
+          "present": false
+        },
+        "favicon": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "appleTouch": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "themeTogglePresent": true
+      },
+      "afterToggleLight": {
+        "label": "events/light-toggled",
+        "htmlClass": "light-mode",
+        "colorScheme": "light",
+        "ztThemeLS": "light",
+        "shellVersion": "2.0.0",
+        "headerCount": 1,
+        "footerCount": 0,
+        "headerBg": "rgba(255, 255, 255, 0.95)",
+        "bodyBg": "rgb(245, 245, 245)",
+        "headerLogoDark": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "none",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 0,
+            "h": 0
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "headerLogoLight": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 45,
+            "h": 45
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "footerLogoDark": {
+          "present": false
+        },
+        "footerLogoLight": {
+          "present": false
+        },
+        "favicon": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "appleTouch": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "themeTogglePresent": true
+      },
+      "reloadLight": {
+        "label": "events/light-reload",
+        "htmlClass": "light-mode",
+        "colorScheme": "light",
+        "ztThemeLS": "light",
+        "shellVersion": "2.0.0",
+        "headerCount": 1,
+        "footerCount": 0,
+        "headerBg": "rgba(255, 255, 255, 0.95)",
+        "bodyBg": "rgb(245, 245, 245)",
+        "headerLogoDark": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "none",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 0,
+            "h": 0
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "headerLogoLight": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 45,
+            "h": 45
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "footerLogoDark": {
+          "present": false
+        },
+        "footerLogoLight": {
+          "present": false
+        },
+        "favicon": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "appleTouch": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "themeTogglePresent": true
+      },
+      "backToDark": {
+        "label": "events/dark-again",
+        "htmlClass": "",
+        "colorScheme": "dark",
+        "ztThemeLS": "dark",
+        "shellVersion": "2.0.0",
+        "headerCount": 1,
+        "footerCount": 0,
+        "headerBg": "rgba(10, 10, 10, 0.92)",
+        "bodyBg": "rgb(10, 10, 10)",
+        "headerLogoDark": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 45,
+            "h": 45
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "headerLogoLight": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "none",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 0,
+            "h": 0
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "footerLogoDark": {
+          "present": false
+        },
+        "footerLogoLight": {
+          "present": false
+        },
+        "favicon": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "appleTouch": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "themeTogglePresent": true
+      }
+    },
+    "conference": {
+      "route": "/pages/business/conference.html",
+      "initialDark": {
+        "label": "conference/dark-fresh",
+        "htmlClass": "",
+        "colorScheme": "dark",
+        "ztThemeLS": null,
+        "shellVersion": "2.0.0",
+        "headerCount": 1,
+        "footerCount": 0,
+        "headerBg": "rgba(10, 10, 10, 0.92)",
+        "bodyBg": "rgb(10, 10, 10)",
+        "headerLogoDark": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 45,
+            "h": 45
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "headerLogoLight": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "none",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 0,
+            "h": 0
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "footerLogoDark": {
+          "present": false
+        },
+        "footerLogoLight": {
+          "present": false
+        },
+        "favicon": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "appleTouch": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "themeTogglePresent": true
+      },
+      "afterToggleLight": {
+        "label": "conference/light-toggled",
+        "htmlClass": "light-mode",
+        "colorScheme": "light",
+        "ztThemeLS": "light",
+        "shellVersion": "2.0.0",
+        "headerCount": 1,
+        "footerCount": 0,
+        "headerBg": "rgba(255, 255, 255, 0.95)",
+        "bodyBg": "rgb(245, 245, 245)",
+        "headerLogoDark": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "none",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 0,
+            "h": 0
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "headerLogoLight": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 45,
+            "h": 45
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "footerLogoDark": {
+          "present": false
+        },
+        "footerLogoLight": {
+          "present": false
+        },
+        "favicon": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "appleTouch": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "themeTogglePresent": true
+      },
+      "reloadLight": {
+        "label": "conference/light-reload",
+        "htmlClass": "light-mode",
+        "colorScheme": "light",
+        "ztThemeLS": "light",
+        "shellVersion": "2.0.0",
+        "headerCount": 1,
+        "footerCount": 0,
+        "headerBg": "rgba(255, 255, 255, 0.95)",
+        "bodyBg": "rgb(245, 245, 245)",
+        "headerLogoDark": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "none",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 0,
+            "h": 0
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "headerLogoLight": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 45,
+            "h": 45
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "footerLogoDark": {
+          "present": false
+        },
+        "footerLogoLight": {
+          "present": false
+        },
+        "favicon": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "appleTouch": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "themeTogglePresent": true
+      },
+      "backToDark": {
+        "label": "conference/dark-again",
+        "htmlClass": "",
+        "colorScheme": "dark",
+        "ztThemeLS": "dark",
+        "shellVersion": "2.0.0",
+        "headerCount": 1,
+        "footerCount": 0,
+        "headerBg": "rgba(10, 10, 10, 0.92)",
+        "bodyBg": "rgb(10, 10, 10)",
+        "headerLogoDark": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 45,
+            "h": 45
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "headerLogoLight": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "none",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 0,
+            "h": 0
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "footerLogoDark": {
+          "present": false
+        },
+        "footerLogoLight": {
+          "present": false
+        },
+        "favicon": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "appleTouch": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "themeTogglePresent": true
+      }
+    },
+    "grooming-care": {
+      "route": "/pages/business/grooming-care.html",
+      "initialDark": {
+        "label": "grooming-care/dark-fresh",
+        "htmlClass": "",
+        "colorScheme": "dark",
+        "ztThemeLS": null,
+        "shellVersion": "2.0.0",
+        "headerCount": 1,
+        "footerCount": 0,
+        "headerBg": "rgba(10, 10, 10, 0.92)",
+        "bodyBg": "rgb(10, 10, 10)",
+        "headerLogoDark": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 45,
+            "h": 45
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "headerLogoLight": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "none",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 0,
+            "h": 0
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "footerLogoDark": {
+          "present": false
+        },
+        "footerLogoLight": {
+          "present": false
+        },
+        "favicon": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "appleTouch": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "themeTogglePresent": true
+      },
+      "afterToggleLight": {
+        "label": "grooming-care/light-toggled",
+        "htmlClass": "light-mode",
+        "colorScheme": "light",
+        "ztThemeLS": "light",
+        "shellVersion": "2.0.0",
+        "headerCount": 1,
+        "footerCount": 0,
+        "headerBg": "rgba(255, 255, 255, 0.95)",
+        "bodyBg": "rgb(245, 245, 245)",
+        "headerLogoDark": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "none",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 0,
+            "h": 0
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "headerLogoLight": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 45,
+            "h": 45
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "footerLogoDark": {
+          "present": false
+        },
+        "footerLogoLight": {
+          "present": false
+        },
+        "favicon": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "appleTouch": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "themeTogglePresent": true
+      },
+      "reloadLight": {
+        "label": "grooming-care/light-reload",
+        "htmlClass": "light-mode",
+        "colorScheme": "light",
+        "ztThemeLS": "light",
+        "shellVersion": "2.0.0",
+        "headerCount": 1,
+        "footerCount": 0,
+        "headerBg": "rgba(255, 255, 255, 0.95)",
+        "bodyBg": "rgb(245, 245, 245)",
+        "headerLogoDark": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "none",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 0,
+            "h": 0
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "headerLogoLight": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 45,
+            "h": 45
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "footerLogoDark": {
+          "present": false
+        },
+        "footerLogoLight": {
+          "present": false
+        },
+        "favicon": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "appleTouch": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "themeTogglePresent": true
+      },
+      "backToDark": {
+        "label": "grooming-care/dark-again",
+        "htmlClass": "",
+        "colorScheme": "dark",
+        "ztThemeLS": "dark",
+        "shellVersion": "2.0.0",
+        "headerCount": 1,
+        "footerCount": 0,
+        "headerBg": "rgba(10, 10, 10, 0.92)",
+        "bodyBg": "rgb(10, 10, 10)",
+        "headerLogoDark": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 45,
+            "h": 45
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "headerLogoLight": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "none",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 0,
+            "h": 0
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "footerLogoDark": {
+          "present": false
+        },
+        "footerLogoLight": {
+          "present": false
+        },
+        "favicon": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "appleTouch": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "themeTogglePresent": true
+      }
+    },
+    "gallery": {
+      "route": "/pages/contact/gallery.html",
+      "initialDark": {
+        "label": "gallery/dark-fresh",
+        "htmlClass": "",
+        "colorScheme": "dark",
+        "ztThemeLS": null,
+        "shellVersion": "2.0.0",
+        "headerCount": 1,
+        "footerCount": 0,
+        "headerBg": "rgba(10, 10, 10, 0.92)",
+        "bodyBg": "rgb(10, 10, 10)",
+        "headerLogoDark": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 45,
+            "h": 45
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "headerLogoLight": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "none",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 0,
+            "h": 0
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "footerLogoDark": {
+          "present": false
+        },
+        "footerLogoLight": {
+          "present": false
+        },
+        "favicon": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "appleTouch": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "themeTogglePresent": true
+      },
+      "afterToggleLight": {
+        "label": "gallery/light-toggled",
+        "htmlClass": "light-mode",
+        "colorScheme": "light",
+        "ztThemeLS": "light",
+        "shellVersion": "2.0.0",
+        "headerCount": 1,
+        "footerCount": 0,
+        "headerBg": "rgba(255, 255, 255, 0.95)",
+        "bodyBg": "rgb(245, 245, 245)",
+        "headerLogoDark": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "none",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 0,
+            "h": 0
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "headerLogoLight": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 45,
+            "h": 45
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "footerLogoDark": {
+          "present": false
+        },
+        "footerLogoLight": {
+          "present": false
+        },
+        "favicon": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "appleTouch": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "themeTogglePresent": true
+      },
+      "reloadLight": {
+        "label": "gallery/light-reload",
+        "htmlClass": "light-mode",
+        "colorScheme": "light",
+        "ztThemeLS": "light",
+        "shellVersion": "2.0.0",
+        "headerCount": 1,
+        "footerCount": 0,
+        "headerBg": "rgba(255, 255, 255, 0.95)",
+        "bodyBg": "rgb(245, 245, 245)",
+        "headerLogoDark": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "none",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 0,
+            "h": 0
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "headerLogoLight": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 45,
+            "h": 45
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "footerLogoDark": {
+          "present": false
+        },
+        "footerLogoLight": {
+          "present": false
+        },
+        "favicon": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "appleTouch": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "themeTogglePresent": true
+      },
+      "backToDark": {
+        "label": "gallery/dark-again",
+        "htmlClass": "",
+        "colorScheme": "dark",
+        "ztThemeLS": "dark",
+        "shellVersion": "2.0.0",
+        "headerCount": 1,
+        "footerCount": 0,
+        "headerBg": "rgba(10, 10, 10, 0.92)",
+        "bodyBg": "rgb(10, 10, 10)",
+        "headerLogoDark": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 45,
+            "h": 45
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "headerLogoLight": {
+          "present": true,
+          "src": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "srcCurrent": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+          "naturalW": 1251,
+          "naturalH": 1251,
+          "complete": true,
+          "display": "none",
+          "visibility": "visible",
+          "opacity": "1",
+          "filter": "none",
+          "rect": {
+            "w": 0,
+            "h": 0
+          },
+          "currentSrcResolved": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+        },
+        "footerLogoDark": {
+          "present": false
+        },
+        "footerLogoLight": {
+          "present": false
+        },
+        "favicon": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "appleTouch": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "themeTogglePresent": true
+      }
+    }
+  },
+  "consoleErrs": [
+    {
+      "route": "home",
+      "type": "log",
+      "text": "[BrandingInit] Starting canonical branding initialization..."
+    },
+    {
+      "route": "home",
+      "type": "log",
+      "text": "[BrandingInit] Settings loaded: {businessName: ZT Lounge Meru, hasResolvedLogo: true, hasResolvedFavicon: true}"
+    },
+    {
+      "route": "home",
+      "type": "log",
+      "text": "[BrandingInit] Updated 4 logo elements"
+    },
+    {
+      "route": "home",
+      "type": "log",
+      "text": "[BrandingInit] Updated OG/Twitter image meta tags"
+    },
+    {
+      "route": "home",
+      "type": "log",
+      "text": "[BrandingInit] Updated JSON-LD structured data"
+    },
+    {
+      "route": "home",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Logo canonicalized: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+    },
+    {
+      "route": "home",
+      "type": "log",
+      "text": "[BrandingInit] Updated favicon elements"
+    },
+    {
+      "route": "home",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Favicon canonicalized: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+    },
+    {
+      "route": "home",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Canonical branding initialization complete"
+    },
+    {
+      "route": "home",
+      "type": "log",
+      "text": "[BrandingInit] Starting canonical branding initialization..."
+    },
+    {
+      "route": "home",
+      "type": "log",
+      "text": "[BrandingInit] Settings loaded: {businessName: ZT Lounge Meru, hasResolvedLogo: true, hasResolvedFavicon: true}"
+    },
+    {
+      "route": "home",
+      "type": "log",
+      "text": "[BrandingInit] Updated 4 logo elements"
+    },
+    {
+      "route": "home",
+      "type": "log",
+      "text": "[BrandingInit] Updated OG/Twitter image meta tags"
+    },
+    {
+      "route": "home",
+      "type": "log",
+      "text": "[BrandingInit] Updated JSON-LD structured data"
+    },
+    {
+      "route": "home",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Logo canonicalized: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+    },
+    {
+      "route": "home",
+      "type": "log",
+      "text": "[BrandingInit] Updated favicon elements"
+    },
+    {
+      "route": "home",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Favicon canonicalized: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+    },
+    {
+      "route": "home",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Canonical branding initialization complete"
+    },
+    {
+      "route": "lounge",
+      "type": "log",
+      "text": "[BrandingInit] Starting canonical branding initialization..."
+    },
+    {
+      "route": "lounge",
+      "type": "log",
+      "text": "[BrandingInit] Settings loaded: {businessName: ZT Lounge Meru, hasResolvedLogo: true, hasResolvedFavicon: true}"
+    },
+    {
+      "route": "lounge",
+      "type": "log",
+      "text": "[BrandingInit] Updated 4 logo elements"
+    },
+    {
+      "route": "lounge",
+      "type": "log",
+      "text": "[BrandingInit] Updated OG/Twitter image meta tags"
+    },
+    {
+      "route": "lounge",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Logo canonicalized: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+    },
+    {
+      "route": "lounge",
+      "type": "log",
+      "text": "[BrandingInit] Updated favicon elements"
+    },
+    {
+      "route": "lounge",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Favicon canonicalized: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+    },
+    {
+      "route": "lounge",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Canonical branding initialization complete"
+    },
+    {
+      "route": "lounge",
+      "type": "log",
+      "text": "[BrandingInit] Starting canonical branding initialization..."
+    },
+    {
+      "route": "lounge",
+      "type": "log",
+      "text": "[BrandingInit] Settings loaded: {businessName: ZT Lounge Meru, hasResolvedLogo: true, hasResolvedFavicon: true}"
+    },
+    {
+      "route": "lounge",
+      "type": "log",
+      "text": "[BrandingInit] Updated 4 logo elements"
+    },
+    {
+      "route": "lounge",
+      "type": "log",
+      "text": "[BrandingInit] Updated OG/Twitter image meta tags"
+    },
+    {
+      "route": "lounge",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Logo canonicalized: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+    },
+    {
+      "route": "lounge",
+      "type": "log",
+      "text": "[BrandingInit] Updated favicon elements"
+    },
+    {
+      "route": "lounge",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Favicon canonicalized: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+    },
+    {
+      "route": "lounge",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Canonical branding initialization complete"
+    },
+    {
+      "route": "restaurant-menu",
+      "type": "log",
+      "text": "[BrandingInit] Starting canonical branding initialization..."
+    },
+    {
+      "route": "restaurant-menu",
+      "type": "log",
+      "text": "[BrandingInit] Settings loaded: {businessName: ZT Lounge Meru, hasResolvedLogo: true, hasResolvedFavicon: true}"
+    },
+    {
+      "route": "restaurant-menu",
+      "type": "log",
+      "text": "[BrandingInit] Updated 4 logo elements"
+    },
+    {
+      "route": "restaurant-menu",
+      "type": "log",
+      "text": "[BrandingInit] Updated OG/Twitter image meta tags"
+    },
+    {
+      "route": "restaurant-menu",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Logo canonicalized: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+    },
+    {
+      "route": "restaurant-menu",
+      "type": "log",
+      "text": "[BrandingInit] Updated favicon elements"
+    },
+    {
+      "route": "restaurant-menu",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Favicon canonicalized: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+    },
+    {
+      "route": "restaurant-menu",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Canonical branding initialization complete"
+    },
+    {
+      "route": "restaurant-menu",
+      "type": "log",
+      "text": "[BrandingInit] Starting canonical branding initialization..."
+    },
+    {
+      "route": "restaurant-menu",
+      "type": "log",
+      "text": "[BrandingInit] Settings loaded: {businessName: ZT Lounge Meru, hasResolvedLogo: true, hasResolvedFavicon: true}"
+    },
+    {
+      "route": "restaurant-menu",
+      "type": "log",
+      "text": "[BrandingInit] Updated 4 logo elements"
+    },
+    {
+      "route": "restaurant-menu",
+      "type": "log",
+      "text": "[BrandingInit] Updated OG/Twitter image meta tags"
+    },
+    {
+      "route": "restaurant-menu",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Logo canonicalized: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+    },
+    {
+      "route": "restaurant-menu",
+      "type": "log",
+      "text": "[BrandingInit] Updated favicon elements"
+    },
+    {
+      "route": "restaurant-menu",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Favicon canonicalized: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+    },
+    {
+      "route": "restaurant-menu",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Canonical branding initialization complete"
+    },
+    {
+      "route": "contact",
+      "type": "log",
+      "text": "[BrandingInit] Starting canonical branding initialization..."
+    },
+    {
+      "route": "contact",
+      "type": "log",
+      "text": "[BrandingInit] Settings loaded: {businessName: ZT Lounge Meru, hasResolvedLogo: true, hasResolvedFavicon: true}"
+    },
+    {
+      "route": "contact",
+      "type": "log",
+      "text": "[BrandingInit] Updated 4 logo elements"
+    },
+    {
+      "route": "contact",
+      "type": "log",
+      "text": "[BrandingInit] Updated OG/Twitter image meta tags"
+    },
+    {
+      "route": "contact",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Logo canonicalized: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+    },
+    {
+      "route": "contact",
+      "type": "log",
+      "text": "[BrandingInit] Updated favicon elements"
+    },
+    {
+      "route": "contact",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Favicon canonicalized: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+    },
+    {
+      "route": "contact",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Canonical branding initialization complete"
+    },
+    {
+      "route": "contact",
+      "type": "log",
+      "text": "[BrandingInit] Starting canonical branding initialization..."
+    },
+    {
+      "route": "contact",
+      "type": "log",
+      "text": "[BrandingInit] Settings loaded: {businessName: ZT Lounge Meru, hasResolvedLogo: true, hasResolvedFavicon: true}"
+    },
+    {
+      "route": "contact",
+      "type": "log",
+      "text": "[BrandingInit] Updated 4 logo elements"
+    },
+    {
+      "route": "contact",
+      "type": "log",
+      "text": "[BrandingInit] Updated OG/Twitter image meta tags"
+    },
+    {
+      "route": "contact",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Logo canonicalized: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+    },
+    {
+      "route": "contact",
+      "type": "log",
+      "text": "[BrandingInit] Updated favicon elements"
+    },
+    {
+      "route": "contact",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Favicon canonicalized: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+    },
+    {
+      "route": "contact",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Canonical branding initialization complete"
+    },
+    {
+      "route": "restaurant",
+      "type": "log",
+      "text": "[BrandingInit] Starting canonical branding initialization..."
+    },
+    {
+      "route": "restaurant",
+      "type": "log",
+      "text": "[BrandingInit] Settings loaded: {businessName: ZT Lounge Meru, hasResolvedLogo: true, hasResolvedFavicon: true}"
+    },
+    {
+      "route": "restaurant",
+      "type": "log",
+      "text": "[BrandingInit] Updated 4 logo elements"
+    },
+    {
+      "route": "restaurant",
+      "type": "log",
+      "text": "[BrandingInit] Updated OG/Twitter image meta tags"
+    },
+    {
+      "route": "restaurant",
+      "type": "log",
+      "text": "[BrandingInit] Updated JSON-LD structured data"
+    },
+    {
+      "route": "restaurant",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Logo canonicalized: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+    },
+    {
+      "route": "restaurant",
+      "type": "log",
+      "text": "[BrandingInit] Updated favicon elements"
+    },
+    {
+      "route": "restaurant",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Favicon canonicalized: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+    },
+    {
+      "route": "restaurant",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Canonical branding initialization complete"
+    },
+    {
+      "route": "restaurant",
+      "type": "log",
+      "text": "[BrandingInit] Starting canonical branding initialization..."
+    },
+    {
+      "route": "restaurant",
+      "type": "log",
+      "text": "[BrandingInit] Settings loaded: {businessName: ZT Lounge Meru, hasResolvedLogo: true, hasResolvedFavicon: true}"
+    },
+    {
+      "route": "restaurant",
+      "type": "log",
+      "text": "[BrandingInit] Updated 4 logo elements"
+    },
+    {
+      "route": "restaurant",
+      "type": "log",
+      "text": "[BrandingInit] Updated OG/Twitter image meta tags"
+    },
+    {
+      "route": "restaurant",
+      "type": "log",
+      "text": "[BrandingInit] Updated JSON-LD structured data"
+    },
+    {
+      "route": "restaurant",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Logo canonicalized: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+    },
+    {
+      "route": "restaurant",
+      "type": "log",
+      "text": "[BrandingInit] Updated favicon elements"
+    },
+    {
+      "route": "restaurant",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Favicon canonicalized: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+    },
+    {
+      "route": "restaurant",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Canonical branding initialization complete"
+    },
+    {
+      "route": "vip",
+      "type": "log",
+      "text": "[BrandingInit] Starting canonical branding initialization..."
+    },
+    {
+      "route": "vip",
+      "type": "log",
+      "text": "[BrandingInit] Settings loaded: {businessName: ZT Lounge Meru, hasResolvedLogo: true, hasResolvedFavicon: true}"
+    },
+    {
+      "route": "vip",
+      "type": "log",
+      "text": "[BrandingInit] Updated 4 logo elements"
+    },
+    {
+      "route": "vip",
+      "type": "log",
+      "text": "[BrandingInit] Updated OG/Twitter image meta tags"
+    },
+    {
+      "route": "vip",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Logo canonicalized: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+    },
+    {
+      "route": "vip",
+      "type": "log",
+      "text": "[BrandingInit] Updated favicon elements"
+    },
+    {
+      "route": "vip",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Favicon canonicalized: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+    },
+    {
+      "route": "vip",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Canonical branding initialization complete"
+    },
+    {
+      "route": "vip",
+      "type": "log",
+      "text": "[BrandingInit] Starting canonical branding initialization..."
+    },
+    {
+      "route": "vip",
+      "type": "log",
+      "text": "[BrandingInit] Settings loaded: {businessName: ZT Lounge Meru, hasResolvedLogo: true, hasResolvedFavicon: true}"
+    },
+    {
+      "route": "vip",
+      "type": "log",
+      "text": "[BrandingInit] Updated 4 logo elements"
+    },
+    {
+      "route": "vip",
+      "type": "log",
+      "text": "[BrandingInit] Updated OG/Twitter image meta tags"
+    },
+    {
+      "route": "vip",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Logo canonicalized: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+    },
+    {
+      "route": "vip",
+      "type": "log",
+      "text": "[BrandingInit] Updated favicon elements"
+    },
+    {
+      "route": "vip",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Favicon canonicalized: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+    },
+    {
+      "route": "vip",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Canonical branding initialization complete"
+    },
+    {
+      "route": "events",
+      "type": "log",
+      "text": "[BrandingInit] Starting canonical branding initialization..."
+    },
+    {
+      "route": "events",
+      "type": "log",
+      "text": "[BrandingInit] Settings loaded: {businessName: ZT Lounge Meru, hasResolvedLogo: true, hasResolvedFavicon: true}"
+    },
+    {
+      "route": "events",
+      "type": "log",
+      "text": "[BrandingInit] Updated 4 logo elements"
+    },
+    {
+      "route": "events",
+      "type": "log",
+      "text": "[BrandingInit] Updated OG/Twitter image meta tags"
+    },
+    {
+      "route": "events",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Logo canonicalized: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+    },
+    {
+      "route": "events",
+      "type": "log",
+      "text": "[BrandingInit] Updated favicon elements"
+    },
+    {
+      "route": "events",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Favicon canonicalized: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+    },
+    {
+      "route": "events",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Canonical branding initialization complete"
+    },
+    {
+      "route": "events",
+      "type": "log",
+      "text": "[BrandingInit] Starting canonical branding initialization..."
+    },
+    {
+      "route": "events",
+      "type": "log",
+      "text": "[BrandingInit] Settings loaded: {businessName: ZT Lounge Meru, hasResolvedLogo: true, hasResolvedFavicon: true}"
+    },
+    {
+      "route": "events",
+      "type": "log",
+      "text": "[BrandingInit] Updated 4 logo elements"
+    },
+    {
+      "route": "events",
+      "type": "log",
+      "text": "[BrandingInit] Updated OG/Twitter image meta tags"
+    },
+    {
+      "route": "events",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Logo canonicalized: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+    },
+    {
+      "route": "events",
+      "type": "log",
+      "text": "[BrandingInit] Updated favicon elements"
+    },
+    {
+      "route": "events",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Favicon canonicalized: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+    },
+    {
+      "route": "events",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Canonical branding initialization complete"
+    },
+    {
+      "route": "conference",
+      "type": "log",
+      "text": "[BrandingInit] Starting canonical branding initialization..."
+    },
+    {
+      "route": "conference",
+      "type": "log",
+      "text": "[BrandingInit] Settings loaded: {businessName: ZT Lounge Meru, hasResolvedLogo: true, hasResolvedFavicon: true}"
+    },
+    {
+      "route": "conference",
+      "type": "log",
+      "text": "[BrandingInit] Updated 4 logo elements"
+    },
+    {
+      "route": "conference",
+      "type": "log",
+      "text": "[BrandingInit] Updated OG/Twitter image meta tags"
+    },
+    {
+      "route": "conference",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Logo canonicalized: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+    },
+    {
+      "route": "conference",
+      "type": "log",
+      "text": "[BrandingInit] Updated favicon elements"
+    },
+    {
+      "route": "conference",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Favicon canonicalized: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+    },
+    {
+      "route": "conference",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Canonical branding initialization complete"
+    },
+    {
+      "route": "conference",
+      "type": "log",
+      "text": "[BrandingInit] Starting canonical branding initialization..."
+    },
+    {
+      "route": "conference",
+      "type": "log",
+      "text": "[BrandingInit] Settings loaded: {businessName: ZT Lounge Meru, hasResolvedLogo: true, hasResolvedFavicon: true}"
+    },
+    {
+      "route": "conference",
+      "type": "log",
+      "text": "[BrandingInit] Updated 4 logo elements"
+    },
+    {
+      "route": "conference",
+      "type": "log",
+      "text": "[BrandingInit] Updated OG/Twitter image meta tags"
+    },
+    {
+      "route": "conference",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Logo canonicalized: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+    },
+    {
+      "route": "conference",
+      "type": "log",
+      "text": "[BrandingInit] Updated favicon elements"
+    },
+    {
+      "route": "conference",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Favicon canonicalized: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+    },
+    {
+      "route": "conference",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Canonical branding initialization complete"
+    },
+    {
+      "route": "grooming-care",
+      "type": "log",
+      "text": "[BrandingInit] Starting canonical branding initialization..."
+    },
+    {
+      "route": "grooming-care",
+      "type": "log",
+      "text": "[BrandingInit] Settings loaded: {businessName: ZT Lounge Meru, hasResolvedLogo: true, hasResolvedFavicon: true}"
+    },
+    {
+      "route": "grooming-care",
+      "type": "log",
+      "text": "[BrandingInit] Updated 4 logo elements"
+    },
+    {
+      "route": "grooming-care",
+      "type": "log",
+      "text": "[BrandingInit] Updated OG/Twitter image meta tags"
+    },
+    {
+      "route": "grooming-care",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Logo canonicalized: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+    },
+    {
+      "route": "grooming-care",
+      "type": "log",
+      "text": "[BrandingInit] Updated favicon elements"
+    },
+    {
+      "route": "grooming-care",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Favicon canonicalized: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+    },
+    {
+      "route": "grooming-care",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Canonical branding initialization complete"
+    },
+    {
+      "route": "grooming-care",
+      "type": "log",
+      "text": "[BrandingInit] Starting canonical branding initialization..."
+    },
+    {
+      "route": "grooming-care",
+      "type": "log",
+      "text": "[BrandingInit] Settings loaded: {businessName: ZT Lounge Meru, hasResolvedLogo: true, hasResolvedFavicon: true}"
+    },
+    {
+      "route": "grooming-care",
+      "type": "log",
+      "text": "[BrandingInit] Updated 4 logo elements"
+    },
+    {
+      "route": "grooming-care",
+      "type": "log",
+      "text": "[BrandingInit] Updated OG/Twitter image meta tags"
+    },
+    {
+      "route": "grooming-care",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Logo canonicalized: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+    },
+    {
+      "route": "grooming-care",
+      "type": "log",
+      "text": "[BrandingInit] Updated favicon elements"
+    },
+    {
+      "route": "grooming-care",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Favicon canonicalized: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+    },
+    {
+      "route": "grooming-care",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Canonical branding initialization complete"
+    },
+    {
+      "route": "gallery",
+      "type": "log",
+      "text": "[BrandingInit] Starting canonical branding initialization..."
+    },
+    {
+      "route": "gallery",
+      "type": "log",
+      "text": "[BrandingInit] Settings loaded: {businessName: ZT Lounge Meru, hasResolvedLogo: true, hasResolvedFavicon: true}"
+    },
+    {
+      "route": "gallery",
+      "type": "log",
+      "text": "[BrandingInit] Updated 4 logo elements"
+    },
+    {
+      "route": "gallery",
+      "type": "log",
+      "text": "[BrandingInit] Updated OG/Twitter image meta tags"
+    },
+    {
+      "route": "gallery",
+      "type": "log",
+      "text": "[BrandingInit] Updated JSON-LD structured data"
+    },
+    {
+      "route": "gallery",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Logo canonicalized: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+    },
+    {
+      "route": "gallery",
+      "type": "log",
+      "text": "[BrandingInit] Updated favicon elements"
+    },
+    {
+      "route": "gallery",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Favicon canonicalized: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+    },
+    {
+      "route": "gallery",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Canonical branding initialization complete"
+    },
+    {
+      "route": "gallery",
+      "type": "log",
+      "text": "[BrandingInit] Starting canonical branding initialization..."
+    },
+    {
+      "route": "gallery",
+      "type": "log",
+      "text": "[BrandingInit] Settings loaded: {businessName: ZT Lounge Meru, hasResolvedLogo: true, hasResolvedFavicon: true}"
+    },
+    {
+      "route": "gallery",
+      "type": "log",
+      "text": "[BrandingInit] Updated 4 logo elements"
+    },
+    {
+      "route": "gallery",
+      "type": "log",
+      "text": "[BrandingInit] Updated OG/Twitter image meta tags"
+    },
+    {
+      "route": "gallery",
+      "type": "log",
+      "text": "[BrandingInit] Updated JSON-LD structured data"
+    },
+    {
+      "route": "gallery",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Logo canonicalized: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+    },
+    {
+      "route": "gallery",
+      "type": "log",
+      "text": "[BrandingInit] Updated favicon elements"
+    },
+    {
+      "route": "gallery",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Favicon canonicalized: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+    },
+    {
+      "route": "gallery",
+      "type": "log",
+      "text": "[BrandingInit] ✅ Canonical branding initialization complete"
+    }
+  ],
+  "failedReqs": [
+    {
+      "route": "gallery",
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/gallery/gallery-07.webp",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "route": "gallery",
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/gallery/gallery-08.webp",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "route": "gallery",
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/gallery/gallery-09.webp",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "route": "gallery",
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/gallery/gallery-10.webp",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "route": "gallery",
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/gallery/gallery-11.webp",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "route": "gallery",
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/gallery/gallery-12.webp",
+      "failure": "net::ERR_ABORTED"
+    }
+  ]
+}

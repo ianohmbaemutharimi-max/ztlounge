@@ -1,0 +1,1025 @@
+{
+  "capturedAt": "2026-09-24T12:28:24.670Z",
+  "url": "http://127.0.0.1:8000/",
+  "navigationError": null,
+  "firstVisible": {
+    "ms": 7648,
+    "slides": [
+      {
+        "bg": "url(\"https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/hero-images/hero-restaurant.webp\")",
+        "opacity": "1",
+        "display": "flex",
+        "visibility": "visible",
+        "z": "3"
+      }
+    ]
+  },
+  "perf": {
+    "navigation": {
+      "responseStart": 10.100000001490116,
+      "domContentLoaded": 293.19999999925494,
+      "load": 6187.699999999255,
+      "responseEnd": 12.5
+    },
+    "paints": [
+      {
+        "name": "first-paint",
+        "start": 172
+      },
+      {
+        "name": "first-contentful-paint",
+        "start": 172
+      }
+    ],
+    "lcp": [
+      {
+        "start": 172,
+        "size": 2128
+      },
+      {
+        "start": 284,
+        "size": 58696
+      },
+      {
+        "start": 7688,
+        "size": 296088
+      },
+      {
+        "start": 8628,
+        "size": 803520
+      }
+    ],
+    "resources": [
+      {
+        "name": "http://127.0.0.1:8000/assets/js/lib/supabase-js.js",
+        "start": 60,
+        "duration": 32.100000001490116,
+        "responseEnd": 92.10000000149012,
+        "transferSize": 213018,
+        "encodedBodySize": 212718,
+        "decodedBodySize": 212718
+      },
+      {
+        "name": "http://127.0.0.1:8000/assets/js/config/supabase.config.js",
+        "start": 62.30000000074506,
+        "duration": 20.100000001490116,
+        "responseEnd": 82.40000000223517,
+        "transferSize": 3042,
+        "encodedBodySize": 2742,
+        "decodedBodySize": 2742
+      },
+      {
+        "name": "http://127.0.0.1:8000/assets/js/lib/supabase.js",
+        "start": 62.900000002235174,
+        "duration": 38.69999999925494,
+        "responseEnd": 101.60000000149012,
+        "transferSize": 6155,
+        "encodedBodySize": 5855,
+        "decodedBodySize": 5855
+      },
+      {
+        "name": "http://127.0.0.1:8000/assets/images/branding/logo.webp",
+        "start": 71.30000000074506,
+        "duration": 49.100000001490116,
+        "responseEnd": 120.40000000223517,
+        "transferSize": 16414,
+        "encodedBodySize": 16114,
+        "decodedBodySize": 16114
+      },
+      {
+        "name": "http://127.0.0.1:8000/assets/images/branding/logo-white.webp",
+        "start": 71.5,
+        "duration": 50.600000001490116,
+        "responseEnd": 122.10000000149012,
+        "transferSize": 14796,
+        "encodedBodySize": 14496,
+        "decodedBodySize": 14496
+      },
+      {
+        "name": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/restaurant/hero-restaurant.webp",
+        "start": 214.60000000149012,
+        "duration": 1808.5999999977648,
+        "responseEnd": 2023.199999999255,
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0
+      },
+      {
+        "name": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/business_settings?select=id&limit=1",
+        "start": 253.19999999925494,
+        "duration": 1909.300000000745,
+        "responseEnd": 2162.5,
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0
+      },
+      {
+        "name": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/business_settings?select=*&limit=1",
+        "start": 253.80000000074506,
+        "duration": 3028.5,
+        "responseEnd": 3282.300000000745,
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0
+      },
+      {
+        "name": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/website_pages?select=id%2Cpage_key%2Ctitle&page_key=eq.home",
+        "start": 289.9000000022352,
+        "duration": 6046.199999999255,
+        "responseEnd": 6336.10000000149,
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0
+      },
+      {
+        "name": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/website_pages?select=id%2Cpage_key%2Ctitle&page_key=eq.home",
+        "start": 290.19999999925494,
+        "duration": 5198.5,
+        "responseEnd": 5488.699999999255,
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0
+      },
+      {
+        "name": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/website_pages?select=id%2Cpage_key%2Ctitle&page_key=eq.gallery",
+        "start": 290.4000000022352,
+        "duration": 5279.5,
+        "responseEnd": 5569.900000002235,
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0
+      },
+      {
+        "name": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/website_pages?select=id%2Cpage_key%2Ctitle&page_key=eq.home",
+        "start": 290.6000000014901,
+        "duration": 5726.599999997765,
+        "responseEnd": 6017.199999999255,
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0
+      },
+      {
+        "name": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/services?select=*&order=display_order.asc&is_active=eq.true",
+        "start": 290.9000000022352,
+        "duration": 1840.2999999970198,
+        "responseEnd": 2131.199999999255,
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0
+      },
+      {
+        "name": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/menu_categories?select=*&order=display_order.asc&is_active=eq.true",
+        "start": 291.1000000014901,
+        "duration": 3808.300000000745,
+        "responseEnd": 4099.400000002235,
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0
+      },
+      {
+        "name": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/website_pages?select=id%2Cpage_key%2Ctitle&page_key=eq.home",
+        "start": 291.30000000074506,
+        "duration": 6295.60000000149,
+        "responseEnd": 6586.900000002235,
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0
+      },
+      {
+        "name": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/testimonials?select=*&order=created_at.desc&approved=eq.true",
+        "start": 291.69999999925494,
+        "duration": 2971.300000000745,
+        "responseEnd": 3263,
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0
+      },
+      {
+        "name": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/website_pages?select=id%2Cpage_key%2Ctitle&page_key=eq.home",
+        "start": 292,
+        "duration": 3643.5,
+        "responseEnd": 3935.5,
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0
+      },
+      {
+        "name": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/membership_plans?select=*&order=display_order.asc",
+        "start": 292.19999999925494,
+        "duration": 2971.900000002235,
+        "responseEnd": 3264.10000000149,
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0
+      },
+      {
+        "name": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/media_assets?select=id%2Cpublic_url%2Calt_text&id=in.%2831c61869-6843-41ba-9af9-fa5f0be77399%2C740f7ee5-e018-4b21-813c-c962e6a36d14%2C40fe55fd-3969-4b12-af10-163008ec18c1%2C3d9989be-6c15-4e86-869e-843a259e70de%2Ce9eb1f40-1093-4dd8-8c36-f5dbee824870%2Cc13f3b5f-7d8b-4ef6-b94f-1b25a4d7ff63%2C376bbcc4-e3a8-4364-96bf-d41ad9499940%2C3fe9fbae-27ac-49ee-af18-5f1d78993cb1%2C590bced4-1697-42e7-a850-aceb841d9774%2C78c4936d-8a71-418d-9209-304ef5faed63%2C774bf8d2-1404-4735-b656-786fdd1d9898%29",
+        "start": 2134.300000000745,
+        "duration": 1148.8999999985099,
+        "responseEnd": 3283.199999999255,
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0
+      },
+      {
+        "name": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/membership_plan_benefits?select=*&order=display_order.asc",
+        "start": 3289.10000000149,
+        "duration": 2165.39999999851,
+        "responseEnd": 5454.5,
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0
+      },
+      {
+        "name": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/media_assets?select=public_url&id=eq.a5fb7148-8562-4d82-9fc1-d979fc19a323",
+        "start": 3292.300000000745,
+        "duration": 1712.300000000745,
+        "responseEnd": 5004.60000000149,
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0
+      },
+      {
+        "name": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/media_assets?select=public_url&id=eq.a5fb7148-8562-4d82-9fc1-d979fc19a323",
+        "start": 3292.699999999255,
+        "duration": 807.7000000029802,
+        "responseEnd": 4100.400000002235,
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0
+      },
+      {
+        "name": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/interior.webp",
+        "start": 3328.5,
+        "duration": 2298.800000000745,
+        "responseEnd": 5627.300000000745,
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0
+      },
+      {
+        "name": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/lounge-interior-main.webp",
+        "start": 3328.60000000149,
+        "duration": 2481.099999997765,
+        "responseEnd": 5809.699999999255,
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0
+      },
+      {
+        "name": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/vip-fireplace-lounge.webp",
+        "start": 3328.699999999255,
+        "duration": 2483.300000000745,
+        "responseEnd": 5812,
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0
+      },
+      {
+        "name": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/wedding.webp",
+        "start": 3328.800000000745,
+        "duration": 2654.60000000149,
+        "responseEnd": 5983.400000002235,
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0
+      },
+      {
+        "name": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/conference-hall.webp",
+        "start": 3329,
+        "duration": 2687.699999999255,
+        "responseEnd": 6016.699999999255,
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0
+      },
+      {
+        "name": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/car-detailing.webp",
+        "start": 3329,
+        "duration": 2856.10000000149,
+        "responseEnd": 6185.10000000149,
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0
+      },
+      {
+        "name": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/promotions?select=*&order=display_order.asc",
+        "start": 3937.800000000745,
+        "duration": 2080.10000000149,
+        "responseEnd": 6017.900000002235,
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0
+      },
+      {
+        "name": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/menu_items?select=*&order=display_order.asc&is_active=eq.true",
+        "start": 4103.5,
+        "duration": 1914.1000000014901,
+        "responseEnd": 6017.60000000149,
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0
+      },
+      {
+        "name": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+        "start": 5009,
+        "duration": 616.8000000007451,
+        "responseEnd": 5625.800000000745,
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0
+      },
+      {
+        "name": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/gallery?select=*&order=display_order.asc&page_id=eq.e5186de1-a199-476f-abe2-a3f8b21c6120&is_active=eq.true",
+        "start": 5579.5,
+        "duration": 745.3000000007451,
+        "responseEnd": 6324.800000000745,
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0
+      },
+      {
+        "name": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/gallery?select=*&order=display_order.asc&page_id=eq.c6817473-6194-4ef2-a055-fc80e5360c3a&is_active=eq.true",
+        "start": 5580.400000002235,
+        "duration": 740.5999999977648,
+        "responseEnd": 6321,
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0
+      },
+      {
+        "name": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/faqs?select=*&order=display_order.asc&page_id=eq.e5186de1-a199-476f-abe2-a3f8b21c6120&is_active=eq.true",
+        "start": 6024.5,
+        "duration": 518.4000000022352,
+        "responseEnd": 6542.900000002235,
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0
+      },
+      {
+        "name": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/website_pages?select=id%2Cpage_key&id=in.%2847d44cf4-be29-48e7-a0e0-9863fe26e9af%29",
+        "start": 6032.400000002235,
+        "duration": 737.0999999977648,
+        "responseEnd": 6769.5,
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0
+      },
+      {
+        "name": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/media_assets?select=id%2Cpublic_url%2Calt_text&id=in.%28a3157f18-fb56-4473-95c6-b2d259d9c707%2C610bcb3e-c2ed-4914-aff5-850aa8de859e%2Cd898e851-fd7a-4744-8494-e1cbb620a8a1%2C72c132f8-c5e0-46ca-9ed9-5f8a32c8c651%2C611ade4f-5c7b-4018-900a-abb7afca0e76%2C379dfca9-e67c-4b2f-b921-76ac2030d934%2C3d421b49-9533-4f92-9930-638a8bdce110%2C1ed186c3-cde7-464d-a284-b640f78be679%2C319e829a-b819-4dff-ad7e-7fa50ad2146d%2C6b8bb3dc-a7ec-40ca-bd4f-4898b746121a%2C897b3a61-9bf0-4e4e-ba55-4bf824eea35e%2Cc8c306df-aed5-485a-91b0-c346768525e2%2C8d01dc78-26b2-4f02-bbc6-c37db2520233%2C9e66cc0a-59d2-482c-8137-f7ca081901c8%29",
+        "start": 6033.800000000745,
+        "duration": 509.6000000014901,
+        "responseEnd": 6543.400000002235,
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0
+      },
+      {
+        "name": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/media_assets?select=id%2Cpublic_url%2Calt_text&id=in.%281b8a64af-b730-4291-8f06-1f66db8018b1%2Cb44a10fc-b446-4b74-a379-8345d2687bea%2C5ce9ae31-a4b3-487f-b313-1b747b550ab8%2C2ea6d47f-c739-4cc3-8d79-659bc529d11c%2Ca1086978-8bbd-4b49-a11e-cc3f65a88f7b%2C872936a8-63ce-4b6d-869c-e1612ad68364%2Caf2c33c5-743b-462d-9882-fe82610c1b41%2C2626a8ba-4683-42c3-a531-913c890014ba%2Ca8b741dd-fa4c-46b0-a0b7-b9d484590619%2Cacf772a5-f6af-4375-b725-e1c33d4012e5%2Cf22949ee-1cb7-4807-80c9-249cc1ae66ae%2Ce55d3b83-1681-4abf-932c-f0843abf3fd1%2C6468fd9e-783a-4097-a813-408133971afd%29",
+        "start": 6328,
+        "duration": 306.69999999925494,
+        "responseEnd": 6634.699999999255,
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0
+      },
+      {
+        "name": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/hero_slides?select=*&order=display_order.asc&page_id=eq.e5186de1-a199-476f-abe2-a3f8b21c6120&is_active=eq.true",
+        "start": 6339.800000000745,
+        "duration": 353.80000000074506,
+        "responseEnd": 6693.60000000149,
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0
+      },
+      {
+        "name": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/services?select=*&order=display_order.asc&page_id=eq.e5186de1-a199-476f-abe2-a3f8b21c6120&is_active=eq.true",
+        "start": 6589.60000000149,
+        "duration": 557.5,
+        "responseEnd": 7147.10000000149,
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0
+      },
+      {
+        "name": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/gallery-images/gallery-02.webp",
+        "start": 6642,
+        "duration": 826,
+        "responseEnd": 7468,
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0
+      },
+      {
+        "name": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/media_assets?select=id%2Cpublic_url%2Calt_text&id=in.%28ce0458d4-2275-40a7-b82c-f367922d1d0b%2C141ce2ea-6bf1-463d-a390-5faf426a74d4%29",
+        "start": 6695.60000000149,
+        "duration": 891.0999999977648,
+        "responseEnd": 7586.699999999255,
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0
+      },
+      {
+        "name": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/barbershop/haircut-beard-grooming.webp",
+        "start": 6801.699999999255,
+        "duration": 979.8000000007451,
+        "responseEnd": 7781.5,
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0
+      },
+      {
+        "name": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/hero-images/hero-restaurant.webp",
+        "start": 7600.900000002235,
+        "duration": 911.5999999977648,
+        "responseEnd": 8512.5,
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0
+      },
+      {
+        "name": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/hero-images/hero-lounge.webp",
+        "start": 7602,
+        "duration": 830.8000000007451,
+        "responseEnd": 8432.800000000745,
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "decodedBodySize": 0
+      }
+    ]
+  },
+  "events": [
+    {
+      "kind": "request",
+      "ms": 90,
+      "url": "http://127.0.0.1:8000/assets/js/lib/supabase-js.js"
+    },
+    {
+      "kind": "request",
+      "ms": 99,
+      "url": "http://127.0.0.1:8000/assets/js/config/supabase.config.js"
+    },
+    {
+      "kind": "request",
+      "ms": 99,
+      "url": "http://127.0.0.1:8000/assets/js/lib/supabase.js"
+    },
+    {
+      "kind": "request",
+      "ms": 128,
+      "url": "http://127.0.0.1:8000/assets/images/branding/logo.webp"
+    },
+    {
+      "kind": "request",
+      "ms": 128,
+      "url": "http://127.0.0.1:8000/assets/images/branding/logo-white.webp"
+    },
+    {
+      "kind": "response",
+      "ms": 164,
+      "url": "http://127.0.0.1:8000/assets/js/lib/supabase-js.js",
+      "status": 200,
+      "type": "application/javascript",
+      "bytes": null
+    },
+    {
+      "kind": "response",
+      "ms": 164,
+      "url": "http://127.0.0.1:8000/assets/js/config/supabase.config.js",
+      "status": 200,
+      "type": "application/javascript",
+      "bytes": null
+    },
+    {
+      "kind": "request",
+      "ms": 235,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/restaurant/hero-restaurant.webp"
+    },
+    {
+      "kind": "response",
+      "ms": 237,
+      "url": "http://127.0.0.1:8000/assets/images/branding/logo.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": null
+    },
+    {
+      "kind": "response",
+      "ms": 237,
+      "url": "http://127.0.0.1:8000/assets/images/branding/logo-white.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": null
+    },
+    {
+      "kind": "response",
+      "ms": 252,
+      "url": "http://127.0.0.1:8000/assets/js/lib/supabase.js",
+      "status": 200,
+      "type": "application/javascript",
+      "bytes": null
+    },
+    {
+      "kind": "request",
+      "ms": 317,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/business_settings?select=id&limit=1"
+    },
+    {
+      "kind": "request",
+      "ms": 317,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/business_settings?select=*&limit=1"
+    },
+    {
+      "kind": "request",
+      "ms": 342,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/website_pages?select=id%2Cpage_key%2Ctitle&page_key=eq.home"
+    },
+    {
+      "kind": "request",
+      "ms": 342,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/website_pages?select=id%2Cpage_key%2Ctitle&page_key=eq.home"
+    },
+    {
+      "kind": "request",
+      "ms": 342,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/website_pages?select=id%2Cpage_key%2Ctitle&page_key=eq.gallery"
+    },
+    {
+      "kind": "request",
+      "ms": 342,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/website_pages?select=id%2Cpage_key%2Ctitle&page_key=eq.home"
+    },
+    {
+      "kind": "request",
+      "ms": 375,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/services?select=*&order=display_order.asc&is_active=eq.true"
+    },
+    {
+      "kind": "request",
+      "ms": 376,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/menu_categories?select=*&order=display_order.asc&is_active=eq.true"
+    },
+    {
+      "kind": "request",
+      "ms": 376,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/website_pages?select=id%2Cpage_key%2Ctitle&page_key=eq.home"
+    },
+    {
+      "kind": "request",
+      "ms": 376,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/testimonials?select=*&order=created_at.desc&approved=eq.true"
+    },
+    {
+      "kind": "request",
+      "ms": 376,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/website_pages?select=id%2Cpage_key%2Ctitle&page_key=eq.home"
+    },
+    {
+      "kind": "request",
+      "ms": 376,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/membership_plans?select=*&order=display_order.asc"
+    },
+    {
+      "kind": "response",
+      "ms": 1756,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/restaurant/hero-restaurant.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": "264064"
+    },
+    {
+      "kind": "response",
+      "ms": 2096,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/business_settings?select=id&limit=1",
+      "status": 200,
+      "type": "application/json; charset=utf-8",
+      "bytes": "10"
+    },
+    {
+      "kind": "response",
+      "ms": 2149,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/services?select=*&order=display_order.asc&is_active=eq.true",
+      "status": 200,
+      "type": "application/json; charset=utf-8",
+      "bytes": "2759"
+    },
+    {
+      "kind": "request",
+      "ms": 2151,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/media_assets?select=id%2Cpublic_url%2Calt_text&id=in.%2831c61869-6843-41ba-9af9-fa5f0be77399%2C740f7ee5-e018-4b21-813c-c962e6a36d14%2C40fe55fd-3969-4b12-af10-163008ec18c1%2C3d9989be-6c15-4e86-869e-843a259e70de%2Ce9eb1f40-1093-4dd8-8c36-f5dbee824870%2Cc13f3b5f-7d8b-4ef6-b94f-1b25a4d7ff63%2C376bbcc4-e3a8-4364-96bf-d41ad9499940%2C3fe9fbae-27ac-49ee-af18-5f1d78993cb1%2C590bced4-1697-42e7-a850-aceb841d9774%2C78c4936d-8a71-418d-9209-304ef5faed63%2C774bf8d2-1404-4735-b656-786fdd1d9898%29"
+    },
+    {
+      "kind": "response",
+      "ms": 3279,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/testimonials?select=*&order=created_at.desc&approved=eq.true",
+      "status": 200,
+      "type": "application/json; charset=utf-8",
+      "bytes": "2"
+    },
+    {
+      "kind": "response",
+      "ms": 3295,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/membership_plans?select=*&order=display_order.asc",
+      "status": 200,
+      "type": "application/json; charset=utf-8",
+      "bytes": null
+    },
+    {
+      "kind": "response",
+      "ms": 3301,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/business_settings?select=*&limit=1",
+      "status": 200,
+      "type": "application/json; charset=utf-8",
+      "bytes": null
+    },
+    {
+      "kind": "response",
+      "ms": 3302,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/media_assets?select=id%2Cpublic_url%2Calt_text&id=in.%2831c61869-6843-41ba-9af9-fa5f0be77399%2C740f7ee5-e018-4b21-813c-c962e6a36d14%2C40fe55fd-3969-4b12-af10-163008ec18c1%2C3d9989be-6c15-4e86-869e-843a259e70de%2Ce9eb1f40-1093-4dd8-8c36-f5dbee824870%2Cc13f3b5f-7d8b-4ef6-b94f-1b25a4d7ff63%2C376bbcc4-e3a8-4364-96bf-d41ad9499940%2C3fe9fbae-27ac-49ee-af18-5f1d78993cb1%2C590bced4-1697-42e7-a850-aceb841d9774%2C78c4936d-8a71-418d-9209-304ef5faed63%2C774bf8d2-1404-4735-b656-786fdd1d9898%29",
+      "status": 200,
+      "type": "application/json; charset=utf-8",
+      "bytes": null
+    },
+    {
+      "kind": "request",
+      "ms": 3308,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/membership_plan_benefits?select=*&order=display_order.asc"
+    },
+    {
+      "kind": "request",
+      "ms": 3309,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/media_assets?select=public_url&id=eq.a5fb7148-8562-4d82-9fc1-d979fc19a323"
+    },
+    {
+      "kind": "request",
+      "ms": 3309,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/media_assets?select=public_url&id=eq.a5fb7148-8562-4d82-9fc1-d979fc19a323"
+    },
+    {
+      "kind": "request",
+      "ms": 3344,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/interior.webp"
+    },
+    {
+      "kind": "request",
+      "ms": 3345,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/lounge-interior-main.webp"
+    },
+    {
+      "kind": "request",
+      "ms": 3345,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/vip-fireplace-lounge.webp"
+    },
+    {
+      "kind": "request",
+      "ms": 3345,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/wedding.webp"
+    },
+    {
+      "kind": "request",
+      "ms": 3345,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/conference-hall.webp"
+    },
+    {
+      "kind": "request",
+      "ms": 3345,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/car-detailing.webp"
+    },
+    {
+      "kind": "response",
+      "ms": 3760,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/vip-fireplace-lounge.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": "101762"
+    },
+    {
+      "kind": "response",
+      "ms": 3929,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/wedding.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": "374260"
+    },
+    {
+      "kind": "request",
+      "ms": 3960,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/promotions?select=*&order=display_order.asc"
+    },
+    {
+      "kind": "response",
+      "ms": 3960,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/website_pages?select=id%2Cpage_key%2Ctitle&page_key=eq.home",
+      "status": 200,
+      "type": "application/json; charset=utf-8",
+      "bytes": null
+    },
+    {
+      "kind": "response",
+      "ms": 3960,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/lounge-interior-main.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": "190290"
+    },
+    {
+      "kind": "response",
+      "ms": 4113,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/menu_categories?select=*&order=display_order.asc&is_active=eq.true",
+      "status": 200,
+      "type": "application/json; charset=utf-8",
+      "bytes": null
+    },
+    {
+      "kind": "response",
+      "ms": 4115,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/media_assets?select=public_url&id=eq.a5fb7148-8562-4d82-9fc1-d979fc19a323",
+      "status": 200,
+      "type": "application/vnd.pgrst.object+json; charset=utf-8",
+      "bytes": "98"
+    },
+    {
+      "kind": "request",
+      "ms": 4119,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/menu_items?select=*&order=display_order.asc&is_active=eq.true"
+    },
+    {
+      "kind": "response",
+      "ms": 4129,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/membership_plan_benefits?select=*&order=display_order.asc",
+      "status": 200,
+      "type": "application/json; charset=utf-8",
+      "bytes": null
+    },
+    {
+      "kind": "response",
+      "ms": 5043,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/media_assets?select=public_url&id=eq.a5fb7148-8562-4d82-9fc1-d979fc19a323",
+      "status": 200,
+      "type": "application/vnd.pgrst.object+json; charset=utf-8",
+      "bytes": "98"
+    },
+    {
+      "kind": "request",
+      "ms": 5058,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp"
+    },
+    {
+      "kind": "response",
+      "ms": 5267,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/interior.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": "167644"
+    },
+    {
+      "kind": "response",
+      "ms": 5598,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/website_pages?select=id%2Cpage_key%2Ctitle&page_key=eq.home",
+      "status": 200,
+      "type": "application/json; charset=utf-8",
+      "bytes": null
+    },
+    {
+      "kind": "response",
+      "ms": 5600,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/website_pages?select=id%2Cpage_key%2Ctitle&page_key=eq.gallery",
+      "status": 200,
+      "type": "application/json; charset=utf-8",
+      "bytes": null
+    },
+    {
+      "kind": "request",
+      "ms": 5616,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/gallery?select=*&order=display_order.asc&page_id=eq.e5186de1-a199-476f-abe2-a3f8b21c6120&is_active=eq.true"
+    },
+    {
+      "kind": "request",
+      "ms": 5616,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/gallery?select=*&order=display_order.asc&page_id=eq.c6817473-6194-4ef2-a055-fc80e5360c3a&is_active=eq.true"
+    },
+    {
+      "kind": "response",
+      "ms": 5647,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/logos/logo.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": "16114"
+    },
+    {
+      "kind": "response",
+      "ms": 5882,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/conference-hall.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": "90026"
+    },
+    {
+      "kind": "response",
+      "ms": 6038,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/website_pages?select=id%2Cpage_key%2Ctitle&page_key=eq.home",
+      "status": 200,
+      "type": "application/json; charset=utf-8",
+      "bytes": null
+    },
+    {
+      "kind": "response",
+      "ms": 6038,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/menu_items?select=*&order=display_order.asc&is_active=eq.true",
+      "status": 200,
+      "type": "application/json; charset=utf-8",
+      "bytes": null
+    },
+    {
+      "kind": "request",
+      "ms": 6043,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/faqs?select=*&order=display_order.asc&page_id=eq.e5186de1-a199-476f-abe2-a3f8b21c6120&is_active=eq.true"
+    },
+    {
+      "kind": "response",
+      "ms": 6043,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/promotions?select=*&order=display_order.asc",
+      "status": 200,
+      "type": "application/json; charset=utf-8",
+      "bytes": null
+    },
+    {
+      "kind": "response",
+      "ms": 6043,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/car-detailing.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": "267646"
+    },
+    {
+      "kind": "request",
+      "ms": 6054,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/website_pages?select=id%2Cpage_key&id=in.%2847d44cf4-be29-48e7-a0e0-9863fe26e9af%29"
+    },
+    {
+      "kind": "request",
+      "ms": 6055,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/media_assets?select=id%2Cpublic_url%2Calt_text&id=in.%28a3157f18-fb56-4473-95c6-b2d259d9c707%2C610bcb3e-c2ed-4914-aff5-850aa8de859e%2Cd898e851-fd7a-4744-8494-e1cbb620a8a1%2C72c132f8-c5e0-46ca-9ed9-5f8a32c8c651%2C611ade4f-5c7b-4018-900a-abb7afca0e76%2C379dfca9-e67c-4b2f-b921-76ac2030d934%2C3d421b49-9533-4f92-9930-638a8bdce110%2C1ed186c3-cde7-464d-a284-b640f78be679%2C319e829a-b819-4dff-ad7e-7fa50ad2146d%2C6b8bb3dc-a7ec-40ca-bd4f-4898b746121a%2C897b3a61-9bf0-4e4e-ba55-4bf824eea35e%2Cc8c306df-aed5-485a-91b0-c346768525e2%2C8d01dc78-26b2-4f02-bbc6-c37db2520233%2C9e66cc0a-59d2-482c-8137-f7ca081901c8%29"
+    },
+    {
+      "kind": "response",
+      "ms": 6340,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/gallery?select=*&order=display_order.asc&page_id=eq.c6817473-6194-4ef2-a055-fc80e5360c3a&is_active=eq.true",
+      "status": 200,
+      "type": "application/json; charset=utf-8",
+      "bytes": "1751"
+    },
+    {
+      "kind": "response",
+      "ms": 6340,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/gallery?select=*&order=display_order.asc&page_id=eq.e5186de1-a199-476f-abe2-a3f8b21c6120&is_active=eq.true",
+      "status": 200,
+      "type": "application/json; charset=utf-8",
+      "bytes": "2"
+    },
+    {
+      "kind": "request",
+      "ms": 6342,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/media_assets?select=id%2Cpublic_url%2Calt_text&id=in.%281b8a64af-b730-4291-8f06-1f66db8018b1%2Cb44a10fc-b446-4b74-a379-8345d2687bea%2C5ce9ae31-a4b3-487f-b313-1b747b550ab8%2C2ea6d47f-c739-4cc3-8d79-659bc529d11c%2Ca1086978-8bbd-4b49-a11e-cc3f65a88f7b%2C872936a8-63ce-4b6d-869c-e1612ad68364%2Caf2c33c5-743b-462d-9882-fe82610c1b41%2C2626a8ba-4683-42c3-a531-913c890014ba%2Ca8b741dd-fa4c-46b0-a0b7-b9d484590619%2Cacf772a5-f6af-4375-b725-e1c33d4012e5%2Cf22949ee-1cb7-4807-80c9-249cc1ae66ae%2Ce55d3b83-1681-4abf-932c-f0843abf3fd1%2C6468fd9e-783a-4097-a813-408133971afd%29"
+    },
+    {
+      "kind": "response",
+      "ms": 6354,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/website_pages?select=id%2Cpage_key%2Ctitle&page_key=eq.home",
+      "status": 200,
+      "type": "application/json; charset=utf-8",
+      "bytes": null
+    },
+    {
+      "kind": "request",
+      "ms": 6356,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/hero_slides?select=*&order=display_order.asc&page_id=eq.e5186de1-a199-476f-abe2-a3f8b21c6120&is_active=eq.true"
+    },
+    {
+      "kind": "response",
+      "ms": 6561,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/faqs?select=*&order=display_order.asc&page_id=eq.e5186de1-a199-476f-abe2-a3f8b21c6120&is_active=eq.true",
+      "status": 200,
+      "type": "application/json; charset=utf-8",
+      "bytes": "2"
+    },
+    {
+      "kind": "response",
+      "ms": 6562,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/media_assets?select=id%2Cpublic_url%2Calt_text&id=in.%28a3157f18-fb56-4473-95c6-b2d259d9c707%2C610bcb3e-c2ed-4914-aff5-850aa8de859e%2Cd898e851-fd7a-4744-8494-e1cbb620a8a1%2C72c132f8-c5e0-46ca-9ed9-5f8a32c8c651%2C611ade4f-5c7b-4018-900a-abb7afca0e76%2C379dfca9-e67c-4b2f-b921-76ac2030d934%2C3d421b49-9533-4f92-9930-638a8bdce110%2C1ed186c3-cde7-464d-a284-b640f78be679%2C319e829a-b819-4dff-ad7e-7fa50ad2146d%2C6b8bb3dc-a7ec-40ca-bd4f-4898b746121a%2C897b3a61-9bf0-4e4e-ba55-4bf824eea35e%2Cc8c306df-aed5-485a-91b0-c346768525e2%2C8d01dc78-26b2-4f02-bbc6-c37db2520233%2C9e66cc0a-59d2-482c-8137-f7ca081901c8%29",
+      "status": 200,
+      "type": "application/json; charset=utf-8",
+      "bytes": null
+    },
+    {
+      "kind": "request",
+      "ms": 6606,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/services?select=*&order=display_order.asc&page_id=eq.e5186de1-a199-476f-abe2-a3f8b21c6120&is_active=eq.true"
+    },
+    {
+      "kind": "response",
+      "ms": 6606,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/website_pages?select=id%2Cpage_key%2Ctitle&page_key=eq.home",
+      "status": 200,
+      "type": "application/json; charset=utf-8",
+      "bytes": null
+    },
+    {
+      "kind": "response",
+      "ms": 6650,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/media_assets?select=id%2Cpublic_url%2Calt_text&id=in.%281b8a64af-b730-4291-8f06-1f66db8018b1%2Cb44a10fc-b446-4b74-a379-8345d2687bea%2C5ce9ae31-a4b3-487f-b313-1b747b550ab8%2C2ea6d47f-c739-4cc3-8d79-659bc529d11c%2Ca1086978-8bbd-4b49-a11e-cc3f65a88f7b%2C872936a8-63ce-4b6d-869c-e1612ad68364%2Caf2c33c5-743b-462d-9882-fe82610c1b41%2C2626a8ba-4683-42c3-a531-913c890014ba%2Ca8b741dd-fa4c-46b0-a0b7-b9d484590619%2Cacf772a5-f6af-4375-b725-e1c33d4012e5%2Cf22949ee-1cb7-4807-80c9-249cc1ae66ae%2Ce55d3b83-1681-4abf-932c-f0843abf3fd1%2C6468fd9e-783a-4097-a813-408133971afd%29",
+      "status": 200,
+      "type": "application/json; charset=utf-8",
+      "bytes": null
+    },
+    {
+      "kind": "request",
+      "ms": 6659,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/gallery-images/gallery-02.webp"
+    },
+    {
+      "kind": "request",
+      "ms": 6712,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/media_assets?select=id%2Cpublic_url%2Calt_text&id=in.%28ce0458d4-2275-40a7-b82c-f367922d1d0b%2C141ce2ea-6bf1-463d-a390-5faf426a74d4%29"
+    },
+    {
+      "kind": "response",
+      "ms": 6713,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/hero_slides?select=*&order=display_order.asc&page_id=eq.e5186de1-a199-476f-abe2-a3f8b21c6120&is_active=eq.true",
+      "status": 200,
+      "type": "application/json; charset=utf-8",
+      "bytes": null
+    },
+    {
+      "kind": "response",
+      "ms": 6789,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/website_pages?select=id%2Cpage_key&id=in.%2847d44cf4-be29-48e7-a0e0-9863fe26e9af%29",
+      "status": 200,
+      "type": "application/json; charset=utf-8",
+      "bytes": null
+    },
+    {
+      "kind": "request",
+      "ms": 6820,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/barbershop/haircut-beard-grooming.webp"
+    },
+    {
+      "kind": "response",
+      "ms": 7209,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/services?select=*&order=display_order.asc&page_id=eq.e5186de1-a199-476f-abe2-a3f8b21c6120&is_active=eq.true",
+      "status": 200,
+      "type": "application/json; charset=utf-8",
+      "bytes": "2"
+    },
+    {
+      "kind": "response",
+      "ms": 7209,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/gallery-images/gallery-02.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": "172938"
+    },
+    {
+      "kind": "response",
+      "ms": 7327,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/barbershop/haircut-beard-grooming.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": "226741"
+    },
+    {
+      "kind": "response",
+      "ms": 7603,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/rest/v1/media_assets?select=id%2Cpublic_url%2Calt_text&id=in.%28ce0458d4-2275-40a7-b82c-f367922d1d0b%2C141ce2ea-6bf1-463d-a390-5faf426a74d4%29",
+      "status": 200,
+      "type": "application/json; charset=utf-8",
+      "bytes": "268"
+    },
+    {
+      "kind": "request",
+      "ms": 7643,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/hero-images/hero-restaurant.webp"
+    },
+    {
+      "kind": "request",
+      "ms": 7643,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/hero-images/hero-lounge.webp"
+    },
+    {
+      "kind": "response",
+      "ms": 7798,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/hero-images/hero-restaurant.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": "264064"
+    },
+    {
+      "kind": "response",
+      "ms": 7854,
+      "url": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/hero-images/hero-lounge.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": "219332"
+    }
+  ]
+}

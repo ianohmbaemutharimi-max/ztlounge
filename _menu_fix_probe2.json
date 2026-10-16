@@ -1,0 +1,93 @@
+﻿[
+  {
+    "page": "restaurant",
+    "status": 200,
+    "connRefused": 32,
+    "errors": [],
+    "menuPriceSpans": [
+      {
+        "wanted": "Signature Nyama Choma",
+        "rendered": ""
+      },
+      {
+        "wanted": "ZT Signature Pilau",
+        "rendered": ""
+      },
+      {
+        "wanted": "Premium Beef Steak",
+        "rendered": ""
+      }
+    ],
+    "chargeSpans": [],
+    "menuCategoryCount": 0,
+    "menuCardCount": 0,
+    "cocktailBlocks": 0
+  },
+  {
+    "page": "restaurant-menu",
+    "status": 200,
+    "connRefused": 5,
+    "errors": [],
+    "menuPriceSpans": [],
+    "chargeSpans": [],
+    "menuCategoryCount": 10,
+    "menuCardCount": 14,
+    "cocktailBlocks": 0
+  },
+  {
+    "page": "conference",
+    "status": 200,
+    "connRefused": 5,
+    "errors": [
+      "[CMS][BusinessInfo] operation=initialize page=conference error=SUBSYSTEM_EXCEPTION detail=Cannot read properties of undefined (reading 'create')",
+      "[CMS][Menu] operation=initialize page=conference error=SUBSYSTEM_EXCEPTION detail=Cannot read properties of undefined (reading 'create')",
+      "[CMS][ServiceCatalog] operation=populateServiceCatalog page=conference error=MISSING_DEPENDENCY detail=window.ServicesRepository.getChargesBySlug",
+      "[CMS][BusinessInfo] operation=initialize page=conference error=SUBSYSTEM_EXCEPTION detail=Cannot read properties of undefined (reading 'create')",
+      "[CMS][JSONLD] operation=initialize page=conference error=SUBSYSTEM_EXCEPTION detail=Cannot read properties of undefined (reading 'create')",
+      "[CMS][Prices] operation=populateServicePrices page=conference error=MISSING_DEPENDENCY detail=window.ServicesRepository.getChargesBySlug",
+      "[content-loader] failed to load promotions: TypeError: Cannot read properties of undefined (reading 'create')\n    at getRepo (http://localhost:8000/assets/js/re",
+      "[LOOP49][Gallery] getByPage() error: TypeError: Cannot read properties of undefined (reading 'create')\n    at getRepo (http://localhost:8000/assets/js/repositor",
+      "[CMS][Gallery] operation=populateGallery page=conference error=ERROR detail=Cannot read properties of undefined (reading 'create')",
+      "Cannot read properties of undefined (reading 'create')"
+    ],
+    "menuPriceSpans": [],
+    "chargeSpans": [
+      {
+        "wanted": "Half-Day Package",
+        "rendered": ""
+      },
+      {
+        "wanted": "Full-Day Package",
+        "rendered": ""
+      },
+      {
+        "wanted": "Executive Package",
+        "rendered": ""
+      },
+      {
+        "wanted": "Half-Day Package",
+        "rendered": "Half-Day (4 hours)"
+      },
+      {
+        "wanted": "Full-Day Package",
+        "rendered": "Full-Day (8 hours)"
+      }
+    ],
+    "menuCategoryCount": 0,
+    "menuCardCount": 0,
+    "cocktailBlocks": 0
+  },
+  {
+    "page": "lounge",
+    "status": 200,
+    "connRefused": 6,
+    "errors": [
+      "[CMS][ServiceCatalog] operation=populateServiceCatalog page=lounge error=MISSING_DEPENDENCY detail=window.ServicesRepository.getChargesBySlug"
+    ],
+    "menuPriceSpans": [],
+    "chargeSpans": [],
+    "menuCategoryCount": 0,
+    "menuCardCount": 0,
+    "cocktailBlocks": 4
+  }
+]

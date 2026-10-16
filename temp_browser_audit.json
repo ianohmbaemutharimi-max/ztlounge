@@ -1,0 +1,1286 @@
+[
+  {
+    "file": "index.html",
+    "viewport": "desktop",
+    "audit": {
+      "header": {
+        "tag": "HEADER",
+        "id": "header",
+        "className": "header",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 1440,
+          "h": 68
+        },
+        "display": "flex",
+        "visibility": "visible",
+        "opacity": "1",
+        "position": "fixed",
+        "top": "0px",
+        "zIndex": "1000"
+      },
+      "siteHeaderDiv": {
+        "tag": "DIV",
+        "id": "site-header",
+        "className": "",
+        "rect": {
+          "x": 0,
+          "y": 68,
+          "w": 1440,
+          "h": 0
+        },
+        "display": "block",
+        "visibility": "visible",
+        "opacity": "1",
+        "position": "static",
+        "top": "auto",
+        "zIndex": "auto"
+      },
+      "logoAnchor": {
+        "tag": "A",
+        "id": "",
+        "className": "logo",
+        "rect": {
+          "x": 96,
+          "y": 11,
+          "w": 352,
+          "h": 45
+        },
+        "display": "flex",
+        "visibility": "visible",
+        "opacity": "1",
+        "position": "static",
+        "top": "auto",
+        "zIndex": "auto"
+      },
+      "darkLogo": {
+        "tag": "IMG",
+        "id": "",
+        "className": "logo-dark site-logo",
+        "rect": {
+          "x": 96,
+          "y": 11,
+          "w": 352,
+          "h": 45
+        },
+        "display": "block",
+        "visibility": "visible",
+        "opacity": "1",
+        "position": "static",
+        "top": "auto",
+        "zIndex": "auto",
+        "src": "http://127.0.0.1:8000/[object%20Object]",
+        "currentSrc": "http://127.0.0.1:8000/[object%20Object]",
+        "complete": true,
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "alt": "ZT Lounge Meru - Premium Hospitality Logo"
+      },
+      "lightLogo": {
+        "tag": "IMG",
+        "id": "",
+        "className": "logo-light site-logo",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0
+        },
+        "display": "none",
+        "visibility": "visible",
+        "opacity": "1",
+        "position": "static",
+        "top": "auto",
+        "zIndex": "auto",
+        "src": "http://127.0.0.1:8000/[object%20Object]",
+        "currentSrc": "http://127.0.0.1:8000/[object%20Object]",
+        "complete": true,
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "alt": "ZT Lounge Meru - Premium Hospitality Logo"
+      },
+      "navMenu": {
+        "tag": "NAV",
+        "id": "navMenu",
+        "className": "nav-menu",
+        "rect": {
+          "x": 561,
+          "y": 10,
+          "w": 553,
+          "h": 46
+        },
+        "display": "flex",
+        "visibility": "visible",
+        "opacity": "1",
+        "position": "static",
+        "top": "auto",
+        "zIndex": "auto"
+      },
+      "hamburger": {
+        "tag": "BUTTON",
+        "id": "hamburger",
+        "className": "hamburger",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0
+        },
+        "display": "none",
+        "visibility": "visible",
+        "opacity": "1",
+        "position": "static",
+        "top": "auto",
+        "zIndex": "auto"
+      },
+      "themeToggle": {
+        "tag": "BUTTON",
+        "id": "themeToggle",
+        "className": "theme-toggle",
+        "rect": {
+          "x": 1130,
+          "y": 12,
+          "w": 42,
+          "h": 42
+        },
+        "display": "flex",
+        "visibility": "visible",
+        "opacity": "1",
+        "position": "static",
+        "top": "auto",
+        "zIndex": "auto"
+      },
+      "phoneCta": {
+        "tag": "A",
+        "id": "",
+        "className": "header-phone",
+        "rect": {
+          "x": 1196,
+          "y": 22,
+          "w": 148,
+          "h": 22
+        },
+        "display": "flex",
+        "visibility": "visible",
+        "opacity": "1",
+        "position": "static",
+        "top": "auto",
+        "zIndex": "auto"
+      }
+    },
+    "screenshot": "temp_audit_index_desktop.png",
+    "failedRequests": [],
+    "errors": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()"
+      },
+      {
+        "type": "error",
+        "text": "[LOOP49][Gallery] getByPage() error: Error: Page resolution failed: db-error\n    at http://127.0.0.1:8000/assets/js/repositories/PageResolver.js:108:23"
+      },
+      {
+        "type": "error",
+        "text": "[CMS][Gallery] operation=populateGallery page=home error=DB_ERROR detail=Page resolution failed: db-error"
+      },
+      {
+        "type": "pageerror",
+        "text": "Page resolution failed: db-error"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()"
+      },
+      {
+        "type": "error",
+        "text": "[CMS][HomepageGallery] operation=populateHomepageGalleryPreview page=home error=DB_ERROR detail=Page resolution failed: db-error"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()"
+      }
+    ],
+    "warnings": [
+      {
+        "type": "warning",
+        "text": "[BusinessConfig] BusinessRepository not loaded, using fallback"
+      },
+      {
+        "type": "warning",
+        "text": "[CMS][Hero] operation=requirePageUuid page=home error=DB_ERROR"
+      },
+      {
+        "type": "warning",
+        "text": "[CMS][Gallery] operation=requirePageUuid page=home error=DB_ERROR"
+      },
+      {
+        "type": "warning",
+        "text": "[CMS][FAQ] operation=requirePageUuid page=home error=DB_ERROR"
+      },
+      {
+        "type": "warning",
+        "text": "[CMS][Services] operation=requirePageUuid page=home error=DB_ERROR"
+      },
+      {
+        "type": "warning",
+        "text": "[CMS][Hero] operation=getByPage page=home error=DB_ERROR"
+      },
+      {
+        "type": "warning",
+        "text": "[CMS][Hero] operation=populateHero page=home error=NO_ACTIVE_SLIDES_UNAVAILABLE detail=page=home"
+      },
+      {
+        "type": "warning",
+        "text": "[BaseRepository] Supabase error for menu_categories : Could not find the table 'public.menu_categories' in the schema cache"
+      },
+      {
+        "type": "warning",
+        "text": "[BaseRepository] Supabase error for services : Could not find the table 'public.services' in the schema cache"
+      },
+      {
+        "type": "warning",
+        "text": "[BaseRepository] Supabase error for testimonials : Could not find the table 'public.testimonials' in the schema cache"
+      },
+      {
+        "type": "warning",
+        "text": "[CMS][Gallery] operation=requirePageUuid page=home error=DB_ERROR"
+      },
+      {
+        "type": "warning",
+        "text": "[BaseRepository] Supabase error for business_settings : Could not find the table 'public.business_settings' in the schema cache"
+      },
+      {
+        "type": "warning",
+        "text": "[BrandingInit] ⚠️  Favicon URL not resolved — keeping fallback"
+      },
+      {
+        "type": "warning",
+        "text": "[BaseRepository] Supabase error for menu_items : Could not find the table 'public.menu_items' in the schema cache"
+      },
+      {
+        "type": "warning",
+        "text": "[SupabaseClient] Connection test failed: Could not find the table 'public.business_settings' in the schema cache"
+      },
+      {
+        "type": "warning",
+        "text": "[CMS][Hero] operation=requirePageUuid page=home error=DB_ERROR"
+      },
+      {
+        "type": "warning",
+        "text": "[CMS][Hero] operation=getByPage page=home error=DB_ERROR"
+      },
+      {
+        "type": "warning",
+        "text": "[BaseRepository] Supabase error for promotions : Could not find the table 'public.promotions' in the schema cache"
+      },
+      {
+        "type": "warning",
+        "text": "[CMS][Hero] operation=requirePageUuid page=home error=DB_ERROR"
+      },
+      {
+        "type": "warning",
+        "text": "[CMS][Hero] operation=getByPage page=home error=DB_ERROR"
+      },
+      {
+        "type": "warning",
+        "text": "[CMS][Hero] operation=requirePageUuid page=home error=DB_ERROR"
+      },
+      {
+        "type": "warning",
+        "text": "[CMS][Hero] operation=getByPage page=home error=DB_ERROR"
+      },
+      {
+        "type": "warning",
+        "text": "[CMS][Services] operation=requirePageUuid page=home error=DB_ERROR"
+      },
+      {
+        "type": "warning",
+        "text": "[CMS][Gallery] operation=requirePageUuid page=home error=DB_ERROR"
+      },
+      {
+        "type": "warning",
+        "text": "[CMS][Services] operation=requirePageUuid page=home error=DB_ERROR"
+      },
+      {
+        "type": "warning",
+        "text": "[CMS][Gallery] operation=requirePageUuid page=home error=DB_ERROR"
+      },
+      {
+        "type": "warning",
+        "text": "[CMS][Services] operation=requirePageUuid page=home error=DB_ERROR"
+      },
+      {
+        "type": "warning",
+        "text": "[CMS][Gallery] operation=requirePageUuid page=home error=DB_ERROR"
+      },
+      {
+        "type": "warning",
+        "text": "[BaseRepository] Supabase error for menu_categories : Could not find the table 'public.menu_categories' in the schema cache"
+      },
+      {
+        "type": "warning",
+        "text": "[BaseRepository] Supabase error for menu_items : Could not find the table 'public.menu_items' in the schema cache"
+      },
+      {
+        "type": "warning",
+        "text": "[BaseRepository] Supabase error for promotions : Could not find the table 'public.promotions' in the schema cache"
+      }
+    ]
+  },
+  {
+    "file": "membership.html",
+    "viewport": "desktop",
+    "audit": {
+      "header": {
+        "tag": "HEADER",
+        "id": "header",
+        "className": "header",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 1440,
+          "h": 68
+        },
+        "display": "flex",
+        "visibility": "visible",
+        "opacity": "1",
+        "position": "fixed",
+        "top": "0px",
+        "zIndex": "1000"
+      },
+      "siteHeaderDiv": {
+        "tag": "DIV",
+        "id": "site-header",
+        "className": "",
+        "rect": {
+          "x": 0,
+          "y": 68,
+          "w": 1440,
+          "h": 0
+        },
+        "display": "block",
+        "visibility": "visible",
+        "opacity": "1",
+        "position": "static",
+        "top": "auto",
+        "zIndex": "auto"
+      },
+      "logoAnchor": {
+        "tag": "A",
+        "id": "",
+        "className": "logo",
+        "rect": {
+          "x": 96,
+          "y": 11,
+          "w": 352,
+          "h": 45
+        },
+        "display": "flex",
+        "visibility": "visible",
+        "opacity": "1",
+        "position": "static",
+        "top": "auto",
+        "zIndex": "auto"
+      },
+      "darkLogo": {
+        "tag": "IMG",
+        "id": "",
+        "className": "logo-dark site-logo",
+        "rect": {
+          "x": 96,
+          "y": 11,
+          "w": 352,
+          "h": 45
+        },
+        "display": "block",
+        "visibility": "visible",
+        "opacity": "1",
+        "position": "static",
+        "top": "auto",
+        "zIndex": "auto",
+        "src": "http://127.0.0.1:8000/[object%20Object]",
+        "currentSrc": "http://127.0.0.1:8000/[object%20Object]",
+        "complete": true,
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "alt": "ZT Lounge Meru - Premium Hospitality Logo"
+      },
+      "lightLogo": {
+        "tag": "IMG",
+        "id": "",
+        "className": "logo-light site-logo",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0
+        },
+        "display": "none",
+        "visibility": "visible",
+        "opacity": "1",
+        "position": "static",
+        "top": "auto",
+        "zIndex": "auto",
+        "src": "http://127.0.0.1:8000/[object%20Object]",
+        "currentSrc": "http://127.0.0.1:8000/[object%20Object]",
+        "complete": true,
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "alt": "ZT Lounge Meru - Premium Hospitality Logo"
+      },
+      "navMenu": {
+        "tag": "NAV",
+        "id": "navMenu",
+        "className": "nav-menu",
+        "rect": {
+          "x": 561,
+          "y": 10,
+          "w": 553,
+          "h": 46
+        },
+        "display": "flex",
+        "visibility": "visible",
+        "opacity": "1",
+        "position": "static",
+        "top": "auto",
+        "zIndex": "auto"
+      },
+      "hamburger": {
+        "tag": "BUTTON",
+        "id": "hamburger",
+        "className": "hamburger",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0
+        },
+        "display": "none",
+        "visibility": "visible",
+        "opacity": "1",
+        "position": "static",
+        "top": "auto",
+        "zIndex": "auto"
+      },
+      "themeToggle": {
+        "tag": "BUTTON",
+        "id": "themeToggle",
+        "className": "theme-toggle",
+        "rect": {
+          "x": 1130,
+          "y": 12,
+          "w": 42,
+          "h": 42
+        },
+        "display": "flex",
+        "visibility": "visible",
+        "opacity": "1",
+        "position": "static",
+        "top": "auto",
+        "zIndex": "auto"
+      },
+      "phoneCta": {
+        "tag": "A",
+        "id": "",
+        "className": "header-phone",
+        "rect": {
+          "x": 1196,
+          "y": 22,
+          "w": 148,
+          "h": 22
+        },
+        "display": "flex",
+        "visibility": "visible",
+        "opacity": "1",
+        "position": "static",
+        "top": "auto",
+        "zIndex": "auto"
+      }
+    },
+    "screenshot": "temp_audit_membership_desktop.png",
+    "failedRequests": [],
+    "errors": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()"
+      },
+      {
+        "type": "error",
+        "text": "[LOOP49][Gallery] getByPage() error: Error: Page resolution failed: db-error\n    at http://127.0.0.1:8000/assets/js/repositories/PageResolver.js:108:23"
+      },
+      {
+        "type": "error",
+        "text": "[CMS][Gallery] operation=populateGallery page=membership error=DB_ERROR detail=Page resolution failed: db-error"
+      },
+      {
+        "type": "pageerror",
+        "text": "Page resolution failed: db-error"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()"
+      }
+    ],
+    "warnings": [
+      {
+        "type": "warning",
+        "text": "[BusinessConfig] BusinessRepository not loaded, using fallback"
+      },
+      {
+        "type": "warning",
+        "text": "[CMS][Gallery] operation=requirePageUuid page=membership error=DB_ERROR"
+      },
+      {
+        "type": "warning",
+        "text": "[CMS][FAQ] operation=requirePageUuid page=membership error=DB_ERROR"
+      },
+      {
+        "type": "warning",
+        "text": "[CMS][Services] operation=requirePageUuid page=membership error=DB_ERROR"
+      },
+      {
+        "type": "warning",
+        "text": "[CMS][Services] operation=requirePageUuid page=membership error=DB_ERROR"
+      },
+      {
+        "type": "warning",
+        "text": "[BaseRepository] Supabase error for business_settings : Could not find the table 'public.business_settings' in the schema cache"
+      },
+      {
+        "type": "warning",
+        "text": "[BrandingInit] ⚠️  Favicon URL not resolved — keeping fallback"
+      },
+      {
+        "type": "warning",
+        "text": "[BaseRepository] Supabase error for menu_categories : Could not find the table 'public.menu_categories' in the schema cache"
+      },
+      {
+        "type": "warning",
+        "text": "[SupabaseClient] Connection test failed: Could not find the table 'public.business_settings' in the schema cache"
+      },
+      {
+        "type": "warning",
+        "text": "[BaseRepository] Supabase error for promotions : Could not find the table 'public.promotions' in the schema cache"
+      },
+      {
+        "type": "warning",
+        "text": "[BaseRepository] Supabase error for menu_items : Could not find the table 'public.menu_items' in the schema cache"
+      }
+    ]
+  },
+  {
+    "file": "index.html",
+    "viewport": "mobile",
+    "audit": {
+      "header": {
+        "tag": "HEADER",
+        "id": "header",
+        "className": "header",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 390,
+          "h": 58
+        },
+        "display": "flex",
+        "visibility": "visible",
+        "opacity": "1",
+        "position": "fixed",
+        "top": "0px",
+        "zIndex": "1000"
+      },
+      "siteHeaderDiv": {
+        "tag": "DIV",
+        "id": "site-header",
+        "className": "",
+        "rect": {
+          "x": 0,
+          "y": 58,
+          "w": 390,
+          "h": 0
+        },
+        "display": "block",
+        "visibility": "visible",
+        "opacity": "1",
+        "position": "static",
+        "top": "auto",
+        "zIndex": "auto"
+      },
+      "logoAnchor": {
+        "tag": "A",
+        "id": "",
+        "className": "logo",
+        "rect": {
+          "x": 36,
+          "y": 11,
+          "w": 176,
+          "h": 36
+        },
+        "display": "flex",
+        "visibility": "visible",
+        "opacity": "1",
+        "position": "static",
+        "top": "auto",
+        "zIndex": "auto"
+      },
+      "darkLogo": {
+        "tag": "IMG",
+        "id": "",
+        "className": "logo-dark site-logo",
+        "rect": {
+          "x": 36,
+          "y": 11,
+          "w": 176,
+          "h": 36
+        },
+        "display": "block",
+        "visibility": "visible",
+        "opacity": "1",
+        "position": "static",
+        "top": "auto",
+        "zIndex": "auto",
+        "src": "http://127.0.0.1:8000/[object%20Object]",
+        "currentSrc": "http://127.0.0.1:8000/[object%20Object]",
+        "complete": true,
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "alt": "ZT Lounge Meru - Premium Hospitality Logo"
+      },
+      "lightLogo": {
+        "tag": "IMG",
+        "id": "",
+        "className": "logo-light site-logo",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0
+        },
+        "display": "none",
+        "visibility": "visible",
+        "opacity": "1",
+        "position": "static",
+        "top": "auto",
+        "zIndex": "auto",
+        "src": "http://127.0.0.1:8000/[object%20Object]",
+        "currentSrc": "http://127.0.0.1:8000/[object%20Object]",
+        "complete": true,
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "alt": "ZT Lounge Meru - Premium Hospitality Logo"
+      },
+      "navMenu": {
+        "tag": "NAV",
+        "id": "navMenu",
+        "className": "nav-menu",
+        "rect": {
+          "x": 449,
+          "y": 0,
+          "w": 332,
+          "h": 844
+        },
+        "display": "block",
+        "visibility": "visible",
+        "opacity": "1",
+        "position": "fixed",
+        "top": "0px",
+        "zIndex": "auto"
+      },
+      "hamburger": {
+        "tag": "BUTTON",
+        "id": "hamburger",
+        "className": "hamburger",
+        "rect": {
+          "x": 310,
+          "y": 7,
+          "w": 44,
+          "h": 44
+        },
+        "display": "flex",
+        "visibility": "visible",
+        "opacity": "1",
+        "position": "static",
+        "top": "auto",
+        "zIndex": "auto"
+      },
+      "themeToggle": {
+        "tag": "BUTTON",
+        "id": "themeToggle",
+        "className": "theme-toggle",
+        "rect": {
+          "x": 236,
+          "y": 11,
+          "w": 36,
+          "h": 36
+        },
+        "display": "flex",
+        "visibility": "visible",
+        "opacity": "1",
+        "position": "static",
+        "top": "auto",
+        "zIndex": "auto"
+      },
+      "phoneCta": {
+        "tag": "A",
+        "id": "",
+        "className": "header-phone",
+        "rect": {
+          "x": 284,
+          "y": 22,
+          "w": 14,
+          "h": 14
+        },
+        "display": "flex",
+        "visibility": "visible",
+        "opacity": "1",
+        "position": "static",
+        "top": "auto",
+        "zIndex": "auto"
+      }
+    },
+    "screenshot": "temp_audit_index_mobile.png",
+    "failedRequests": [],
+    "errors": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()"
+      },
+      {
+        "type": "error",
+        "text": "[CMS][HomepageGallery] operation=populateHomepageGalleryPreview page=home error=DB_ERROR detail=Page resolution failed: db-error"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()"
+      },
+      {
+        "type": "error",
+        "text": "[LOOP49][Gallery] getByPage() error: Error: Page resolution failed: db-error\n    at http://127.0.0.1:8000/assets/js/repositories/PageResolver.js:108:23"
+      },
+      {
+        "type": "error",
+        "text": "[CMS][Gallery] operation=populateGallery page=home error=DB_ERROR detail=Page resolution failed: db-error"
+      },
+      {
+        "type": "pageerror",
+        "text": "Page resolution failed: db-error"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()"
+      }
+    ],
+    "warnings": [
+      {
+        "type": "warning",
+        "text": "[BusinessConfig] BusinessRepository not loaded, using fallback"
+      },
+      {
+        "type": "warning",
+        "text": "[SupabaseClient] Connection test failed: Could not find the table 'public.business_settings' in the schema cache"
+      },
+      {
+        "type": "warning",
+        "text": "[BaseRepository] Supabase error for services : Could not find the table 'public.services' in the schema cache"
+      },
+      {
+        "type": "warning",
+        "text": "[BaseRepository] Supabase error for menu_categories : Could not find the table 'public.menu_categories' in the schema cache"
+      },
+      {
+        "type": "warning",
+        "text": "[BaseRepository] Supabase error for testimonials : Could not find the table 'public.testimonials' in the schema cache"
+      },
+      {
+        "type": "warning",
+        "text": "[CMS][Gallery] operation=requirePageUuid page=home error=DB_ERROR"
+      },
+      {
+        "type": "warning",
+        "text": "[CMS][Hero] operation=requirePageUuid page=home error=DB_ERROR"
+      },
+      {
+        "type": "warning",
+        "text": "[CMS][Gallery] operation=requirePageUuid page=home error=DB_ERROR"
+      },
+      {
+        "type": "warning",
+        "text": "[CMS][FAQ] operation=requirePageUuid page=home error=DB_ERROR"
+      },
+      {
+        "type": "warning",
+        "text": "[CMS][Services] operation=requirePageUuid page=home error=DB_ERROR"
+      },
+      {
+        "type": "warning",
+        "text": "[CMS][Hero] operation=getByPage page=home error=DB_ERROR"
+      },
+      {
+        "type": "warning",
+        "text": "[CMS][Hero] operation=populateHero page=home error=NO_ACTIVE_SLIDES_UNAVAILABLE detail=page=home"
+      },
+      {
+        "type": "warning",
+        "text": "[BaseRepository] Supabase error for business_settings : Could not find the table 'public.business_settings' in the schema cache"
+      },
+      {
+        "type": "warning",
+        "text": "[BrandingInit] ⚠️  Favicon URL not resolved — keeping fallback"
+      },
+      {
+        "type": "warning",
+        "text": "[BaseRepository] Supabase error for menu_items : Could not find the table 'public.menu_items' in the schema cache"
+      },
+      {
+        "type": "warning",
+        "text": "[CMS][Hero] operation=requirePageUuid page=home error=DB_ERROR"
+      },
+      {
+        "type": "warning",
+        "text": "[CMS][Hero] operation=getByPage page=home error=DB_ERROR"
+      },
+      {
+        "type": "warning",
+        "text": "[BaseRepository] Supabase error for promotions : Could not find the table 'public.promotions' in the schema cache"
+      },
+      {
+        "type": "warning",
+        "text": "[CMS][Hero] operation=requirePageUuid page=home error=DB_ERROR"
+      },
+      {
+        "type": "warning",
+        "text": "[CMS][Hero] operation=getByPage page=home error=DB_ERROR"
+      },
+      {
+        "type": "warning",
+        "text": "[CMS][Hero] operation=requirePageUuid page=home error=DB_ERROR"
+      },
+      {
+        "type": "warning",
+        "text": "[CMS][Hero] operation=getByPage page=home error=DB_ERROR"
+      },
+      {
+        "type": "warning",
+        "text": "[CMS][Services] operation=requirePageUuid page=home error=DB_ERROR"
+      },
+      {
+        "type": "warning",
+        "text": "[CMS][Gallery] operation=requirePageUuid page=home error=DB_ERROR"
+      },
+      {
+        "type": "warning",
+        "text": "[CMS][Services] operation=requirePageUuid page=home error=DB_ERROR"
+      },
+      {
+        "type": "warning",
+        "text": "[CMS][Gallery] operation=requirePageUuid page=home error=DB_ERROR"
+      },
+      {
+        "type": "warning",
+        "text": "[CMS][Services] operation=requirePageUuid page=home error=DB_ERROR"
+      },
+      {
+        "type": "warning",
+        "text": "[CMS][Gallery] operation=requirePageUuid page=home error=DB_ERROR"
+      },
+      {
+        "type": "warning",
+        "text": "[BaseRepository] Supabase error for menu_categories : Could not find the table 'public.menu_categories' in the schema cache"
+      },
+      {
+        "type": "warning",
+        "text": "[BaseRepository] Supabase error for menu_items : Could not find the table 'public.menu_items' in the schema cache"
+      },
+      {
+        "type": "warning",
+        "text": "[BaseRepository] Supabase error for promotions : Could not find the table 'public.promotions' in the schema cache"
+      }
+    ]
+  },
+  {
+    "file": "membership.html",
+    "viewport": "mobile",
+    "audit": {
+      "header": {
+        "tag": "HEADER",
+        "id": "header",
+        "className": "header",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 390,
+          "h": 58
+        },
+        "display": "flex",
+        "visibility": "visible",
+        "opacity": "1",
+        "position": "fixed",
+        "top": "0px",
+        "zIndex": "1000"
+      },
+      "siteHeaderDiv": {
+        "tag": "DIV",
+        "id": "site-header",
+        "className": "",
+        "rect": {
+          "x": 0,
+          "y": 58,
+          "w": 390,
+          "h": 0
+        },
+        "display": "block",
+        "visibility": "visible",
+        "opacity": "1",
+        "position": "static",
+        "top": "auto",
+        "zIndex": "auto"
+      },
+      "logoAnchor": {
+        "tag": "A",
+        "id": "",
+        "className": "logo",
+        "rect": {
+          "x": 36,
+          "y": 11,
+          "w": 176,
+          "h": 36
+        },
+        "display": "flex",
+        "visibility": "visible",
+        "opacity": "1",
+        "position": "static",
+        "top": "auto",
+        "zIndex": "auto"
+      },
+      "darkLogo": {
+        "tag": "IMG",
+        "id": "",
+        "className": "logo-dark site-logo",
+        "rect": {
+          "x": 36,
+          "y": 11,
+          "w": 176,
+          "h": 36
+        },
+        "display": "block",
+        "visibility": "visible",
+        "opacity": "1",
+        "position": "static",
+        "top": "auto",
+        "zIndex": "auto",
+        "src": "http://127.0.0.1:8000/[object%20Object]",
+        "currentSrc": "http://127.0.0.1:8000/[object%20Object]",
+        "complete": true,
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "alt": "ZT Lounge Meru - Premium Hospitality Logo"
+      },
+      "lightLogo": {
+        "tag": "IMG",
+        "id": "",
+        "className": "logo-light site-logo",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0
+        },
+        "display": "none",
+        "visibility": "visible",
+        "opacity": "1",
+        "position": "static",
+        "top": "auto",
+        "zIndex": "auto",
+        "src": "http://127.0.0.1:8000/[object%20Object]",
+        "currentSrc": "http://127.0.0.1:8000/[object%20Object]",
+        "complete": true,
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "alt": "ZT Lounge Meru - Premium Hospitality Logo"
+      },
+      "navMenu": {
+        "tag": "NAV",
+        "id": "navMenu",
+        "className": "nav-menu",
+        "rect": {
+          "x": 449,
+          "y": 0,
+          "w": 332,
+          "h": 844
+        },
+        "display": "block",
+        "visibility": "visible",
+        "opacity": "1",
+        "position": "fixed",
+        "top": "0px",
+        "zIndex": "auto"
+      },
+      "hamburger": {
+        "tag": "BUTTON",
+        "id": "hamburger",
+        "className": "hamburger",
+        "rect": {
+          "x": 310,
+          "y": 7,
+          "w": 44,
+          "h": 44
+        },
+        "display": "flex",
+        "visibility": "visible",
+        "opacity": "1",
+        "position": "static",
+        "top": "auto",
+        "zIndex": "auto"
+      },
+      "themeToggle": {
+        "tag": "BUTTON",
+        "id": "themeToggle",
+        "className": "theme-toggle",
+        "rect": {
+          "x": 236,
+          "y": 11,
+          "w": 36,
+          "h": 36
+        },
+        "display": "flex",
+        "visibility": "visible",
+        "opacity": "1",
+        "position": "static",
+        "top": "auto",
+        "zIndex": "auto"
+      },
+      "phoneCta": {
+        "tag": "A",
+        "id": "",
+        "className": "header-phone",
+        "rect": {
+          "x": 284,
+          "y": 22,
+          "w": 14,
+          "h": 14
+        },
+        "display": "flex",
+        "visibility": "visible",
+        "opacity": "1",
+        "position": "static",
+        "top": "auto",
+        "zIndex": "auto"
+      }
+    },
+    "screenshot": "temp_audit_membership_mobile.png",
+    "failedRequests": [],
+    "errors": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()"
+      },
+      {
+        "type": "error",
+        "text": "[LOOP49][Gallery] getByPage() error: Error: Page resolution failed: db-error\n    at http://127.0.0.1:8000/assets/js/repositories/PageResolver.js:108:23"
+      },
+      {
+        "type": "error",
+        "text": "[CMS][Gallery] operation=populateGallery page=membership error=DB_ERROR detail=Page resolution failed: db-error"
+      },
+      {
+        "type": "pageerror",
+        "text": "Page resolution failed: db-error"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 404 ()"
+      }
+    ],
+    "warnings": [
+      {
+        "type": "warning",
+        "text": "[BusinessConfig] BusinessRepository not loaded, using fallback"
+      },
+      {
+        "type": "warning",
+        "text": "[BaseRepository] Supabase error for business_settings : Could not find the table 'public.business_settings' in the schema cache"
+      },
+      {
+        "type": "warning",
+        "text": "[BrandingInit] ⚠️  Favicon URL not resolved — keeping fallback"
+      },
+      {
+        "type": "warning",
+        "text": "[SupabaseClient] Connection test failed: Could not find the table 'public.business_settings' in the schema cache"
+      },
+      {
+        "type": "warning",
+        "text": "[BaseRepository] Supabase error for menu_categories : Could not find the table 'public.menu_categories' in the schema cache"
+      },
+      {
+        "type": "warning",
+        "text": "[CMS][Gallery] operation=requirePageUuid page=membership error=DB_ERROR"
+      },
+      {
+        "type": "warning",
+        "text": "[CMS][FAQ] operation=requirePageUuid page=membership error=DB_ERROR"
+      },
+      {
+        "type": "warning",
+        "text": "[CMS][Services] operation=requirePageUuid page=membership error=DB_ERROR"
+      },
+      {
+        "type": "warning",
+        "text": "[CMS][Services] operation=requirePageUuid page=membership error=DB_ERROR"
+      },
+      {
+        "type": "warning",
+        "text": "[BaseRepository] Supabase error for menu_items : Could not find the table 'public.menu_items' in the schema cache"
+      },
+      {
+        "type": "warning",
+        "text": "[BaseRepository] Supabase error for promotions : Could not find the table 'public.promotions' in the schema cache"
+      }
+    ]
+  }
+]

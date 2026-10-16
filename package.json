@@ -1,0 +1,31 @@
+{
+  "name": "zt-lounge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "phase3c_audit.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:website": "playwright test website-media-gateway.spec.js",
+    "test:admin": "playwright test admin-media-gateway.spec.js",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ianohmbaemutharimi-max/ztlounge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ianohmbaemutharimi-max/ztlounge/issues"
+  },
+  "homepage": "https://github.com/ianohmbaemutharimi-max/ztlounge#readme",
+  "dependencies": {
+    "playwright": "^1.63.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.0"
+  }
+}

@@ -1,0 +1,110 @@
+L14: * Get page identifier — DELEGATES to the canonical PageIdentity module.
+L18: function getPageId() {
+L19: if (window.PageIdentity && window.PageIdentity.getCanonicalPageId) {
+L20: var pageId = window.PageIdentity.getCanonicalPageId();
+L21: console.log('[LOOP49][ContentLoader] getPageId() via PageIdentity:', pageId);
+L25: // directory/hosting-path scanning). Mirrors PageIdentity.FILENAME_MAP
+L28: window.CMSReport.warn('ContentLoader', 'getPageId', 'MISSING_DEPENDENCY', 'window.PageIdentity (using exact-basename fallback)');
+L48: console.log('[LOOP49][ContentLoader] getPageId() fallback for file "' + file + '":', fallbackPageId);
+L302: var pageId = getPageId();
+L437: var pageId = getPageId();
+L555: var pageId = getPageId();
+L627: var pageId = getPageId();
+L659: function populateServiceCards() {
+L741: var pageId = getPageId();
+L959: var pageId = getPageId();
+L1119: var pageId = getPageId();
+L1135: if (window.PageIdentity && window.PageIdentity.pageSlugForPageId) {
+L1136: slug = window.PageIdentity.pageSlugForPageId(pageId);
+L1237: var pageId = getPageId();
+L1238: var slug = (window.PageIdentity && window.PageIdentity.pageSlugForPageId)
+L1239: ? window.PageIdentity.pageSlugForPageId(pageId)
+L1386: if (!window.PageIdentity || !window.PageResolver) {
+L1389: var pageId = window.PageIdentity.getCanonicalPageId();
+L1635: document.addEventListener('DOMContentLoaded', function() {
+L1636: console.log('[LOOP49][ContentLoader] DOMContentLoaded fired, initializing CMS subsystems...');
+L1656: * injects its shared footer/CTA chrome during DOMContentLoaded.
+
+--- init region ---
+     * Each subsystem runs inside its own error boundary — a failure in
+     * Gallery can never prevent Prices, Booking forms, or any other
+     * subsystem from initializing.
+     * [LOOP 49 DEBUG] Enhanced Gallery initialization logging
+     */
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('[LOOP49][ContentLoader] DOMContentLoaded fired, initializing CMS subsystems...');
+        runGuarded('Hero',         populateHero);
+        runGuarded('Gallery',      populateGallery);
+        runGuarded('HomepageGallery', populateHomepageGalleryPreview);
+        runGuarded('FAQ',          populateFAQ);
+        runGuarded('Services',     populateServiceCards);
+        runGuarded('CategoryServices', populateCategoryServices);
+        runGuarded('Menu',         populateMenu);
+        runGuarded('ServicesPage', populateServices);
+        runGuarded('Prices',       populateServicePrices);
+        runGuarded('ServiceCatalog', populateServiceCatalog);
+        runGuarded('Testimonials', populateTestimonials);
+        runGuarded('BusinessInfo', populateBusinessInfo);
+        runGuarded('Promotions',   populatePromotions);
+        runGuarded('Membership',   populateMembership);
+        runGuarded('JSONLD',       generateJSONLD);
+    });
+
+    /**
+     * The canonical public shell (assets/js/shared-components.js)
+     * injects its shared footer/CTA chrome during DOMContentLoaded.
+     * populateBusinessInfo above may therefore have hydrated the DOM
+     * before that chrome existed, leaving the shared shell on its
+     * static fallback (e.g. tel:+254143542601) while other pages show
+     * the canonical business_settings value. The shell announces
+     * 'shell:rendered' once the shared markup is in the DOM; re-running
+     * the (idempotent, BusinessRepository-cached) hydration guarantees
+     * every page renders the SAME canonical business information.
+     */
+    document.addEventListener('shell:rendered', function() {
+        runGuarded('BusinessInfo', populateBusinessInfo);
+    });
+})();
+
+
+--- getPageId ---
+    function getPageId() {
+        if (window.PageIdentity && window.PageIdentity.getCanonicalPageId) {
+            var pageId = window.PageIdentity.getCanonicalPageId();
+            console.log('[LOOP49][ContentLoader] getPageId() via PageIdentity:', pageId);
+            return pageId;
+        }
+        // Fallback: EXACT basename mapping ONLY (never substrings, never
+        // directory/hosting-path scanning). Mirrors PageIdentity.FILENAME_MAP
+        // so unwired pages degrade without guessing page identity.
+        if (window.CMSReport) {
+            window.CMSReport.warn('ContentLoader', 'getPageId', 'MISSING_DEPENDENCY', 'window.PageIdentity (using exact-basename fallback)');
+        }
+        var segments = String(window.location.pathname || '').split('/');
+        var file = (segments[segments.length - 1] || '').split('?')[0].split('#')[0].toLowerCase();
+        var basenameMap = {
+            'index.html': 'home',
+            '': 'home',
+            'restaurant.html': 'restaurant',
+            'restaurant-menu.html': 'restaurant-menu',
+            'lounge.html': 'lounge',
+            'vip.html': 'vip',
+            'events.html': 'events',
+            'conference.html': 'conference',
+            'autospa.html': 'autospa',
+            'barbershop.html': 'autospa',  // Barbershop redirects to Auto Spa (consolidated)
+            'grooming-care.html': 'grooming-care',  // Grooming & Care consolidated page
+            'gallery.html': 'gallery',
+            'contact.html': 'contact'
+        };
+        var fallbackPageId = Object.prototype.hasOwnProperty.call(basenameMap, file) ? basenameMap[file] : null;
+        console.log('[LOOP49][ContentLoader] getPageId() fallback for file "' + file + '":', fallbackPageId);
+        return fallbackPageId;
+    }
+
+    /**
+     * Run one CMS subsystem initializer inside its own error boundary.
+     * A failure in one subsystem is reported structurally and can never
+     * abort the others (hardening rule: no cascading CMS failures).
+     */
+    function runGuarded(subsystem, fn) {

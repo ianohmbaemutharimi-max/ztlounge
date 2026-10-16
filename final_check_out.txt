@@ -1,0 +1,394 @@
+cleanup_out.txt exists (should be false after this run deletes it): see below
+_services_fix_loop2_report.md exists: true
+temp artifacts remaining: NONE
+--- git status (public repo) ---
+D .next/cache/.previewinfo
+ D .next/cache/.rscinfo
+ D .next/cache/turbopack/v16.3.0-d73f5622/00000001.sst
+ D .next/cache/turbopack/v16.3.0-d73f5622/00000002.sst
+ D .next/cache/turbopack/v16.3.0-d73f5622/00000003.sst
+ D .next/cache/turbopack/v16.3.0-d73f5622/00000004.sst
+ D .next/cache/turbopack/v16.3.0-d73f5622/00000005.meta
+ D .next/cache/turbopack/v16.3.0-d73f5622/00000006.meta
+ D .next/cache/turbopack/v16.3.0-d73f5622/00000007.meta
+ D .next/cache/turbopack/v16.3.0-d73f5622/00000008.meta
+ D .next/cache/turbopack/v16.3.0-d73f5622/00000009.sst
+ D .next/cache/turbopack/v16.3.0-d73f5622/00000010.sst
+ D .next/cache/turbopack/v16.3.0-d73f5622/00000011.sst
+ D .next/cache/turbopack/v16.3.0-d73f5622/00000012.meta
+ D .next/cache/turbopack/v16.3.0-d73f5622/00000013.meta
+ D .next/cache/turbopack/v16.3.0-d73f5622/00000014.meta
+ D .next/cache/turbopack/v16.3.0-d73f5622/CURRENT
+ D .next/cache/turbopack/v16.3.0-d73f5622/LOG
+ D .next/dev/build-manifest.json
+ D .next/dev/cache/.rscinfo
+ D .next/dev/cache/turbopack/ee6e79b1/CURRENT
+ D .next/dev/cache/turbopack/v16.3.0-d73f5622/CURRENT
+ D .next/dev/fallback-build-manifest.json
+ D .next/dev/package.json
+ D .next/dev/prerender-manifest.json
+ D .next/dev/routes-manifest.json
+ D .next/dev/server/app-paths-manifest.json
+ D .next/dev/server/interception-route-rewrite-manifest.js
+ D .next/dev/server/middleware-build-manifest.js
+ D .next/dev/server/middleware-manifest.json
+ D .next/dev/server/next-font-manifest.js
+ D .next/dev/server/next-font-manifest.json
+ D .next/dev/server/pages-manifest.json
+ D .next/dev/server/server-reference-manifest.js
+ D .next/dev/server/server-reference-manifest.json
+ D .next/dev/static/development/_buildManifest.js
+ D .next/dev/static/development/_clientMiddlewareManifest.js
+ D .next/dev/static/development/_ssgManifest.js
+ D .next/dev/trace
+ D .next/dev/types/routes.d.ts
+ D .next/diagnostics/build-diagnostics.json
+ D .next/diagnostics/framework.json
+ D .next/package.json
+ D .next/trace
+ D .next/trace-build
+ D .next/turbopack
+ D .next/types/cache-life.d.ts
+ D .next/types/root-params.d.ts
+ D .next/types/routes.d.ts
+ D .next/types/validator.ts
+ D .vscode/settings.json
+ D 1)problems.push({page
+ D ADMIN_GALLERY_IMAGE_UPLOAD_AUDIT_FINAL.md
+ D AUDIT_FINAL_100_PERCENT.md
+ D AUDIT_FINAL_PRODUCTION_VERIFICATION.md
+ D AUDIT_LIVE_DATABASE_ALIGNMENT.md
+ D AUDIT_MCP_PENDING.md
+ D AUDIT_TARGETED_VERIFICATION.md
+ D FINAL_CONTENT_SYSTEM_AUDIT.md
+ D GALLERY_UPLOAD_AUDIT_FINAL.md
+ D GALLERY_UPLOAD_AUDIT_PHASE_1.md
+ D GALLERY_UPLOAD_AUDIT_PHASE_2.md
+ D GALLERY_UPLOAD_IMPLEMENTATION_REPORT.md
+ D GOOGLE_REVIEWS_IMPLEMENTATION_AUDIT.md
+ D GOOGLE_REVIEWS_IMPLEMENTATION_PATH.md
+ D INVITATION_SIGNUP_PATH_REVIEW.md
+ D MANAGER_AUTHORIZATION_FINAL_AUDIT.md
+ D MANAGER_AUTHORIZATION_FIX_REPORT.md
+ D PRODUCTION_GATE_FINAL_VERIFICATION.md
+ D README.md
+ D TESTIMONIALS_AUTHORIZATION_FIX_REPORT.md
+ D ZT_LOUNGE_LIVE_RECONCILIATION_AUDIT.md
+ D _audit_dup_detail.js
+ D _audit_dup_images.js
+ D _audit_final.js
+ D _audit_media.js
+ D _audit_seo.js
+ D _audit_verify.js
+ M assets/css/theme.css
+ D assets/images/branding/favicon.ico
+ M assets/js/booking.config.js
+ M assets/js/business-config.js
+ M assets/js/config/supabase.config.js
+ M assets/js/content-loader.js
+ M assets/js/core/app.js
+ M assets/js/faq.config.js
+ M assets/js/forms.js
+ D assets/js/hero.config.js
+D  assets/js/main.js
+ M assets/js/menu-nav.js
+ M assets/js/menu.config.js
+ M assets/js/repositories/BookingRepository.js
+ M assets/js/repositories/BusinessRepository.js
+ M assets/js/repositories/FAQRepository.js
+ M assets/js/repositories/GalleryRepository.js
+ M assets/js/repositories/HeroRepository.js
+ M assets/js/repositories/MenuRepository.js
+ M assets/js/repositories/ServicesRepository.js
+ M assets/js/repositories/TestimonialsRepository.js
+ M assets/js/seo.config.js
+ M assets/js/services.config.js
+ M assets/js/services/BusinessService.js
+ M assets/js/shared-components.js
+D  assets/js/slider.js
+ D image-list.txt
+ M index.html
+ D m[1])
+ D pages/business/autospa.html
+ M pages/business/conference.html
+ M pages/business/events.html
+ M pages/contact/contact.html
+ M pages/contact/gallery.html
+ M pages/experiences/lounge.html
+ M pages/experiences/restaurant-menu.html
+ M pages/experiences/restaurant.html
+ M pages/experiences/vip.html
+ D scripts/_apply-defer.js
+ D scripts/_final-verify.js
+ D scripts/_verify-defer.js
+ D scripts/fix-all-double-prefix.js
+ D scripts/fix-double-prefix.js
+ D scripts/fix-image-paths.js
+ D scripts/replace
+ D scripts/replace-image-paths.js
+ D scripts/upload-to-storage.js
+ M sitemap.xml
+ M supabase/migrations/026_seed_cms_content.sql
+?? $null
+?? .dev-server-err.txt
+?? .dev-server-log.txt
+?? .dev-server-pid.txt
+?? LOOP24_CONTINUATION_ACCEPTANCE_REPORT.md
+?? LOOP24_FINAL_RUNTIME_BOOKING_ACCEPTANCE_REPORT.md
+?? LOOP25_PHASE1_SCHEMA_DISCOVERY_REPORT.md
+?? LOOP25_PHASE2_GROOMING_RUNTIME_CONTRACT_AUDIT.md
+?? LOOP25_PHASE3_GROOMING_CONTRACT_IMPLEMENTATION_REPORT.md
+?? LOOP25_PHASE4A_DELETE_FORENSIC_REPORT.md
+?? LOOP49_GALLERY_TEST.md
+?? VALIDATION_REPORT.md
+?? _audit_page.js
+?? _barber_rpc.cjs
+?? _be.cjs
+?? _build_e2e.cjs
+?? _bulk_canonicalize.cjs
+?? _capture_all.py
+?? _capture_grooming.py
+?? _capture_remaining.py
+?? _cat_service_audit.mjs
+?? _classic_haircut_loop6_report.md
+?? _conference_grid_loop5_report.md
+?? _e2e_loop24_final.txt
+?? _e2e_v2_err.txt
+?? _e2e_v2_out.txt
+?? _grooming_category_fix_loop4_report.md
+?? _header_compare.py
+?? _inline_extract.js
+?? _install_pw.bat
+?? _l30_srv.err
+?? _l58_header_spoof_probe.cjs
+?? _l61_alive.txt
+?? _l61_proc.csv
+?? _l65_tsc.txt
+?? _l68_chain3.txt
+?? _l68_chain4.txt
+?? _l68_pub_out.txt
+?? _logo_check.py
+?? _logo_check2.py
+?? _logo_check_final.py
+?? _loop24_continue_out.txt
+?? _loop24_continue_pid.txt
+?? _loop24_continue_stdout.txt
+?? _loop24_e2e.cjs
+?? _loop24_pid.txt
+?? _loop24_run1.txt
+?? _loop25_diag_out.txt
+?? _loop25_impl_e2e_out.txt
+?? _loop25_lounge_diag.txt
+?? _loop25_lounge_pw.txt
+?? _loop25_phase1_detail.mjs
+?? _loop25_phase1_schema_audit.mjs
+?? _loop25_phase2_out.txt
+?? _loop25_phase2_pid.txt
+?? _loop25_phase4a_deps.mjs
+?? _loop29_srv.err
+?? _loop2_runtime_verify.cjs
+?? _loop2_runtime_verify_out.txt
+?? _loop2_write_report.cjs
+?? _loop3_verify.cjs
+?? _loop3_verify_out.txt
+?? _loop44_browser_probe_result.json
+?? _loop44_browser_result.json
+?? _loop44_http.cjs
+?? _loop44_probe.cjs
+?? _loop47/
+?? _loop47_brand_out.txt
+?? _loop47_brand_probe.js
+?? _loop47_branding.js
+?? _loop47_branding_console.js
+?? _loop47_branding_out.txt
+?? _loop47_branding_probe.js
+?? _loop47_broken_link_probe.js
+?? _loop47_diff.js
+?? _loop47_diff_out.txt
+?? _loop47_done.txt
+?? _loop47_done2.txt
+?? _loop47_full2_out.txt
+?? _loop47_full_err.txt
+?? _loop47_full_out.txt
+?? _loop47_gallery_lines.txt
+?? _loop47_gallery_out.txt
+?? _loop47_gallery_probe.js
+?? _loop47_gallery_probe2.js
+?? _loop47_gp2_out.txt
+?? _loop47_groom_out.txt
+?? _loop47_grooming_probe.js
+?? _loop47_hours_audit.js
+?? _loop47_hours_hooks.js
+?? _loop47_hours_out.txt
+?? _loop47_hours_probe.js
+?? _loop47_link_out.txt
+?? _loop47_migrate.js
+?? _loop47_patch_whatsapp.js
+?? _loop47_probe2.js
+?? _loop47_probe_out.txt
+?? _loop47_reg2_out.txt
+?? _loop47_reg_err.txt
+?? _loop47_reg_out.txt
+?? _loop47_regression.js
+?? _loop47_regression_report.json
+?? _loop47_report.json
+?? _loop47_runall.cmd
+?? _loop47_smoke2_err.txt
+?? _loop47_smoke2_out.txt
+?? _loop47_smoke_err.txt
+?? _loop47_smoke_out.txt
+?? _loop47_unify.js
+?? _loop47_verify.js
+?? _loop47_whitbox.js
+?? _loop47_whitebox.js
+?? _loop47_whitebox2.js
+?? _loop47_whitebox_out.txt
+?? _loop48_bb.txt
+?? _loop48_blackbox.txt
+?? _loop48_cms.txt
+?? _loop48_cms2.txt
+?? _loop48_final.txt
+?? _loop48_media.js
+?? _loop48_probe.js
+?? _loop48_srcscan.js
+?? _loop49_branding_sweep.js
+?? _loop49_diag_services.js
+?? _loop49_gallery_runtime.cjs
+?? _loop49_patch_services.js
+?? _loop49_patch_services2.js
+?? _loop49_probe_branding.js
+?? _loop4_verify.cjs
+?? _loop4_verify_out.txt
+?? _loop5_probe.cjs
+?? _loop5_probe_out.txt
+?? _loop5_verify.cjs
+?? _loop5_verify_out.txt
+?? _loop5_write_report.cjs
+?? _loop6_audit.cjs
+?? _loop6_audit_out.txt
+?? _loop6_diag.cjs
+?? _loop6_diag_out.txt
+?? _loop6_fix.cjs
+?? _loop6_fix2.cjs
+?? _loop6_fix2_out.txt
+?? _loop6_fix_out.txt
+?? _loop6_verify.cjs
+?? _loop6_verify_out.txt
+?? _p1.cjs
+?? _p2.cjs
+?? _p2b_probe.cjs
+?? _p2b_probe_result.json
+?? _p3.cjs
+?? _p4.cjs
+?? _part1.cjs
+?? _part2.cjs
+?? _part3.cjs
+?? _part4.cjs
+?? _phase2_db_audit.mjs
+?? _phase2b_verification.mjs
+?? _playwright_full_test.cjs
+?? _public_server.js
+?? _pw_audit.js
+?? _q1.cjs
+?? _q2.cjs
+?? _q3.cjs
+?? _query_db.py
+?? _rest_audit1.cjs
+?? _rest_audit2.cjs
+?? _rest_audit3.cjs
+?? _rest_audit4.cjs
+?? _rest_db.js
+?? _rest_db2.js
+?? _rest_db3.js
+?? _rest_mobile.cjs
+?? _rest_pw5.cjs
+?? _rest_pw6.cjs
+?? _rest_scan.js
+?? _rest_scripts.js
+?? _rls_test.cjs
+?? _rpc_test.cjs
+?? _run_audit.bat
+?? _run_capture.bat
+?? _run_chrome.py
+?? _run_grooming.bat
+?? _run_header.bat
+?? _run_header2.bat
+?? _run_logo.bat
+?? _run_pw.bat
+?? _run_rem.bat
+?? _run_remaining.bat
+?? _runner.cjs
+?? _runtime_audit.py
+?? _runtime_captures/
+?? _runtime_home.html
+?? _server.js
+?? _server_err.txt
+?? _server_log.txt
+?? _services_audit_pages.mjs
+?? _services_audit_pages_out.txt
+?? _services_audit_phase1.mjs
+?? _services_audit_phase1_out.txt
+?? _services_audit_phase1_recreate.cjs
+?? _services_audit_phase1_recreated.txt
+?? _services_audit_phase2.mjs
+?? _services_audit_phase2.txt
+?? _services_audit_phase2_out.txt
+?? _services_fix_loop2_report.md
+?? _services_fix_loop3_report.md
+?? _show_compare.py
+?? _smoke_fresh.txt
+?? _smoke_fresh.txt.err
+?? _smoke_out.txt
+?? _smoke_pid.txt
+?? _static_compare.py
+?? _static_server.cjs
+?? _supabase_check.py
+?? _svc_probe2_err.txt
+?? _svc_probe2_out.txt
+?? _test_chrome.bat
+?? _test_chrome.py
+?? _test_chrome2.py
+?? _test_one.py
+?? _test_one2.py
+?? _verify_cms.js
+?? _wf1.cjs
+?? _wf2.cjs
+?? _wf3.cjs
+?? _wf4.cjs
+?? assets/js/booking.js
+?? assets/js/branding-init.js
+?? assets/js/lib/booking-time.d.ts
+?? assets/js/lib/booking-time.js
+?? assets/js/lib/cms-report.js
+?? assets/js/lib/page-identity.js
+?? assets/js/lib/supabase-js.js
+?? assets/js/membership.config.js
+?? assets/js/repositories/MediaResolver.js
+?? assets/js/repositories/MembershipRepository.js
+?? assets/js/repositories/PageResolver.js
+?? assets/js/repositories/PromotionRepository.js
+?? assets/js/theme-init.js
+?? classic_haircut_probe.js
+?? dev-server.err
+?? dif.txt
+?? final_check.js
+?? index_clean.html
+?? null
+?? package-lock.json
+?? package.json
+?? pages/business/grooming-care.html
+?? phase3c_audit.js
+?? phase3c_query.js
+?? phasej-audit/
+?? r_82985a.txt
+?? refresh_req.txt
+?? runtime_loop24.js
+?? start_pub_server.cjs
+?? supabase/migrations/033_google_reviews_integration.sql
+?? supabase/migrations/034_booking_future_datetime_trigger.sql
+?? supabase/migrations/035_cleanup_hero_highlight.sql
+?? supabase/migrations/036_add_barbershop.sql
+?? supabase/migrations/037_consolidate_barbershop_into_autospa.sql
+?? temp_fix.py
+?? temp_fix2.py
+?? zt-lounge-admin/

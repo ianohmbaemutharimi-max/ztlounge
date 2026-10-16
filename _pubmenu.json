@@ -1,0 +1,150 @@
+﻿[
+  {
+    "page": "restaurant-menu",
+    "http": 200,
+    "dataPage": "restaurant-menu",
+    "catCount": 5,
+    "cats": [
+      "Specialty Dishes",
+      "Choma Zone",
+      "Main Dishes (Wet/Dry Fry)",
+      "Hot Beverages and Breakfast",
+      "Quick Bites & Snack"
+    ],
+    "itemCount": 11,
+    "names": [
+      "Fresh Juice",
+      "Signature Nyama Choma",
+      "ZT Signature Pilau",
+      "Premium Beef Steak",
+      "Mixed Grill Platter",
+      "Grilled Chicken",
+      "Premium Sides",
+      "Goat Ribs",
+      "Coffee",
+      "Loaded Fries",
+      "Chicken Tikka"
+    ],
+    "emptyCatBlocks": 0,
+    "navChips": [
+      "Specialty Dishes",
+      "Choma Zone",
+      "Main Dishes (Wet/Dry Fry)",
+      "Hot Beverages and Breakfast",
+      "Quick Bites & Snack"
+    ],
+    "loungeOnlyLeak": [],
+    "itemsMissingMedia": [],
+    "itemsNonStorage": [],
+    "items": [
+      {
+        "name": "Fresh Juice",
+        "desc": "Fresh tropical fruit juices",
+        "price": "KES 450",
+        "img": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/menu-images/fresh-juice.webp"
+      },
+      {
+        "name": "Signature Nyama Choma",
+        "desc": "Slow-grilled premium beef with signature spices",
+        "price": "KES 1,800",
+        "img": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/menu-images/nyama-choma.webp"
+      },
+      {
+        "name": "ZT Signature Pilau",
+        "desc": "Aromatic basmati rice cooked with special spices and herbs",
+        "price": "KES 650",
+        "img": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/menu-images/signature-pilau.webp"
+      },
+      {
+        "name": "Premium Beef Steak",
+        "desc": "Prime cuts grilled to your preference. Tender & juicy.",
+        "price": "KES 1,650",
+        "img": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/menu-images/beef-steak.webp"
+      },
+      {
+        "name": "Mixed Grill Platter",
+        "desc": "Assorted grilled meats with traditional accompaniments",
+        "price": "KES 1,650",
+        "img": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/menu-images/mixed-grill.webp"
+      },
+      {
+        "name": "Grilled Chicken",
+        "desc": "Grilled chicken with herb potatoes and seasonal vegetables",
+        "price": "KES 1,200",
+        "img": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/menu-images/grilled-chicken.webp"
+      },
+      {
+        "name": "Premium Sides",
+        "desc": "Selection of premium side dishes",
+        "price": "KES 450",
+        "img": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/menu-images/premium-sides.webp"
+      },
+      {
+        "name": "Goat Ribs",
+        "desc": "Tender grilled goat ribs with signature marinade",
+        "price": "KES 1,500",
+        "img": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/menu-images/goat-ribs.webp"
+      },
+      {
+        "name": "Coffee",
+        "desc": "Premium brewed coffee",
+        "price": "KES 250",
+        "img": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/menu-images/coffee.webp"
+      },
+      {
+        "name": "Loaded Fries",
+        "desc": "Loaded with cheese and signature toppings",
+        "price": "KES 850",
+        "img": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/menu-images/loaded-fries.webp"
+      },
+      {
+        "name": "Chicken Tikka",
+        "desc": "Marinated chicken pieces with aromatic spices",
+        "price": "KES 650",
+        "img": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/menu-images/chicken-tikka.webp"
+      }
+    ],
+    "consoleErrors": [],
+    "failedRequests": []
+  },
+  {
+    "page": "lounge",
+    "http": 200,
+    "dataPage": "lounge",
+    "catCount": 1,
+    "cats": [
+      "Fast Foods"
+    ],
+    "itemCount": 2,
+    "names": [
+      "Signature Cocktail",
+      "Cocktail Selection"
+    ],
+    "emptyCatBlocks": 0,
+    "navChips": [
+      "Fast Foods"
+    ],
+    "loungeOnlyLeak": [
+      "Signature Cocktail",
+      "Cocktail Selection"
+    ],
+    "itemsMissingMedia": [],
+    "itemsNonStorage": [],
+    "items": [
+      {
+        "name": "Signature Cocktail",
+        "desc": "House signature cocktail",
+        "price": "KES 750",
+        "img": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/menu-images/signature-cocktail.webp"
+      },
+      {
+        "name": "Cocktail Selection",
+        "desc": "Premium cocktail selection",
+        "price": "KES 850",
+        "img": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/menu-images/cocktail.webp"
+      }
+    ],
+    "consoleErrors": [],
+    "failedRequests": []
+  }
+]

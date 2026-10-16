@@ -1,0 +1,88 @@
+﻿[
+  {
+    "page": "restaurant",
+    "status": 200,
+    "connRefused": 30,
+    "errors": [],
+    "menuPriceSpans": [
+      {
+        "wanted": "Signature Nyama Choma",
+        "rendered": ""
+      },
+      {
+        "wanted": "ZT Signature Pilau",
+        "rendered": ""
+      },
+      {
+        "wanted": "Premium Beef Steak",
+        "rendered": ""
+      }
+    ],
+    "chargeSpans": [],
+    "menuCategoryCount": 0,
+    "menuCardCount": 0,
+    "cocktailBlocks": 0
+  },
+  {
+    "page": "restaurant-menu",
+    "status": 200,
+    "connRefused": 13,
+    "errors": [],
+    "menuPriceSpans": [],
+    "chargeSpans": [],
+    "menuCategoryCount": 0,
+    "menuCardCount": 0,
+    "cocktailBlocks": 0
+  },
+  {
+    "page": "conference",
+    "status": 200,
+    "connRefused": 18,
+    "errors": [
+      "[CMS][BusinessInfo] TypeError: Cannot read properties of undefined (reading 'getContact')\n    at Object.getContact (http://localhost:8000/assets/js/services/Bus",
+      "[CMS][BusinessInfo] TypeError: Cannot read properties of undefined (reading 'getContact')\n    at Object.getContact (http://localhost:8000/assets/js/services/Bus",
+      "[CMS][JSONLD] TypeError: Cannot read properties of undefined (reading 'getBusiness')\n    at Object.getBusiness (http://localhost:8000/assets/js/services/Busines"
+    ],
+    "menuPriceSpans": [],
+    "chargeSpans": [
+      {
+        "wanted": "Half-Day Package",
+        "rendered": ""
+      },
+      {
+        "wanted": "Full-Day Package",
+        "rendered": ""
+      },
+      {
+        "wanted": "Executive Package",
+        "rendered": ""
+      },
+      {
+        "wanted": "Half-Day Package",
+        "rendered": "Half-Day (4 hours)"
+      },
+      {
+        "wanted": "Full-Day Package",
+        "rendered": "Full-Day (8 hours)"
+      }
+    ],
+    "menuCategoryCount": 0,
+    "menuCardCount": 0,
+    "cocktailBlocks": 0
+  },
+  {
+    "page": "lounge",
+    "status": 200,
+    "connRefused": 9,
+    "errors": [
+      "[CMS][BusinessInfo] operation=initialize page=lounge error=SUBSYSTEM_EXCEPTION detail=Cannot read properties of undefined (reading 'getContact')",
+      "[CMS][BusinessInfo] operation=initialize page=lounge error=SUBSYSTEM_EXCEPTION detail=Cannot read properties of undefined (reading 'getContact')",
+      "[CMS][JSONLD] operation=initialize page=lounge error=SUBSYSTEM_EXCEPTION detail=Cannot read properties of undefined (reading 'getBusiness')"
+    ],
+    "menuPriceSpans": [],
+    "chargeSpans": [],
+    "menuCategoryCount": 0,
+    "menuCardCount": 0,
+    "cocktailBlocks": 4
+  }
+]

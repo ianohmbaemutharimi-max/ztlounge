@@ -1,0 +1,52 @@
+
+===== restaurant =====
+  section id= class=section-padding h2="Visual Experience" imgs=6 cssbg=0 cards=0
+  section id= class=section-padding bg-card h2="Our Masterpieces" imgs=3 cssbg=0 cards=0
+  section id= class=section-padding bg-card h2="More Than Just A Restaurant" imgs=3 cssbg=0 cards=0
+  --- restaurant <img> inventory ---
+    alt="Elegant dining room with warm ambient lighting" src=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/restaurant/interior.webp
+    alt="Outdoor garden seating with shades and greenery" src=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/restaurant/outdoor-dining.webp
+    alt="Family dining area with comfortable seating" src=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/restaurant/family-area.webp
+    alt="Spacious restaurant interior with modern decor" src=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/vip/vip-private-dining.webp
+    alt="Couples enjoying a romantic dinner" src=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/restaurant/interior-ambience.webp
+    alt="VIP area with premium table settings" src=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/vip/vip-family-lounge.webp
+    alt="Signature Nyama Choma slow-grilled to perfection" src=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/menu/nyama-choma.webp
+    alt="ZT Signature Pilau aromatic basmati rice" src=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/menu/signature-pilau.webp
+    alt="Premium Beef Steak prime cuts grilled to preference" src=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/menu/beef-steak.webp
+    alt="Lounge & Bar with premium cocktails" src=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/lounge/lounge-interior-main.webp
+    alt="VIP Cabins exclusive private spaces" src=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/vip/vip-premium-seating.webp
+    alt="Events venue for corporate and private events" src=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/events/event-1.webp
+  --- restaurant <a> cards with images ---
+    a href=lounge.html h3="" src=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/lounge/lounge-interior-
+    a href=vip.html h3="" src=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/vip/vip-premium-seating
+    a href=../business/events.html h3="" src=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/events/event-1.webp
+
+===== lounge =====
+  section id=services class=service-cards-section h2="Discover ZT Lounge" imgs=6 cssbg=0 cards=8
+  section id= class=section-padding bg-card h2="Signature Cocktails" imgs=1 cssbg=0 cards=0
+  section id=gallery class=gallery-preview h2="Lounge Gallery" imgs=4 cssbg=0 cards=0
+  section id=location class=location-section h2="Our Location" imgs=1 cssbg=0 cards=0
+  --- context before .service-cards-grid ---
+  ontainer"> <div class="section-header"> <span class="section-tag">Lounge Experiences</span> <h2 class="section-title">Discover <span>ZT Lounge</span></h2> <p class="section-subtitle">Explore our premium lounge offerings</p> </div> <div class="service-cards-grid"> 
+
+===== vip =====
+  section id=services class=service-cards-section h2="Discover VIP Cabins" imgs=6 cssbg=0 cards=8
+  section id= class=section-padding bg-card h2="Your Private Sanctuary" imgs=1 cssbg=0 cards=0
+  section id=gallery class=gallery-preview h2="VIP Gallery" imgs=4 cssbg=0 cards=0
+  section id=location class=location-section h2="Our Location" imgs=1 cssbg=0 cards=0
+  --- context before .service-cards-grid ---
+  r"> <div class="section-header"> <span class="section-tag">VIP Experiences</span> <h2 class="section-title">Discover <span>VIP Cabins</span></h2> <p class="section-subtitle">Explore our premium private cabin experiences</p> </div> <div class="service-cards-grid"> 
+
+===== events =====
+  section id=services class=service-cards-section h2="Celebrate With Us" imgs=6 cssbg=0 cards=8
+  section id=gallery class=gallery-preview h2="Event Gallery" imgs=4 cssbg=0 cards=0
+  section id=location class=location-section h2="Our Location" imgs=1 cssbg=0 cards=0
+  --- context before .service-cards-grid ---
+  ="container"> <div class="section-header"> <span class="section-tag">Event Services</span> <h2 class="section-title">Celebrate <span>With Us</span></h2> <p class="section-subtitle">Discover our premium event experiences</p> </div> <div class="service-cards-grid"> 
+
+===== conference =====
+  section id=services class=service-cards-section h2="Corporate Facilities" imgs=6 cssbg=0 cards=8
+  section id=gallery class=gallery-preview h2="Conference Gallery" imgs=4 cssbg=0 cards=0
+  section id=location class=location-section h2="Our Location" imgs=1 cssbg=0 cards=0
+  --- context before .service-cards-grid-conference ---
+   color: var(--color-gold); } /* Loop 5: layout for the page-specific grid class. Mirrors the shared .service-cards-grid rules in theme.css (base 1618, @1024px 2205, @768px 2352, @480px 2425) so responsive behavior is preserved without sharing the globally-replaced class. */ .service-cards-grid-conference { 

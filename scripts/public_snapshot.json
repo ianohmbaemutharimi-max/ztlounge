@@ -1,0 +1,31 @@
+﻿=== PUBLIC TOP DIRS ===
+DIR .temp
+DIR assets
+DIR node_modules
+DIR pages
+DIR phasej-audit
+DIR scripts
+DIR supabase
+DIR zt-lounge-admin
+DIR _audit_screenshots
+DIR _audit_temp
+DIR _audit_tmp
+DIR _repro_screenshots
+DIR _repro_screenshots2
+DIR _runtime_captures
+=== DIR FILE COUNTS ===
+.temp: files=38 subdirs=()
+assets: files=0 subdirs=(css,images,js)
+node_modules: files=1 subdirs=(.bin,playwright,playwright-core)
+pages: files=0 subdirs=(business,contact,experiences)
+phasej-audit: files=45 subdirs=()
+scripts: files=16 subdirs=(_acceptance_screenshots)
+supabase: files=1 subdirs=(.temp,migrations,review)
+zt-lounge-admin: files=53 subdirs=(.next,node_modules,public,scripts,src,supabase,tests)
+_audit_screenshots: files=16 subdirs=()
+_audit_temp: files=14 subdirs=()
+_audit_tmp: files=24 subdirs=()
+_repro_screenshots: files=4 subdirs=()
+_repro_screenshots2: files=12 subdirs=()
+_runtime_captures: files=10 subdirs=()
+=== ROOT FILES ===

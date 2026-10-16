@@ -1,0 +1,139 @@
+﻿[
+  {
+    "page": "restaurant-menu",
+    "path": "/pages/experiences/restaurant-menu.html",
+    "status": 200,
+    "errors": [
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED"
+    ],
+    "menuContainerExists": true,
+    "menuNavExists": true,
+    "renderedCategoryCount": 0,
+    "renderedItemCount": 0,
+    "categories": [],
+    "menuNavAnchors": [],
+    "dataMenuNameSpans": [],
+    "cocktailItems": []
+  },
+  {
+    "page": "restaurant",
+    "path": "/pages/experiences/restaurant.html",
+    "status": 200,
+    "errors": [
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "Failed to load resource: the server responded with a status of 400 ()"
+    ],
+    "menuContainerExists": false,
+    "menuNavExists": false,
+    "renderedCategoryCount": 0,
+    "renderedItemCount": 0,
+    "categories": [],
+    "menuNavAnchors": [],
+    "dataMenuNameSpans": [
+      {
+        "wanted": "Signature Nyama Choma",
+        "rendered": ""
+      },
+      {
+        "wanted": "ZT Signature Pilau",
+        "rendered": ""
+      },
+      {
+        "wanted": "Premium Beef Steak",
+        "rendered": ""
+      }
+    ],
+    "cocktailItems": []
+  },
+  {
+    "page": "lounge",
+    "path": "/pages/experiences/lounge.html",
+    "status": 200,
+    "errors": [
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "[CMS][BusinessInfo] TypeError: Cannot read properties of undefined (reading 'getContact')\n    at Object.getContact (http://localhost:8000/assets/js/services/BusinessService.js:80:27)\n    at populateBu",
+      "[CMS][Menu] TypeError: Cannot read properties of undefined (reading 'create')\n    at getCategoryRepo (http://localhost:8000/assets/js/repositories/MenuRepository.js:90:50)\n    at getCategories (http:/",
+      "[CMS][Services] op=getByPage page=lounge error=MISSING_DEPENDENCY detail=window.BaseRepository",
+      "[CMS][BusinessInfo] TypeError: Cannot read properties of undefined (reading 'getContact')\n    at Object.getContact (http://localhost:8000/assets/js/services/BusinessService.js:80:27)\n    at populateBu",
+      "[CMS][JSONLD] TypeError: Cannot read properties of undefined (reading 'getBusiness')\n    at Object.getBusiness (http://localhost:8000/assets/js/services/BusinessService.js:30:27)\n    at generateJSONLD",
+      "[CMS][Services] op=getByPage page=lounge error=MISSING_DEPENDENCY detail=window.BaseRepository",
+      "[content-loader] failed to load promotions: TypeError: Cannot read properties of undefined (reading 'create')\n    at getRepo (http://localhost:8000/assets/js/repositories/PromotionRepository.js:39:42)"
+    ],
+    "menuContainerExists": false,
+    "menuNavExists": false,
+    "renderedCategoryCount": 0,
+    "renderedItemCount": 0,
+    "categories": [],
+    "menuNavAnchors": [],
+    "dataMenuNameSpans": [],
+    "cocktailItems": [
+      {
+        "name": "House Signature Collection",
+        "desc": "Exclusive blends created by our award-winning mixologists",
+        "price": "From KES 1,200"
+      },
+      {
+        "name": "Premium Whiskey Selection",
+        "desc": "Curated from the world's finest distilleries",
+        "price": "From KES 1,500"
+      },
+      {
+        "name": "Vintage Wine Cellar",
+        "desc": "Exquisite wines from premier vineyards",
+        "price": "From KES 2,000"
+      },
+      {
+        "name": "Artisanal Mocktails",
+        "desc": "Sophisticated non-alcoholic creations",
+        "price": "From KES 800"
+      }
+    ]
+  }
+]

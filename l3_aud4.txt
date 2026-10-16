@@ -1,0 +1,127 @@
+=== website_pages ===
+  barbershop | Barbershop | d05ec365-19a4-4a79-b4d7-4fe79246a060
+  conference | Conference | 5974b756-733a-4160-837a-4d28973e2f4b
+  contact | Contact Us | 124ba2da-3c92-4589-b328-f4e967ac6faa
+  events | Events Venue | e64ede2a-63c5-402d-a50d-21b0b0b2673a
+  gallery | Gallery | c6817473-6194-4ef2-a055-fc80e5360c3a
+  grooming-care | Grooming & Care Services | 47d44cf4-be29-48e7-a0e0-9863fe26e9af
+  home | ZT Lounge Home | e5186de1-a199-476f-abe2-a3f8b21c6120
+  lounge | Lounge & Bar | 2ba8a348-42a9-4ab6-b4db-1eb1fb67748d
+  restaurant | Restaurant | a3490e73-ef00-4063-8d25-dcdc2772ddb4
+  vip | VIP Cabins | d6d5e58d-6d6a-49a6-b2b5-d28f46eca2f2
+
+=== ALL SERVICES (with page_key + canonical media) ===
+  [active] Restaurant (slug=restaurant)
+      page=restaurant | category=be8b2520-8ef8-4420-979a-134356005329 | ord=0 | href=pages/experiences/restaurant.html | media_id=SET
+      canonical_url=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/gallery-images/gallery-11.webp
+      legacy_image_url=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/interior.webp
+  [active] Classic Haircut (slug=classic-haircut)
+      page=grooming-care | category=011d68d4-7b4b-4a13-9c8e-959c135f119b | ord=0 | href=- | media_id=NULL
+      canonical_url=NULL
+  [active] Lounge & Bar (slug=lounge-bar)
+      page=lounge | category=e27f42c0-b627-411b-af58-a500c68c7c0d | ord=1 | href=pages/experiences/lounge.html | media_id=SET
+      canonical_url=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/lounge-interior-main.webp
+      legacy_image_url=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/lounge-interior-main.webp
+  [active] Carpet Deep Cleaning (slug=carpet-deep-cleaning)
+      page=grooming-care | category=c8f3a1d2-9e4b-4c7a-8d5e-1f2b3a4c5d6e | ord=1 | href=- | media_id=SET
+      canonical_url=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/carpet-cleaning/carpet-deep-cleaning.webp
+  [active] VIP Cabins (slug=vip-cabins)
+      page=vip | category=ff8038a6-3fe8-4a6e-897a-3ada6cf9ad9d | ord=2 | href=pages/experiences/vip.html | media_id=SET
+      canonical_url=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/vip-fireplace-lounge.webp
+      legacy_image_url=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/vip-fireplace-lounge.webp
+  [active] Beard Trim & Shape (slug=beard-trim-shape)
+      page=grooming-care | category=011d68d4-7b4b-4a13-9c8e-959c135f119b | ord=2 | href=- | media_id=SET
+      canonical_url=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/barbershop/beard-trim-shape.webp
+  [active] Sofa & Upholstery Cleaning (slug=sofa-upholstery-cleaning)
+      page=grooming-care | category=c8f3a1d2-9e4b-4c7a-8d5e-1f2b3a4c5d6e | ord=2 | href=- | media_id=SET
+      canonical_url=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/carpet-cleaning/sofa-upholstery-cleaning.webp
+  [active] Haircut & Beard Grooming (slug=haircut-beard-grooming)
+      page=grooming-care | category=011d68d4-7b4b-4a13-9c8e-959c135f119b | ord=3 | href=- | media_id=SET
+      canonical_url=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/barbershop/haircut-beard-grooming.webp
+  [active] Events (slug=events)
+      page=events | category=08537c46-d2e6-4d44-b589-878ef2a0c51b | ord=3 | href=pages/business/events.html | media_id=SET
+      canonical_url=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/wedding.webp
+      legacy_image_url=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/wedding.webp
+  [active] Mattress Cleaning (slug=mattress-cleaning)
+      page=grooming-care | category=c8f3a1d2-9e4b-4c7a-8d5e-1f2b3a4c5d6e | ord=3 | href=- | media_id=SET
+      canonical_url=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/carpet-cleaning/mattress-cleaning.webp
+  [active] Conference (slug=conference)
+      page=conference | category=98ae55ff-3ecf-4589-86b0-4f413c4eb4dc | ord=4 | href=pages/business/conference.html | media_id=SET
+      canonical_url=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/conference-hall.webp
+      legacy_image_url=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/conference-hall.webp
+  [active] Auto Spa (slug=auto-spa)
+      page=grooming-care | category=92efcbe4-22ab-4acd-95a4-6e733dc069e1 | ord=5 | href=pages/business/autospa.html | media_id=SET
+      canonical_url=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/car-detailing.webp
+      legacy_image_url=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/service-images/car-detailing.webp
+
+=== restaurant: grid markup context ===
+  data-page: restaurant
+  explore-section present: false
+
+=== lounge: grid markup context ===
+  card#1 [service-card service-card-lounge] h3="Signature Cocktails"
+      img=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/menu/cocktail.webp
+  card#2 [service-card service-card-lounge] h3="Live Entertainment"
+      img=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/lounge/lounge-bar.webp
+  card#3 [service-card service-card-lounge] h3="VIP Bottle Service"
+      img=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/lounge/lounge-bottle.webp
+  card#4 [service-card service-card-lounge] h3="Premium Spirits"
+      img=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/lounge/lounge-bar.webp
+  card#5 [service-card service-card-lounge] h3="Private Events"
+      img=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/lounge/private-lounge.webp
+  card#6 [service-card service-card-lounge] h3="After-Work Unwind"
+      img=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/lounge/pool-table.webp
+  data-page: lounge
+  explore-section present: false
+
+=== vip: grid markup context ===
+  card#1 [service-card service-card-vip] h3="Private Dining"
+      img=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/vip/vip-private-dining.webp
+  card#2 [service-card service-card-vip] h3="Romantic Getaways"
+      img=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/vip/vip-fireplace-lounge.webp
+  card#3 [service-card service-card-vip] h3="Business Meetings"
+      img=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/vip/vip-tv-lounge.webp
+  card#4 [service-card service-card-vip] h3="Celebrations"
+      img=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/vip/vip-family-lounge.webp
+  card#5 [service-card service-card-vip] h3="Family Gatherings"
+      img=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/vip/vip-premium-seating.webp
+  card#6 [service-card service-card-vip] h3="Executive Retreats"
+      img=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/vip/vip-private-suite.webp
+  data-page: vip
+  explore-section present: false
+
+=== events: grid markup context ===
+  card#1 [service-card service-card-events] h3="Weddings"
+      img=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/events/wedding.webp
+  card#2 [service-card service-card-events] h3="Birthdays"
+      img=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/events/birthday.webp
+  card#3 [service-card service-card-events] h3="Graduations"
+      img=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/events/event-1.webp
+  card#4 [service-card service-card-events] h3="Anniversaries"
+      img=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/events/celebration.webp
+  card#5 [service-card service-card-events] h3="Corporate Events"
+      img=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/events/event-2.webp
+  card#6 [service-card service-card-events] h3="Private Celebrations"
+      img=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/events/event-1.webp
+  data-page: events
+  explore-section present: false
+
+=== conference: grid markup context ===
+  card#1 [service-card service-card-conference] h3="Boardroom"
+      img=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/conference/conference-hall.webp
+  card#2 [service-card service-card-conference] h3="Training Room"
+      img=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/conference/corporate-meeting.webp
+  card#3 [service-card service-card-conference] h3="Seminar Hall"
+      img=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/conference/conference-setup.webp
+  card#4 [service-card service-card-conference] h3="Conference Hall"
+      img=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/conference/conference-2.webp
+  card#5 [service-card service-card-conference] h3="Catering Services"
+      img=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/conference/conference-1.webp
+  card#6 [service-card service-card-conference] h3="AV Equipment"
+      img=https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/conference/conference-hall.webp
+  data-page: conference
+  explore-section present: false
+
+=== grooming: grid markup context ===
+  data-page: grooming-care
+  explore-section present: true

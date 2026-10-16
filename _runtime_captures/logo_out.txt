@@ -1,0 +1,163 @@
+=== LOGO SOURCES ===
+
+--- home (4 logo imgs found) ---
+  src: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/bra
+  alt: ZT Lounge Meru - Premium Hospitality Logo
+  class: logo-dark site-logo
+  src: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/bra
+  alt: ZT Lounge Meru - Premium Hospitality Logo
+  class: logo-light site-logo
+  src: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/bra
+  alt: ZT Lounge Meru - Premium Hospitality Logo
+  class: logo-dark site-logo
+  src: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/bra
+  alt: ZT Lounge Meru - Premium Hospitality Logo
+  class: logo-light site-logo
+
+--- restaurant (4 logo imgs found) ---
+  src: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/bra
+  alt: ZT Lounge Meru - Premium Hospitality Logo
+  class: logo-dark site-logo
+  src: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/bra
+  alt: ZT Lounge Meru - Premium Hospitality Logo
+  class: logo-light site-logo
+  src: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/bra
+  alt: ZT Lounge Meru - Premium Hospitality Logo
+  class: logo-dark site-logo
+  src: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/bra
+  alt: ZT Lounge Meru - Premium Hospitality Logo
+  class: logo-light site-logo
+
+--- restaurant-menu (4 logo imgs found) ---
+  src: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/bra
+  alt: ZT Lounge Meru - Premium Hospitality Logo
+  class: logo-dark site-logo
+  src: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/bra
+  alt: ZT Lounge Meru - Premium Hospitality Logo
+  class: logo-light site-logo
+  src: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/bra
+  alt: ZT Lounge Meru - Premium Hospitality Logo
+  class: logo-dark site-logo
+  src: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/bra
+  alt: ZT Lounge Meru - Premium Hospitality Logo
+  class: logo-light site-logo
+
+--- lounge (4 logo imgs found) ---
+  src: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/bra
+  alt: ZT Lounge Meru - Premium Hospitality Logo
+  class: logo-dark site-logo
+  src: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/bra
+  alt: ZT Lounge Meru - Premium Hospitality Logo
+  class: logo-light site-logo
+  src: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/bra
+  alt: ZT Lounge Meru - Premium Hospitality Logo
+  class: logo-dark site-logo
+  src: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/bra
+  alt: ZT Lounge Meru - Premium Hospitality Logo
+  class: logo-light site-logo
+
+--- vip (4 logo imgs found) ---
+  src: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/bra
+  alt: ZT Lounge Meru - Premium Hospitality Logo
+  class: logo-dark site-logo
+  src: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/bra
+  alt: ZT Lounge Meru - Premium Hospitality Logo
+  class: logo-light site-logo
+  src: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/bra
+  alt: ZT Lounge Meru - Premium Hospitality Logo
+  class: logo-dark site-logo
+  src: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/bra
+  alt: ZT Lounge Meru - Premium Hospitality Logo
+  class: logo-light site-logo
+
+--- events (4 logo imgs found) ---
+  src: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/bra
+  alt: ZT Lounge Meru - Premium Hospitality Logo
+  class: logo-dark site-logo
+  src: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/bra
+  alt: ZT Lounge Meru - Premium Hospitality Logo
+  class: logo-light site-logo
+  src: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/bra
+  alt: ZT Lounge Meru - Premium Hospitality Logo
+  class: logo-dark site-logo
+  src: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/bra
+  alt: ZT Lounge Meru - Premium Hospitality Logo
+  class: logo-light site-logo
+
+--- conference (4 logo imgs found) ---
+  src: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/bra
+  alt: ZT Lounge Meru - Premium Hospitality Logo
+  class: logo-dark site-logo
+  src: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/bra
+  alt: ZT Lounge Meru - Premium Hospitality Logo
+  class: logo-light site-logo
+  src: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/bra
+  alt: ZT Lounge Meru - Premium Hospitality Logo
+  class: logo-dark site-logo
+  src: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/bra
+  alt: ZT Lounge Meru - Premium Hospitality Logo
+  class: logo-light site-logo
+
+--- grooming-care (4 logo imgs found) ---
+  src: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/bra
+  alt: ZT Lounge Meru
+  class: logo-dark site-logo
+  src: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/bra
+  alt: ZT Lounge Meru
+  class: logo-light site-logo
+  src: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/bra
+  alt: ZT Lounge Meru
+  class: logo-dark site-logo
+  src: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/bra
+  alt: ZT Lounge Meru
+  class: logo-light site-logo
+
+--- contact (4 logo imgs found) ---
+  src: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/bra
+  alt: ZT Lounge Meru - Premium Hospitality Logo
+  class: logo-dark site-logo
+  src: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/bra
+  alt: ZT Lounge Meru - Premium Hospitality Logo
+  class: logo-light site-logo
+  src: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/bra
+  alt: ZT Lounge Meru - Premium Hospitality Logo
+  class: logo-dark site-logo
+  src: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/bra
+  alt: ZT Lounge Meru - Premium Hospitality Logo
+  class: logo-light site-logo
+
+--- gallery (4 logo imgs found) ---
+  src: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/bra
+  alt: ZT Lounge Meru - Premium Hospitality Logo
+  class: logo-dark site-logo
+  src: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/bra
+  alt: ZT Lounge Meru - Premium Hospitality Logo
+  class: logo-light site-logo
+  src: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/bra
+  alt: ZT Lounge Meru - Premium Hospitality Logo
+  class: logo-dark site-logo
+  src: https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/bra
+  alt: ZT Lounge Meru - Premium Hospitality Logo
+  class: logo-light site-logo
+
+=== FAVICON ===
+  home                : icon=<link rel="icon" type="image/x-icon" href="data:," />
+  home                : apple=<link rel="apple-touch-icon" href="data:," />
+  restaurant          : icon=<link rel="icon" type="image/x-icon" href="data:," />
+  restaurant          : apple=<link rel="apple-touch-icon" href="data:," />
+  restaurant-menu     : icon=<link rel="icon" type="image/x-icon" href="data:," />
+  restaurant-menu     : apple=<link rel="apple-touch-icon" href="data:," />
+  lounge              : icon=<link rel="icon" type="image/x-icon" href="data:," />
+  lounge              : apple=<link rel="apple-touch-icon" href="data:," />
+  vip                 : icon=<link rel="icon" type="image/x-icon" href="data:," />
+  vip                 : apple=<link rel="apple-touch-icon" href="data:," />
+  events              : icon=<link rel="icon" type="image/x-icon" href="data:," />
+  events              : apple=<link rel="apple-touch-icon" href="data:," />
+  conference          : icon=<link rel="icon" type="image/x-icon" href="data:," />
+  conference          : apple=<link rel="apple-touch-icon" href="data:," />
+  grooming-care       : icon=<link rel="icon" type="image/x-icon" href="data:," />
+  grooming-care       : apple=<link rel="apple-touch-icon" href="data:," />
+  contact             : icon=<link rel="icon" type="image/x-icon" href="data:," />
+  contact             : apple=<link rel="apple-touch-icon" href="data:," />
+  gallery             : icon=<link rel="icon" type="image/x-icon" href="data:," />
+  gallery             : apple=<link rel="apple-touch-icon" href="data:," />

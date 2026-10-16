@@ -1,0 +1,149 @@
+﻿{
+  "status": 200,
+  "dom": {
+    "hasSupabase": true,
+    "hasRepo": false,
+    "hasLoader": false,
+    "menuCards": 0,
+    "cats": 0
+  },
+  "refusedCount": 31,
+  "refused": [
+    {
+      "url": "http://localhost:8000/assets/images/branding/logo.webp",
+      "err": "net::ERR_CONNECTION_REFUSED"
+    },
+    {
+      "url": "http://localhost:8000/assets/images/branding/logo-white.webp",
+      "err": "net::ERR_CONNECTION_REFUSED"
+    },
+    {
+      "url": "http://localhost:8000/assets/js/lib/cms-report.js",
+      "err": "net::ERR_CONNECTION_REFUSED"
+    },
+    {
+      "url": "http://localhost:8000/assets/js/repositories/PageResolver.js",
+      "err": "net::ERR_CONNECTION_REFUSED"
+    },
+    {
+      "url": "http://localhost:8000/assets/js/repositories/MediaResolver.js",
+      "err": "net::ERR_CONNECTION_REFUSED"
+    },
+    {
+      "url": "http://localhost:8000/assets/js/lib/BaseRepository.js",
+      "err": "net::ERR_CONNECTION_REFUSED"
+    },
+    {
+      "url": "http://localhost:8000/assets/js/business-config.js",
+      "err": "net::ERR_CONNECTION_REFUSED"
+    },
+    {
+      "url": "http://localhost:8000/assets/js/repositories/BusinessRepository.js",
+      "err": "net::ERR_CONNECTION_REFUSED"
+    },
+    {
+      "url": "http://localhost:8000/assets/js/branding-init.js",
+      "err": "net::ERR_CONNECTION_REFUSED"
+    },
+    {
+      "url": "http://localhost:8000/assets/js/repositories/HeroRepository.js",
+      "err": "net::ERR_CONNECTION_REFUSED"
+    },
+    {
+      "url": "http://localhost:8000/assets/js/repositories/ServicesRepository.js",
+      "err": "net::ERR_CONNECTION_REFUSED"
+    },
+    {
+      "url": "http://localhost:8000/assets/js/repositories/GalleryRepository.js",
+      "err": "net::ERR_CONNECTION_REFUSED"
+    },
+    {
+      "url": "http://localhost:8000/assets/js/repositories/MenuRepository.js",
+      "err": "net::ERR_CONNECTION_REFUSED"
+    },
+    {
+      "url": "http://localhost:8000/assets/js/repositories/FAQRepository.js",
+      "err": "net::ERR_CONNECTION_REFUSED"
+    },
+    {
+      "url": "http://localhost:8000/assets/js/repositories/TestimonialsRepository.js",
+      "err": "net::ERR_CONNECTION_REFUSED"
+    },
+    {
+      "url": "http://localhost:8000/assets/js/repositories/PromotionRepository.js",
+      "err": "net::ERR_CONNECTION_REFUSED"
+    },
+    {
+      "url": "http://localhost:8000/assets/js/repositories/BookingRepository.js",
+      "err": "net::ERR_CONNECTION_REFUSED"
+    },
+    {
+      "url": "http://localhost:8000/assets/js/repositories/ContactRepository.js",
+      "err": "net::ERR_CONNECTION_REFUSED"
+    },
+    {
+      "url": "http://localhost:8000/assets/js/repositories/SEORepository.js",
+      "err": "net::ERR_CONNECTION_REFUSED"
+    },
+    {
+      "url": "http://localhost:8000/assets/js/services/BusinessService.js",
+      "err": "net::ERR_CONNECTION_REFUSED"
+    },
+    {
+      "url": "http://localhost:8000/assets/js/services.config.js",
+      "err": "net::ERR_CONNECTION_REFUSED"
+    },
+    {
+      "url": "http://localhost:8000/assets/js/gallery.config.js",
+      "err": "net::ERR_CONNECTION_REFUSED"
+    },
+    {
+      "url": "http://localhost:8000/assets/js/menu.config.js",
+      "err": "net::ERR_CONNECTION_REFUSED"
+    },
+    {
+      "url": "http://localhost:8000/assets/js/faq.config.js",
+      "err": "net::ERR_CONNECTION_REFUSED"
+    },
+    {
+      "url": "http://localhost:8000/assets/js/booking.config.js",
+      "err": "net::ERR_CONNECTION_REFUSED"
+    },
+    {
+      "url": "http://localhost:8000/assets/js/contact.config.js",
+      "err": "net::ERR_CONNECTION_REFUSED"
+    },
+    {
+      "url": "http://localhost:8000/assets/js/seo.config.js",
+      "err": "net::ERR_CONNECTION_REFUSED"
+    },
+    {
+      "url": "http://localhost:8000/assets/js/lib/booking-time.js",
+      "err": "net::ERR_CONNECTION_REFUSED"
+    },
+    {
+      "url": "http://localhost:8000/assets/js/forms.js",
+      "err": "net::ERR_CONNECTION_REFUSED"
+    },
+    {
+      "url": "http://localhost:8000/assets/js/content-loader.js",
+      "err": "net::ERR_CONNECTION_REFUSED"
+    },
+    {
+      "url": "http://localhost:8000/assets/js/background-media-warmer.js",
+      "err": "net::ERR_CONNECTION_REFUSED"
+    }
+  ],
+  "otherFailed": [],
+  "okCount": 20,
+  "sampleOk": [
+    "http://localhost:8000/pages/experiences/lounge.html",
+    "http://localhost:8000/assets/js/theme-init.js",
+    "http://localhost:8000/assets/css/theme.css",
+    "http://localhost:8000/assets/css/menu.css",
+    "http://localhost:8000/assets/js/shared-components.js",
+    "http://localhost:8000/assets/js/lib/supabase-js.js",
+    "http://localhost:8000/assets/js/config/env.js",
+    "http://localhost:8000/assets/js/config/supabase.config.js"
+  ]
+}

@@ -1,0 +1,736 @@
+﻿[
+  {
+    "page": "home",
+    "path": "/index.html",
+    "status": 200,
+    "errors": [
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED"
+    ],
+    "names": [],
+    "phones": [
+      "+254 143 542 601"
+    ],
+    "phoneLinks": [
+      "tel:254143542601",
+      "tel:254143542601",
+      "tel:+254143542601",
+      "tel:+254143542601",
+      "tel:+254143542601",
+      "tel:254143542601",
+      "tel:254143542601"
+    ],
+    "emails": [
+      "ztloungemeru@gmail.com",
+      "ztloungemeru@gmail.com"
+    ],
+    "addresses": [
+      "Opposite Ezri Hotel, Milimani, Meru",
+      "Opposite Ezri Hotel, Milimani, Meru"
+    ],
+    "hours": [
+      "Mon - Sun: 10:00 AM - 2:00 AM",
+      "Mon - Sun: 10:00 AM - 2:00 AM"
+    ],
+    "mapLinks": [
+      "https://maps.app.goo.gl/HqTbiiU4q2jRFoPg6"
+    ],
+    "bodyHasObjectObject": false,
+    "ld": [
+      {
+        "type": "LocalBusiness",
+        "name": "ZT Lounge Meru",
+        "telephone": "+254143542601",
+        "street": "Opposite Ezri Hotel, Milimani, Meru",
+        "locality": "Meru",
+        "country": "KE",
+        "postcode": "60200",
+        "region": "Meru County",
+        "hasHours": true,
+        "hasMap": false,
+        "hasLogo": false
+      },
+      {
+        "type": "Restaurant",
+        "name": "ZT Lounge Meru",
+        "telephone": "+254143542601",
+        "email": "ztloungemeru@gmail.com",
+        "street": "Opposite Ezri Hotel, Milimani, Meru",
+        "locality": "Meru",
+        "country": "KE",
+        "postcode": "60200",
+        "region": "Meru County",
+        "hasHours": true,
+        "hasMap": true,
+        "hasLogo": false
+      }
+    ]
+  },
+  {
+    "page": "contact",
+    "path": "/pages/contact/contact.html",
+    "status": 200,
+    "errors": [
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "console: Failed to load resource: the server responded with a status of 404 (File not found)"
+    ],
+    "names": [],
+    "phones": [
+      "+254 143 542 601"
+    ],
+    "phoneLinks": [
+      "tel:254143542601",
+      "tel:254143542601",
+      "tel:254143542601",
+      "tel:254143542601",
+      "tel:254143542601",
+      "tel:254143542601",
+      "tel:254143542601",
+      "tel:254143542601",
+      "tel:254143542601"
+    ],
+    "emails": [
+      "ztloungemeru@gmail.com",
+      "ztloungemeru@gmail.com",
+      "ztloungemeru@gmail.com"
+    ],
+    "addresses": [
+      "Opposite Ezri Hotel, Milimani, Meru",
+      "Opposite Ezri Hotel, Milimani, Meru",
+      "Opposite Ezri Hotel, Milimani, Meru"
+    ],
+    "hours": [
+      "Mon - Sun: 10:00 AM - 2:00 AM",
+      "Mon - Sun: 10:00 AM - 2:00 AM",
+      "Mon - Sun: 10:00 AM - 2:00 AM"
+    ],
+    "mapLinks": [
+      "https://maps.app.goo.gl/HqTbiiU4q2jRFoPg6",
+      "https://maps.app.goo.gl/HqTbiiU4q2jRFoPg6"
+    ],
+    "bodyHasObjectObject": false,
+    "ld": [
+      {
+        "type": "LocalBusiness",
+        "name": "ZT Lounge Meru",
+        "telephone": "+254143542601",
+        "email": "ztloungemeru@gmail.com",
+        "street": "Opposite Ezri Hotel, Milimani, Meru",
+        "locality": "Meru  town",
+        "country": "Kenya",
+        "postcode": "60200",
+        "region": "Meru County",
+        "hasHours": true,
+        "hasMap": true,
+        "hasLogo": true
+      },
+      {
+        "type": "BreadcrumbList",
+        "telephone": "+254143542601",
+        "email": "ztloungemeru@gmail.com",
+        "hasHours": true,
+        "hasMap": true,
+        "hasLogo": true
+      },
+      {
+        "type": "LocalBusiness",
+        "name": "ZT Lounge Meru",
+        "telephone": "+254143542601",
+        "email": "ztloungemeru@gmail.com",
+        "street": "Opposite Ezri Hotel, Milimani, Meru",
+        "locality": "Meru  town",
+        "country": "Kenya",
+        "hasHours": true,
+        "hasMap": true,
+        "hasLogo": true
+      }
+    ]
+  },
+  {
+    "page": "restaurant",
+    "path": "/pages/experiences/restaurant.html",
+    "status": 200,
+    "errors": [
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "console: [CMS][BusinessInfo] operation=initialize page=restaurant error=SUBSYSTEM_EXCEPTION detail=Cannot read properties of undefined (reading 'getContact')",
+      "console: [CMS][Menu] operation=initialize page=restaurant error=SUBSYSTEM_EXCEPTION detail=Cannot read properties of undefined (reading 'create')",
+      "console: [CMS][Services] operation=getByPage page=restaurant error=MISSING_DEPENDENCY detail=window.BaseRepository",
+      "console: [CMS][BusinessInfo] operation=initialize page=restaurant error=SUBSYSTEM_EXCEPTION detail=Cannot read properties of undefined (reading 'getContact')",
+      "console: [CMS][JSONLD] operation=initialize page=restaurant error=SUBSYSTEM_EXCEPTION detail=Cannot read properties of undefined (reading 'getBusiness')",
+      "console: [CMS][Services] operation=getByPage page=restaurant error=MISSING_DEPENDENCY detail=window.BaseRepository",
+      "console: [content-loader] failed to load promotions: TypeError: Cannot read properties of undefined (reading 'create')\n    at getRepo (http://localhost:8000/assets/js/repositories/PromotionRepository.js:39:42)\n    at Object.getEligible (http://localhost:8000/assets/js/repositories/PromotionRepository.js:148:16)\n    at http://localhost:8000/assets/js/content-loader.js:1878:51",
+      "console: [LOOP49][Gallery] getByPage() error: TypeError: Cannot read properties of undefined (reading 'create')\n    at getRepo (http://localhost:8000/assets/js/repositories/GalleryRepository.js:56:42)\n    at http://localhost:8000/assets/js/repositories/GalleryRepository.js:98:21",
+      "console: [CMS][Gallery] operation=populateGallery page=restaurant error=ERROR detail=Cannot read properties of undefined (reading 'create')",
+      "Cannot read properties of undefined (reading 'create')"
+    ],
+    "names": [],
+    "phones": [
+      "+254 143 542 601"
+    ],
+    "phoneLinks": [
+      "tel:254143542601",
+      "tel:254143542601",
+      "tel:+254143542601",
+      "tel:254143542601",
+      "tel:254143542601"
+    ],
+    "emails": [
+      "ztloungemeru@gmail.com"
+    ],
+    "addresses": [
+      "Opposite Ezri Hotel, Milimani, Meru"
+    ],
+    "hours": [
+      "Mon - Sun: 10:00 AM - 2:00 AM"
+    ],
+    "mapLinks": [],
+    "bodyHasObjectObject": false,
+    "ld": [
+      {
+        "type": "Restaurant",
+        "name": "ZT Lounge Restaurant",
+        "telephone": "+254143542601",
+        "email": "ztloungemeru@gmail.com",
+        "street": "Opposite Ezri Hotel, Milimani, Meru",
+        "locality": "Meru",
+        "country": "KE",
+        "postcode": "60200",
+        "region": "Meru County",
+        "hasHours": true,
+        "hasMap": false,
+        "hasLogo": false
+      },
+      {
+        "type": "BreadcrumbList",
+        "hasHours": false,
+        "hasMap": false,
+        "hasLogo": false
+      }
+    ]
+  },
+  {
+    "page": "menu",
+    "path": "/pages/experiences/restaurant-menu.html",
+    "status": 200,
+    "errors": [
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "console: [BrandingInit] Γ¥î Failed to load canonical branding: Cannot read properties of undefined (reading 'create')",
+      "console: [CMS][BusinessInfo] operation=initialize page=restaurant-menu error=SUBSYSTEM_EXCEPTION detail=Cannot read properties of undefined (reading 'create')",
+      "console: [CMS][Menu] operation=initialize page=restaurant-menu error=SUBSYSTEM_EXCEPTION detail=Cannot read properties of undefined (reading 'create')",
+      "console: [CMS][Services] operation=getByPage page=restaurant-menu error=MISSING_DEPENDENCY detail=window.BaseRepository",
+      "console: [CMS][BusinessInfo] operation=initialize page=restaurant-menu error=SUBSYSTEM_EXCEPTION detail=Cannot read properties of undefined (reading 'create')",
+      "console: [CMS][JSONLD] operation=initialize page=restaurant-menu error=SUBSYSTEM_EXCEPTION detail=Cannot read properties of undefined (reading 'create')",
+      "console: [CMS][Services] operation=getByPage page=restaurant-menu error=MISSING_DEPENDENCY detail=window.BaseRepository",
+      "console: [content-loader] failed to load promotions: TypeError: Cannot read properties of undefined (reading 'create')\n    at getRepo (http://localhost:8000/assets/js/repositories/PromotionRepository.js:39:42)\n    at Object.getEligible (http://localhost:8000/assets/js/repositories/PromotionRepository.js:148:16)\n    at http://localhost:8000/assets/js/content-loader.js:1878:51"
+    ],
+    "names": [],
+    "phones": [
+      "+254 143 542 601"
+    ],
+    "phoneLinks": [
+      "tel:254143542601",
+      "tel:254143542601",
+      "tel:+254143542601",
+      "tel:+254143542601",
+      "tel:254143542601",
+      "tel:254143542601"
+    ],
+    "emails": [
+      "ztloungemeru@gmail.com",
+      "ztloungemeru@gmail.com"
+    ],
+    "addresses": [
+      "Opposite Ezri Hotel, Milimani, Meru",
+      "Opposite Ezri Hotel, Milimani, Meru"
+    ],
+    "hours": [
+      "Mon - Sun: 10:00 AM - 2:00 AM",
+      "Mon - Sun: 10:00 AM - 2:00 AM"
+    ],
+    "mapLinks": [
+      "https://maps.app.goo.gl/HqTbiiU4q2jRFoPg6"
+    ],
+    "bodyHasObjectObject": false,
+    "ld": [
+      {
+        "type": "Menu",
+        "name": "ZT Lounge Restaurant Menu",
+        "hasHours": false,
+        "hasMap": false,
+        "hasLogo": false
+      },
+      {
+        "type": "BreadcrumbList",
+        "hasHours": false,
+        "hasMap": false,
+        "hasLogo": false
+      }
+    ]
+  },
+  {
+    "page": "lounge",
+    "path": "/pages/experiences/lounge.html",
+    "status": 200,
+    "errors": [],
+    "names": [],
+    "phones": [
+      "+254 143 542 601"
+    ],
+    "phoneLinks": [
+      "tel:254143542601",
+      "tel:254143542601",
+      "tel:254143542601",
+      "tel:254143542601",
+      "tel:254143542601",
+      "tel:254143542601"
+    ],
+    "emails": [
+      "ztloungemeru@gmail.com",
+      "ztloungemeru@gmail.com"
+    ],
+    "addresses": [
+      "Opposite Ezri Hotel, Milimani, Meru",
+      "Opposite Ezri Hotel, Milimani, Meru"
+    ],
+    "hours": [
+      "Mon - Sun: 10:00 AM - 2:00 AM",
+      "Mon - Sun: 10:00 AM - 2:00 AM"
+    ],
+    "mapLinks": [
+      "https://maps.app.goo.gl/HqTbiiU4q2jRFoPg6"
+    ],
+    "bodyHasObjectObject": false,
+    "ld": [
+      {
+        "type": "BarOrPub",
+        "name": "ZT Lounge Bar",
+        "telephone": "+254143542601",
+        "email": "ztloungemeru@gmail.com",
+        "street": "Opposite Ezri Hotel, Milimani, Meru",
+        "locality": "Meru  town",
+        "country": "Kenya",
+        "postcode": "60200",
+        "region": "Meru County",
+        "hasHours": true,
+        "hasMap": true,
+        "hasLogo": true
+      },
+      {
+        "type": "BreadcrumbList",
+        "telephone": "+254143542601",
+        "email": "ztloungemeru@gmail.com",
+        "hasHours": true,
+        "hasMap": true,
+        "hasLogo": true
+      },
+      {
+        "type": "LocalBusiness",
+        "name": "ZT Lounge Meru",
+        "telephone": "+254143542601",
+        "email": "ztloungemeru@gmail.com",
+        "street": "Opposite Ezri Hotel, Milimani, Meru",
+        "locality": "Meru  town",
+        "country": "Kenya",
+        "hasHours": true,
+        "hasMap": true,
+        "hasLogo": true
+      }
+    ]
+  },
+  {
+    "page": "conference",
+    "path": "/pages/business/conference.html",
+    "status": 200,
+    "errors": [
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED"
+    ],
+    "names": [],
+    "phones": [
+      "+254 143 542 601"
+    ],
+    "phoneLinks": [
+      "tel:254143542601",
+      "tel:254143542601",
+      "tel:254143542601",
+      "tel:254143542601",
+      "tel:254143542601",
+      "tel:254143542601"
+    ],
+    "emails": [
+      "ztloungemeru@gmail.com",
+      "ztloungemeru@gmail.com"
+    ],
+    "addresses": [
+      "Opposite Ezri Hotel, Milimani, Meru",
+      "Opposite Ezri Hotel, Milimani, Meru"
+    ],
+    "hours": [
+      "Mon - Sun: 10:00 AM - 2:00 AM",
+      "Mon - Sun: 10:00 AM - 2:00 AM"
+    ],
+    "mapLinks": [
+      "https://maps.app.goo.gl/HqTbiiU4q2jRFoPg6"
+    ],
+    "bodyHasObjectObject": false,
+    "ld": [
+      {
+        "type": "ConferenceCenter",
+        "name": "ZT Lounge Conference Hall",
+        "telephone": "+254143542601",
+        "email": "ztloungemeru@gmail.com",
+        "street": "Opposite Ezri Hotel, Milimani, Meru",
+        "locality": "Meru  town",
+        "country": "Kenya",
+        "postcode": "60200",
+        "region": "Meru County",
+        "hasHours": true,
+        "hasMap": true,
+        "hasLogo": true
+      },
+      {
+        "type": "BreadcrumbList",
+        "telephone": "+254143542601",
+        "email": "ztloungemeru@gmail.com",
+        "hasHours": true,
+        "hasMap": true,
+        "hasLogo": true
+      },
+      {
+        "type": "LocalBusiness",
+        "name": "ZT Lounge Meru",
+        "telephone": "+254143542601",
+        "email": "ztloungemeru@gmail.com",
+        "street": "Opposite Ezri Hotel, Milimani, Meru",
+        "locality": "Meru  town",
+        "country": "Kenya",
+        "hasHours": true,
+        "hasMap": true,
+        "hasLogo": true
+      }
+    ]
+  },
+  {
+    "page": "vip",
+    "path": "/pages/experiences/vip.html",
+    "status": 200,
+    "errors": [
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED"
+    ],
+    "names": [],
+    "phones": [
+      "+254 143 542 601"
+    ],
+    "phoneLinks": [
+      "tel:254143542601",
+      "tel:254143542601",
+      "tel:254143542601",
+      "tel:254143542601",
+      "tel:254143542601",
+      "tel:254143542601",
+      "tel:254143542601"
+    ],
+    "emails": [
+      "ztloungemeru@gmail.com",
+      "ztloungemeru@gmail.com"
+    ],
+    "addresses": [
+      "Opposite Ezri Hotel, Milimani, Meru",
+      "Opposite Ezri Hotel, Milimani, Meru"
+    ],
+    "hours": [
+      "Mon - Sun: 10:00 AM - 2:00 AM",
+      "Mon - Sun: 10:00 AM - 2:00 AM"
+    ],
+    "mapLinks": [
+      "https://maps.app.goo.gl/HqTbiiU4q2jRFoPg6"
+    ],
+    "bodyHasObjectObject": false,
+    "ld": [
+      {
+        "type": "LodgingBusiness",
+        "name": "ZT Lounge VIP Cabins",
+        "telephone": "+254143542601",
+        "email": "ztloungemeru@gmail.com",
+        "street": "Opposite Ezri Hotel, Milimani, Meru",
+        "locality": "Meru  town",
+        "country": "Kenya",
+        "postcode": "60200",
+        "region": "Meru County",
+        "hasHours": true,
+        "hasMap": true,
+        "hasLogo": true
+      },
+      {
+        "type": "BreadcrumbList",
+        "telephone": "+254143542601",
+        "email": "ztloungemeru@gmail.com",
+        "hasHours": true,
+        "hasMap": true,
+        "hasLogo": true
+      },
+      {
+        "type": "LocalBusiness",
+        "name": "ZT Lounge Meru",
+        "telephone": "+254143542601",
+        "email": "ztloungemeru@gmail.com",
+        "street": "Opposite Ezri Hotel, Milimani, Meru",
+        "locality": "Meru  town",
+        "country": "Kenya",
+        "hasHours": true,
+        "hasMap": true,
+        "hasLogo": true
+      }
+    ]
+  },
+  {
+    "page": "events",
+    "path": "/pages/business/events.html",
+    "status": 200,
+    "errors": [
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "console: [BrandingInit] Γ¥î Failed to load canonical branding: Cannot read properties of undefined (reading 'create')",
+      "console: [CMS][BusinessInfo] operation=initialize page=events error=SUBSYSTEM_EXCEPTION detail=Cannot read properties of undefined (reading 'create')",
+      "console: [CMS][Menu] operation=initialize page=events error=SUBSYSTEM_EXCEPTION detail=Cannot read properties of undefined (reading 'create')",
+      "console: [CMS][Services] operation=getByPage page=events error=MISSING_DEPENDENCY detail=window.BaseRepository",
+      "console: [CMS][BusinessInfo] operation=initialize page=events error=SUBSYSTEM_EXCEPTION detail=Cannot read properties of undefined (reading 'create')",
+      "console: [CMS][JSONLD] operation=initialize page=events error=SUBSYSTEM_EXCEPTION detail=Cannot read properties of undefined (reading 'create')",
+      "console: [CMS][Services] operation=getByPage page=events error=MISSING_DEPENDENCY detail=window.BaseRepository",
+      "console: [content-loader] failed to load promotions: TypeError: Cannot read properties of undefined (reading 'create')\n    at getRepo (http://localhost:8000/assets/js/repositories/PromotionRepository.js:39:42)\n    at Object.getEligible (http://localhost:8000/assets/js/repositories/PromotionRepository.js:148:16)\n    at http://localhost:8000/assets/js/content-loader.js:1878:51",
+      "console: [LOOP49][Gallery] getByPage() error: TypeError: Cannot read properties of undefined (reading 'create')\n    at getRepo (http://localhost:8000/assets/js/repositories/GalleryRepository.js:56:42)\n    at http://localhost:8000/assets/js/repositories/GalleryRepository.js:98:21",
+      "console: [CMS][Gallery] operation=populateGallery page=events error=ERROR detail=Cannot read properties of undefined (reading 'create')",
+      "Cannot read properties of undefined (reading 'create')"
+    ],
+    "names": [],
+    "phones": [
+      "+254 143 542 601"
+    ],
+    "phoneLinks": [
+      "tel:254143542601",
+      "tel:254143542601",
+      "tel:+254143542601",
+      "tel:+254143542601",
+      "tel:254143542601",
+      "tel:254143542601"
+    ],
+    "emails": [
+      "ztloungemeru@gmail.com",
+      "ztloungemeru@gmail.com"
+    ],
+    "addresses": [
+      "Opposite Ezri Hotel, Milimani, Meru",
+      "Opposite Ezri Hotel, Milimani, Meru"
+    ],
+    "hours": [
+      "Mon - Sun: 10:00 AM - 2:00 AM",
+      "Mon - Sun: 10:00 AM - 2:00 AM"
+    ],
+    "mapLinks": [
+      "https://maps.app.goo.gl/HqTbiiU4q2jRFoPg6"
+    ],
+    "bodyHasObjectObject": false,
+    "ld": [
+      {
+        "type": "EventVenue",
+        "name": "ZT Lounge Events Venue",
+        "telephone": "+254143542601",
+        "email": "ztloungemeru@gmail.com",
+        "street": "Opposite Ezri Hotel, Milimani",
+        "locality": "Meru",
+        "country": "KE",
+        "postcode": "60200",
+        "region": "Meru County",
+        "hasHours": false,
+        "hasMap": false,
+        "hasLogo": false
+      },
+      {
+        "type": "BreadcrumbList",
+        "hasHours": false,
+        "hasMap": false,
+        "hasLogo": false
+      }
+    ]
+  },
+  {
+    "page": "grooming",
+    "path": "/pages/business/grooming-care.html",
+    "status": 200,
+    "errors": [
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED"
+    ],
+    "names": [],
+    "phones": [
+      "+254 143 542 601"
+    ],
+    "phoneLinks": [
+      "tel:254143542601",
+      "tel:254143542601",
+      "tel:254143542601",
+      "tel:254143542601",
+      "tel:254143542601",
+      "tel:254143542601",
+      "tel:254143542601",
+      "tel:254143542601",
+      "tel:254143542601",
+      "tel:254143542601"
+    ],
+    "emails": [
+      "ztloungemeru@gmail.com",
+      "ztloungemeru@gmail.com"
+    ],
+    "addresses": [
+      "Opposite Ezri Hotel, Milimani, Meru",
+      "Opposite Ezri Hotel, Milimani, Meru"
+    ],
+    "hours": [
+      "Mon - Sun: 10:00 AM - 2:00 AM",
+      "Mon - Sun: 10:00 AM - 2:00 AM"
+    ],
+    "mapLinks": [
+      "https://maps.app.goo.gl/HqTbiiU4q2jRFoPg6"
+    ],
+    "bodyHasObjectObject": false,
+    "ld": [
+      {
+        "type": "LocalBusiness",
+        "name": "ZT Lounge Grooming & Care",
+        "telephone": "+254143542601",
+        "email": "ztloungemeru@gmail.com",
+        "street": "Opposite Ezri Hotel, Milimani, Meru",
+        "locality": "Meru  town",
+        "country": "Kenya",
+        "postcode": "60200",
+        "region": "Meru County",
+        "hasHours": true,
+        "hasMap": true,
+        "hasLogo": true
+      },
+      {
+        "type": "BreadcrumbList",
+        "telephone": "+254143542601",
+        "email": "ztloungemeru@gmail.com",
+        "hasHours": true,
+        "hasMap": true,
+        "hasLogo": true
+      },
+      {
+        "type": "LocalBusiness",
+        "name": "ZT Lounge Meru",
+        "telephone": "+254143542601",
+        "email": "ztloungemeru@gmail.com",
+        "street": "Opposite Ezri Hotel, Milimani, Meru",
+        "locality": "Meru  town",
+        "country": "Kenya",
+        "hasHours": true,
+        "hasMap": true,
+        "hasLogo": true
+      },
+      {
+        "type": "OfferCatalog",
+        "name": "Grooming & Care Services",
+        "hasHours": false,
+        "hasMap": false,
+        "hasLogo": false
+      }
+    ]
+  },
+  {
+    "page": "gallery",
+    "path": "/pages/contact/gallery.html",
+    "status": 200,
+    "errors": [
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "console: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+      "console: [CMS][BusinessInfo] operation=initialize page=gallery error=SUBSYSTEM_EXCEPTION detail=Cannot read properties of undefined (reading 'getContact')",
+      "console: [CMS][BusinessInfo] operation=initialize page=gallery error=SUBSYSTEM_EXCEPTION detail=Cannot read properties of undefined (reading 'getContact')",
+      "console: [CMS][JSONLD] operation=initialize page=gallery error=SUBSYSTEM_EXCEPTION detail=Cannot read properties of undefined (reading 'getBusiness')",
+      "console: Failed to load resource: the server responded with a status of 404 (File not found)"
+    ],
+    "names": [],
+    "phones": [
+      "+254 143 542 601"
+    ],
+    "phoneLinks": [
+      "tel:254143542601",
+      "tel:254143542601",
+      "tel:+254143542601",
+      "tel:+254143542601",
+      "tel:+254143542601",
+      "tel:254143542601",
+      "tel:254143542601"
+    ],
+    "emails": [
+      "ztloungemeru@gmail.com",
+      "ztloungemeru@gmail.com"
+    ],
+    "addresses": [
+      "Opposite Ezri Hotel, Milimani, Meru",
+      "Opposite Ezri Hotel, Milimani, Meru"
+    ],
+    "hours": [
+      "Mon - Sun: 10:00 AM - 2:00 AM",
+      "Mon - Sun: 10:00 AM - 2:00 AM"
+    ],
+    "mapLinks": [
+      "https://maps.app.goo.gl/HqTbiiU4q2jRFoPg6"
+    ],
+    "bodyHasObjectObject": false,
+    "ld": [
+      {
+        "type": "ImageGallery",
+        "name": "ZT Lounge Meru Gallery",
+        "hasHours": false,
+        "hasMap": false,
+        "hasLogo": false
+      },
+      {
+        "type": "BreadcrumbList",
+        "hasHours": false,
+        "hasMap": false,
+        "hasLogo": false
+      }
+    ]
+  }
+]
