@@ -46,7 +46,7 @@ window.BookingConfig = Object.freeze({
             { value: "seminar", label: "Seminar" },
             { value: "workshop", label: "Workshop" },
             { value: "other", label: "Other" }
-        },
+        ],
         autospa: [
             { value: "wash", label: "Basic Wash" },
             { value: "detailing", label: "Full Detailing" },
