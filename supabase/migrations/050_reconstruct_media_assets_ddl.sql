@@ -1,6 +1,16 @@
 -- ============================================================================
 -- Migration 050: Reconstruct media_assets DDL
 -- ============================================================================
+-- SUPERSEDED FOR PRODUCTION: the live production database (project ref
+-- jczwilrysvnhcjzjztbi) already had media_assets pre-existing; migration
+-- 054 (media_assets_schema_reconcile.sql) records the columns that were added
+-- to production on 2026-10-15. Do NOT re-run this or migration 051 against
+-- production — the production history branch (media_fix_step3_4_register_and_link_gallery)
+-- already contains the equivalent changes. This file remains for fresh
+-- environment rebuilds only.
+-- ============================================================================
+-- Migration 050: Reconstruct media_assets DDL
+-- ============================================================================
 -- WHY THIS EXISTS
 -- --------------
 -- `media_assets` is the canonical media registry that every content table

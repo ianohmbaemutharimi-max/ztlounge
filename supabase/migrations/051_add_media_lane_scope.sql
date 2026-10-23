@@ -1,6 +1,16 @@
 -- ============================================================================
 -- Migration 051: Add page-lane scope + active toggle to media_assets
 -- ============================================================================
+-- SUPERSEDED FOR PRODUCTION: columns page_id and is_active were applied to the
+-- live production database (project ref jczwilrysvnhcjzjztbi) on 2026-10-15
+-- via migration 054 (media_assets_schema_reconcile.sql), which records the
+-- final state. Do NOT re-run this or migration 050 against production — the
+-- production history branch (media_fix_step3_4_register_and_link_gallery)
+-- already contains the equivalent changes. This file remains for fresh
+-- environment rebuilds only.
+-- ============================================================================
+-- Migration 051: Add page-lane scope + active toggle to media_assets
+-- ============================================================================
 -- WHY THIS EXISTS  (Option A — Scoped Lanes, Layer 1)
 -- --------------------------------------------------
 -- The target architecture is a single, well-categorized media library whose
@@ -92,7 +102,7 @@ CREATE INDEX IF NOT EXISTS media_assets_is_active_idx
 UPDATE public.media_assets
 SET category = (regexp_match(path, '^(?:assets/)?images/([^/]+)/'))[1]
 WHERE category IS NULL
-  AND path ~ '^(assets/)?images/'
+  AND path ~ '^(assets/)?images/';
 
 
 -- ---------------------------------------------------------------------------

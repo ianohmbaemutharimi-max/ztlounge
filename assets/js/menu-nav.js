@@ -4,8 +4,8 @@
  */
 (function() {
     'use strict';
-    
-    document.addEventListener('DOMContentLoaded', function() {
+
+    function initMenuScrollSpy() {
         var categoryLinks = document.querySelectorAll('.menu-nav a');
         categoryLinks.forEach(function(link) {
             link.addEventListener('click', function(e) {
@@ -28,7 +28,7 @@
 
         var menuCategories = document.querySelectorAll('.menu-category');
         var navAnchors = document.querySelectorAll('.menu-nav a');
-        
+
         function updateActiveNav() {
             var scrollPosition = window.scrollY + 200;
             var activeIndex = 0;
@@ -39,8 +39,15 @@
                 anchor.classList.toggle('active', index === activeIndex);
             });
         }
-        
+
         window.addEventListener('scroll', updateActiveNav);
         updateActiveNav();
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        initMenuScrollSpy();
     });
+
+    window.initMenuScrollSpy = initMenuScrollSpy;
+
 })();

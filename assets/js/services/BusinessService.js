@@ -49,6 +49,7 @@ window.BusinessService = (function() {
                 phoneRaw: contact.phoneRaw || formatPhoneRaw(contact.phone),
                 email: contact.email || '',
                 address: contact.address || {},
+                google_review_url: contact.google_review_url || '',
                 social: contact.social || {}
             };
         });

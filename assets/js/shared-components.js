@@ -1,52 +1,68 @@
 /**
- * ============================================================
- * ZT Lounge Meru - Shared Components System
- * Centralizes header and footer across all public pages
- * Version: 1.0.0
- * ============================================================
+ * Depth-aware routing helpers.
+ *
+ * The shared header/footer is injected into pages at varying directory
+ * depths (site root, pages/experiences/, pages/business/, pages/contact/).
+ * Internal hrefs must be resolved relative to the current document so links
+ * such as the Grooming & Care entry don't 404 on nested pages (e.g.
+ * /pages/business/grooming-care.html). Mirrors the convention already used
+ * by content-loader.js (siteRootPrefix / siteHref).
  */
+function siteRootPrefix() {
+    var segments = String(window.location.pathname || '').split('/').filter(Boolean);
+    // Root document (e.g. / or /index.html) needs no prefix.
+    if (segments.length <= 1) return '';
+    return new Array(segments.length).join('../');
+}
 
-(function() {
-    'use strict';
-
-    /**
-     * Get business config with fallback
-     */
-    function getBusinessConfig() {
-        return window.BusinessConfig || window.BusinessRepository || {
-            name: 'ZT Lounge Meru',
-            phone: '+254 143 542 601',
-            phoneRaw: '254143542601',
-            email: 'ztloungemeru@gmail.com',
-            address: {
-                street: 'Opposite Ezri Hotel, Milimani',
-                city: 'Meru',
-                country: 'Kenya',
-                full: 'Opposite Ezri Hotel, Milimani, Meru, Kenya',
-                short: 'Opposite Ezri Hotel, Milimani, Meru'
-            },
-            social: {
-                whatsapp: 'https://wa.me/254143542601'
-            },
-            hours: {
-                default: 'Mon - Sun: 10:00 AM - 2:00 AM'
-            },
-            logo: { 
-                dark: 'https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/branding/logo.webp', 
-                light: 'https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/branding/logo-white.webp',
-                alt: 'ZT Lounge Meru - Premium Hospitality Logo'
-            }
-        };
+/** Apply site-root prefix to a canonical route. Leaves absolute/root/hash
+ *  schemes (mailto:, tel:, https://, //) untouched. */
+function href(route) {
+    if (!route || route === '/' || route.charAt(0) === '#' ||
+        /^(?:[a-z][a-z0-9+.-]*:)?\/\//i.test(route)) {
+        return route;
     }
+    return siteRootPrefix() + route;
+}
 
-    window.injectHeader = function() {
+/**
+ * Get business config with fallback
+ */
+function getBusinessConfig() {
+    return window.BusinessConfig || window.BusinessRepository || {
+        name: 'ZT Lounge Meru',
+        phone: '+254 143 542 601',
+        phoneRaw: '254143542601',
+        email: 'ztloungemeru@gmail.com',
+        address: {
+            street: 'Milimani Road',
+            city: 'Meru',
+            country: 'Kenya',
+            full: 'Milimani Road, Meru, Kenya',
+            short: 'Milimani, Meru'
+        },
+        social: {
+            whatsapp: 'https://wa.me/254143542601'
+        },
+        hours: {
+            default: 'Mon - Sun: 10:00 AM - 2:00 AM'
+        },
+        logo: {
+             dark: 'https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/branding/logo.webp',
+             light: 'https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/branding/logo-white.webp',
+             alt: 'ZT Lounge Meru - Premium Hospitality Logo'
+        }
+    };
+}
+
+window.injectHeader = function() {
         var config = getBusinessConfig();
         var headerHTML = '<header class="header" id="header" role="banner">' +
             '<div class="container">' +
                 '<div class="nav-wrapper">' +
                     '<a href="/" class="logo" aria-label="ZT Lounge Home">' +
-                        '<img src="' + config.logo.dark + '" alt="' + config.logo.alt + '" class="logo-dark site-logo" height="62" width="auto" decoding="async" fetchpriority="high" />' +
-                        '<img src="' + config.logo.light + '" alt="' + config.logo.alt + '" class="logo-light site-logo" height="62" width="auto" decoding="async" fetchpriority="high" />' +
+                        '<img src="' + config.logo.dark + '" data-media-id="79e60738-2a52-4b93-9a5c-5cbd7bed5603" alt="' + config.logo.alt + '" class="logo-dark site-logo" height="62" width="auto" decoding="async" fetchpriority="high" />' +
+                        '<img src="' + config.logo.light + '" data-media-id="ebac626d-8849-4a8b-8613-f7663bd28eda" alt="' + config.logo.alt + '" class="logo-light site-logo" height="62" width="auto" decoding="async" fetchpriority="high" />' +
                     '</a>' +
                     '<nav class="nav-menu" id="navMenu" role="navigation" aria-label="Main navigation">' +
                         '<ul class="nav-list" role="menubar">' +
@@ -54,42 +70,29 @@
                             '<li role="none" aria-expanded="false">' +
                                 '<a role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="experiences-dropdown" class="dropdown-parent" tabindex="0">Experiences <i class="fas fa-chevron-down" aria-hidden="true"></i></a>' +
                                 '<ul class="dropdown-menu" id="experiences-dropdown" role="menu">' +
-                                    '<li role="none"><a href="pages/experiences/restaurant.html" role="menuitem">Restaurant</a></li>' +
-                                    '<li role="none"><a href="pages/experiences/restaurant-menu.html" role="menuitem">Restaurant Menu</a></li>' +
-                                    '<li role="none"><a href="pages/experiences/lounge.html" role="menuitem">Lounge</a></li>' +
-                                    '<li role="none"><a href="pages/experiences/vip.html" role="menuitem">VIP Cabins</a></li>' +
+                                    '<li role="none"><a href="' + href('pages/experiences/restaurant.html') + '" role="menuitem">Restaurant</a></li>' +
+                                    '<li role="none"><a href="' + href('pages/experiences/restaurant-menu.html') + '" role="menuitem">Restaurant Menu</a></li>' +
+                                    '<li role="none"><a href="' + href('pages/experiences/lounge.html') + '" role="menuitem">Lounge</a></li>' +
+                                    '<li role="none"><a href="' + href('pages/experiences/vip.html') + '" role="menuitem">VIP Cabins</a></li>' +
                                 '</ul>' +
                             '</li>' +
                             '<li role="none" aria-expanded="false">' +
                                 '<a role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="business-dropdown" class="dropdown-parent" tabindex="0">Business <i class="fas fa-chevron-down" aria-hidden="true"></i></a>' +
                                 '<ul class="dropdown-menu" id="business-dropdown" role="menu">' +
-                                    '<li role="none"><a href="pages/business/events.html" role="menuitem">Events</a></li>' +
-                                    '<li role="none"><a href="pages/business/conference.html" role="menuitem">Conference</a></li>' +
-                                    '<li role="none"><a href="pages/business/autospa.html" role="menuitem">Auto Spa</a></li>' +
+                                    '<li role="none"><a href="' + href('pages/business/events.html') + '" role="menuitem">Events</a></li>' +
+                                    '<li role="none"><a href="' + href('pages/business/conference.html') + '" role="menuitem">Conference</a></li>' +
+                                    '<li role="none"><a href="' + href('pages/business/grooming-care.html') + '" role="menuitem">Grooming & Care</a></li>' +
                                 '</ul>' +
                             '</li>' +
                             '<li role="none" aria-expanded="false">' +
                                 '<a role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="contact-dropdown" class="dropdown-parent" tabindex="0">Contact <i class="fas fa-chevron-down" aria-hidden="true"></i></a>' +
                                 '<ul class="dropdown-menu" id="contact-dropdown" role="menu">' +
-                                    '<li role="none"><a href="pages/contact/contact.html" role="menuitem">Contact Page</a></li>' +
-                                    '<li role="none"><a href="pages/contact/gallery.html" role="menuitem">Gallery</a></li>' +
+                                    '<li role="none"><a href="' + href('pages/contact/contact.html') + '" role="menuitem">Contact Page</a></li>' +
+                                    '<li role="none"><a href="' + href('pages/contact/gallery.html') + '" role="menuitem">Gallery</a></li>' +
                                 '</ul>' +
                             '</li>' +
                         '</ul>' +
                     '</nav>' +
-                    '<div class="nav-actions">' +
-                        '<button class="theme-toggle" id="themeToggle" aria-label="Toggle light or dark color theme" title="Toggle theme" type="button">' +
-                            '<i class="fas fa-moon" aria-hidden="true"></i>' +
-                            '<i class="fas fa-sun" aria-hidden="true"></i>' +
-                        '</button>' +
-                        '<a href="tel:' + config.phoneRaw + '" class="header-phone" aria-label="Call ZT Lounge">' +
-                            '<i class="fas fa-phone" aria-hidden="true"></i>' +
-                            '<span class="phone-number">' + config.phone + '</span>' +
-                        '</a>' +
-                        '<button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu" type="button">' +
-                            '<span></span><span></span><span></span>' +
-                        '</button>' +
-                    '</div>' +
                 '</div>' +
             '</div>' +
         '</header>';
@@ -101,70 +104,64 @@
             document.body.insertAdjacentHTML('afterbegin', headerHTML);
         }
     };
-
-    /**
-     * Inject shared footer into the page
-     * Call this before closing body tag
-     */
-    window.injectFooter = function() {
+window.injectFooter = function() {
         var config = getBusinessConfig();
         var address = config.address || {};
-        var hours = config.hours || {};
-        
+        var hours = (config.hours && config.hours.default) || 'Mon - Sun: 10:00 AM - 2:00 AM';
+        var phoneRaw = config.phoneRaw || String(config.phone || '').replace(/\D/g, '');
+        var whatsapp = (config.social && config.social.whatsapp) || ('https://wa.me/' + phoneRaw);
         var footerHTML = '<footer class="footer" role="contentinfo">' +
             '<div class="container">' +
                 '<div class="footer-grid">' +
                     '<div class="footer-brand">' +
-                        '<a href="/" class="logo" aria-label="ZT Lounge Home">' +
-                            '<img src="https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/branding/logo.webp" alt="ZT Lounge Meru - Premium Hospitality Logo" class="logo-dark site-logo" height="62" width="auto" loading="lazy" decoding="async" />' +
-                            '<img src="https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/branding/logo-white.webp" alt="ZT Lounge Meru - Premium Hospitality Logo" class="logo-light site-logo" height="62" width="auto" loading="lazy" decoding="async" />' +
+                        '<a href="' + href('index.html') + '" class="logo" aria-label="ZT Lounge Home">' +
+                            '<img src="' + config.logo.dark + '" data-media-id="79e60738-2a52-4b93-9a5c-5cbd7bed5603" alt="' + config.logo.alt + '" class="logo-dark site-logo" height="48" width="auto" loading="lazy" decoding="async" />' +
+                            '<img src="' + config.logo.light + '" data-media-id="ebac626d-8849-4a8b-8613-f7663bd28eda" alt="' + config.logo.alt + '" class="logo-light site-logo" height="48" width="auto" loading="lazy" decoding="async" />' +
                         '</a>' +
-                        '<p>Experience premium hospitality at ZT Lounge Meru — fine dining, exclusive lounges, pool table entertainment, Auto Spa, and world-class service in Milimani.</p>' +
+                        '<p data-business="description">Experience premium hospitality at ZT Lounge Meru — fine dining, exclusive lounges, pool table entertainment, Grooming &amp; Care, and world-class service in Milimani.</p>' +
                         '<div class="footer-social">' +
-                            '<a href="https://facebook.com/ztlounge" target="_blank" rel="noopener noreferrer" aria-label="Facebook page"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>' +
-                            '<a href="https://instagram.com/ztlounge" target="_blank" rel="noopener noreferrer" aria-label="Instagram page"><i class="fab fa-instagram" aria-hidden="true"></i></a>' +
-                            '<a href="https://x.com/ztlounge_meru" target="_blank" rel="noopener noreferrer" aria-label="Twitter page"><i class="fab fa-twitter" aria-hidden="true"></i></a>' +
-                            '<a href="https://youtube.com/@ztlounge" target="_blank" rel="noopener noreferrer" aria-label="YouTube channel"><i class="fab fa-youtube" aria-hidden="true"></i></a>' +
+                            '<a href="https://facebook.com/ztlounge" target="_blank" rel="noopener noreferrer" aria-label="Facebook page" data-social="facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>' +
+                            '<a href="https://instagram.com/ztlounge" target="_blank" rel="noopener noreferrer" aria-label="Instagram page" data-social="instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>' +
+                            '<a href="https://x.com/ztlounge_meru" target="_blank" rel="noopener noreferrer" aria-label="Twitter page" data-social="twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>' +
+                            '<a href="https://youtube.com/@ztlounge" target="_blank" rel="noopener noreferrer" aria-label="YouTube channel" data-social="youtube"><i class="fab fa-youtube" aria-hidden="true"></i></a>' +
                         '</div>' +
                     '</div>' +
                     '<nav class="footer-links" aria-label="Quick links">' +
                         '<h4>Quick Links</h4>' +
                         '<ul>' +
-                            '<li><a href="/">Home</a></li>' +
-                            '<li><a href="pages/experiences/restaurant.html">Restaurant</a></li>' +
-                            '<li><a href="pages/experiences/lounge.html">Lounge & Bar</a></li>' +
-                            '<li><a href="pages/experiences/vip.html">VIP Cabins</a></li>' +
-                            '<li><a href="pages/business/events.html">Events</a></li>' +
-                            '<li><a href="pages/business/conference.html">Conference</a></li>' +
-                            '<li><a href="pages/business/autospa.html">Auto Spa</a></li>' +
-                            '<li><a href="pages/contact/gallery.html">Gallery</a></li>' +
-                            '<li><a href="pages/contact/contact.html">Contact</a></li>' +
-                        '</ul>' +
-                    '</nav>' +
+                            '<li><a href="' + href('index.html') + '">Home</a></li>' +
+                            '<li><a href="' + href('pages/experiences/restaurant.html') + '">Restaurant</a></li>' +
+                            '<li><a href="' + href('pages/experiences/lounge.html') + '">Lounge &amp; Bar</a></li>' +
+                            '<li><a href="' + href('pages/experiences/vip.html') + '">VIP Cabins</a></li>' +
+                            '<li><a href="' + href('pages/business/events.html') + '">Events</a></li>' +
+                            '<li><a href="' + href('pages/business/conference.html') + '">Conference</a></li>' +
+                            '<li><a href="' + href('pages/business/grooming-care.html') + '">Grooming &amp; Care</a></li>' +
+                            '<li><a href="' + href('pages/contact/gallery.html') + '">Gallery</a></li>' +
+                            '<li><a href="' + href('pages/contact/contact.html') + '">Contact</a></li>' +
                     '<nav class="footer-services" aria-label="Our services">' +
                         '<h4>Our Services</h4>' +
                         '<ul>' +
-                            '<li><a href="pages/experiences/restaurant.html">Restaurant</a></li>' +
-                            '<li><a href="pages/experiences/lounge.html">Lounge & Bar</a></li>' +
-                            '<li><a href="pages/experiences/vip.html">VIP Cabins</a></li>' +
-                            '<li><a href="pages/business/events.html">Events</a></li>' +
-                            '<li><a href="pages/business/conference.html">Conference</a></li>' +
-                            '<li><a href="pages/business/autospa.html">Auto Spa</a></li>' +
+                            '<li><a href="' + href('pages/experiences/restaurant.html') + '">Restaurant</a></li>' +
+                            '<li><a href="' + href('pages/experiences/lounge.html') + '">Lounge &amp; Bar</a></li>' +
+                            '<li><a href="' + href('pages/experiences/vip.html') + '">VIP Cabins</a></li>' +
+                            '<li><a href="' + href('pages/business/events.html') + '">Events</a></li>' +
+                            '<li><a href="' + href('pages/business/conference.html') + '">Conference</a></li>' +
+                            '<li><a href="' + href('pages/business/grooming-care.html') + '">Grooming &amp; Care</a></li>' +
                         '</ul>' +
                     '</nav>' +
                     '<div class="footer-contact" aria-label="Contact information">' +
                         '<h4>Contact Info</h4>' +
                         '<ul>' +
-                            '<li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> ' + (address.short || address.full || 'Opposite Ezri Hotel, Milimani, Meru') + '</li>' +
-                            '<li><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:' + (config.phoneRaw || config.phone.replace(/\D/g, '')) + '">' + config.phone + '</a></li>' +
-                            '<li><i class="fab fa-whatsapp" aria-hidden="true"></i> <a href="' + (config.social && config.social.whatsapp || 'https://wa.me/' + (config.phoneRaw || config.phone.replace(/\D/g, ''))) + '" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>' +
-                            '<li><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:' + config.email + '">' + config.email + '</a></li>' +
-                            '<li><i class="fas fa-clock" aria-hidden="true"></i> ' + (hours.default || 'Mon - Sun: 10:00 AM - 2:00 AM') + '</li>' +
+                            '<li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> <span data-business="address">' + (address.full || 'Milimani Road, Meru') + '</span></li>' +
+                            '<li><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:' + phoneRaw + '" data-business="phone">' + config.phone + '</a></li>' +
+                            '<li><i class="fab fa-whatsapp" aria-hidden="true"></i> <a href="' + whatsapp + '" target="_blank" rel="noopener noreferrer" data-business="whatsapp">WhatsApp</a></li>' +
+                            '<li><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:' + config.email + '" data-business="email">' + config.email + '</a></li>' +
+                            '<li><i class="fas fa-clock" aria-hidden="true"></i> <span data-business="hours">' + hours + '</span></li>' +
                         '</ul>' +
                     '</div>' +
                 '</div>' +
                 '<div class="footer-bottom">' +
-                    '<p>&copy; <span id="copyrightYear">2026</span> ZT Lounge Meru. All rights reserved.</p>' +
+                    '<p>&copy; <span id="copyrightYear">2026</span> <span data-business="name">' + config.name + '</span>. All rights reserved.</p>' +
                     '<p class="footer-credit">Designed with <i class="fas fa-heart" aria-hidden="true"></i> for luxury</p>' +
                 '</div>' +
             '</div>' +
@@ -178,6 +175,10 @@
         }
     };
 
+                        '</ul>' +
+                    '</nav>' +
+
+
     /**
      * Auto-inject on DOMContentLoaded
      * Injects into placeholders or appends to body
@@ -185,5 +186,7 @@
     document.addEventListener('DOMContentLoaded', function() {
         injectHeader();
         injectFooter();
+        if (window.MediaDomResolver) {
+            window.MediaDomResolver.init();
+        }
     });
-})();

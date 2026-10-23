@@ -20,7 +20,7 @@
         }
         var path = window.location.pathname;
         if (path === '/' || path.endsWith('index.html')) return 'home';
-        if (path.includes('restaurant-menu')) return 'restaurantMenu';
+        if (path.includes('restaurant-menu')) return 'restaurant-menu';
         if (path.includes('restaurant')) return 'restaurant';
         if (path.includes('lounge')) return 'lounge';
         if (path.includes('vip')) return 'vip';
@@ -154,19 +154,22 @@
     function populateServiceCards() {
         if (!window.ServicesRepository) return;
 
-        window.ServicesRepository.getAll().then(function(servicesData) {
-            if (!servicesData || !servicesData.length) return;
+        var pageId = getPageId();
+        var grid = document.querySelector('.service-cards-grid');
+        if (!grid) return;
 
-            var grid = document.querySelector('.service-cards-grid');
-            if (!grid) return;
+        window.ServicesRepository.getByPage(pageId).then(function(servicesData) {
+            if (!servicesData || !servicesData.services || !servicesData.services.length) {
+                return;
+            }
 
+            var services = servicesData.services;
             var cards = grid.querySelectorAll('.service-card');
-            if (cards.length === 0) return;
 
-            // Map services by slug to update matching cards
-            servicesData.forEach(function(service) {
-                var slug = service.slug || '';
-                var card = null;
+            if (cards.length > 0) {
+                // Update existing cards in-place (homepage pattern)
+                services.forEach(function(service) {
+                    var card = null;
 
                 // Match by href or by order
                 if (service.href) {

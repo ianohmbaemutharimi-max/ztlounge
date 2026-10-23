@@ -62,6 +62,17 @@ window.MenuRepository = (function() {
         };
     }
 
+    /**
+     * Resolve media URLs for menu items.
+     * Menu items carry image_url directly on the row (not media_id),
+     * so this is a pass-through. Kept for API consistency with other repos.
+     * @param {Array} items - Array of mapped menu items
+     * @returns {Promise<Array>} Items unchanged
+     */
+    function resolveMedia(items) {
+        return Promise.resolve(items || []);
+    }
+
     function getItemRepo() {
         if (!itemRepo) {
             itemRepo = window.BaseRepository.create(
@@ -185,10 +196,53 @@ window.MenuRepository = (function() {
         });
     }
 
+
+    /** Get full menu structure for a specific page, scoped by page_id. */
+    function getMenuForPage(pageId) {
+        return getCategories().then(function(categories) {
+            if (!categories || !categories.length) {
+                return { categories: [], uncategorizedItems: [] };
+            }
+            return getItemRepo().getAll({
+                select: '*,menu_categories(id,name,slug,description,display_order,is_active),media_assets(public_url,alt_text)',
+                eq: [
+                    { column: 'page_id', value: pageId },
+                    { column: 'is_active', value: true }
+                ],
+                orderBy: 'display_order',
+                ascending: true
+            }).then(function(items) {
+                var mappedItems = (items || []).map(mapItemToUI);
+                return resolveMedia(mappedItems).then(function(resolvedItems) {
+                    var categoriesWithItems = categories.map(function(cat) {
+                        var catItems = resolvedItems.filter(function(item) {
+                            return item.category_id === cat.id;
+                        });
+                        return {
+                            id: cat.id,
+                            name: cat.name,
+                            slug: cat.slug,
+                            description: cat.description,
+                            display_order: cat.display_order,
+                            items: catItems
+                        };
+                    });
+                    var uncategorizedItems = resolvedItems.filter(function(item) {
+                        return !item.category_id || item.category_id === '';
+                    });
+                    return {
+                        categories: categoriesWithItems,
+                        uncategorizedItems: uncategorizedItems
+                    };
+                });
+            });
+        });
+    }
     return {
         getCategories: getCategories,
         getSignatureItems: getSignatureItems,
         getItemsByCategory: getItemsByCategory,
-        getMenu: getMenu
+        getMenu: getMenu,
+        getMenuForPage: getMenuForPage
     };
 })();

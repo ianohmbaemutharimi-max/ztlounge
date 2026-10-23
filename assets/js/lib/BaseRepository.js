@@ -237,7 +237,7 @@ window.BaseRepository = (function() {
             }
 
             return safeQuery(function(client) {
-                var query = client.from(tableName).select('*');
+                var query = client.from(tableName).select(queryOptions && queryOptions.select ? queryOptions.select : '*');
 
                 if (queryOptions) {
                     if (queryOptions.orderBy) {

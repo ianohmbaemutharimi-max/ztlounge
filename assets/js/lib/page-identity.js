@@ -20,8 +20,9 @@ window.PageIdentity = (function () {
      * Canonical page identifiers. Anything else is invalid by definition.
      * NOTE: 'grooming-care' consolidates Auto Spa, Barbershop, and Carpet
      * Cleaning services into a unified grooming & care experience.
-     * Barbershop and 'autospa' remain as legacy identifiers for backward
-     * compatibility but map to 'grooming-care'.
+     * Legacy URLs barbershop.html and autospa.html resolve to 'grooming-care'.
+     * Auto Spa is a SERVICE CATEGORY (slug 'auto-spa'), not a page: 'autospa'
+     * is deliberately NOT a PageId and pages/business/autospa.html was removed.
      */
     var PAGE_IDS = [
         'home',
@@ -31,7 +32,6 @@ window.PageIdentity = (function () {
         'vip',
         'events',
         'conference',
-        'autospa',
         'grooming-care',
         'gallery',
         'contact'
@@ -47,7 +47,7 @@ window.PageIdentity = (function () {
         'vip.html': 'vip',
         'events.html': 'events',
         'conference.html': 'conference',
-        'autospa.html': 'autospa',
+        'autospa.html': 'grooming-care', // legacy URL -> consolidated Grooming & Care
         'grooming-care.html': 'grooming-care',
         'barbershop.html': 'grooming-care', // legacy URL -> consolidated Grooming & Care
         'gallery.html': 'gallery',
@@ -65,7 +65,6 @@ window.PageIdentity = (function () {
         'vip': 'vip-cabins',
         'events': 'events',
         'conference': 'conference',
-        'autospa': 'auto-spa',
         'grooming-care': 'auto-spa'
     };
 
@@ -78,7 +77,6 @@ window.PageIdentity = (function () {
         'vip': 'vip',
         'events': 'events',
         'conference': 'conference',
-        'autospa': 'autospa',
         'grooming-care': 'grooming-care',
         'gallery': 'gallery',
         'contact': 'contact'

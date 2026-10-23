@@ -45,14 +45,14 @@ window.TestimonialsRepository = (function() {
         // Return canonical database field names directly (no mapping)
         return {
             id: item.id,
-            comment: item.comment || '',
+            comment: item.comment || item.quote || '',
             author: author,
-            occupation: item.occupation || '',
+            occupation: item.occupation || item.location || '',
             rating: item.rating || 5,
             image_url: item.image_url || '',
             is_featured: item.is_featured || false,
-            is_visible: item.is_visible || false,
-            approved: item.approved || false,
+            is_visible: item.is_visible !== undefined ? item.is_visible : true,
+            approved: item.approved !== undefined ? item.approved : true,
             created_at: item.created_at
         };
     }
@@ -64,9 +64,9 @@ window.TestimonialsRepository = (function() {
             repo = window.BaseRepository.create(
                 tableName,
                 function() {
-                    // Fallback to local config
-                    var localConfig = window.TestimonialsConfig || { testimonials: [] };
-                    return localConfig.testimonials || [];
+                    // Fallback to local config (TestimonialsConfig.items)
+                    var localConfig = window.TestimonialsConfig || {};
+                    return localConfig.items || localConfig.testimonials || [];
                 },
                 { cacheTTL: 300000 }
             );
@@ -89,7 +89,7 @@ window.TestimonialsRepository = (function() {
             }
             // Fallback to local config
             var config = window.TestimonialsConfig || {};
-            var localItems = config.testimonials || [];
+            var localItems = config.items || config.testimonials || [];
             return localItems.map(mapToUI);
         });
     }
@@ -112,7 +112,7 @@ window.TestimonialsRepository = (function() {
             }
             // Fallback to local config
             var config = window.TestimonialsConfig || {};
-            var localItems = (config.testimonials || []).filter(function(item) {
+            var localItems = (config.items || config.testimonials || []).filter(function(item) {
                 return item.featured || item.is_featured;
             });
             return localItems.map(mapToUI);

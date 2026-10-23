@@ -1,8 +1,36 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="../../assets/js/theme-init.js"></script>
-    <!-- Favicon - Single Declaration -->
+    <!-- ============================================================
+         CRITICAL: Theme initialization - runs BEFORE any rendering
+         ============================================================ -->
+    <script>
+        (function() {
+            try {
+                var savedTheme = localStorage.getItem('zt-theme');
+                if (savedTheme === 'light') {
+                    document.documentElement.classList.add('light-mode');
+                    document.documentElement.style.colorScheme = 'light';
+                } else {
+                    document.documentElement.style.colorScheme = 'dark';
+                }
+            } catch (e) {
+                document.documentElement.style.colorScheme = 'dark';
+            }
+        })();
+    </script>
+    <noscript>
+        <link rel="stylesheet" href="../../assets/css/theme.css">
+        <style>
+            body { background: #0a0a0a; color: #ffffff; }
+        </style>
+    </noscript>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+
+    <!-- SEO -->
+    <title>Grooming &amp; Care Services - Barbershop, Auto Spa &amp; Carpet Cleaning | ZT Lounge Meru</title>
 
     <!-- Performance: Preconnect for Critical Resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -41,9 +69,6 @@
     THEME.CSS - SINGLE SOURCE OF TRUTH
     ========================================================== -->
     <link rel="stylesheet" href="../../assets/css/theme.css" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-    <title>Grooming &amp; Care Services - Barbershop, Auto Spa &amp; Carpet Cleaning | ZT Lounge Meru</title>
     <meta name="description" content="Premium grooming and care services at ZT Lounge Meru. Professional barbershop grooming, auto spa car detailing, and thorough carpet cleaning services. Book your appointment today." />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://ztlounge.co.ke/pages/business/grooming-care.html" />
@@ -51,7 +76,7 @@
     <!-- Open Graph - Grooming & Care specific -->
     <meta property="og:title" content="Grooming &amp; Care Services - Barbershop, Auto Spa &amp; Carpet Cleaning | ZT Lounge Meru" />
     <meta property="og:description" content="Premium grooming and care services at ZT Lounge Meru. Professional barbershop grooming, auto spa car detailing, and thorough carpet cleaning services." />
-    <meta property="og:image" content="https://ztlounge.co.ke/assets/images/branding/og-image.webp" />
+    <meta property="og:image" content="https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/grooming-care/grooming-care.hero.webp" data-media-id="25407251-9197-42b1-a2a9-3ab30fbc8e26" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:url" content="https://ztlounge.co.ke/pages/business/grooming-care.html" />
@@ -61,7 +86,10 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Grooming &amp; Care Services - Barbershop, Auto Spa &amp; Carpet Cleaning | ZT Lounge Meru" />
     <meta name="twitter:description" content="Premium grooming and care services at ZT Lounge Meru. Professional barbershop grooming, auto spa car detailing, and thorough carpet cleaning services." />
-    <meta name="twitter:image" content="https://ztlounge.co.ke/assets/images/branding/og-image.webp" />
+    <meta name="twitter:image" content="https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/grooming-care/grooming-care.hero.webp" data-media-id="25407251-9197-42b1-a2a9-3ab30fbc8e26" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/branding/favicon.ico" data-media-id="8aa895c5-c73e-4a26-8442-dd83890ad41c" />
+    <link rel="apple-touch-icon" href="https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/branding/apple-touch-icon.webp" data-media-id="8eea0060-d5f5-4c78-b518-9611d636dd9" />
     <style>
 .cta-section-grooming{background:linear-gradient(135deg,rgba(201,168,76,0.08),rgba(15,15,15,0.95))}
 .features-grid-grooming{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-lg)}
@@ -92,7 +120,7 @@
         "url": "https://ztlounge.co.ke/pages/business/grooming-care.html",
         "telephone": "+254143542601",
         "email": "ztloungemeru@gmail.com",
-        "address": {"@type": "PostalAddress", "streetAddress": "Opposite Ezri Hotel, Milimani, Meru", "addressLocality": "Meru", "addressRegion": "Meru County", "postalCode": "60200", "addressCountry": "KE"},
+        "address": {"@type": "PostalAddress", "streetAddress": "Milimani, Meru", "addressLocality": "Meru", "addressRegion": "Meru County", "postalCode": "60200", "addressCountry": "KE"},
         "priceRange": "$$",
         "openingHours": "Mo-Su 08:00-18:00"
     }
@@ -114,12 +142,51 @@
     <!-- Canonical public shell (LOOP 47): header is injected by assets/js/shared-components.js -->
     <div id="site-header"></div>
     <script src="../../assets/js/shared-components.js" data-features="booking"></script>
+    <!-- Supabase client + repository initialization (required for booking form & package display) -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+    <script src="../../assets/js/config/env.js" defer></script>
+    <script src="../../assets/js/config/supabase.config.js" defer></script>
+    <script src="../../assets/js/lib/supabase.js" defer></script>
+    <script src="../../assets/js/repositories/PageResolver.js"></script>
+    <script src="../../assets/js/lib/BaseRepository.js" defer></script>
+    <script src="../../assets/js/booking.config.js" defer></script>
+    <script src="../../assets/js/repositories/HeroRepository.js" defer></script>
+    <script src="../../assets/js/repositories/ServicesRepository.js" defer></script>
+    <script src="../../assets/js/repositories/GalleryRepository.js" defer></script>
+    <script src="../../assets/js/repositories/BookingRepository.js" defer></script>
+    <script src="../../assets/js/content-loader.js" defer></script>
     <main id="main" role="main">
         <section class="hero" id="hero" aria-label="Hero">
-            <div class="hero-slider" role="region" aria-label="Featured images">                <!-- CMS hero slides are generated from hero_slides by content-loader.js populateHero() -->
+            <div class="hero-slider" role="region" aria-label="Featured images">
+                <!-- Static slide shell mirrors the hero_slides CMS row (page_id = grooming-care);
+                     content-loader.js populateHero() patches badge/title/subtitle from the database. -->
+                <div
+                    class="hero-slide active"
+                    id="hero-slide-0"
+                    role="tabpanel"
+                    aria-labelledby="hero-dot-0"
+                    aria-hidden="false"
+                    data-media-id="774bf8d2-1404-4735-b656-786fdd1d9898"
+                    data-media-bg
+                    data-media-bg-gradient="linear-gradient(135deg, rgba(10,10,10,0.75), rgba(10,10,10,0.4))"
+                >
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content container">
+                        <span class="hero-badge">Premium Grooming &amp; Care</span>
+                        <h2 class="hero-title">Grooming <span>&amp; Care</span></h2>
+                        <p class="hero-subtitle">Auto Spa • Barbershop • Carpet Cleaning • Premium Service</p>
+                        <div class="hero-buttons">
+                            <a href="#services" class="btn btn-primary btn-large">Our Services</a>
+                            <a href="#booking-cta" class="btn btn-secondary btn-large">Book Now</a>
+                        </div>
+                    </div>
+                </div>
                 <button class="slider-btn prev" id="prevSlide" aria-label="Previous slide" type="button">&#8249;</button>
                 <button class="slider-btn next" id="nextSlide" aria-label="Next slide" type="button">&#8250;</button>
-                <div class="slider-dots" role="tablist" aria-label="Hero slides"></div>            </div>
+                <div class="slider-dots" role="tablist" aria-label="Hero slides">
+                    <span class="dot active" id="hero-dot-0" data-index="0" role="tab" aria-selected="true" aria-controls="hero-slide-0" aria-label="Slide 1 - Grooming &amp; Care" tabindex="0"></span>
+                </div>
+            </div>
         </section>
         <section class="about-section" id="about" aria-label="About">
             <div class="container"><div class="about-short">
@@ -130,10 +197,8 @@
         <section class="section-padding" id="services" aria-label="Service categories">
             <div class="container">
                 <div class="section-header"><span class="section-tag">Our Services</span><h2 class="section-title">Choose Your <span>Care Category</span></h2><p class="section-subtitle">Select the service that fits your needs</p></div>
-                <div class="features-grid-grooming">
-                    <div class="feature-card-grooming"><div class="icon"><i class="fas fa-cut" aria-hidden="true"></i></div><h3>Barbershop</h3><p>Professional barbering and personal grooming services.</p><a href="#barbershop-services" class="btn btn-outline-gold">View Services</a></div>
-                    <div class="feature-card-grooming"><div class="icon"><i class="fas fa-car" aria-hidden="true"></i></div><h3>Auto Spa</h3><p>Professional car detailing, washing, and polishing.</p><a href="#autospa-services" class="btn btn-outline-gold">View Services</a></div>
-                    <div class="feature-card-grooming"><div class="icon"><i class="fas fa-couch" aria-hidden="true"></i></div><h3>Carpet Cleaning</h3><p>Deep cleaning for carpets, sofas, and mattresses.</p><a href="#carpet-cleaning-services" class="btn btn-outline-gold">View Services</a></div>
+                <div class="features-grid-grooming" id="grooming-features-container">
+                    <!-- CMS-driven feature cards populated by content-loader.js populateServices() from ServicesRepository -->
                 </div>
             </div>
         </section>
@@ -141,7 +206,7 @@
             <div class="container">
                 <div class="section-header"><span class="section-tag">Barbershop</span><h2 class="section-title">Personal <span>Grooming</span></h2><p class="section-subtitle">Premium barbering services</p></div>
                 <div class="service-cards-grid barbershop-grid" data-category-grid data-category-slug="barbershop"></div>
-                <div class="category-empty-state" data-category-empty data-category-slug="barbershop" style="display:none;text-align:center;padding:2rem 1rem;color:var(--text-muted,#a8a29e)"><p>Barbershop packages being prepared. Call <a href="tel:+254143542601" data-phone-link>+254 143 542 601</a> for availability.</p></div>
+                <div class="category-empty-state" data-category-empty data-category-slug="barbershop" style="text-align:center;padding:2rem 1rem;color:var(--text-muted,#a8a29e)"><p>Barbershop packages being prepared. Call <a href="tel:+254143542601" data-phone-link>+254 143 542 601</a> for availability.</p></div>
                 <div style="text-align:center;margin-top:var(--space-lg)"><a href="#booking-cta" class="btn btn-primary" data-booking-category="barbershop">Book Barbershop</a></div>
             </div>
         </section>
@@ -149,7 +214,7 @@
             <div class="container">
                 <div class="section-header"><span class="section-tag">Auto Spa</span><h2 class="section-title">Premium <span>Car Care</span></h2><p class="section-subtitle">Comprehensive auto detailing packages</p></div>
                 <div class="service-cards-grid autospa-grid" data-category-grid data-category-slug="auto-spa"></div>
-                <div class="category-empty-state" data-category-empty data-category-slug="auto-spa" style="display:none;text-align:center;padding:2rem 1rem;color:var(--text-muted,#a8a29e)"><p>Auto Spa services being updated. Call <a href="tel:+254143542601" data-phone-link>+254 143 542 601</a> for availability.</p></div>
+                <div class="category-empty-state" data-category-empty data-category-slug="auto-spa" style="text-align:center;padding:2rem 1rem;color:var(--text-muted,#a8a29e)"><p>Auto Spa services being updated. Call <a href="tel:+254143542601" data-phone-link>+254 143 542 601</a> for availability.</p></div>
                 <div style="text-align:center;margin-top:var(--space-lg)"><a href="#booking-cta" class="btn btn-primary" data-booking-category="auto-spa">Book Auto Spa</a></div>
             </div>
         </section>
@@ -157,7 +222,7 @@
             <div class="container">
                 <div class="section-header"><span class="section-tag">Carpet Cleaning</span><h2 class="section-title">Professional <span>Carpet Care</span></h2><p class="section-subtitle">Deep cleaning and stain removal</p></div>
                 <div class="service-cards-grid carpet-cleaning-grid" data-category-grid data-category-slug="carpet-cleaning"></div>
-                <div class="category-empty-state" data-category-empty data-category-slug="carpet-cleaning" style="display:none;text-align:center;padding:2rem 1rem;color:var(--text-muted,#a8a29e)"><p>Carpet cleaning services being prepared. Call <a href="tel:+254143542601" data-phone-link>+254 143 542 601</a> for availability.</p></div>
+                <div class="category-empty-state" data-category-empty data-category-slug="carpet-cleaning" style="text-align:center;padding:2rem 1rem;color:var(--text-muted,#a8a29e)"><p>Carpet cleaning services being prepared. Call <a href="tel:+254143542601" data-phone-link>+254 143 542 601</a> for availability.</p></div>
                 <div style="text-align:center;margin-top:var(--space-lg)"><a href="#booking-cta" class="btn btn-primary" data-booking-category="carpet-cleaning">Book Carpet Cleaning</a></div>
             </div>
         </section>
@@ -210,14 +275,31 @@
                 </div>
             </div>
         </section>
+        <!-- ===== GALLERY PREVIEW - Grooming & Care (canonical, DB-driven) ===== -->
+        <section class="gallery-preview" id="gallery" aria-label="Gallery preview of Grooming and Care">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Visual Tour</span>
+                    <h2 class="section-title">Grooming &amp; Care <span>Gallery</span></h2>
+                    <p class="section-subtitle">A look inside our grooming and care experience</p>
+                </div>
+                <div class="gallery-preview-grid">
+                    <!-- Gallery images populated by content-loader.js from Supabase gallery table (canonical only) -->
+                </div>
+                <div class="gallery-cta">
+                    <a href="../contact/gallery.html" class="btn btn-primary">View Full Gallery</a>
+                </div>
+            </div>
+        </section>
+
         <section class="location-section" id="location" aria-label="Location">
             <div class="container">
                 <div class="section-header"><span class="section-tag">Visit Us</span><h2 class="section-title">Our <span>Location</span></h2><p class="section-subtitle">Find us in the heart of Milimani, Meru</p></div>
                 <div class="location-grid">
-                    <figure class="location-image"><img src="https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/autospa/car-detailing.webp" alt="ZT Lounge Grooming &amp; Care - Milimani, Meru" loading="lazy" decoding="async" /></figure>
+                    <figure class="location-image"><img src="https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/autospa/car-detailing.webp" alt="ZT Lounge Grooming &amp; Care - Milimani, Meru" loading="lazy" decoding="async" data-media-id="25407251-9197-42b1-a2a9-3ab30fbc8e26" /></figure>
                     <div class="location-info">
                         <h3>ZT Lounge Grooming &amp; Care</h3>
-                        <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> <span data-business-address>Opposite Ezri Hotel, Milimani, Meru</span></p>
+                        <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> <span data-business-address>Milimani, Meru</span></p>
                         <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+254143542601" data-phone-link>+254 143 542 601</a></p>
                         <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:ztloungemeru@gmail.com" data-email-link>ztloungemeru@gmail.com</a></p>
                         <p><i class="fas fa-clock" aria-hidden="true"></i> <span data-hours="default">Mon - Sun: 10:00 AM - 2:00 AM</span></p>
@@ -237,6 +319,10 @@
     <div id="site-footer"></div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Supabase client (sets window.supabaseClient) before any Supabase-dependent code runs
+            if (window.SupabaseClient) {
+                window.SupabaseClient.getClient();
+            }
             var dateInput = document.getElementById('appointmentDate');
             if (dateInput) { var t=new Date(); t.setDate(t.getDate()+1); dateInput.value=t.toISOString().split('T')[0]; }
             var CATEGORY_SLUG={'barbershop':'barbershop','auto-spa':'auto-spa','carpet-cleaning':'carpet-cleaning'};
@@ -261,10 +347,76 @@
             var ctas=document.querySelectorAll('[data-booking-category]');
             ctas.forEach(function(cta){cta.addEventListener('click',function(){var cat=this.getAttribute('data-booking-category');var sm={'barbershop':'barbershop','auto-spa':'auto-spa','autospa':'auto-spa','carpet-cleaning':'carpet-cleaning'};var slug=sm[cat]||cat;if(categorySlugField)categorySlugField.value=slug;if(categoryGroup)categoryGroup.style.display='none';loadServices(slug);updateWhatsapp(slug);});});
             if(categorySlugField&&categorySlugField.value){updateWhatsapp(categorySlugField.value);}
+
+            // ---- Form submit handler for #autospaBookingForm ----
+            var form = document.getElementById('autospaBookingForm');
+            var formError = document.getElementById('formError');
+            var formSuccess = document.getElementById('formSuccess');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    if (formError) { formError.classList.remove('visible'); formError.textContent = ''; }
+                    if (formSuccess) { formSuccess.classList.remove('visible'); formSuccess.textContent = ''; }
+
+                    var fullName = document.getElementById('fullName').value.trim();
+                    var phone = document.getElementById('phoneNumber').value.trim();
+                    var email = document.getElementById('email').value.trim();
+                    var date = document.getElementById('appointmentDate').value;
+                    var time = document.getElementById('bookingTime').value;
+                    var guests = document.getElementById('guestCount').value;
+                    var specialRequests = document.getElementById('specialRequests').value.trim();
+
+                    if (!fullName || !phone || !date || !time) {
+                        if (formError) { formError.textContent = 'Please fill in all required fields.'; formError.classList.add('visible'); }
+                        return;
+                    }
+
+                    var svcOpt = serviceSelect && serviceSelect.options[serviceSelect.selectedIndex];
+                    var serviceSlug = svcOpt ? svcOpt.getAttribute('data-service-slug') : null;
+                    if (!serviceSlug) {
+                        if (formError) { formError.textContent = 'Please select a service.'; formError.classList.add('visible'); }
+                        return;
+                    }
+
+                    if (!window.BookingRepository || !window.BookingRepository.insert) {
+                        if (formError) { formError.textContent = 'Booking system not ready.'; formError.classList.add('visible'); }
+                        return;
+                    }
+
+                    window.BookingRepository.insert({
+                        fullName: fullName,
+                        email: email || null,
+                        phone: phone,
+                        serviceSlug: serviceSlug,
+                        date: date,
+                        time: time,
+                        guests: parseInt(guests, 10) || 1,
+                        specialRequests: specialRequests || null
+                    }).then(function(result) {
+                        if (formSuccess) {
+                            formSuccess.textContent = 'Thank you! Your booking reference is ' + (result.booking && result.booking.booking_number) + '. We will confirm within 30 minutes.';
+                            formSuccess.classList.add('visible');
+                        }
+                        form.reset();
+                    }).catch(function(err) {
+                        if (formError) {
+                            formError.textContent = err.message || 'Booking failed. Please try again.';
+                            formError.classList.add('visible');
+                        }
+                    });
+                });
+            }
+
             initContext();
         });
     </script>
         <!-- Canonical public shell (LOOP 47): the global CMS script layer is
          emitted by assets/js/shared-components.js (single source of truth). -->
-</body>
+    <script src="../../assets/js/repositories/MediaResolver.js" defer></script>
+    <script src="../../assets/js/lib/media-dom-resolver.js" defer></script>
+
+
+<script src="assets/js/shared-components.js"></script></body>
 </html>
+</html>
+

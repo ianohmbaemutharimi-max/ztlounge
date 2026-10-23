@@ -2,11 +2,18 @@
  * ============================================================
  * ZT Lounge Meru - Business Configuration
  * Single Source of Truth for Business Information
- * Version: 1.1.0
+ * Version: 1.2.0 (Legacy Media Fallback — behavior unchanged)
  * ============================================================
  *
  * This configuration maps directly to the business_settings table.
  * DO NOT hardcode these values in HTML - use this config instead.
+ *
+ * MEDIA NOTE: logo URLs below are the documented static fallback for
+ * the BusinessRepository branding gateway (see docs/BUSINESS_SETTINGS.md:
+ * media failure keeps branding fallbacks, catch-and-keep). Canonical
+ * ownership for these assets lives on data-media-id attributes in
+ * shared-components.js (logo -> 79e60738-*, logo-white -> ebac626d-*).
+ * Keep these URLs in sync only if the storage paths change.
  * ============================================================
  */
 
@@ -50,6 +57,9 @@ window.BusinessConfig = Object.freeze({
 
     // Maps
     googleMaps: 'https://maps.app.goo.gl/HqTbiiU4q2jRFoPg6',
+
+    // Google Reviews (business_settings.google_review_url overrides this when set)
+    googleReview: 'https://maps.app.goo.gl/HqTbiiU4q2jRFoPg6',
 
     // Branding
     logo: {

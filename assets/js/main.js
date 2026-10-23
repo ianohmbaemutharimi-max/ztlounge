@@ -1748,24 +1748,6 @@
             }
         },
 
-        // AutoSpa Page Controller
-        AutoSpa: {
-            _initialized: false,
-
-            init: function() {
-                if (this._initialized) return;
-                
-                ZT.Components.ScrollReveal.init();
-                
-                this._initialized = true;
-                ZT.Logger.info('AutoSpa page controller initialized');
-            },
-
-            destroy: function() {
-                ZT.Components.ScrollReveal.destroy();
-                this._initialized = false;
-            }
-        },
 
         // Lounge Page Controller
         Lounge: {
@@ -1960,7 +1942,6 @@
                 conference: ZT.Pages.Conference,
                 events: ZT.Pages.Events,
                 contact: ZT.Pages.Contact,
-                autospa: ZT.Pages.AutoSpa,
                 lounge: ZT.Pages.Lounge,
                 vip: ZT.Pages.VIP
             };
@@ -1979,7 +1960,7 @@
             }
             
             const pageName = path.split('/').pop()?.replace('.html', '') || 'home';
-            const validPages = ['restaurant', 'gallery', 'conference', 'events', 'contact', 'autospa', 'lounge', 'vip'];
+            const validPages = ['restaurant', 'gallery', 'conference', 'events', 'contact', 'lounge', 'vip'];
             
             return validPages.includes(pageName) ? pageName : 'home';
         },

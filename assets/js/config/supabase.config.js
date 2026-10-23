@@ -38,7 +38,9 @@ var SupabaseConfigObj = {
         serviceCategories: 'service_categories',
         heroSlides: 'hero_slides',
         menuItems: 'menu_items',
-        menuCategories: 'menu_categories'
+        menuCategories: 'menu_categories',
+        membershipPlans: 'membership_plans',
+        membershipPlanBenefits: 'membership_plan_benefits'
     },
 
     // Query configuration

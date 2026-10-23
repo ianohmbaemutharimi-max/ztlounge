@@ -2,20 +2,24 @@
  * ============================================================
  * ZT Lounge Meru - Gallery Repository
  * Abstraction layer for gallery content
- * Version: 2.0.0
+ * Version: 2.0.0 (Phase 3 - Canonical Media Migration)
  * ============================================================
- * 
- * Public Interface:
+ *
+  * Public Interface:
  * - GalleryRepository.getByPage(pageId)
- * - GalleryRepository.getAll()
- * 
- * Data Source: Supabase (gallery table) with local config fallback
- * 
- * Field Mapping (Supabase -> UI):
- * - image_url -> image
- * - display_order -> sort_order
- * - alt_text -> alt
- * - title/description -> label/caption
+ * - GalleryRepository.getAll(options?)  // options.is_favorite for hero/favorite filtering
+ *
+ * Data Source: Supabase (public.gallery table)
+ * Media:       Resolved EXCLUSIVELY via MediaResolver
+ *              (gallery.media_id → media_assets.public_url)
+ *
+ * Canonical contract:
+ *   • mapToUI() returns media_id — NO image_url in mapped output.
+ *   • resolveMedia() delegates to MediaResolver.resolveCollection()
+ *     which throws on missing / unresolvable media_id (exclusive gateway).
+ *   • getByPage() returns { items: [...] } (resolved) to match the
+ *     content-loader populateGallery() contract.
+ *   • No static config fallback — the canonical source is the database.
  * ============================================================
  */
 
@@ -25,40 +29,58 @@ window.GalleryRepository = (function() {
     var repo = null;
 
     /**
-     * Map Supabase database fields to UI-expected fields
-     * @param {Object} item - Raw database item
-     * @returns {Object} Mapped item
+     * Map a raw Supabase row to the canonical UI shape.
+     *
+     * Canonical field names are preserved (no renaming):
+     *   title, description, alt_text, category, display_order, …
+     *   media_id is the single media pointer (resolved to image_url
+     *   downstream by MediaResolver — never a fallback to image_url).
      */
     function mapToUI(item) {
         if (!item) return null;
-        // Return canonical database field names directly
         return {
             id: item.id,
-            label: item.title || item.label || '',  // Canonical: title (with fallback)
-            caption: item.description || item.caption || '',  // Canonical: description (with fallback)
-            image_url: item.image_url || item.image || '',  // Canonical: image_url (with fallback)
-            alt_text: item.alt_text || item.alt || '',  // Canonical: alt_text (with fallback)
+            title: item.title || '',
+            description: item.description || '',
+            alt_text: item.alt_text || '',
             category: item.category || '',
-            display_order: item.display_order || item.sort_order || 0,  // Canonical: display_order (with fallback)
-            page_id: item.page_id,
-            is_active: item.is_active,
-            is_featured: item.is_featured,
-            type: item.type || 'general',
-            view_count: item.view_count || 0
+            media_id: item.media_id || null,   // Canonical: resolved by MediaResolver
+            display_order: item.display_order || 0,
+            page_id: item.page_id || '',
+            is_active: item.is_active !== undefined ? item.is_active : true,
+            is_featured: item.is_featured || false,
+            type: item.type || 'general'
         };
     }
 
+    /**
+     * Resolve media through the canonical MediaResolver (EXCLUSIVE GATEWAY).
+     *
+     * Delegates to MediaResolver.resolveCollection() which:
+     *   1. Batches all media_ids into a single media_assets query.
+     *   2. Caches results in-memory for the session.
+     *   3. Throws on ANY item with a missing or unresolvable media_id.
+     *
+     * @param {Array<Object>} items - Items with media_id
+     * @returns {Promise<Array>} Same items with canonical image_url applied
+     */
+    function resolveMedia(items) {
+        var valid = (items || []).filter(function(r) { return r !== null; });
+        if (window.MediaResolver && window.MediaResolver.resolveCollection) {
+            return MediaResolver.resolveCollection(valid);
+        }
+        // MediaResolver absent: no resolution, items keep media_id only
+        return Promise.resolve(valid);
+    }
+
+    /**
+     * Get or initialize the base repository
+     */
     function getRepo() {
         if (!repo) {
-            var config = window.SupabaseConfig || {};
-            var tableName = config.tables && config.tables.gallery ? config.tables.gallery : 'gallery';
-            repo = window.BaseRepository.create(
-                tableName,
-                function() {
-                    // Fallback to local config
-                    var localConfig = window.GalleryConfig || { gallery: [] };
-                    return localConfig.gallery || [];
-                },
+            repo = BaseRepository.create(
+                SupabaseConfig.tables.gallery,
+                function() { return []; },   // no static fallback — canonical source is DB only
                 { cacheTTL: 300000 }
             );
         }
@@ -66,52 +88,95 @@ window.GalleryRepository = (function() {
     }
 
     /**
-     * Get gallery items for a specific page
-     * @param {string} pageId - Page identifier
-     * @returns {Promise<Array>} Array of gallery item objects
+     * Get gallery items for a specific page.
+     *
+     * @param {string} pageId - Canonical PageId (e.g. 'gallery', 'home', 'restaurant')
+     * @returns {Promise<{items: Array}>} Resolved gallery items for the page
      */
-     function getByPage(pageId) {
-         return getRepo().getAll({
-             eq: [
-                 { column: 'page_id', value: pageId },
-                 { column: 'is_active', value: true }
-             ],
-             orderBy: 'display_order',
-             ascending: true
-         }).then(function(data) {
-            if (data && data.length > 0) {
-                // Map fields and check if we got real data from Supabase
-                return data.map(mapToUI);
-            }
-            // Fallback to local config
-            var config = window.GalleryConfig || {};
-            var localItems = config[pageId] || config.gallery || [];
-            return localItems.map(mapToUI);
-        });
-    }
+    function getByPage(pageId) {
+        var table = SupabaseConfig.tables.gallery;
+        var cacheKey = 'gallery_page_' + (pageId || '');
+        if (cache[cacheKey]) {
+            return Promise.resolve(cache[cacheKey]);
+        }
 
-    /**
-     * Get all gallery items (for pages without specific page_id)
-     * @returns {Promise<Array>} Array of gallery item objects
-     */
-    function getAll() {
-        return getRepo().getAll({
-            eq: [{ column: 'is_active', value: true }],
+        var request = BaseRepository.create(
+            table,
+            function() { return []; },
+            { cacheTTL: 300000 }
+        ).getAll({
+            eq: [
+                { column: 'page_id', value: pageId },
+                { column: 'is_active', value: true }
+            ],
             orderBy: 'display_order',
             ascending: true
         }).then(function(data) {
-            if (data && data.length > 0) {
-                return data.map(mapToUI);
-            }
-            // Fallback to local config
-            var config = window.GalleryConfig || {};
-            var localItems = config.gallery || [];
-            return localItems.map(mapToUI);
+            var items = (data || []).map(mapToUI);
+            return resolveMedia(items).then(function(resolved) {
+                var result = { items: resolved };
+                cache[cacheKey] = result;
+                return result;
+            });
         });
+
+        cache[cacheKey] = request;
+        return request;
     }
+
+        /**
+     * Get all active gallery items across all pages.
+     *
+     * @param {Object} [options] - Optional flags
+     * @param {boolean} [options.is_favorite] - When true, filter to is_featured items only
+     *                                         (used for hero/favorite section previews)
+     * @returns {Promise<{items: Array}>} Resolved gallery items
+     */
+    function getAll(options) {
+        options = options || {};
+        var cacheKey = options.is_favorite ? 'gallery_all_featured' : 'gallery_all';
+        if (cache[cacheKey]) {
+            return Promise.resolve(cache[cacheKey]);
+        }
+
+        var eqFilters = [{ column: 'is_active', value: true }];
+        if (options.is_favorite) {
+            eqFilters.push({ column: 'is_featured', value: true });
+        }
+
+        var request = getRepo().getAll({
+            eq: eqFilters,
+            orderBy: 'display_order',
+            ascending: true
+        }).then(function(data) {
+            var items = (data || []).map(mapToUI);
+            return resolveMedia(items).then(function(resolved) {
+                var result = { items: resolved };
+                cache[cacheKey] = result;
+                return result;
+            });
+        });
+
+        cache[cacheKey] = request;
+        return request;
+    }
+
+    /**
+     * Clear in-memory cache (useful for tests / forced refresh)
+     */
+    function clearCache() {
+        cache = {};
+        repo = null;
+    }
+
+    // Module-level cache
+    var cache = {};
 
     return {
         getByPage: getByPage,
-        getAll: getAll
+        getAll: getAll,
+        mapToUI: mapToUI,
+        resolveMedia: resolveMedia,
+        clearCache: clearCache
     };
 })();

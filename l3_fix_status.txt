@@ -1,6 +1,0 @@
-pages/experiences/lounge.html: grid@23401 marker=true cardsInFile=0 cardsInGridSection=0 publicAssetsRefs=11
-   grid preview: <div class="service-cards-grid"> <!-- DB-driven: populated by content-loader.js populateServiceCards() --> </div> </div> </section> <!-- ===== SIGNATURE COCKTAILS - Lounge (page-specific) ===== --> <secti
-pages/experiences/vip.html: grid@21682 marker=true cardsInFile=0 cardsInGridSection=0 publicAssetsRefs=11
-   grid preview: <div class="service-cards-grid"> <!-- DB-driven: populated by content-loader.js populateServiceCards() --> </div> </div> </section> <!-- ===== OVERVIEW - VIP (page-specific) ===== --> <section class="sect
-pages/business/events.html: grid@18633 marker=true cardsInFile=0 cardsInGridSection=0 publicAssetsRefs=10
-   grid preview: <div class="service-cards-grid"> <!-- DB-driven: populated by content-loader.js populateServiceCards() --> </div> </div> </section> <!-- ===== GALLERY PREVIEW - Events (matching index gallery) ===== --> <

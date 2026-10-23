@@ -254,8 +254,13 @@
      * Initialize all forms on the page
      */
     function init() {
-        // Bind ALL booking forms (restaurant, lounge, vip, events, conference, autospa)
-        var bookingForms = document.querySelectorAll('#reservationForm, #loungeBookingForm, #vipBookingForm, #eventBookingForm, #conferenceBookingForm, #autospaBookingForm');
+        // Bind generic booking forms (restaurant, lounge, vip, events, conference).
+        // NOTE: #autospaBookingForm is deliberately NOT bound here. The Auto Spa
+        // form now lives on grooming-care.html, which registers its own submit
+        // handler that submits the selected service's data-service-slug. Binding
+        // it here as well fired a second submit listener on the same form,
+        // creating a duplicate booking with a hard-coded 'restaurant' slug.
+        var bookingForms = document.querySelectorAll('#reservationForm, #loungeBookingForm, #vipBookingForm, #eventBookingForm, #conferenceBookingForm');
         bookingForms.forEach(function(form) {
             bindBookingForm(form);
         });

@@ -2,7 +2,12 @@
  * ============================================================
  * ZT Lounge Meru - Services Configuration
  * Single Source of Truth for Services Section
- * Version: 1.0.0
+ * Version: 2.0.0 (Canonical Media Migration)
+ *
+ * MEDIA CONTRACT: service entries reference media assets exclusively via
+ * media_id (media_assets UUID). No image URL fallbacks — resolution
+ * happens through window.MediaResolver (see ServicesRepository).
+ * Experiences/features below are icon/text-only and carry no media.
  * ============================================================
  */
 
@@ -17,7 +22,7 @@ window.ServicesConfig = Object.freeze({
                 id: "restaurant",
                 name: "Restaurant",
                 description: "Fine dining with exquisite cuisine and elegant ambiance",
-                image_url: "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/restaurant/interior.webp",
+                media_id: "2d837e6f-f53e-4b03-bc88-97585937e9a1",
                 alt_text: "Fine dining restaurant at ZT Lounge with elegant table setting and ambient lighting",
                 tag: "✦ Signature",
                 page_id: "home",
@@ -29,7 +34,7 @@ window.ServicesConfig = Object.freeze({
                 id: "lounge",
                 name: "Lounge & Bar",
                 description: "Premium cocktails, live entertainment, and sophisticated atmosphere",
-                image_url: "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/lounge/lounge-interior-main.webp",
+                media_id: "6ed7e810-92e2-4988-b192-82531ce03cb2",
                 alt_text: "Luxury lounge and bar at ZT Lounge with premium seating and sophisticated atmosphere",
                 tag: "✦ Nightlife",
                 page_id: "home",
@@ -41,7 +46,7 @@ window.ServicesConfig = Object.freeze({
                 id: "vip",
                 name: "VIP Cabins",
                 description: "Private, exclusive cabins for intimate dining and celebrations",
-                image_url: "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/vip/vip-fireplace-lounge.webp",
+                media_id: "76780f76-860b-4c48-980c-4eb692a80f05",
                 alt_text: "Luxury VIP cabin at ZT Lounge with private dining and exclusive amenities",
                 tag: "✦ Private",
                 page_id: "home",
@@ -53,7 +58,7 @@ window.ServicesConfig = Object.freeze({
                 id: "events",
                 name: "Events",
                 description: "Weddings, birthdays, graduations, and private celebrations",
-                image_url: "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/events/wedding.webp",
+                media_id: "1f0d04c1-b58e-44cb-8dd1-8f65c7e8f911",
                 alt_text: "Elegant event setup at ZT Lounge with floral arrangements and celebratory decor",
                 tag: "✦ Celebrations",
                 page_id: "home",
@@ -65,7 +70,7 @@ window.ServicesConfig = Object.freeze({
                 id: "conference",
                 name: "Conference",
                 description: "State-of-the-art facilities for corporate meetings and seminars",
-                image_url: "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/conference/conference-hall.webp",
+                media_id: "2f270769-d381-4189-93cc-b8285d3ac78a",
                 alt_text: "Modern conference hall at ZT Lounge with state-of-the-art audiovisual equipment",
                 tag: "✦ Corporate",
                 page_id: "home",
@@ -74,16 +79,16 @@ window.ServicesConfig = Object.freeze({
                 href: "pages/business/conference.html"
             },
             {
-                id: "autospa",
-                name: "Auto Spa",
-                description: "Professional detailing, washing, and premium car care services",
-                image_url: "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/autospa/car-detailing.webp",
-                alt_text: "Professional auto detailing at ZT Lounge with premium car care services",
+                id: "grooming-care",
+                name: "Grooming & Care",
+                description: "Barbershop grooming, auto spa car detailing, and carpet cleaning services",
+                media_id: "25407251-9197-42b1-a2a9-3ab30fbc8e26",
+                alt_text: "Grooming & Care services at ZT Lounge - barbershop, auto spa, and carpet cleaning",
                 tag: "✦ Premium",
                 page_id: "home",
                 type: "service",
                 display_order: 6,
-                href: "pages/business/autospa.html"
+                href: "pages/business/grooming-care.html"
             }
         ]
     },

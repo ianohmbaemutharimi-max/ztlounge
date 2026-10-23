@@ -2,15 +2,15 @@
  * ============================================================
  * ZT Lounge Meru - Hero Repository
  * Abstraction layer for hero section content
- * Version: 1.0.0
+ * Version: 2.0.0 (Phase 3 - Canonical Media Migration)
  * ============================================================
- * 
+ *
  * Public Interface:
  * - HeroRepository.getSlides(pageId)
  * - HeroRepository.getByPage(pageId)
- * 
- * Data Source: hero.config.js (Configuration file)
- * Future: Will return Supabase data without changing the interface
+ *
+ * Data Source: Supabase (hero_slides table)
+ * Media: Resolved exclusively via MediaResolver (media_id -> media_assets.public_url)
  * ============================================================
  */
 
@@ -22,7 +22,7 @@ window.HeroRepository = (function() {
     /**
      * Map Supabase database fields to UI-expected fields
      * @param {Object} item - Raw database item
-     * @returns {Object} Mapped item
+     * @returns {Object} Mapped item with media_id for canonical media resolution
      */
     function mapToUI(item) {
         if (!item) return null;
@@ -33,7 +33,7 @@ window.HeroRepository = (function() {
             title: item.title || '',
             highlight: item.highlight || '',
             subtitle: item.subtitle || '',
-            image_url: item.image_url || item.image || '',  // Canonical: image_url (with fallback)
+            media_id: item.media_id || null,  // Canonical: media_id (resolved to image_url by MediaResolver)
             alt_text: item.alt_text || '',
             cta_text: item.cta_text || '',
             cta_link: item.cta_link || '',
@@ -42,6 +42,20 @@ window.HeroRepository = (function() {
             page_id: item.page_id || '',
             is_active: item.is_active !== undefined ? item.is_active : true
         };
+    }
+
+    /**
+     * Resolve media through the canonical MediaResolver (EXCLUSIVE GATEWAY).
+     * Resolves media_id -> media_assets.public_url. Throws on missing media_id.
+     * @param {Array} items - Array of items with media_id
+     * @returns {Promise<Array>} Items with canonical image_url applied
+     */
+    function resolveMedia(items) {
+        if (window.MediaResolver && window.MediaResolver.resolveCollection) {
+            return window.MediaResolver.resolveCollection(items);
+        }
+        // MediaResolver absent: presentation fallback is no resolution
+        return Promise.resolve(items);
     }
 
     /**
@@ -60,11 +74,11 @@ window.HeroRepository = (function() {
 
     /**
      * Get hero slides for a specific page
-     * Tries Supabase first, falls back to local config
+     * Queries Supabase hero_slides table, resolves media via MediaResolver
      * @param {string} pageId - Page identifier (home, restaurant, lounge, etc.)
      * @returns {Promise<Object>} Hero configuration for the page
      */
-     function getByPage(pageId) {
+    function getByPage(pageId) {
         return getRepo().getAll({
             eq: [
                 { column: 'page_id', value: pageId },
@@ -74,10 +88,12 @@ window.HeroRepository = (function() {
             ascending: true
         }).then(function(data) {
             if (data && data.length > 0) {
-                return { slides: data.map(mapToUI) };
+                var mapped = data.map(mapToUI);
+                return resolveMedia(mapped).then(function(resolved) {
+                    return { slides: resolved };
+                });
             }
-            var config = window.HeroConfig || {};
-            return config[pageId] || { slides: [] };
+            return { slides: [] };
         });
     }
 

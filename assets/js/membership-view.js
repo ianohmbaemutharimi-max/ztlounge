@@ -67,7 +67,7 @@ window.MembershipView = (function() {
     }
 
     function teaserCta() {
-        return '<button type="button" class="zt-member-cta-secondary" data-membership-modal-trigger>View Benefits</button>';
+        return '<button type="button" class="zt-member-cta-secondary" data-membership-modal-trigger>View Details</button>';
     }
 
     function fullModeCta(plan, business) {
@@ -254,20 +254,48 @@ function createModal(plan, summary, business) {
 
     function init() {
         var mounts = document.querySelectorAll('[data-membership-grid]');
-        if (!mounts.length || !window.MembershipRepository) return Promise.resolve();
+        if (!mounts.length) {
+            console.warn('[membership-view] No membership grid mount points found');
+            return Promise.resolve();
+        }
+        if (!window.MembershipRepository) {
+            console.error('[membership-view] MembershipRepository is not defined - cannot render membership cards');
+            // Don't hide existing mounts - let other scripts handle it
+            return Promise.resolve();
+        }
+
         var feePromise = window.MembershipRepository.getFeeSummary
             ? window.MembershipRepository.getFeeSummary() : Promise.resolve(null);
+
         return Promise.all([
             window.MembershipRepository.getPublicPlans(),
             feePromise,
             businessData()
         ]).then(function(results) {
+            var plans = results[0] || [];
+            var feeSummary = results[1] || null;
+            var business = results[2] || null;
+
+            console.log('[membership-view] Rendering', plans.length, 'plans');
+
+            if (plans.length === 0) {
+                // Hide gracefully if no plans (instead of erroring)
+                Array.prototype.forEach.call(mounts, function(el) {
+                    hideData(el);
+                });
+                console.log('[membership-view] No active plans found - section hidden');
+                return;
+            }
+
             Array.prototype.forEach.call(mounts, function(el) {
-                mount(el, results[0] || [], results[1] || null, results[2] || null);
+                mount(el, plans, feeSummary, business);
             });
         }).catch(function(error) {
+            // Log error but DON'T hide the section - let users see the mount points
             console.error('[membership-view] render failed:', error);
-            Array.prototype.forEach.call(mounts, function(el) { hideData(el); });
+            // Only hide if mounts explicitly request it, otherwise leave visible
+            // Commented out: Array.prototype.forEach.call(mounts, function(el) { hideData(el); });
+            console.warn('[membership-view] Error rendered but section remains visible for debugging');
         });
     }
 

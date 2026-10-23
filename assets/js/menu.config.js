@@ -2,9 +2,21 @@
  * ============================================================
  * ZT Lounge Meru - Menu Configuration
  * Single Source of Truth for Menu Items
- * Version: 1.0.0
+ * Version: 2.0.0 (Canonical Media Migration)
+ *
+ * MEDIA CONTRACT: entries reference media assets exclusively via
+ * media_id (media_assets UUID). No image URL fallbacks — resolution
+ * happens through window.MediaResolver (see MenuRepository).
  * ============================================================
  */
+
+/**
+ * Page key to UUID mapping for menu engine resolution.
+ * menu-engine.js uses this to resolve data-page-key to Supabase page_id.
+ */
+window.pageKeyToId = Object.freeze({
+    "restaurant-menu": "1ff74409-98f8-4ab6-a3b6-0741b19f2040"
+});
 
 window.MenuConfig = Object.freeze({
     categories: [
@@ -21,7 +33,7 @@ window.MenuConfig = Object.freeze({
             name: "Signature Nyama Choma",
             description: "Slow-grilled to perfection, juicy, flavorful, and unforgettable.",
             price: "KES 1,800",
-            image: "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/menu/nyama-choma.webp",
+            media_id: "06914e55-16d8-410a-aacc-712ff7169891",
             alt: "Signature Nyama Choma slow-grilled to perfection"
         },
         {
@@ -29,7 +41,7 @@ window.MenuConfig = Object.freeze({
             name: "ZT Signature Pilau",
             description: "Aromatic basmati rice cooked with special spices and herbs.",
             price: "KES 650",
-            image: "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/menu/signature-pilau.webp",
+            media_id: "c611e8d6-dea2-4a74-86b2-dbb8b9ff5063",
             alt: "ZT Signature Pilau aromatic basmati rice"
         },
         {
@@ -37,7 +49,7 @@ window.MenuConfig = Object.freeze({
             name: "Premium Beef Steak",
             description: "Prime cuts grilled to your preference. Tender & juicy.",
             price: "KES 1,650",
-            image: "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/menu/beef-steak.webp",
+            media_id: "8b6b9ce0-29c4-49f9-abb2-fd81c1c3e67b",
             alt: "Premium Beef Steak prime cuts grilled to preference"
         }
     ],

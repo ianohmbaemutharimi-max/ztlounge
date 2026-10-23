@@ -44,13 +44,20 @@ window.BusinessRepository = (function() {
             latitude: item.latitude || 0,
             longitude: item.longitude || 0,
             opening_hours: item.opening_hours || item.hours || {},
-            logo_url: item.logo_url || item.logo || '',
+                        logo_url: item.logo_url || item.logo || '',
+            logo_media_id: item.logo_media_id || null,
+            logo_light_media_id: item.logo_light_media_id || null,
+            favicon_media_id: item.favicon_media_id || null,
+            resolved_logo_url: item.resolved_logo_url || null,
+            resolved_logo_light_url: item.resolved_logo_light_url || null,
+            resolved_favicon_url: item.resolved_favicon_url || null,
             whatsapp: item.whatsapp || '',
             facebook: item.facebook || '',
             instagram: item.instagram || '',
             twitter: item.twitter || '',
             youtube: item.youtube || '',
-            google_maps_url: item.google_maps_url || ''
+            google_maps_url: item.google_maps_url || '',
+            google_review_url: item.google_review_url || item.googleReviewUrl || ''
         };
     }
 
@@ -71,6 +78,55 @@ window.BusinessRepository = (function() {
         return repo;
     }
 
+        /**
+     * Resolve branding media_id -> public_url from media_assets.
+     * Writes the canonical DB-derived URLs onto settings.resolved_* , falling
+     * back to the legacy logo_url/favicon_url static values (or null) when the
+     * anon client cannot read media_assets. branding-init.js reads these.
+     */
+    function resolveMediaIds(settings) {
+        settings.resolved_logo_url = settings.logo_url || null;
+        settings.resolved_logo_light_url = settings.logo_light_url || null;
+        settings.resolved_favicon_url = settings.favicon_url || null;
+
+        var client = (typeof window !== 'undefined') && window.supabaseClient;
+        if (!client) {
+            return Promise.resolve(settings);
+        }
+
+        var idMap = {};
+        if (settings.logo_media_id) idMap[settings.logo_media_id] = 'logo';
+        if (settings.logo_light_media_id) idMap[settings.logo_light_media_id] = 'logo_light';
+        if (settings.favicon_media_id) idMap[settings.favicon_media_id] = 'favicon';
+        var ids = Object.keys(idMap);
+        if (!ids.length) {
+            return Promise.resolve(settings);
+        }
+
+        return client
+            .from('media_assets')
+            .select('id,public_url')
+            .in('id', ids)
+            .then(function(res) {
+                if (res && Array.isArray(res.data)) {
+                    res.data.forEach(function(asset) {
+                        var kind = idMap[asset.id];
+                        var url = asset.public_url;
+                        if (!url) return;
+                        if (kind === 'logo') settings.resolved_logo_url = url;
+                        else if (kind === 'logo_light') settings.resolved_logo_light_url = url;
+                        else if (kind === 'favicon') settings.resolved_favicon_url = url;
+                    });
+                }
+                return settings;
+            })
+            .catch(function(err) {
+                console.warn('[BusinessRepository] media_assets resolution failed, keeping branding fallbacks:',
+                    (err && err.message) || err);
+                return settings;
+            });
+    }
+
     /**
      * Get all business settings (single row)
      * @returns {Promise<Object>} Business settings object
@@ -87,10 +143,14 @@ window.BusinessRepository = (function() {
             if (data && data.length > 0) {
                 cachedData = mapToUI(data[0]);
                 // Add backwards compatible camelCase aliases
-                cachedData.businessName = cachedData.business_name;
+                                cachedData.businessName = cachedData.business_name;
                 cachedData.hours = cachedData.opening_hours;
                 cachedData.logo = cachedData.logo_url;
-                return cachedData;
+                cachedData.logo_light = cachedData.logo_light_url || null;
+                cachedData.favicon = cachedData.favicon_url || null;
+                // Resolve media_id -> public_url so branding-init.js can apply
+                // canonical DB-driven logos/favicon. Falls back gracefully.
+                return resolveMediaIds(cachedData);
             }
             // Fallback to local config
             var config = window.BusinessConfig || {};
@@ -109,7 +169,8 @@ window.BusinessRepository = (function() {
                 latitude: config.latitude || 0.0476,
                 longitude: config.longitude || 37.6822,
                 opening_hours: config.hours || {},
-                hours: config.hours || {}  // Backwards compatibility
+                hours: config.hours || {},
+                google_review_url: config.googleReview || config.googleMaps || ''
             };
             return cachedData;
         }).catch(function(error) {
@@ -131,7 +192,8 @@ window.BusinessRepository = (function() {
                 latitude: config.latitude || 0.0476,
                 longitude: config.longitude || 37.6822,
                 opening_hours: config.hours || {},
-                hours: config.hours || {}  // Backwards compatibility
+                hours: config.hours || {},
+                google_review_url: config.googleReview || config.googleMaps || ''
             };
             return cachedData;
         });
@@ -213,6 +275,7 @@ window.BusinessRepository = (function() {
                 email: settings.email,
                 address: settings.address,
                 hours: settings.hours,
+                google_review_url: settings.google_review_url || config.googleReview || config.googleMaps || '',
                 social: {
                     facebook: settings.facebook || config.social && config.social.facebook || '',
                     instagram: settings.instagram || config.social && config.social.instagram || '',

@@ -1,10 +1,13 @@
 /**
  * ============================================================
  * ZT Lounge Meru - Centralized Asset URL Helper
- * Version: 1.0.0
+ * Version: 1.1.0 (Legacy Passthrough — Media Gateway Migration)
  * ============================================================
- * Provides a single function to resolve local asset paths
- * to Supabase Storage public URLs.
+ * LEGACY: New media references MUST go through the canonical
+ * media_assets gateway (MediaResolver / MediaDomResolver with
+ * media_id). This helper remains only as a URL normalizer for
+ * legacy relative paths; it returns full Supabase URLs unchanged
+ * (passthrough), so canonical MediaResolver output is unaffected.
  *
  * All media assets are stored in the Supabase Storage bucket
  * "public-assets" under the "images/" folder hierarchy.

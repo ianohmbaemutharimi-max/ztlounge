@@ -1,5 +1,0 @@
-[33m905bd7a[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfeature/membership-tiers-staging-phase1[m[33m, [m[1;32mmain[m[33m, [m[1;32mfeature/membership-tiers-phase1[m[33m)[m fix: align testimonials UI with database schema and manager RBAC
-[33m92e1e3e[m Add testimonials frontend section + final production audit report
-[33m647aefc[m Cleanup migration: remove Hair Styling orphan category, Mary Customer test customer, Test User contact message
-[33m63d8500[m Production Hardening: Add final report with security fixes, debt, readiness score, deployment checklist
-[33m0d0c11a[m Phase 2: Harden booking validation - Kenyan phone, email, future date, validation-before-loading

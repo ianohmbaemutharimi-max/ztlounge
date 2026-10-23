@@ -2,10 +2,9 @@
   "config": {
     "argv": [
       "C:\\Program Files\\nodejs\\node.exe",
-      "D:\\zt lounge\\zt-lounge-demo\\zt-lounge-admin\\node_modules\\@playwright\\test\\cli.js",
+      "D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\node_modules\\@playwright\\test\\cli.js",
       "test",
-      "d:/zt",
-      "lounge/zt-lounge-demo/zt-lounge-admin/tests/e2e/restaurant-service-information.spec.ts"
+      "tests/membership-section.spec.js"
     ],
     "configFile": "D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\playwright.config.js",
     "rootDir": "D:/zt lounge/zt-lounge-demo/zt-lounge/tests",
@@ -18,14 +17,18 @@
     "grep": {},
     "grepInvert": null,
     "maxFailures": 0,
-    "metadata": {},
+    "metadata": {
+      "actualWorkers": 1
+    },
     "preserveOutput": "always",
     "projects": [
       {
         "outputDir": "D:/zt lounge/zt-lounge-demo/zt-lounge/test-results",
         "repeatEach": 1,
         "retries": 1,
-        "metadata": {},
+        "metadata": {
+          "actualWorkers": 1
+        },
         "id": "chromium",
         "name": "chromium",
         "testDir": "D:/zt lounge/zt-lounge-demo/zt-lounge/tests",
@@ -34,6 +37,46 @@
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
         ],
         "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\test-results",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "chromium",
+        "testDir": "D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\tests",
+        "snapshotDir": "D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\tests",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://localhost:8000",
+          "trace": "on-first-retry",
+          "screenshot": "only-on-failure",
+          "video": "retain-on-failure",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "chromium"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium"
       }
     ],
     "quiet": false,
@@ -61,45 +104,639 @@
     },
     "shard": null,
     "tags": [],
-    "updateSnapshots": "missing",
+    "updateSnapshots": "default",
     "updateSourceMethod": "patch",
-    "version": "1.62.1",
+    "version": "1.64.0",
     "workers": 1,
     "webServer": null
   },
-  "suites": [],
-  "errors": [
+  "suites": [
     {
-      "message": "Error: Playwright Test did not expect test.describe() to be called here.\nMost common reasons include:\n- You are calling test.describe() in a configuration file.\n- You are calling test.describe() in a file that is imported by the configuration file.\n- You have two different versions of @playwright/test. This usually happens\n  when one of the dependencies in your package.json depends on @playwright/test.\n- You are calling test.describe() from an async test.describe() block. Only sync ones are supported.",
-      "stack": "Error: Playwright Test did not expect test.describe() to be called here.\nMost common reasons include:\n- You are calling test.describe() in a configuration file.\n- You are calling test.describe() in a file that is imported by the configuration file.\n- You have two different versions of @playwright/test. This usually happens\n  when one of the dependencies in your package.json depends on @playwright/test.\n- You are calling test.describe() from an async test.describe() block. Only sync ones are supported.\n    at _TestTypeImpl._currentSuite (D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\node_modules\\playwright\\lib\\common\\index.js:2235:13)\n    at _TestTypeImpl._describe (D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\node_modules\\playwright\\lib\\common\\index.js:2277:24)\n    at Function.describe (D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\node_modules\\playwright\\lib\\common\\index.js:1169:12)\n    at Object.<anonymous> (D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\tests\\admin-media-gateway.spec.js:10:6)",
-      "location": {
-        "file": "D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\tests\\admin-media-gateway.spec.js",
-        "column": 6,
-        "line": 10
-      },
-      "snippet": "\u001b[90m   at \u001b[39madmin-media-gateway.spec.js:10\n\n\u001b[0m \u001b[90m  8 |\u001b[39m \u001b[36mconst\u001b[39m \u001b[33mADMIN_URL\u001b[39m \u001b[33m=\u001b[39m \u001b[32m'http://localhost:3000'\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m  9 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 10 |\u001b[39m test\u001b[33m.\u001b[39mdescribe(\u001b[32m'Admin - Exclusive Media Gateway'\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m    |\u001b[39m      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 11 |\u001b[39m     \u001b[36mlet\u001b[39m consoleErrors \u001b[33m=\u001b[39m []\u001b[33m;\u001b[39m\n \u001b[90m 12 |\u001b[39m\n \u001b[90m 13 |\u001b[39m     test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m"
-    },
-    {
-      "message": "Error: Playwright Test did not expect test.describe() to be called here.\nMost common reasons include:\n- You are calling test.describe() in a configuration file.\n- You are calling test.describe() in a file that is imported by the configuration file.\n- You have two different versions of @playwright/test. This usually happens\n  when one of the dependencies in your package.json depends on @playwright/test.\n- You are calling test.describe() from an async test.describe() block. Only sync ones are supported.",
-      "stack": "Error: Playwright Test did not expect test.describe() to be called here.\nMost common reasons include:\n- You are calling test.describe() in a configuration file.\n- You are calling test.describe() in a file that is imported by the configuration file.\n- You have two different versions of @playwright/test. This usually happens\n  when one of the dependencies in your package.json depends on @playwright/test.\n- You are calling test.describe() from an async test.describe() block. Only sync ones are supported.\n    at _TestTypeImpl._currentSuite (D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\node_modules\\playwright\\lib\\common\\index.js:2235:13)\n    at _TestTypeImpl._describe (D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\node_modules\\playwright\\lib\\common\\index.js:2277:24)\n    at Function.describe (D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\node_modules\\playwright\\lib\\common\\index.js:1169:12)\n    at Object.<anonymous> (D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\tests\\website-media-gateway.spec.js:10:6)",
-      "location": {
-        "file": "D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\tests\\website-media-gateway.spec.js",
-        "column": 6,
-        "line": 10
-      },
-      "snippet": "\u001b[90m   at \u001b[39mwebsite-media-gateway.spec.js:10\n\n\u001b[0m \u001b[90m  8 |\u001b[39m \u001b[36mconst\u001b[39m \u001b[33mBASE_URL\u001b[39m \u001b[33m=\u001b[39m \u001b[32m'http://localhost:8000'\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m  9 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 10 |\u001b[39m test\u001b[33m.\u001b[39mdescribe(\u001b[32m'Website - Exclusive Media Gateway'\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m    |\u001b[39m      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 11 |\u001b[39m     \u001b[36mlet\u001b[39m consoleErrors \u001b[33m=\u001b[39m []\u001b[33m;\u001b[39m\n \u001b[90m 12 |\u001b[39m\n \u001b[90m 13 |\u001b[39m     test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m"
-    },
-    {
-      "message": "Error: No tests found.\nMake sure that arguments are regular expressions matching test files.\nYou may need to escape symbols like \"$\" or \"*\" and quote the arguments.",
-      "stack": "Error: No tests found.\nMake sure that arguments are regular expressions matching test files.\nYou may need to escape symbols like \"$\" or \"*\" and quote the arguments."
+      "title": "membership-section.spec.js",
+      "file": "membership-section.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Website - Membership Section",
+          "file": "membership-section.spec.js",
+          "line": 10,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Home page membership section loads membership cards from Supabase",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 35373,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m0\u001b[39m\nReceived:   \u001b[31m0\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m0\u001b[39m\nReceived:   \u001b[31m0\u001b[39m\n    at D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\tests\\membership-section.spec.js:34:33",
+                        "location": {
+                          "file": "D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\tests\\membership-section.spec.js",
+                          "column": 33,
+                          "line": 34
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 32 |\u001b[39m         \u001b[36mconst\u001b[39m membershipCards \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'.zt-member-card'\u001b[39m)\u001b[33m.\u001b[39mcount()\u001b[33m;\u001b[39m\n \u001b[90m 33 |\u001b[39m         console\u001b[33m.\u001b[39mlog(\u001b[32m`✓ Found ${membershipCards} membership cards`\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 34 |\u001b[39m         expect(membershipCards)\u001b[33m.\u001b[39mtoBeGreaterThan(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 35 |\u001b[39m\n \u001b[90m 36 |\u001b[39m         \u001b[36mconst\u001b[39m firstCard \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'.zt-member-card'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n \u001b[90m 37 |\u001b[39m         \u001b[36mawait\u001b[39m expect(firstCard\u001b[33m.\u001b[39mlocator(\u001b[32m'.zt-member-card-title'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\tests\\membership-section.spec.js",
+                            "column": 33,
+                            "line": 34
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m0\u001b[39m\nReceived:   \u001b[31m0\u001b[39m\n\n  32 |         const membershipCards = await page.locator('.zt-member-card').count();\n  33 |         console.log(`✓ Found ${membershipCards} membership cards`);\n> 34 |         expect(membershipCards).toBeGreaterThan(0);\n     |                                 ^\n  35 |\n  36 |         const firstCard = page.locator('.zt-member-card').first();\n  37 |         await expect(firstCard.locator('.zt-member-card-title')).toBeVisible();\n    at D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\tests\\membership-section.spec.js:34:33"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "✓ Membership section found on home page\n"
+                        },
+                        {
+                          "text": "✓ Found 0 membership cards\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-23T11:47:48.682Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\test-results\\membership-section-Website-25cb6-bership-cards-from-Supabase-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\test-results\\membership-section-Website-25cb6-bership-cards-from-Supabase-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\test-results\\membership-section-Website-25cb6-bership-cards-from-Supabase-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\tests\\membership-section.spec.js",
+                        "column": 33,
+                        "line": 34
+                      }
+                    },
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 20693,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m0\u001b[39m\nReceived:   \u001b[31m0\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m0\u001b[39m\nReceived:   \u001b[31m0\u001b[39m\n    at D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\tests\\membership-section.spec.js:34:33",
+                        "location": {
+                          "file": "D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\tests\\membership-section.spec.js",
+                          "column": 33,
+                          "line": 34
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 32 |\u001b[39m         \u001b[36mconst\u001b[39m membershipCards \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'.zt-member-card'\u001b[39m)\u001b[33m.\u001b[39mcount()\u001b[33m;\u001b[39m\n \u001b[90m 33 |\u001b[39m         console\u001b[33m.\u001b[39mlog(\u001b[32m`✓ Found ${membershipCards} membership cards`\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 34 |\u001b[39m         expect(membershipCards)\u001b[33m.\u001b[39mtoBeGreaterThan(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 35 |\u001b[39m\n \u001b[90m 36 |\u001b[39m         \u001b[36mconst\u001b[39m firstCard \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'.zt-member-card'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n \u001b[90m 37 |\u001b[39m         \u001b[36mawait\u001b[39m expect(firstCard\u001b[33m.\u001b[39mlocator(\u001b[32m'.zt-member-card-title'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\tests\\membership-section.spec.js",
+                            "column": 33,
+                            "line": 34
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m0\u001b[39m\nReceived:   \u001b[31m0\u001b[39m\n\n  32 |         const membershipCards = await page.locator('.zt-member-card').count();\n  33 |         console.log(`✓ Found ${membershipCards} membership cards`);\n> 34 |         expect(membershipCards).toBeGreaterThan(0);\n     |                                 ^\n  35 |\n  36 |         const firstCard = page.locator('.zt-member-card').first();\n  37 |         await expect(firstCard.locator('.zt-member-card-title')).toBeVisible();\n    at D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\tests\\membership-section.spec.js:34:33"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "✓ Membership section found on home page\n"
+                        },
+                        {
+                          "text": "✓ Found 0 membership cards\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-10-23T11:48:47.066Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\test-results\\membership-section-Website-25cb6-bership-cards-from-Supabase-chromium-retry1\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\test-results\\membership-section-Website-25cb6-bership-cards-from-Supabase-chromium-retry1\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\test-results\\membership-section-Website-25cb6-bership-cards-from-Supabase-chromium-retry1\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\test-results\\membership-section-Website-25cb6-bership-cards-from-Supabase-chromium-retry1\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\tests\\membership-section.spec.js",
+                        "column": 33,
+                        "line": 34
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "b7a8e0e4ba9ef3feaaef-665d57b5b12dc1a8a072",
+              "file": "membership-section.spec.js",
+              "line": 22,
+              "column": 5
+            },
+            {
+              "title": "View Details button opens popup with membership benefits",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12151,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "⚠ Skipping modal test - no membership cards rendered\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-23T11:49:14.939Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b7a8e0e4ba9ef3feaaef-d021fdfe824fa290833b",
+              "file": "membership-section.spec.js",
+              "line": 50,
+              "column": 5
+            },
+            {
+              "title": "Membership grid mount point exists on home page",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12052,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "✓ Membership grid mount point found\n"
+                        },
+                        {
+                          "text": "✓ Membership mode: teaser\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-23T11:49:27.598Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b7a8e0e4ba9ef3feaaef-cf02241543ca0fb62af7",
+              "file": "membership-section.spec.js",
+              "line": 89,
+              "column": 5
+            },
+            {
+              "title": "Supabase configuration is available on window",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11304,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "✓ SupabaseConfig loaded with membership table names\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-23T11:49:39.708Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b7a8e0e4ba9ef3feaaef-c8a99b5379af34930f43",
+              "file": "membership-section.spec.js",
+              "line": 102,
+              "column": 5
+            },
+            {
+              "title": "No critical JavaScript errors on home page",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 18283,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -  1\u001b[39m\n\u001b[31m+ Received  + 35\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -  1\u001b[39m\n\u001b[31m+ Received  + 35\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\tests\\membership-section.spec.js:140:30",
+                        "location": {
+                          "file": "D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\tests\\membership-section.spec.js",
+                          "column": 30,
+                          "line": 140
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 138 |\u001b[39m         scriptErrors\u001b[33m.\u001b[39mforEach(e \u001b[33m=>\u001b[39m console\u001b[33m.\u001b[39mlog(\u001b[32m`  - ${e}`\u001b[39m))\u001b[33m;\u001b[39m\n \u001b[90m 139 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 140 |\u001b[39m         expect(scriptErrors)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 141 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 142 |\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\tests\\membership-section.spec.js",
+                            "column": 30,
+                            "line": 140
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -  1\u001b[39m\n\u001b[31m+ Received  + 35\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  138 |         scriptErrors.forEach(e => console.log(`  - ${e}`));\n  139 |\n> 140 |         expect(scriptErrors).toEqual([]);\n      |                              ^\n  141 |     });\n  142 | });\n    at D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\tests\\membership-section.spec.js:140:30"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "Console errors found: 33\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-23T11:49:51.066Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\test-results\\membership-section-Website-9813d-aScript-errors-on-home-page-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\test-results\\membership-section-Website-9813d-aScript-errors-on-home-page-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\test-results\\membership-section-Website-9813d-aScript-errors-on-home-page-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\tests\\membership-section.spec.js",
+                        "column": 30,
+                        "line": 140
+                      }
+                    },
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 34475,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -  1\u001b[39m\n\u001b[31m+ Received  + 35\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -  1\u001b[39m\n\u001b[31m+ Received  + 35\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\tests\\membership-section.spec.js:140:30",
+                        "location": {
+                          "file": "D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\tests\\membership-section.spec.js",
+                          "column": 30,
+                          "line": 140
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 138 |\u001b[39m         scriptErrors\u001b[33m.\u001b[39mforEach(e \u001b[33m=>\u001b[39m console\u001b[33m.\u001b[39mlog(\u001b[32m`  - ${e}`\u001b[39m))\u001b[33m;\u001b[39m\n \u001b[90m 139 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 140 |\u001b[39m         expect(scriptErrors)\u001b[33m.\u001b[39mtoEqual([])\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 141 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 142 |\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\tests\\membership-section.spec.js",
+                            "column": 30,
+                            "line": 140
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -  1\u001b[39m\n\u001b[31m+ Received  + 35\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+   \"Failed to load resource: net::ERR_CONNECTION_REFUSED\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  138 |         scriptErrors.forEach(e => console.log(`  - ${e}`));\n  139 |\n> 140 |         expect(scriptErrors).toEqual([]);\n      |                              ^\n  141 |     });\n  142 | });\n    at D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\tests\\membership-section.spec.js:140:30"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "Console errors found: 33\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        },
+                        {
+                          "text": "  - Failed to load resource: net::ERR_CONNECTION_REFUSED\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-10-23T11:50:14.136Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\test-results\\membership-section-Website-9813d-aScript-errors-on-home-page-chromium-retry1\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\test-results\\membership-section-Website-9813d-aScript-errors-on-home-page-chromium-retry1\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\test-results\\membership-section-Website-9813d-aScript-errors-on-home-page-chromium-retry1\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\test-results\\membership-section-Website-9813d-aScript-errors-on-home-page-chromium-retry1\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\zt lounge\\zt-lounge-demo\\zt-lounge\\tests\\membership-section.spec.js",
+                        "column": 30,
+                        "line": 140
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "b7a8e0e4ba9ef3feaaef-5f4b13a0e556f65bcb54",
+              "file": "membership-section.spec.js",
+              "line": 124,
+              "column": 5
+            }
+          ]
+        }
+      ]
     }
   ],
+  "errors": [],
   "stats": {
-    "startTime": "2026-10-14T11:28:24.396Z",
-    "duration": 1351.9210000000003,
-    "expected": 0,
+    "startTime": "2026-10-23T11:47:45.626Z",
+    "duration": 189784.5,
+    "expected": 3,
     "skipped": 0,
-    "unexpected": 0,
+    "unexpected": 2,
     "flaky": 0
   }
 }
