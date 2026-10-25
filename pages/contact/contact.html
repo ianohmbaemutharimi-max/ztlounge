@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ============================================================
+         CRITICAL: Theme initialization - runs BEFORE any rendering
+         ============================================================ -->
+    <script>
+        (function() {
+            try {
+                var savedTheme = localStorage.getItem('zt-theme');
+                if (savedTheme === 'light') {
+                    document.documentElement.classList.add('light-mode');
+                    document.documentElement.style.colorScheme = 'light';
+                } else {
+                    document.documentElement.style.colorScheme = 'dark';
+                }
+            } catch (e) {
+                document.documentElement.style.colorScheme = 'dark';
+            }
+        })();
+    </script>
+    <noscript>
+        <link rel="stylesheet" href="../../assets/css/theme.css">
+        <style>
+            body { background: #0a0a0a; color: #ffffff; }
+        </style>
+    </noscript>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    
+    <!-- SEO -->
+    <title>Contact & Book � ZT Lounge Meru | Reservations & Inquiries</title>
+    <meta name="description" content="Contact ZT Lounge Meru for restaurant reservations, VIP cabin bookings, event planning, conference inquiries, and auto spa appointments. WhatsApp, call, or book online." />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f5f5f5" media="(prefers-color-scheme: light)" />
+    <meta name="color-scheme" content="dark light" />
+    <link rel="canonical" href="https://ztlounge.co.ke/pages/contact/contact.html" />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Contact & Book � ZT Lounge Meru | Reservations & Inquiries" />
+    <meta property="og:description" content="Contact ZT Lounge Meru for restaurant reservations, VIP cabin bookings, event planning, conference inquiries, and auto spa appointments." />
+    <meta property="og:image" content="https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/branding/og-image.webp" data-media-id="fa95e3b4-83c7-47ad-b689-4f3c8760855a" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://ztlounge.co.ke/pages/contact/contact.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ZT Lounge Meru" />
+    <meta property="og:locale" content="en_KE" />
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Contact & Book � ZT Lounge Meru" />
+    <meta name="twitter:description" content="Contact ZT Lounge Meru for restaurant reservations, VIP cabin bookings, event planning, conference inquiries, and auto spa appointments." />
+    <meta name="twitter:image" content="https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/branding/og-image.webp" data-media-id="fa95e3b4-83c7-47ad-b689-4f3c8760855a" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "ZT Lounge Meru",
+            "image": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/branding/logo.webp",
+            "data-media-id": "79e60738-2a52-4b93-9a5c-5cbd7bed5603",
+            "url": "https://ztlounge.co.ke/pages/contact/contact.html",
+            "telephone": "+254143542601",
+            "priceRange": "$$$",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Milimani Road",
+                "addressLocality": "Meru",
+                "addressRegion": "Meru County",
+                "postalCode": "60200",
+                "addressCountry": "KE"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 0.0476,
+                "longitude": 37.6822
+            },
+            "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                "opens": "10:00",
+                "closes": "02:00"
+            }
+        }
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/branding/favicon.ico" data-media-id="8aa895c5-c73e-4a26-8442-dd83890ad41c" />
+    <link rel="apple-touch-icon" href="https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/branding/apple-touch-icon.webp" data-media-id="8eea0060-d5f5-4c78-b518-9611d636dd9" />
+
+    <!-- Performance: Preconnect for Critical Resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+
+    <!-- Performance: Preload Critical Images -->
+    <link rel="preload" as="image" href="https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/restaurant/hero-restaurant.webp" fetchpriority="high" data-media-id="1add06f7-bbb5-423a-9e9f-dec1f35f2138" />
+    <link rel="preload" as="image" href="https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/lounge/hero-lounge.webp" fetchpriority="high" data-media-id="203d3e83-b242-4e0e-a771-b887f0c00879" />
+    
+    <!-- Performance: Non-blocking Font Loading -->
+    <link 
+        rel="stylesheet" 
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" 
+        media="print" 
+        onload="this.media='all'" 
+    />
+    <noscript>
+        <link 
+            rel="stylesheet" 
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" 
+        />
+    </noscript>
+
+    <!-- Performance: Non-blocking Font Awesome -->
+    <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" 
+        media="print" 
+        onload="this.media='all'" 
+    />
+    <noscript>
+        <link 
+            rel="stylesheet" 
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" 
+        />
+    </noscript>
+
+    <!-- ==========================================================
+    THEME.CSS - SINGLE SOURCE OF TRUTH
+    ========================================================== -->
+    <link rel="stylesheet" href="../../assets/css/theme.css" />
+
+    <!-- ==========================================================
+    PAGE-SPECIFIC CSS - Contact (following index.html pattern)
+    ========================================================== -->
+    <style>
+        /* ============================================
+           CONTACT - PAGE-SPECIFIC STYLES
+           Following the index.html pattern
+           ============================================ */
+
+        /* Hero slides - Contact specific */
+        .hero-slide-contact-1 {
+            background: linear-gradient(135deg, rgba(10,10,10,0.75), rgba(10,10,10,0.4)),
+                        url('https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/restaurant/hero-restaurant.webp') center/cover no-repeat;
+        }
+
+        .hero-slide-contact-2 {
+            background: linear-gradient(135deg, rgba(10,10,10,0.75), rgba(10,10,10,0.4)),
+                        url('https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/lounge/hero-lounge.webp') center/cover no-repeat;
+        }
+
+        .hero-slide-contact-3 {
+            background: linear-gradient(135deg, rgba(10,10,10,0.75), rgba(10,10,10,0.4)),
+                        url('https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/conference/conference-hall.webp') center/cover no-repeat;
+        }
+
+        /* Service Cards - Contact specific */
+        .service-card-contact .card-tag {
+            background: rgba(201, 168, 76, 0.15);
+            color: var(--color-gold);
+        }
+
+        /* Contact Grid - Page-specific */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-2xl);
+            align-items: start;
+        }
+
+        .contact-info-card {
+            background: var(--color-card-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+        }
+
+        .contact-info-card h3 {
+            font-family: var(--font-family-serif);
+            font-size: var(--font-size-xl);
+            margin-bottom: var(--space-md);
+        }
+
+        .contact-info-card .contact-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            padding: var(--space-sm) 0;
+            border-bottom: 1px solid var(--color-border-light);
+        }
+
+        .contact-info-card .contact-item:last-child {
+            border-bottom: none;
+        }
+
+        .contact-info-card .contact-item i {
+            color: var(--color-gold);
+            width: 24px;
+            text-align: center;
+            font-size: var(--font-size-lg);
+        }
+
+        .contact-info-card .contact-item a {
+            color: var(--color-text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info-card .contact-item a:hover {
+            color: var(--color-gold);
+        }
+
+        .contact-info-card .contact-item span {
+            color: var(--color-text-secondary);
+        }
+
+        /* Map Container - Page-specific */
+        .map-container {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--color-border);
+            margin-top: var(--space-lg);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 300px;
+            border: 0;
+            display: block;
+        }
+
+        /* Trust Badges - Matching index style */
+        .trust-badges {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-md);
+            margin-top: var(--space-xl);
+        }
+
+        .trust-badge {
+            padding: var(--space-md);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            text-align: center;
+            background: var(--color-card-bg);
+        }
+
+        .trust-badge i {
+            color: var(--color-gold);
+            font-size: var(--font-size-xl);
+            margin-bottom: var(--space-xs);
+        }
+
+        .trust-badge p {
+            font-size: var(--font-size-sm);
+            margin: 0;
+        }
+
+        .trust-badge strong {
+            display: block;
+            font-size: var(--font-size-md);
+            color: var(--color-text);
+        }
+
+        /* Booking Form - Contact specific */
+        .booking-form-contact {
+            max-width: 100%;
+            background: var(--color-card-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+        }
+
+        .booking-form-contact .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-md);
+        }
+
+        .booking-form-contact .form-group {
+            margin-bottom: var(--space-md);
+        }
+
+        .booking-form-contact label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: var(--space-xs);
+            color: var(--color-text);
+            font-size: var(--font-size-sm);
+        }
+
+        .booking-form-contact .form-input,
+        .booking-form-contact .form-select,
+        .booking-form-contact textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            background: var(--color-bg);
+            color: var(--color-text);
+            font-size: var(--font-size-md);
+            transition: border-color 0.3s ease;
+            font-family: var(--font-family-sans);
+        }
+
+        .booking-form-contact .form-input:focus,
+        .booking-form-contact .form-select:focus,
+        .booking-form-contact textarea:focus {
+            outline: none;
+            border-color: var(--color-gold);
+            box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.1);
+        }
+
+        .booking-form-contact .form-input.error,
+        .booking-form-contact .form-select.error,
+        .booking-form-contact textarea.error {
+            border-color: #e74c3c;
+        }
+
+        .booking-form-contact .form-error {
+            color: #e74c3c;
+            font-size: var(--font-size-xs);
+            margin-top: var(--space-xs);
+            display: none;
+        }
+
+        .booking-form-contact .form-error.visible {
+            display: block;
+        }
+
+        .booking-form-contact .form-success {
+            display: none;
+            padding: var(--space-md);
+            background: rgba(46, 204, 113, 0.1);
+            border: 1px solid #2ecc71;
+            border-radius: var(--radius-md);
+            color: #2ecc71;
+            text-align: center;
+            margin-bottom: var(--space-md);
+        }
+
+        .booking-form-contact .form-success.visible {
+            display: block;
+        }
+
+        .booking-form-contact .form-success i {
+            margin-right: var(--space-sm);
+        }
+
+        .booking-form-contact textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        /* FAQ Section - Page-specific */
+        .faq-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--color-card-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: var(--space-md) var(--space-lg);
+            margin-bottom: var(--space-sm);
+            transition: border-color 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: var(--color-gold);
+        }
+
+        .faq-item strong {
+            display: block;
+            color: var(--color-text);
+            font-size: var(--font-size-md);
+            margin-bottom: var(--space-xs);
+        }
+
+        .faq-item p {
+            color: var(--color-text-secondary);
+            font-size: var(--font-size-sm);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* WhatsApp Priority Section - Page-specific */
+        .whatsapp-priority {
+            text-align: center;
+            padding: var(--space-xl) 0;
+        }
+
+        .whatsapp-priority .icon {
+            font-size: var(--font-size-3xl);
+            color: #25D366;
+            margin-bottom: var(--space-md);
+        }
+
+        .whatsapp-priority h2 {
+            font-family: var(--font-family-serif);
+            font-size: var(--font-size-2xl);
+            margin-bottom: var(--space-sm);
+        }
+
+        .whatsapp-priority h2 span {
+            color: var(--color-gold);
+        }
+
+        .whatsapp-priority p {
+            color: var(--color-text-secondary);
+            font-size: var(--font-size-md);
+            max-width: 500px;
+            margin: 0 auto var(--space-lg);
+        }
+
+        .whatsapp-priority .features {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-xl);
+            margin-bottom: var(--space-xl);
+            flex-wrap: wrap;
+        }
+
+        .whatsapp-priority .features span {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            color: var(--color-text-secondary);
+            font-size: var(--font-size-sm);
+        }
+
+        .whatsapp-priority .features span i {
+            color: #25D366;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-xl);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                min-height: calc(100vh - var(--header-height-mobile));
+            }
+            .hero-slider {
+                height: calc(100vh - var(--header-height-mobile));
+                min-height: 500px;
+            }
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            .slider-btn {
+                width: 44px;
+                height: 44px;
+                font-size: 0.9rem;
+                min-width: 44px;
+                min-height: 44px;
+            }
+            .slider-btn.prev {
+                left: 12px;
+            }
+            .slider-btn.next {
+                right: 12px;
+            }
+
+            .booking-form-contact .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .trust-badges {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: var(--space-lg) auto 0;
+            }
+
+            .whatsapp-priority .features {
+                flex-direction: column;
+                gap: var(--space-sm);
+                align-items: center;
+            }
+
+            .map-container iframe {
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            .hero-buttons .btn {
+                padding: 12px 24px;
+                font-size: 0.85rem;
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-info-card {
+                padding: var(--space-md);
+            }
+        }
+
+        /* Image Fallback */
+        .image-fallback {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            min-height: 120px;
+            color: var(--color-gold);
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            padding: 1rem;
+            text-align: center;
+            background: var(--color-card-bg);
+            border-radius: inherit;
+        }
+    </style>
+
+    <!-- Schema - LocalBusiness -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "ZT Lounge Meru",
+        "description": "Premium restaurant, VIP cabins, lounge, conference facilities, events venue, and auto spa in Meru.",
+        "url": "https://ztlounge.co.ke/",
+        "telephone": "+254143542601",
+        "email": "ztloungemeru@gmail.com",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Milimani Road",
+            "addressLocality": "Meru",
+            "addressRegion": "Meru County",
+            "postalCode": "60200",
+            "addressCountry": "KE"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 0.0476,
+            "longitude": 37.6822
+        },
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "10:00",
+            "closes": "02:00"
+        },
+        "priceRange": "$$$",
+        "sameAs": [
+            "https://wa.me/254143542601",
+            "https://instagram.com/ztlounge"
+        ]
+    }
+    </script>
+
+    <!-- Schema - Breadcrumb -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ztlounge.co.ke/" },
+            { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://ztlounge.co.ke/pages/contact/contact.html" }
+        ]
+    }
+    </script>
+</head>
+
+<body data-page="contact">
+<div id="site-header">
+    <header class="header">
+        <div class="nav-wrapper">
+            <div class="logo">
+                <a href="../../index.html">
+                    <img class="site-logo logo-dark" src="https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/branding/logo.webp" data-media-id="79e60738-2a52-4b93-9a5c-5cbd7bed5603" alt="ZT Lounge Meru">
+                    <img class="site-logo logo-light" src="https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/branding/logo-white.webp" data-media-id="ebac626d-8849-4a8b-8613-f7663bd28eda" alt="ZT Lounge Meru">
+                </a>
+            </div>
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../experiences/restaurant.html">Restaurant</a></li>
+                    <li><a href="../experiences/lounge.html">Lounge</a></li>
+                    <li><a href="../experiences/vip.html">VIP Cabins</a></li>
+                    <li class="dropdown-parent"><a href="#" class="dropdown-parent">Events &amp; Business</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../business/events.html">Events &amp; Celebrations</a></li>
+                            <li><a href="../business/conference.html">Conference Hall</a></li>
+                            <li><a href="../business/grooming-care.html">Grooming &amp; Care</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../experiences/restaurant-menu.html">Menu</a></li>
+                    <li><a href="../contact/gallery.html">Gallery</a></li>
+                    <li><a href="../contact/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <button class="theme-toggle" aria-label="Toggle theme">🌓</button>
+                <div class="header-phone">
+                    <span>📞</span>
+                    <a href="tel:+254143542601">+254 143 542 601</a>
+                </div>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+</div>
+    <!-- Accessibility: Skip Navigation -->
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <!-- Header injected by shared-components.js -->
+ ===== -->
+    <main id="main" role="main">
+
+        <!-- ===== HERO - Using index slider architecture ===== -->
+        <!-- Database-driven hero content loaded via content-loader.js + HeroRepository.js -->
+        <section class="hero" id="hero" aria-label="Hero banner showcasing ZT Lounge">
+            <div class="hero-slider" role="region" aria-label="Featured images">
+                <!-- Slide 1 - Populated from database -->
+                <div 
+                    class="hero-slide active" 
+                    data-index="0"
+                    id="hero-slide-0" 
+                    role="tabpanel" 
+                    aria-labelledby="hero-dot-0" 
+                    aria-hidden="false"
+                    style="background-color: #1a1a1a;"
+                    data-media-bg
+                    data-media-bg-gradient="linear-gradient(135deg, rgba(10,10,10,0.75), rgba(10,10,10,0.4))"
+                >
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content container">
+                        <span class="hero-badge">Loading...</span>
+                        <h1 class="hero-title">Let's Create Your <span>Perfect Experience</span></h1>
+                        <p class="hero-subtitle">Reservations • Inquiries • Events</p>
+                        <div class="hero-buttons">
+                            <a href="#booking" class="btn btn-primary btn-large">Book Now</a>
+                            <a href="#services" class="btn btn-secondary btn-large">Explore Services</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 - Populated from database -->
+                <div 
+                    class="hero-slide" 
+                    data-index="1"
+                    id="hero-slide-1" 
+                    role="tabpanel" 
+                    aria-labelledby="hero-dot-1" 
+                    aria-hidden="true"
+                    style="background-color: #1a1a1a;"
+                    data-media-bg
+                    data-media-bg-gradient="linear-gradient(135deg, rgba(10,10,10,0.75), rgba(10,10,10,0.4))"
+                >
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content container">
+                        <span class="hero-badge">Loading...</span>
+                        <h2 class="hero-title">Welcome to <span>ZT Lounge</span></h2>
+                        <p class="hero-subtitle">Please wait...</p>
+                        <div class="hero-buttons">
+                            <a href="#booking" class="btn btn-primary btn-large" tabindex="-1">Book Now</a>
+                            <a href="#services" class="btn btn-secondary btn-large" tabindex="-1">Explore Services</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 - Populated from database -->
+                <div 
+                    class="hero-slide" 
+                    data-index="2"
+                    id="hero-slide-2" 
+                    role="tabpanel" 
+                    aria-labelledby="hero-dot-2" 
+                    aria-hidden="true"
+                    style="background-color: #1a1a1a;"
+                    data-media-bg
+                    data-media-bg-gradient="linear-gradient(135deg, rgba(10,10,10,0.75), rgba(10,10,10,0.4))"
+                >
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content container">
+                        <span class="hero-badge">Loading...</span>
+                        <h2 class="hero-title">Your <span>Event</span> Destination</h2>
+                        <p class="hero-subtitle">Please wait...</p>
+                        <div class="hero-buttons">
+                            <a href="#booking" class="btn btn-primary btn-large" tabindex="-1">Book Now</a>
+                            <a href="#services" class="btn btn-secondary btn-large" tabindex="-1">Explore Services</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slider Controls -->
+                <button class="slider-btn prev" id="prevSlide" aria-label="Previous slide" type="button">
+                    <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                </button>
+                <button class="slider-btn next" id="nextSlide" aria-label="Next slide" type="button">
+                    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </button>
+
+                <!-- Dots -->
+                <div class="slider-dots" role="tablist" aria-label="Hero slides">
+                    <span class="dot active" id="hero-dot-0" data-index="0" role="tab" aria-selected="true" aria-controls="hero-slide-0" aria-label="Slide 1" tabindex="0"></span>
+                    <span class="dot" id="hero-dot-1" data-index="1" role="tab" aria-selected="false" aria-controls="hero-slide-1" aria-label="Slide 2" tabindex="-1"></span>
+                    <span class="dot" id="hero-dot-2" data-index="2" role="tab" aria-selected="false" aria-controls="hero-slide-2" aria-label="Slide 3 - Events" tabindex="-1"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== ABOUT - Contact (matching index about style) ===== -->
+        <section class="about-section" id="about" aria-label="About ZT Lounge">
+            <div class="container">
+                <div class="about-short">
+                    <div class="section-tag">About ZT Lounge</div>
+                    <p>ZT Lounge Meru brings together premium dining, VIP experiences, lounge entertainment, celebrations, conference facilities, and professional auto spa services in one destination. Located in the heart of Milimani, we redefine luxury hospitality in Meru.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SERVICES - Contact Cards (matching index service cards) ===== -->
+        <section class="service-cards-section" id="services" aria-label="Our services">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Our Services</span>
+                    <h2 class="section-title">Explore <span>ZT Lounge</span></h2>
+                    <p class="section-subtitle">Discover our premium hospitality experiences</p>
+                </div>
+                <div class="service-cards-grid" data-service-grid></div>
+            </div>
+        </section>
+
+        <!-- ===== GALLERY PREVIEW - Contact (matching index gallery) ===== -->
+        <section class="gallery-preview" id="gallery" aria-label="Gallery preview of ZT Lounge spaces">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Our Spaces</span>
+                    <h2 class="section-title">Photo <span>Gallery</span></h2>
+                    <p class="section-subtitle">Take a visual tour of our luxurious facilities</p>
+                </div>
+                <div class="gallery-preview-grid">
+                    <!-- Populated dynamically by content-loader.js from Supabase (page_id = contact) -->
+                </div>
+                <div class="gallery-cta">
+                    <a href="gallery.html" class="btn btn-primary">View Full Gallery</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== LOCATION - Contact (matching index location section) ===== -->
+        <section class="location-section" id="location" aria-label="Location and contact information">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Visit Us</span>
+                    <h2 class="section-title">Our <span>Location</span></h2>
+                    <p class="section-subtitle">Find us in the heart of Milimani, Meru</p>
+                </div>
+                <div class="location-grid">
+                    <figure class="location-image">
+                        <img 
+                            src="https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/restaurant/hero-restaurant.webp" 
+                            alt="ZT Lounge Meru - Luxury hospitality destination in Milimani with premium dining and entertainment" 
+                            loading="lazy" 
+                            decoding="async" 
+                            data-media-id="1add06f7-bbb5-423a-9e9f-dec1f35f2138"
+                        />
+                    </figure>
+                    <div class="location-info">
+                        <h3>ZT Lounge Meru</h3>
+                        <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Milimani Road, Meru, Kenya</p>
+                        <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+254143542601">+254 143 542 601</a></p>
+                        <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:ztloungemeru@gmail.com">ztloungemeru@gmail.com</a></p>
+                        <p><i class="fas fa-clock" aria-hidden="true"></i> Mon - Sun: 10:00 AM - 2:00 AM</p>
+                        <div class="location-cta">
+                            <a href="tel:+254143542601" class="btn btn-primary"><i class="fas fa-phone" aria-hidden="true"></i> Call Now</a>
+                            <a href="https://wa.me/254143542601?text=Hello%20ZT%20Lounge%2C%20I'd%20like%20to%20make%20an%20inquiry" class="btn btn-success" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp</a>
+                            <a href="https://maps.app.goo.gl/HqTbiiU4q2jRFoPg6" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Get Directions</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== TRUST BADGES - Contact (matching index) ===== -->
+        <section class="section-padding bg-card" aria-label="Trust badges" style="padding: var(--space-2xl) 0;">
+            <div class="container">
+                <div class="trust-badges">
+                    <div class="trust-badge">
+                        <i class="fas fa-smile" aria-hidden="true"></i>
+                        <strong>200+ Happy Guests</strong>
+                        <p>Loved by our visitors</p>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-calendar-check" aria-hidden="true"></i>
+                        <strong>500+ Events Hosted</strong>
+                        <p>Memorable celebrations</p>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-bolt" aria-hidden="true"></i>
+                        <strong>Fast Response</strong>
+                        <p>Within 30 minutes</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== BOOKING - Contact (matching index form style) ===== -->
+        <section class="section-padding bg-dark" id="booking" aria-label="Book your experience" style="padding: var(--space-2xl) 0;">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Reserve Now</span>
+                    <h2 class="section-title">Book Your <span>Experience</span></h2>
+                    <p class="section-subtitle">Complete the form and our team will confirm your booking promptly</p>
+                </div>
+
+                <div class="contact-grid">
+                    <!-- Form Column -->
+                    <div>
+                        <form class="booking-form-contact" id="contactForm" novalidate>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="fullName">Full Name *</label>
+                                    <input type="text" id="fullName" name="fullName" class="form-input" required aria-required="true" placeholder="John Doe" />
+                                    <div class="form-error" id="fullNameError">Please enter your full name.</div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email *</label>
+                                    <input type="email" id="email" name="email" class="form-input" required aria-required="true" placeholder="you@example.com" />
+                                    <div class="form-error" id="emailError">Please enter a valid email address.</div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="phoneNumber">Phone Number *</label>
+                                    <input type="tel" id="phoneNumber" name="phoneNumber" class="form-input" required aria-required="true" placeholder="+254 700 000 000" />
+                                    <div class="form-error" id="phoneError">Please enter a valid phone number.</div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="service">Service *</label>
+                                    <select id="service" name="service" class="form-select" required aria-required="true">
+                                        <option value="">Select a service...</option>
+                                        <option value="restaurant">Restaurant</option>
+                                        <option value="vip">VIP Cabin</option>
+                                        <option value="lounge">Lounge &amp; Bar</option>
+                                        <option value="conference">Conference Hall</option>
+                                        <option value="events">Events Venue</option>
+                                        <option value="autospa">Grooming & Care</option>
+                                    </select>
+                                    <div class="form-error" id="serviceError">Please select a service.</div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="bookingDate">Preferred Date *</label>
+                                    <input type="date" id="bookingDate" name="bookingDate" class="form-input" required aria-required="true" />
+                                    <div class="form-error" id="dateError">Please select a date.</div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="bookingTime">Preferred Time</label>
+                                    <input type="time" id="bookingTime" name="bookingTime" class="form-input" />
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="guestCount">Number of Guests</label>
+                                    <input type="number" id="guestCount" name="guestCount" min="1" value="2" class="form-input" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="occasion">Occasion Type</label>
+                                    <select id="occasion" name="occasion" class="form-select">
+                                        <option value="">Select occasion...</option>
+                                        <option value="dinner">Dinner</option>
+                                        <option value="celebration">Celebration</option>
+                                        <option value="corporate">Corporate</option>
+                                        <option value="wedding">Wedding</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="specialRequests">Special Requests</label>
+                                <textarea id="specialRequests" name="specialRequests" class="form-input" rows="3" placeholder="Dietary requirements, seating preferences, celebration details, etc."></textarea>
+                            </div>
+
+                            <div class="form-success" id="formSuccess">
+                                <i class="fas fa-check-circle" aria-hidden="true"></i> Thank you! We'll respond within 30 minutes.
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">
+                                <i class="fas fa-calendar-check" aria-hidden="true"></i> Submit Booking
+                            </button>
+                            <p style="text-align: center; font-size: var(--font-size-sm); color: var(--color-text-muted); margin-top: var(--space-sm);">We'll respond within 30 minutes</p>
+                        </form>
+                    </div>
+
+                    <!-- Contact Info Column -->
+                    <div>
+                        <div class="contact-info-card">
+                            <h3>Contact <span class="gold-text">Information</span></h3>
+                            
+                            <div class="contact-item">
+                                <i class="fas fa-phone" aria-hidden="true"></i>
+                                <a href="tel:+254143542601">+254 143 542 601</a>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                                <a href="https://wa.me/254143542601" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <i class="fas fa-envelope" aria-hidden="true"></i>
+                                <a href="mailto:ztloungemeru@gmail.com">ztloungemeru@gmail.com</a>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                <span>Milimani, Meru</span>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <i class="fas fa-clock" aria-hidden="true"></i>
+                                <span>Mon�Sun: 10:00 AM � 2:00 AM</span>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <i class="fas fa-parking" aria-hidden="true"></i>
+                                <span>Secure on-site parking available</span>
+                            </div>
+
+                            <div style="margin-top: var(--space-lg);">
+                                <a href="https://maps.app.goo.gl/HqTbiiU4q2jRFoPg6" target="_blank" rel="noopener noreferrer" class="btn btn-outline-gold" style="width: 100%;">
+                                    <i class="fas fa-directions" aria-hidden="true"></i> Get Directions
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Map -->
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255282.35853743783!2d36.68219672040564!3d0.04761899255321661!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1782953de3206897%3A0x3c0a7c0b6b8e5a7f!2sMeru%2C%20Kenya!5e0!3m2!1sen!2s!4v1700000000000" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map showing ZT Lounge location in Milimani, Meru"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== WHATSAPP PRIORITY - Contact (page-specific) ===== -->
+        <section class="section-padding bg-card" aria-labelledby="whatsapp-heading" style="padding: var(--space-2xl) 0;">
+            <div class="container">
+                <div class="whatsapp-priority">
+                    <div class="icon"><i class="fab fa-whatsapp" aria-hidden="true"></i></div>
+                    <h2>Need a <span>Faster Response?</span></h2>
+                    <p>Get instant support and confirm your booking in minutes via WhatsApp.</p>
+                    <div class="features">
+                        <span><i class="fas fa-check-circle" aria-hidden="true"></i> Instant responses</span>
+                        <span><i class="fas fa-check-circle" aria-hidden="true"></i> 24/7 support</span>
+                        <span><i class="fas fa-check-circle" aria-hidden="true"></i> Direct booking</span>
+                    </div>
+                    <div class="flex flex-wrap gap-12 justify-center">
+                        <a href="https://wa.me/254143542601?text=Hello%20ZT%20Lounge%2C%20I'd%20like%20to%20make%20a%20booking." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" aria-label="Chat with us on WhatsApp">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i> Chat on WhatsApp
+                        </a>
+                        <a href="tel:+254143542601" class="btn btn-outline-gold" aria-label="Call ZT Lounge">
+                            <i class="fas fa-phone-alt" aria-hidden="true"></i> Call: +254 143 542 601
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FAQ - Contact (page-specific) ===== -->
+        <section class="section-padding bg-dark" aria-labelledby="faq-heading" style="padding: var(--space-2xl) 0;">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">FAQ</span>
+                    <h2 id="faq-heading" class="section-title">Frequently Asked <span>Questions</span></h2>
+                    <p class="section-subtitle">Find answers to common questions</p>
+                </div>
+                <div class="faq-container">
+                    <!-- Populated by content-loader.js from Supabase faqs table for contact page -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FINAL CTA - Contact (page-specific) ===== -->
+        <section class="section-padding bg-card" aria-labelledby="final-cta-heading" style="padding: var(--space-2xl) 0;">
+            <div class="container">
+                <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+                    <span class="section-tag">We're Ready</span>
+                    <h2 style="font-family: var(--font-family-serif); font-size: var(--font-size-2xl); margin-bottom: var(--space-md);">
+                        We're Ready To <span class="gold-text">Welcome You</span>
+                    </h2>
+                    <p style="color: var(--color-text-secondary); font-size: var(--font-size-md); margin-bottom: var(--space-lg);">
+                        Reach out today and let us create an unforgettable experience for you.
+                    </p>
+                    <div class="flex flex-wrap gap-12 justify-center">
+                        <a href="https://wa.me/254143542601?text=Hello%20ZT%20Lounge%2C%20I'd%20like%20to%20make%20a%20booking." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" aria-label="Contact us on WhatsApp">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp Us
+                        </a>
+                        <a href="tel:+254143542601" class="btn btn-outline-gold" aria-label="Call ZT Lounge">
+                            <i class="fas fa-phone-alt" aria-hidden="true"></i> Call Now
+                        </a>
+                        <a href="#booking" class="btn btn-primary">
+                            <i class="fas fa-calendar-check" aria-hidden="true"></i> Submit Booking
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FLOATING WHATSAPP (Identical to index) ===== -->
+    <div class="whatsapp-float">
+        <a 
+            href="https://wa.me/254143542601?text=Hello%20ZT%20Lounge%2C%20I'd%20like%20to%20make%20a%20booking" 
+            class="whatsapp-btn" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label="Chat with us on WhatsApp to make a booking or inquiry"
+        >
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        </a>
+        <span class="whatsapp-tooltip">Chat With Us</span>
+    </div>
+
+    <!-- ===== MOBILE STICKY CTA (Identical to index) ===== -->
+    <div class="mobile-sticky-cta" role="complementary" aria-label="Quick actions">
+        <a 
+            href="https://wa.me/254143542601?text=Hello%20ZT%20Lounge%2C%20I'd%20like%20to%20book" 
+            class="sticky-btn whatsapp-sticky" 
+            target="_blank" 
+            rel="noopener noreferrer"
+        >
+            <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp
+        </a>
+        <a href="tel:+254143542601" class="sticky-btn call-sticky">
+            <i class="fas fa-phone" aria-hidden="true"></i> Call
+        </a>
+        <a href="#booking" class="sticky-btn book-sticky">
+            <i class="fas fa-calendar-check" aria-hidden="true"></i> Book
+        </a>
+    </div>
+
+        <!-- Footer injected by shared-components.js -->
+
+    <!-- ============================================================
+         SHARED JAVASCRIPT (Identical to index with Contact specific additions)
+         ============================================================ -->
+    <script>
+        /**
+         * ============================================================
+         * SHARED SITE JAVASCRIPT (Identical to index)
+         * Navigation, Theme Toggle, Hamburger, Copyright, Hero Slider
+         * ============================================================
+         */
+        document.addEventListener('DOMContentLoaded', function() {
+            // === THEME TOGGLE ===
+            var themeToggle = document.getElementById('themeToggle');
+            var html = document.documentElement;
+
+            if (themeToggle) {
+                themeToggle.addEventListener('click', function() {
+                    html.classList.toggle('light-mode');
+                    var isLight = html.classList.contains('light-mode');
+                    localStorage.setItem('zt-theme', isLight ? 'light' : 'dark');
+                    document.documentElement.style.colorScheme = isLight ? 'light' : 'dark';
+                });
+            }
+
+            // === HAMBURGER MENU ===
+            var hamburger = document.getElementById('hamburger');
+            var navMenu = document.getElementById('navMenu');
+
+            if (hamburger && navMenu) {
+                hamburger.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    this.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                    var isActive = navMenu.classList.contains('active');
+                    this.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+                });
+
+                // Mobile dropdown toggle
+                var dropdownParents = navMenu.querySelectorAll('.nav-list > li > a.dropdown-parent');
+                dropdownParents.forEach(function(link) {
+                    link.addEventListener('click', function(e) {
+                        if (window.innerWidth <= 768) {
+                            var parentLi = this.parentElement;
+                            var isExpanded = parentLi.getAttribute('aria-expanded') === 'true';
+                            
+                            var activeItems = navMenu.querySelectorAll('.nav-list > li.active-dropdown');
+                            activeItems.forEach(function(el) {
+                                if (el !== parentLi) {
+                                    el.classList.remove('active-dropdown');
+                                    el.setAttribute('aria-expanded', 'false');
+                                }
+                            });
+                            
+                            var newExpanded = !isExpanded;
+                            parentLi.classList.toggle('active-dropdown', newExpanded);
+                            parentLi.setAttribute('aria-expanded', String(newExpanded));
+                        }
+                    });
+                });
+
+                // Close menu on link click (mobile)
+                var navLinks = navMenu.querySelectorAll('a');
+                navLinks.forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        if (window.innerWidth <= 768 && !this.closest('.dropdown-menu')) {
+                            hamburger.classList.remove('active');
+                            navMenu.classList.remove('active');
+                            hamburger.setAttribute('aria-expanded', 'false');
+                        }
+                    });
+                });
+
+                // Close on Escape
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+                        hamburger.classList.remove('active');
+                        navMenu.classList.remove('active');
+                        hamburger.setAttribute('aria-expanded', 'false');
+                        hamburger.focus();
+                    }
+                });
+
+                // Close on resize to desktop
+                window.addEventListener('resize', function() {
+                    if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
+                        hamburger.classList.remove('active');
+                        navMenu.classList.remove('active');
+                        hamburger.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+
+            // === HERO SLIDER (Identical to index) ===
+            var heroSlides = document.querySelectorAll('.hero-slide');
+            var heroDots = document.querySelectorAll('.dot');
+            var heroCurrent = 0;
+            var heroInterval;
+
+            function goToHero(index) {
+                if (index < 0) index = heroSlides.length - 1;
+                if (index >= heroSlides.length) index = 0;
+                heroSlides.forEach(function(slide, i) {
+                    var isActive = i === index;
+                    slide.classList.toggle('active', isActive);
+                    slide.setAttribute('aria-hidden', String(!isActive));
+                    var interactiveElements = slide.querySelectorAll('a, button');
+                    interactiveElements.forEach(function(el) {
+                        el.tabIndex = isActive ? 0 : -1;
+                    });
+                });
+                heroDots.forEach(function(dot, i) {
+                    var isActive = i === index;
+                    dot.classList.toggle('active', isActive);
+                    dot.setAttribute('aria-selected', String(isActive));
+                    dot.tabIndex = isActive ? 0 : -1;
+                });
+                heroCurrent = index;
+            }
+
+            function nextHero() { goToHero(heroCurrent + 1); }
+            function prevHero() { goToHero(heroCurrent - 1); }
+
+            var prevSlideBtn = document.getElementById('prevSlide');
+            var nextSlideBtn = document.getElementById('nextSlide');
+
+            if (prevSlideBtn) prevSlideBtn.addEventListener('click', function() { prevHero(); resetHeroAutoplay(); });
+            if (nextSlideBtn) nextSlideBtn.addEventListener('click', function() { nextHero(); resetHeroAutoplay(); });
+
+            heroDots.forEach(function(dot, index) {
+                dot.addEventListener('click', function() {
+                    goToHero(index);
+                    resetHeroAutoplay();
+                });
+                dot.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        goToHero(index);
+                        resetHeroAutoplay();
+                    }
+                });
+            });
+
+            function startHeroAutoplay() {
+                stopHeroAutoplay();
+                heroInterval = setInterval(nextHero, 5000);
+            }
+
+            function stopHeroAutoplay() {
+                if (heroInterval) {
+                    clearInterval(heroInterval);
+                    heroInterval = null;
+                }
+            }
+
+            function resetHeroAutoplay() {
+                startHeroAutoplay();
+            }
+
+            var heroContainer = document.querySelector('.hero-slider');
+            if (heroContainer) {
+                heroContainer.addEventListener('mouseenter', stopHeroAutoplay);
+                heroContainer.addEventListener('mouseleave', startHeroAutoplay);
+                heroContainer.addEventListener('focusin', stopHeroAutoplay);
+                heroContainer.addEventListener('focusout', function(e) {
+                    if (!this.contains(e.relatedTarget)) startHeroAutoplay();
+                });
+            }
+
+            goToHero(0);
+            startHeroAutoplay();
+
+            // === COPYRIGHT YEAR ===
+            var yearEl = document.getElementById('copyrightYear');
+            if (yearEl) {
+                yearEl.textContent = new Date().getFullYear();
+            }
+
+            // === UPDATE ACTIVE NAV LINK ===
+            var currentPath = window.location.pathname;
+            var navLinks = document.querySelectorAll('.nav-list a[href]');
+            navLinks.forEach(function(link) {
+                var href = link.getAttribute('href');
+                var isActive = href === currentPath || 
+                               (href === 'contact.html' && currentPath.includes('contact')) ||
+                               (href === '../../index.html' && (currentPath === '/' || currentPath === '' || currentPath.includes('index')));
+                if (isActive) {
+                    link.classList.add('active');
+                    link.setAttribute('aria-current', 'page');
+                } else {
+                    link.classList.remove('active');
+                    link.removeAttribute('aria-current');
+                }
+            });
+        });
+
+        /**
+         * ============================================================
+         * CONTACT BOOKING FORM (Unique to this page)
+         * ============================================================
+         */
+        document.addEventListener('DOMContentLoaded', function() {
+            var bookingForm = document.getElementById('contactForm');
+            if (!bookingForm) return;
+
+            // Set default date to tomorrow
+            var dateInput = document.getElementById('bookingDate');
+            if (dateInput) {
+                var tomorrow = new Date();
+                tomorrow.setDate(tomorrow.getDate() + 1);
+                dateInput.value = tomorrow.toISOString().split('T')[0];
+            }
+
+            bookingForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                // Reset previous errors
+                document.querySelectorAll('.form-error').forEach(function(el) {
+                    el.classList.remove('visible');
+                });
+                document.querySelectorAll('.form-input, .form-select').forEach(function(el) {
+                    el.classList.remove('error');
+                });
+                document.getElementById('formSuccess').classList.remove('visible');
+
+                var isValid = true;
+
+                // Validate name
+                var name = document.getElementById('fullName');
+                if (!name.value.trim()) {
+                    document.getElementById('fullNameError').classList.add('visible');
+                    name.classList.add('error');
+                    isValid = false;
+                }
+
+                // Validate email
+                var email = document.getElementById('email');
+                var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test(email.value.trim())) {
+                    document.getElementById('emailError').classList.add('visible');
+                    email.classList.add('error');
+                    isValid = false;
+                }
+
+                // Validate phone
+                var phone = document.getElementById('phoneNumber');
+                if (!phone.value.trim() || phone.value.trim().length < 8) {
+                    document.getElementById('phoneError').classList.add('visible');
+                    phone.classList.add('error');
+                    isValid = false;
+                }
+
+                // Validate service
+                var service = document.getElementById('service');
+                if (!service.value) {
+                    document.getElementById('serviceError').classList.add('visible');
+                    service.classList.add('error');
+                    isValid = false;
+                }
+
+                // Validate date
+                var date = document.getElementById('bookingDate');
+                if (!date.value) {
+                    document.getElementById('dateError').classList.add('visible');
+                    date.classList.add('error');
+                    isValid = false;
+                }
+
+                if (!isValid) {
+                    var firstError = document.querySelector('.form-error.visible');
+                    if (firstError) {
+                        firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                    return;
+                }
+
+                // Build WhatsApp message
+                var message = 'Hello ZT Lounge, I\'d like to make a booking:%0A%0A' +
+                    'Name: ' + name.value.trim() + '%0A' +
+                    'Email: ' + email.value.trim() + '%0A' +
+                    'Phone: ' + phone.value.trim() + '%0A' +
+                    'Service: ' + service.options[service.selectedIndex].text + '%0A' +
+                    'Date: ' + date.value + '%0A' +
+                    'Time: ' + (document.getElementById('bookingTime').value || 'Not specified') + '%0A' +
+                    'Guests: ' + (document.getElementById('guestCount').value || '2') + '%0A' +
+                    'Occasion: ' + document.getElementById('occasion').options[document.getElementById('occasion').selectedIndex].text + '%0A' +
+                    'Special Requests: ' + (document.getElementById('specialRequests').value.trim() || 'None');
+
+                var whatsappUrl = 'https://wa.me/254143542601?text=' + encodeURIComponent(message);
+
+                // Show success message
+                document.getElementById('formSuccess').classList.add('visible');
+
+                // Open WhatsApp and reset form
+                setTimeout(function() {
+                    window.open(whatsappUrl, '_blank');
+                    setTimeout(function() {
+                        bookingForm.reset();
+                        document.getElementById('formSuccess').classList.remove('visible');
+                        // Reset date to tomorrow
+                        if (dateInput) {
+                            var tomorrow = new Date();
+                            tomorrow.setDate(tomorrow.getDate() + 1);
+                            dateInput.value = tomorrow.toISOString().split('T')[0];
+                        }
+                    }, 3000);
+                }, 1000);
+            });
+        });
+    </script>
+
+    <!-- ============================================================
+         SUPABASE & CMS ARCHITECTURE
+         Loaded after inline scripts to enhance content from database
+         ============================================================ -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+    <script src="../../assets/js/config/env.js" defer></script>
+    <script src="../../assets/js/config/supabase.config.js" defer></script>
+    <script src="../../assets/js/asset-url.js" defer></script>
+    <script src="../../assets/js/lib/supabase.js" defer></script>
+    <script src="../../assets/js/lib/BaseRepository.js" defer></script>
+    <script src="../../assets/js/business-config.js" defer></script>
+    <script src="../../assets/js/repositories/BusinessRepository.js" defer></script>
+    <script src="../../assets/js/branding-init.js" defer></script>
+    <script src="../../assets/js/repositories/HeroRepository.js" defer></script>
+    <script src="../../assets/js/repositories/ServicesRepository.js" defer></script>
+    <script src="../../assets/js/repositories/GalleryRepository.js" defer></script>
+    <script src="../../assets/js/repositories/MenuRepository.js" defer></script>
+    <script src="../../assets/js/repositories/FAQRepository.js" defer></script>
+    <script src="../../assets/js/repositories/TestimonialsRepository.js" defer></script>
+    <script src="../../assets/js/repositories/BookingRepository.js" defer></script>
+    <script src="../../assets/js/repositories/ContactRepository.js" defer></script>
+    <script src="../../assets/js/repositories/SEORepository.js" defer></script>
+    <script src="../../assets/js/services/BusinessService.js" defer></script>
+    <script src="../../assets/js/hero.config.js" defer></script>
+    <script src="../../assets/js/services.config.js" defer></script>
+    <script src="../../assets/js/gallery.config.js" defer></script>
+    <script src="../../assets/js/menu.config.js" defer></script>
+    <script src="../../assets/js/faq.config.js" defer></script>
+    <script src="../../assets/js/testimonials.config.js" defer></script>
+    <script src="../../assets/js/booking.config.js" defer></script>
+    <script src="../../assets/js/contact.config.js" defer></script>
+    <script src="../../assets/js/seo.config.js" defer></script>
+    <script src="../../assets/js/forms.js" defer></script>
+    <script src="../../assets/js/content-loader.js" defer></script>
+    <script src="../../assets/js/repositories/MediaResolver.js" defer></script>
+    <script src="../../assets/js/lib/media-dom-resolver.js" defer></script>
+<div id="site-footer"></div><script src="assets/js/shared-components.js"></script></body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <!-- ============================================================
+         CRITICAL: Theme initialization - runs BEFORE any rendering
+         ============================================================ -->
+    <script>
+        (function() {
+            try {
+                var savedTheme = localStorage.getItem('zt-theme');
+                if (savedTheme === 'light') {
+                    document.documentElement.classList.add('light-mode');
+                    document.documentElement.style.colorScheme = 'light';
+                } else {
+                    document.documentElement.style.colorScheme = 'dark';
+                }
+            } catch (e) {
+                document.documentElement.style.colorScheme = 'dark';
+            }
+        })();
+    </script>
+    <noscript>
+        <link rel="stylesheet" href="../../assets/css/theme.css">
+        <style>
+            body { background: #0a0a0a; color: #ffffff; }
+        </style>
+    </noscript>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    
+    <!-- SEO -->
+    <title>Restaurant Menu - ZT Lounge Meru | Signature Dishes & Gourmet Cuisine</title>
+    <meta name="description" content="Explore the full menu at ZT Lounge Restaurant Meru. Signature grills, main courses, vegetarian options and premium beverages." />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f5f5f5" media="(prefers-color-scheme: light)" />
+    <meta name="color-scheme" content="dark light" />
+    <link rel="canonical" href="https://ztlounge.co.ke/pages/experiences/restaurant-menu.html" />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Restaurant Menu - ZT Lounge Meru | Signature Dishes" />
+    <meta property="og:description" content="Explore the full menu at ZT Lounge Restaurant Meru. Signature grills, main courses, and more." />
+    <meta property="og:image" content="https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/branding/og-image.webp" data-media-id="fa95e3b4-83c7-47ad-b689-4f3c8760855a" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://ztlounge.co.ke/pages/experiences/restaurant-menu.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ZT Lounge Meru" />
+    <meta property="og:locale" content="en_KE" />
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Restaurant Menu - ZT Lounge Meru" />
+    <meta name="twitter:description" content="Explore the full menu at ZT Lounge Restaurant Meru." />
+    <meta name="twitter:image" content="https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/branding/og-image.webp" data-media-id="fa95e3b4-83c7-47ad-b689-4f3c8760855a" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "ZT Lounge Meru",
+            "image": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/branding/logo.webp",
+            "data-media-id": "79e60738-2a52-4b93-9a5c-5cbd7bed5603",
+            "url": "https://ztlounge.co.ke/pages/experiences/restaurant-menu.html",
+            "telephone": "+254143542601",
+            "priceRange": "$$$",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Milimani Road",
+                "addressLocality": "Meru",
+                "addressRegion": "Meru County",
+                "postalCode": "60200",
+                "addressCountry": "KE"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 0.0476,
+                "longitude": 37.6822
+            },
+            "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                "opens": "10:00",
+                "closes": "02:00"
+            }
+        }
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/branding/favicon.ico" data-media-id="8aa895c5-c73e-4a26-8442-dd83890ad41c" />
+    <link rel="apple-touch-icon" href="https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/branding/apple-touch-icon.webp" data-media-id="8eea0060-d5f5-4c78-b518-9611d636dd9" />
+
+    <!-- Performance: Preconnect for Critical Resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+
+    <!-- Performance: Preload Critical Images -->
+    <link rel="preload" as="image" href="https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/menu/nyama-choma.webp" fetchpriority="high" data-media-id="06914e55-16d8-410a-aacc-712ff7169891" />
+    <link rel="preload" as="image" href="https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/menu/beef-steak.webp" fetchpriority="high" data-media-id="8b6b9ce0-29c4-49f9-abb2-fd81c1c3e67b" />
+    <link rel="preload" as="image" href="https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/menu/grilled-chicken.webp" fetchpriority="high" data-media-id="8d9e360a-bb39-4ba4-939a-f9f451432416" />
+    
+    <!-- Performance: Non-blocking Font Loading -->
+    <link 
+        rel="stylesheet" 
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" 
+        media="print" 
+        onload="this.media='all'" 
+    />
+    <noscript>
+        <link 
+            rel="stylesheet" 
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" 
+        />
+    </noscript>
+
+    <!-- Performance: Non-blocking Font Awesome -->
+    <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" 
+        media="print" 
+        onload="this.media='all'" 
+    />
+    <noscript>
+        <link 
+            rel="stylesheet" 
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" 
+        />
+    </noscript>
+
+    <!-- ==========================================================
+    THEME.CSS - SINGLE SOURCE OF TRUTH
+    ========================================================== -->
+    <link rel="stylesheet" href="../../assets/css/theme.css" />
+
+    <!-- ==========================================================
+    PAGE-SPECIFIC CSS - Restaurant Menu (following index.html pattern)
+    ========================================================== -->
+    <style>
+        /* ============================================
+           RESTAURANT MENU - PAGE-SPECIFIC STYLES
+           Following the index.html pattern
+           ============================================ */
+
+        /* Hero slides - Restaurant Menu specific */
+        .hero-slide-menu-1 {
+            background: linear-gradient(135deg, rgba(10,10,10,0.75), rgba(10,10,10,0.4)),
+                        url('https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/menu/signature-pilau.webp') center/cover no-repeat;
+        }
+
+        .hero-slide-menu-2 {
+            background: linear-gradient(135deg, rgba(10,10,10,0.75), rgba(10,10,10,0.4)),
+                        url('https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/menu/beef-steak.webp') center/cover no-repeat;
+        }
+
+        .hero-slide-menu-3 {
+            background: linear-gradient(135deg, rgba(10,10,10,0.75), rgba(10,10,10,0.4)),
+                        url('https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/menu/premium-sides.webp') center/cover no-repeat;
+        }
+
+        /* Service Cards - Restaurant Menu specific */
+        .service-card-menu .card-tag {
+            background: rgba(201, 168, 76, 0.15);
+            color: var(--color-gold);
+        }
+
+        /* Menu Navigation - Page-specific */
+        .menu-nav-section {
+            padding: var(--space-lg) 0;
+            background: var(--color-card-bg);
+            border-bottom: 1px solid var(--color-border);
+            position: sticky;
+            top: var(--header-height, 110px);
+            z-index: 100;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .menu-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .menu-nav a {
+            padding: 8px 20px;
+            border-radius: 30px;
+            background: var(--color-bg);
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            font-size: var(--font-size-sm);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 1px solid var(--color-border);
+            white-space: nowrap;
+        }
+
+        .menu-nav a:hover,
+        .menu-nav a.active {
+            background: rgba(201, 168, 76, 0.15);
+            color: var(--color-gold);
+            border-color: var(--color-gold);
+            transform: translateY(-2px);
+        }
+
+        /* Menu Items - Page-specific */
+        .menu-items-section {
+            padding: var(--space-2xl) 0;
+            background: var(--color-bg);
+        }
+
+        .menu-category {
+            margin-bottom: var(--space-2xl);
+        }
+
+        .menu-category:last-child {
+            margin-bottom: 0;
+        }
+
+        .menu-category-title {
+            font-family: var(--font-family-serif);
+            font-size: var(--font-size-2xl);
+            color: var(--color-text);
+            margin-bottom: var(--space-sm);
+            text-align: center;
+        }
+
+        .menu-category-title span {
+            color: var(--color-gold);
+        }
+
+        .menu-category-divider {
+            width: 60px;
+            height: 3px;
+            background: var(--color-gold);
+            margin: 0 auto var(--space-xl);
+            border-radius: 2px;
+        }
+
+        .menu-items-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-lg);
+        }
+
+        .menu-item-card {
+            background: var(--color-card-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .menu-item-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(201, 168, 76, 0.3);
+        }
+
+        .menu-item-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .menu-item-content {
+            padding: var(--space-lg);
+        }
+
+        .menu-item-content h3 {
+            font-family: var(--font-family-serif);
+            font-size: var(--font-size-md);
+            color: var(--color-text);
+            margin-bottom: var(--space-xs);
+        }
+
+        .menu-item-content p {
+            color: var(--color-text-secondary);
+            font-size: var(--font-size-sm);
+            line-height: 1.6;
+            margin-bottom: var(--space-sm);
+        }
+
+        .price-tag {
+            display: inline-block;
+            padding: 4px 16px;
+            background: rgba(201, 168, 76, 0.12);
+            color: var(--color-gold);
+            border-radius: 20px;
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+            border: 1px solid rgba(201, 168, 76, 0.2);
+        }
+
+        /* Trust Badges - Matching index style */
+        .trust-badges {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-md);
+            margin-top: var(--space-xl);
+        }
+
+        .trust-badge {
+            padding: var(--space-md);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            text-align: center;
+            background: var(--color-card-bg);
+        }
+
+        .trust-badge i {
+            color: var(--color-gold);
+            font-size: var(--font-size-xl);
+            margin-bottom: var(--space-xs);
+        }
+
+        .trust-badge p {
+            font-size: var(--font-size-sm);
+            margin: 0;
+        }
+
+        .trust-badge strong {
+            display: block;
+            font-size: var(--font-size-md);
+            color: var(--color-text);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                min-height: calc(100vh - var(--header-height-mobile));
+            }
+            .hero-slider {
+                height: calc(100vh - var(--header-height-mobile));
+                min-height: 500px;
+            }
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            .slider-btn {
+                width: 44px;
+                height: 44px;
+                font-size: 0.9rem;
+                min-width: 44px;
+                min-height: 44px;
+            }
+            .slider-btn.prev {
+                left: 12px;
+            }
+            .slider-btn.next {
+                right: 12px;
+            }
+
+            .menu-nav-section {
+                top: var(--header-height-mobile, 76px);
+                padding: var(--space-md) 0;
+            }
+
+            .menu-nav {
+                gap: var(--space-xs);
+            }
+
+            .menu-nav a {
+                font-size: var(--font-size-xs);
+                padding: 6px 14px;
+            }
+
+            .menu-items-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .menu-category-title {
+                font-size: var(--font-size-xl);
+            }
+
+            .menu-item-image {
+                height: 160px;
+            }
+
+            .trust-badges {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: var(--space-lg) auto 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            .hero-buttons .btn {
+                padding: 12px 24px;
+                font-size: 0.85rem;
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Image Fallback */
+        .image-fallback {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            min-height: 120px;
+            color: var(--color-gold);
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            padding: 1rem;
+            text-align: center;
+            background: var(--color-card-bg);
+            border-radius: inherit;
+        }
+    </style>
+
+    <!-- Structured Data - Restaurant Menu -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Menu",
+            "name": "ZT Lounge Restaurant Menu",
+            "description": "Full menu of ZT Lounge Restaurant featuring signature grills, main courses, vegetarian options, and beverages.",
+            "url": "https://ztlounge.co.ke/pages/experiences/restaurant-menu.html"
+        }
+    </script>
+
+    <!-- Schema - Breadcrumb -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ztlounge.co.ke/" },
+            { "@type": "ListItem", "position": 2, "name": "Experiences", "item": "https://ztlounge.co.ke/pages/experiences/" },
+            { "@type": "ListItem", "position": 3, "name": "Restaurant Menu", "item": "https://ztlounge.co.ke/pages/experiences/restaurant-menu.html" }
+        ]
+    }
+    </script>
+</head>
+
+<body data-page="restaurant-menu">
+<div id="site-header">
+    <header class="header">
+        <div class="nav-wrapper">
+            <div class="logo">
+                <a href="../../index.html">
+                    <img class="site-logo logo-dark" src="https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/branding/logo.webp" data-media-id="79e60738-2a52-4b93-9a5c-5cbd7bed5603" alt="ZT Lounge Meru">
+                    <img class="site-logo logo-light" src="https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/branding/logo-white.webp" data-media-id="ebac626d-8849-4a8b-8613-f7663bd28eda" alt="ZT Lounge Meru">
+                </a>
+            </div>
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../experiences/restaurant.html">Restaurant</a></li>
+                    <li><a href="../experiences/lounge.html">Lounge</a></li>
+                    <li><a href="../experiences/vip.html">VIP Cabins</a></li>
+                    <li class="dropdown-parent"><a href="#" class="dropdown-parent">Events &amp; Business</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../business/events.html">Events &amp; Celebrations</a></li>
+                            <li><a href="../business/conference.html">Conference Hall</a></li>
+                            <li><a href="../business/grooming-care.html">Grooming &amp; Care</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../experiences/restaurant-menu.html">Menu</a></li>
+                    <li><a href="../contact/gallery.html">Gallery</a></li>
+                    <li><a href="../contact/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <button class="theme-toggle" aria-label="Toggle theme">🌓</button>
+                <div class="header-phone">
+                    <span>📞</span>
+                    <a href="tel:+254143542601">+254 143 542 601</a>
+                </div>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+</div>
+    <!-- Accessibility: Skip Navigation -->
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <!-- Header injected by shared-components.js -->
+ ===== -->
+    <main id="main" role="main">
+
+        <!-- ===== HERO ===== -->
+        <section class="hero" id="hero" aria-label="ZT Lounge Restaurant Menu">
+            <div class="hero-slider" role="region" aria-label="Featured dining experiences">
+                <!-- Slide 1 - Signature Dining -->
+                <div 
+                    class="hero-slide active" 
+                    data-index="0" 
+                    id="hero-slide-0" 
+                    role="tabpanel" 
+                    aria-labelledby="hero-dot-0" 
+                    aria-hidden="false"
+                    style="background-color: #1a1a1a;"
+                    data-media-bg
+                    data-media-bg-gradient="linear-gradient(135deg, rgba(10,10,10,0.75), rgba(10,10,10,0.4))"
+                >
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content container">
+                        <span class="hero-badge">Loading...</span>
+                        <h1 class="hero-title">Culinary <span>Excellence</span></h1>
+                        <p class="hero-subtitle">Signature grills, gourmet creations</p>
+                        <div class="hero-buttons">
+                            <a href="#menu" class="btn btn-primary btn-large">Explore the Menu</a>
+                            <a href="restaurant.html#reservation" class="btn btn-secondary btn-large">Reserve a Table</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 - Chef's Creations -->
+                <div 
+                    class="hero-slide" 
+                    data-index="1" 
+                    id="hero-slide-1" 
+                    role="tabpanel" 
+                    aria-labelledby="hero-dot-1" 
+                    aria-hidden="true"
+                    style="background-color: #1a1a1a;"
+                    data-media-bg
+                    data-media-bg-gradient="linear-gradient(135deg, rgba(10,10,10,0.75), rgba(10,10,10,0.4))"
+                >
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content container">
+                        <span class="hero-badge">Loading...</span>
+                        <h2 class="hero-title">Artisanal <span>Creations</span></h2>
+                        <p class="hero-subtitle">Please wait...</p>
+                        <div class="hero-buttons">
+                            <a href="#menu" class="btn btn-primary btn-large" tabindex="-1">View the Menu</a>
+                            <a href="restaurant.html#reservation" class="btn btn-secondary btn-large" tabindex="-1">Reserve Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 - Private Dining -->
+                <div 
+                    class="hero-slide" 
+                    data-index="2" 
+                    id="hero-slide-2" 
+                    role="tabpanel" 
+                    aria-labelledby="hero-dot-2" 
+                    aria-hidden="true"
+                    style="background-color: #1a1a1a;"
+                    data-media-bg
+                    data-media-bg-gradient="linear-gradient(135deg, rgba(10,10,10,0.75), rgba(10,10,10,0.4))"
+                >
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content container">
+                        <span class="hero-badge">Loading...</span>
+                        <h2 class="hero-title">Exclusive <span>Experiences</span></h2>
+                        <p class="hero-subtitle">Please wait...</p>
+                        <div class="hero-buttons">
+                            <a href="#menu" class="btn btn-primary btn-large" tabindex="-1">Discover the Menu</a>
+                            <a href="vip.html" class="btn btn-secondary btn-large" tabindex="-1">Explore VIP Dining</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slider Controls -->
+                <button class="slider-btn prev" id="prevSlide" aria-label="Previous slide" type="button">
+                    <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                </button>
+                <button class="slider-btn next" id="nextSlide" aria-label="Next slide" type="button">
+                    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </button>
+
+                <!-- Dots -->
+                <div class="slider-dots" role="tablist" aria-label="Hero slides">
+                    <span class="dot active" id="hero-dot-0" data-index="0" role="tab" aria-selected="true" aria-controls="hero-slide-0" aria-label="Slide 1 - Culinary Excellence" tabindex="0"></span>
+                    <span class="dot" id="hero-dot-1" data-index="1" role="tab" aria-selected="false" aria-controls="hero-slide-1" aria-label="Slide 2 - Artisanal Creations" tabindex="-1"></span>
+                    <span class="dot" id="hero-dot-2" data-index="2" role="tab" aria-selected="false" aria-controls="hero-slide-2" aria-label="Slide 3" tabindex="-1"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== ABOUT - The ZT Lounge Experience ===== -->
+        <section class="about-section" id="about" aria-label="The ZT Lounge dining experience">
+            <div class="container">
+                <div class="about-short">
+                    <span class="section-tag">The ZT Lounge Experience</span>
+                    <h2 class="section-title" style="font-size: var(--font-size-2xl); margin-top: var(--space-sm);">Where <span>Culinary Art</span> Meets Hospitality</h2>
+                    <p style="max-width: 700px; margin: var(--space-md) auto 0; font-size: var(--font-size-md); color: var(--color-text-secondary); line-height: 1.8;">
+                        At ZT Lounge, we transform exceptional ingredients into unforgettable dining experiences. 
+                        Our passion for culinary excellence is matched only by our commitment to warm, attentive service 
+                        in an atmosphere of understated elegance. Every visit tells a story of craftsmanship, quality, 
+                        and the rich flavors of Kenya.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SIGNATURE EXPERIENCES (Consolidated Features) ===== -->
+        <section class="service-cards-section" id="experiences" aria-label="Signature dining experiences">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Signature Experiences</span>
+                    <h2 class="section-title">Discover <span>Our Craft</span></h2>
+                    <p class="section-subtitle">Four pillars of an exceptional dining journey</p>
+                </div>
+                <div class="service-cards-grid restaurant-grid" data-category-grid data-category-slug="restaurant">
+<div class="category-empty-state" data-category-empty data-category-slug="restaurant" style="text-align:center;padding:2rem 1rem;color:var(--text-muted,#a8a29e)"><p>Service menu being prepared. <a href="tel:+254143542601" data-phone-link>+254 143 542 601</a> for availability.</p></div>
+        <div style="text-align:center;margin-top:var(--space-lg)"><a href="#menu" class="btn btn-primary" data-booking-category="restaurant">View Restaurant Menu</a></div>
+    </div>
+</div>
+</section>
+
+        <!-- ===== MENU (rendered from Supabase by menu-engine.js) ===== -->
+        <section id="menu" class="menu-section" aria-label="Restaurant menu categories and items">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Our Menu</span>
+                    <h2 class="section-title">Full <span>Restaurant Menu</span></h2>
+                    <p class="section-subtitle">Explore our complete selection of signature dishes, mains, beverages, and more.</p>
+                </div>
+                <div data-menu-root data-page-key="restaurant-menu" class="menu-items-section" aria-label="Restaurant menu"></div>
+            </div>
+        </section>
+
+        <!-- ===== CULINARY GALLERY - Visual Storytelling ===== -->
+        <section class="gallery-preview" id="gallery" aria-label="Culinary gallery">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Culinary Artistry</span>
+                    <h2 class="section-title">Visual <span>Storytelling</span></h2>
+                    <p class="section-subtitle">A glimpse into the artistry behind every dish</p>
+                </div>
+                <div class="gallery-preview-grid">
+                    <!-- Populated dynamically by content-loader.js from Supabase (page_id = restaurant-menu) -->
+                </div>
+                <div class="gallery-cta">
+                    <a href="../contact/gallery.html" class="btn btn-primary">View Full Gallery</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== LOCATION ===== -->
+        <section class="location-section" id="location" aria-label="Our location">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Visit Us</span>
+                    <h2 class="section-title">Find <span>Us</span></h2>
+                    <p class="section-subtitle">Experience ZT Lounge in the heart of Milimani</p>
+                </div>
+                <div class="location-grid">
+                    <figure class="location-image">
+                        <img 
+                            src="https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/menu/mixed-grill.webp" 
+                            alt="ZT Lounge Restaurant in Milimani, Meru" 
+                            loading="lazy" 
+                            decoding="async" 
+                            data-media-id="c3c42387-5413-4122-bc41-ad2cdc5ac34c"
+                        />
+                    </figure>
+                    <div class="location-info">
+                        <h3>ZT Lounge Restaurant</h3>
+                        <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Milimani, Meru</p>
+                        <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+254143542601">+254 143 542 601</a></p>
+                        <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:ztloungemeru@gmail.com">ztloungemeru@gmail.com</a></p>
+                        <p><i class="fas fa-clock" aria-hidden="true"></i> Mon - Sun: 10:00 AM - 2:00 AM</p>
+                        <div class="location-cta">
+                            <a href="tel:+254143542601" class="btn btn-primary"><i class="fas fa-phone" aria-hidden="true"></i> Call Now</a>
+                            <a href="https://wa.me/254143542601?text=Hello%20ZT%20Lounge%2C%20I'd%20like%20to%20make%20a%20reservation" class="btn btn-success" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp</a>
+                            <a href="https://maps.app.goo.gl/HqTbiiU4q2jRFoPg6" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Get Directions</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== RESERVATION CTA - Single Strong CTA ===== -->
+        <section class="section-padding bg-dark" aria-label="Make a reservation" style="padding: var(--space-2xl) 0; background: var(--color-card-bg);">
+            <div class="container">
+                <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+                    <span class="section-tag">Reserve Your Experience</span>
+                    <h2 style="font-family: var(--font-family-serif); font-size: var(--font-size-2xl); margin-bottom: var(--space-md);">
+                        Secure Your <span class="gold-text">Table</span>
+                    </h2>
+                    <p style="color: var(--color-text-secondary); font-size: var(--font-size-md); margin-bottom: var(--space-lg); line-height: 1.8;">
+                        Whether it's an intimate dinner, a celebration, or a private gathering, 
+                        we look forward to welcoming you to ZT Lounge. 
+                        Reserve your table and experience the finest hospitality in Meru.
+                    </p>
+                    <div style="display: flex; flex-wrap: wrap; gap: var(--space-md); justify-content: center;">
+                        <a href="restaurant.html#reservation" class="btn btn-primary">
+                            <i class="fas fa-calendar-check" aria-hidden="true"></i> Reserve a Table
+                        </a>
+                        <a href="vip.html" class="btn btn-secondary">
+                            <i class="fas fa-crown" aria-hidden="true"></i> Private Dining
+                        </a>
+                        <a href="https://wa.me/254143542601?text=Hello%20ZT%20Lounge%2C%20I'd%20like%20to%20make%20an%20inquiry" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp Inquiry
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FLOATING WHATSAPP ===== -->
+    <div class="whatsapp-float">
+        <a 
+            href="https://wa.me/254143542601?text=Hello%20ZT%20Lounge%2C%20I'd%20like%20to%20make%20a%20booking" 
+            class="whatsapp-btn" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label="Chat with us on WhatsApp"
+        >
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        </a>
+        <span class="whatsapp-tooltip">Chat With Us</span>
+    </div>
+
+    <!-- ===== MOBILE STICKY CTA ===== -->
+    <div class="mobile-sticky-cta" role="complementary" aria-label="Quick actions">
+        <a 
+            href="https://wa.me/254143542601?text=Hello%20ZT%20Lounge%2C%20I'd%20like%20to%20book" 
+            class="sticky-btn whatsapp-sticky" 
+            target="_blank" 
+            rel="noopener noreferrer"
+        >
+            <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp
+        </a>
+        <a href="tel:+254143542601" class="sticky-btn call-sticky">
+            <i class="fas fa-phone" aria-hidden="true"></i> Call
+        </a>
+        <a href="restaurant.html#reservation" class="sticky-btn book-sticky">
+            <i class="fas fa-calendar-check" aria-hidden="true"></i> Book
+        </a>
+    </div>
+
+        <!-- Footer injected by shared-components.js -->
+
+    <!-- ============================================================
+         SHARED JAVASCRIPT (Identical to index)
+         ============================================================ -->
+    <script>
+        /**
+         * ============================================================
+         * SHARED SITE JAVASCRIPT (Identical to index)
+         * Navigation, Theme Toggle, Hamburger, Copyright, Hero Slider
+         * ============================================================
+         */
+        document.addEventListener('DOMContentLoaded', function() {
+            // === THEME TOGGLE ===
+            var themeToggle = document.getElementById('themeToggle');
+            var html = document.documentElement;
+
+            if (themeToggle) {
+                themeToggle.addEventListener('click', function() {
+                    html.classList.toggle('light-mode');
+                    var isLight = html.classList.contains('light-mode');
+                    localStorage.setItem('zt-theme', isLight ? 'light' : 'dark');
+                    document.documentElement.style.colorScheme = isLight ? 'light' : 'dark';
+                });
+            }
+
+            // === HAMBURGER MENU ===
+            var hamburger = document.getElementById('hamburger');
+            var navMenu = document.getElementById('navMenu');
+
+            if (hamburger && navMenu) {
+                hamburger.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    this.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                    var isActive = navMenu.classList.contains('active');
+                    this.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+                });
+
+                // Mobile dropdown toggle
+                var dropdownParents = navMenu.querySelectorAll('.nav-list > li > a.dropdown-parent');
+                dropdownParents.forEach(function(link) {
+                    link.addEventListener('click', function(e) {
+                        if (window.innerWidth <= 768) {
+                            var parentLi = this.parentElement;
+                            var isExpanded = parentLi.getAttribute('aria-expanded') === 'true';
+                            
+                            var activeItems = navMenu.querySelectorAll('.nav-list > li.active-dropdown');
+                            activeItems.forEach(function(el) {
+                                if (el !== parentLi) {
+                                    el.classList.remove('active-dropdown');
+                                    el.setAttribute('aria-expanded', 'false');
+                                }
+                            });
+                            
+                            var newExpanded = !isExpanded;
+                            parentLi.classList.toggle('active-dropdown', newExpanded);
+                            parentLi.setAttribute('aria-expanded', String(newExpanded));
+                        }
+                    });
+                });
+
+                // Close menu on link click (mobile)
+                var navLinks = navMenu.querySelectorAll('a');
+                navLinks.forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        if (window.innerWidth <= 768 && !this.closest('.dropdown-menu')) {
+                            hamburger.classList.remove('active');
+                            navMenu.classList.remove('active');
+                            hamburger.setAttribute('aria-expanded', 'false');
+                        }
+                    });
+                });
+
+                // Close on Escape
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+                        hamburger.classList.remove('active');
+                        navMenu.classList.remove('active');
+                        hamburger.setAttribute('aria-expanded', 'false');
+                        hamburger.focus();
+                    }
+                });
+
+                // Close on resize to desktop
+                window.addEventListener('resize', function() {
+                    if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
+                        hamburger.classList.remove('active');
+                        navMenu.classList.remove('active');
+                        hamburger.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+
+            // === HERO SLIDER (Identical to index) ===
+            var heroSlides = document.querySelectorAll('.hero-slide');
+            var heroDots = document.querySelectorAll('.dot');
+            var heroCurrent = 0;
+            var heroInterval;
+
+            function goToHero(index) {
+                if (index < 0) index = heroSlides.length - 1;
+                if (index >= heroSlides.length) index = 0;
+                heroSlides.forEach(function(slide, i) {
+                    var isActive = i === index;
+                    slide.classList.toggle('active', isActive);
+                    slide.setAttribute('aria-hidden', String(!isActive));
+                    var interactiveElements = slide.querySelectorAll('a, button');
+                    interactiveElements.forEach(function(el) {
+                        el.tabIndex = isActive ? 0 : -1;
+                    });
+                });
+                heroDots.forEach(function(dot, i) {
+                    var isActive = i === index;
+                    dot.classList.toggle('active', isActive);
+                    dot.setAttribute('aria-selected', String(isActive));
+                    dot.tabIndex = isActive ? 0 : -1;
+                });
+                heroCurrent = index;
+            }
+
+            function nextHero() { goToHero(heroCurrent + 1); }
+            function prevHero() { goToHero(heroCurrent - 1); }
+
+            var prevSlideBtn = document.getElementById('prevSlide');
+            var nextSlideBtn = document.getElementById('nextSlide');
+
+            if (prevSlideBtn) prevSlideBtn.addEventListener('click', function() { prevHero(); resetHeroAutoplay(); });
+            if (nextSlideBtn) nextSlideBtn.addEventListener('click', function() { nextHero(); resetHeroAutoplay(); });
+
+            heroDots.forEach(function(dot, index) {
+                dot.addEventListener('click', function() {
+                    goToHero(index);
+                    resetHeroAutoplay();
+                });
+                dot.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        goToHero(index);
+                        resetHeroAutoplay();
+                    }
+                });
+            });
+
+            function startHeroAutoplay() {
+                stopHeroAutoplay();
+                heroInterval = setInterval(nextHero, 5000);
+            }
+
+            function stopHeroAutoplay() {
+                if (heroInterval) {
+                    clearInterval(heroInterval);
+                    heroInterval = null;
+                }
+            }
+
+            function resetHeroAutoplay() {
+                startHeroAutoplay();
+            }
+
+            var heroContainer = document.querySelector('.hero-slider');
+            if (heroContainer) {
+                heroContainer.addEventListener('mouseenter', stopHeroAutoplay);
+                heroContainer.addEventListener('mouseleave', startHeroAutoplay);
+                heroContainer.addEventListener('focusin', stopHeroAutoplay);
+                heroContainer.addEventListener('focusout', function(e) {
+                    if (!this.contains(e.relatedTarget)) startHeroAutoplay();
+                });
+            }
+
+            goToHero(0);
+            startHeroAutoplay();
+
+            // === COPYRIGHT YEAR ===
+            var yearEl = document.getElementById('copyrightYear');
+            if (yearEl) {
+                yearEl.textContent = new Date().getFullYear();
+            }
+
+            // === UPDATE ACTIVE NAV LINK ===
+            var currentPath = window.location.pathname;
+            var navLinks = document.querySelectorAll('.nav-list a[href]');
+            navLinks.forEach(function(link) {
+                var href = link.getAttribute('href');
+                var isActive = href === currentPath || 
+                               (href === 'restaurant-menu.html' && currentPath.includes('restaurant-menu')) ||
+                               (href === '../../index.html' && (currentPath === '/' || currentPath === '' || currentPath.includes('index')));
+                if (isActive) {
+                    link.classList.add('active');
+                    link.setAttribute('aria-current', 'page');
+                } else {
+                    link.classList.remove('active');
+                    link.removeAttribute('aria-current');
+                }
+            });
+        });
+
+    </script>
+
+    <!-- ============================================================
+         SUPABASE & CMS ARCHITECTURE
+         Loaded after inline scripts to enhance content from database
+         ============================================================ -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+    <script src="../../assets/js/config/env.js" defer></script>
+    <script src="../../assets/js/config/supabase.config.js" defer></script>
+    <script src="../../assets/js/asset-url.js" defer></script>
+    <script src="../../assets/js/lib/supabase.js" defer></script>
+    <script src="../../assets/js/lib/BaseRepository.js" defer></script>
+    <script src="../../assets/js/business-config.js" defer></script>
+    <script src="../../assets/js/repositories/BusinessRepository.js" defer></script>
+    <script src="../../assets/js/branding-init.js" defer></script>
+    <script src="../../assets/js/repositories/HeroRepository.js" defer></script>
+    <script src="../../assets/js/repositories/ServicesRepository.js" defer></script>
+    <script src="../../assets/js/repositories/GalleryRepository.js" defer></script>
+    <script src="../../assets/js/repositories/MenuRepository.js" defer></script>
+    <script src="../../assets/js/repositories/FAQRepository.js" defer></script>
+    <script src="../../assets/js/repositories/TestimonialsRepository.js" defer></script>
+    <script src="../../assets/js/repositories/BookingRepository.js" defer></script>
+    <script src="../../assets/js/repositories/ContactRepository.js" defer></script>
+    <script src="../../assets/js/repositories/SEORepository.js" defer></script>
+    <script src="../../assets/js/services/BusinessService.js" defer></script>
+    <script src="../../assets/js/hero.config.js" defer></script>
+    <script src="../../assets/js/services.config.js" defer></script>
+    <script src="../../assets/js/gallery.config.js" defer></script>
+    <script src="../../assets/js/menu.config.js" defer></script>
+    <script src="../../assets/js/faq.config.js" defer></script>
+    <script src="../../assets/js/testimonials.config.js" defer></script>
+    <script src="../../assets/js/booking.config.js" defer></script>
+    <script src="../../assets/js/contact.config.js" defer></script>
+    <script src="../../assets/js/seo.config.js" defer></script>
+    <script src="../../assets/js/content-loader.js" defer></script>
+    <script src="../../assets/js/menu-nav.js" defer></script>
+    <script src="../../assets/js/repositories/MediaResolver.js" defer></script>
+    <script src="../../assets/js/lib/media-dom-resolver.js" defer></script>
+    <script src="../../assets/js/menu-engine.js" defer></script>
+<div id="site-footer"></div><script src="assets/js/shared-components.js"></script></body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
