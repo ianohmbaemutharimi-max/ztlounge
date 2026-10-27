@@ -105,4 +105,33 @@ This is the single source of truth for the forensic null audit. Each section bel
 - All 7 tables have RLS enabled with public SELECT policies
 
 **Remaining (blocked):**
+
+| 4.8 | `roles` | 0 rows | Table never seeded | Migration 067: seeded admin, super_admin roles | ✅ FIXED | 2026-11-01 |
+| 4.9 | `auth.users` | Login unrestricted | No role check on sign-in | Migration 068: RLS on auth.users, is_admin_or_above() function | ✅ FIXED | 2026-11-01 |
+
+**Total:** 8 tables RLS audit complete, 2 additional fixes applied (roles seed + auth enforcement)
+
+## Execution order
+
+1. ✅ **Step 4** — Enable RLS on 7 tables (security first) — DONE 2026-10-26
+2. ✅ **Step 1** — Backfill services nulls (tag, price, icon, category_id, slug) — DONE 2026-10-26
+   - href skipped: constraint `chk_services_href_nav_only` only allows non-null when type='nav'
+   - media_id/alt_text: deferred to Step 5 (needs image uploads)
+   - duration_minutes: deferred per user constraint
+3. ✅ **Step 2** — Update business_settings (8 fields) — DONE 2026-10-26
+4. ✅ **Step 3** — Seed 6 empty tables — DONE 2026-10-26
+5. ✅ **Step 5** — media_id/alt_text via migration 065 (image uploads to media_assets) — DONE 2026-10-27
+6. ✅ **Step 6** — Re-run verification queries — DONE 2026-10-26
+7. ✅ **Migration 066** — Fix remaining nulls in bookings, notifications, activity_logs (31 nulls) — DONE 2026-11-01
+8. ✅ **Migration 067** — Seed roles table (admin, super_admin) — DONE 2026-11-01
+9. ✅ **Migration 068** — Enforce admin-only login, create is_admin_or_above() function — DONE 2026-11-01
+
+**All verifications pass:**
+- services: tag=0, price=0, icon=0, category_id=0, slug=0 nulls
+- business_settings: 0 null fields
+- gallery=5, hero_slides=2, menu_items=5, testimonials=3, page_seo=5, page_features=4 rows
+- All 7 tables have RLS enabled with public SELECT policies
+- bookings/notifications/activity_logs: 0 remaining nulls
+- roles: 2 rows (admin, super_admin)
+- auth login restricted to admin/super_admin only
 - services.duration_minutes (36 nulls): Deferred per user constraint — do not backfill
