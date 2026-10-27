@@ -18,7 +18,7 @@ Exports (verified): the four above **plus** `getAll()`, `getPackages()`,
 | `getByPage(pageId)` | Accepts UUID or page key (resolves via `PageResolver.requirePageUuid`); queries `services` where `page_id = uuid AND is_active = true`, ordered by `display_order`; splits into `{services, experiences, features}` by `type`; falls back to `window.ServicesConfig[pageId]` |
 | `getExperiences/getFeatures` | Thin wrappers over `getByPage` |
 | `getAll()` | All active services, no page filter |
-| `getPackages()` | `type = 'packages'` active rows |
+| `getPackages()` | `type = 'pkg'` active rows (7 pkg cards with pricing) |
 | `getByCategory(slug)` | Resolves slug → id via `service_categories` (active only), then `services` where `category_id = id AND is_active AND type='service'`; **no page filter** (content-loader re-filters by page UUID) |
 | `mapToUI()` | Passes through `image_url`, `alt_text`, `tag`, `href`, `icon`, `category_id`… |
 

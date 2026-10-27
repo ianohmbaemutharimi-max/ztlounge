@@ -12,6 +12,13 @@
  * - ServicesRepository.getFeatures(pageId)
  * 
  * Data Source: Supabase (services table) with local config fallback
+ * Card Types Supported:
+ * - nav:   Navigation cards with links
+ * - info:  Informational cards/badges
+ * - pkg:   Package cards with pricing
+ *
+ * Public Interface:
+ * - ServicesRepository.getPackages()  -> pkg-type cards
  *
  * MEDIA RESOLUTION: every service discovered from the database or the
  * local config is normalized to the canonical media_id field through
@@ -41,19 +48,17 @@ window.ServicesRepository = (function() {
             id: item.id,
             name: item.name || '',
             description: item.description || '',
-            duration_minutes: item.duration_minutes,
             price: item.price || 0,
-            // media_id is the canonical pointer - resolved by MediaResolver
-            // image_url removed - no fallback permitted
-            alt_text: item.alt_text || '',
-            tag: item.tag || '',
-            href: item.href || '',
             type: item.type || 'nav',
             display_order: item.display_order || 0,
-            page_id: item.page_id || '',
+            category_id: item.category_id || null,
+            media_id: item.media_id || null,
             icon: item.icon || '',
-            // Canonical media reference for MediaResolver
-            media_id: item.media_id || null
+            href: item.href || '',
+            alt_text: item.alt_text || '',
+            tag: item.tag || '',
+            featured: item.featured || false,
+            page_id: item.page_id || ''
         };
     }
 
@@ -253,18 +258,31 @@ window.ServicesRepository = (function() {
         });
     }
 
-    /** Get all active info-type services (formerly packages) */
+    /** Get all active package-type services (pkg cards with pricing) */
     function getPackages() {
         return getRepo().getAll({
             eq: [
                 { column: 'is_active', value: true },
-                { column: 'type', value: 'info' }
+                { column: 'type', value: 'pkg' }
             ],
             orderBy: 'display_order',
             ascending: true
         }).then(function(data) {
             if (data && data.length > 0) {
                 var mapped = data.map(mapToUI);
+                // Convert DB fields to package card format for content-loader
+                mapped = mapped.map(function(item) {
+                    return {
+                        package_name: item.name || '',
+                        description: item.description || '',
+                        price_amount: item.price || 0,
+                        price_period: window.ServicesConfig && window.ServicesConfig.pricePeriodLabel ? window.ServicesConfig.pricePeriodLabel : 'at the counter',
+                        is_featured: item.featured || false,
+                        category_id: item.category_id,
+                        media_id: item.media_id,
+                        id: item.id
+                    };
+                });
                 return resolveMedia(mapped);
             }
             return [];
