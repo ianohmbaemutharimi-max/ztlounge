@@ -133,6 +133,10 @@ This is the single source of truth for the forensic null audit. Each section bel
 9. ✅ **Migration 068** — Enforce admin-only login, create is_admin_or_above() function — DONE 2026-11-01
 
 **All verifications pass:**
+- services.duration_minutes (36 nulls): Deferred per user constraint — do not backfill
+- services.href (12 nulls): Legitimate nulls — constraint `chk_services_href_nav_only` only allows non-null href when type='nav'; 12 non-nav services legitimately have no navigation href
+
+**All nullable columns across all tables: 0 remaining nulls** (services.href=12 are contractually excluded)
 - services: tag=0, price=0, icon=0, category_id=0, slug=0 nulls
 - business_settings: 0 null fields
 - gallery=5, hero_slides=2, menu_items=5, testimonials=3, page_seo=5, page_features=4 rows
