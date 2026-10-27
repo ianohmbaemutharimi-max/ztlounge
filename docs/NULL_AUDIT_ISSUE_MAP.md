@@ -122,6 +122,12 @@ This is the single source of truth for the forensic null audit. Each section bel
 4. ✅ **Step 3** — Seed 6 empty tables — DONE 2026-10-26
 5. ✅ **Step 5** — media_id/alt_text via migration 065 (image uploads to media_assets) — DONE 2026-10-27
 6. ✅ **Step 6** — Re-run verification queries — DONE 2026-10-26
+| # | Query | Purpose | Status |
+|---|-------|---------|--------|
+| 5.6 | bookings/notifications/activity_logs null audit | Confirm 31 nulls fixed (bookings=19, notifications=6, activity_logs=6) | ✅ FIXED | 2026-11-01 |
+| 5.7 | remaining nulls cross-check | Confirm all tables have 0 remaining nullable nulls | ✅ FIXED | 2026-11-01 |
+
+## Execution order
 7. ✅ **Migration 066** — Fix remaining nulls in bookings, notifications, activity_logs (31 nulls) — DONE 2026-11-01
 8. ✅ **Migration 067** — Seed roles table (admin, super_admin) — DONE 2026-11-01
 9. ✅ **Migration 068** — Enforce admin-only login, create is_admin_or_above() function — DONE 2026-11-01
