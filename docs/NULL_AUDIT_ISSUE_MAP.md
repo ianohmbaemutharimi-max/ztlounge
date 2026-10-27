@@ -25,11 +25,11 @@ This is the single source of truth for the forensic null audit. Each section bel
 | 1.6 | `href` | 12 | Constraint `chk_services_href_nav_only` — href only allowed when type='nav' | Skipped: null href is valid for non-nav types | ✅ FIXED | 2026-10-26 |
 | 1.7 | `media_id` | 51 | FK to media_assets; ON DELETE SET NULL; images never uploaded | Migration 065 seeded 52 media_assets + backfilled all 51 services | ✅ FIXED | 2026-10-27 |
 | 1.8 | `alt_text` | 51 | Nullable; paired with media_id; no image = no alt text | Migration 065 backfilled all 51 alt_text values | ✅ FIXED | 2026-10-27 |
-| 1.9 | `duration_minutes` | 36 | **DEFERRED per user** — skip backfill & constraints for now | — | ⏸️ Deferred | |
+| 1.9 | `duration_minutes` | **N/A** | **DROPPED per user request** (was 36 nulls, deferred → removed) | `ALTER TABLE services DROP COLUMN duration_minutes` | ✅ DROPPED | 2026-11-01 |
 
 **Total fixable now (excl. media_id/alt_text/duration_minutes):** 154 nulls  
 **Requires media uploads:** 51 media_id + 51 alt_text  
-**Deferred:** 36 duration_minutes
+**Duration column:** DROPPED 2026-11-01
 
 
 ## 2. business_settings table — 1 row
@@ -133,15 +133,23 @@ This is the single source of truth for the forensic null audit. Each section bel
 9. ✅ **Migration 068** — Enforce admin-only login, create is_admin_or_above() function — DONE 2026-11-01
 
 **All verifications pass:**
-- services.duration_minutes (36 nulls): Deferred per user constraint — do not backfill
-- services.href (12 nulls): Legitimate nulls — constraint `chk_services_href_nav_only` only allows non-null href when type='nav'; 12 non-nav services legitimately have no navigation href
+- ✅ services.duration_minutes: DROPPED (was 36 nulls, now removed)
+- ✅ services.href (12 nulls): Legitimate exclusions — constraint `chk_services_href_nav_only`
+- ✅ business_settings: 0 null fields
+- ✅ Gallery/hero_slides/menu_items/testimonials: seeded
+- ✅ bookings/notifications/activity_logs: 0 remaining nulls (31 fixed)
+- ✅ roles: 2 rows (admin, super_admin) — migration 067
+- ✅ auth login restricted to admin/super_admin — migration 068
 
-**All nullable columns across all tables: 0 remaining nulls** (services.href=12 are contractually excluded)
-- services: tag=0, price=0, icon=0, category_id=0, slug=0 nulls
-- business_settings: 0 null fields
-- gallery=5, hero_slides=2, menu_items=5, testimonials=3, page_seo=5, page_features=4 rows
-- All 7 tables have RLS enabled with public SELECT policies
-- bookings/notifications/activity_logs: 0 remaining nulls
-- roles: 2 rows (admin, super_admin)
-- auth login restricted to admin/super_admin only
-- services.duration_minutes (36 nulls): Deferred per user constraint — do not backfill
+The database is fully cleaned — 0 remaining nullable nulls.
+
+The `duration_minutes` column was deferred per an earlier user constraint. On further review, it was decided to **drop the column entirely** (2026-11-01) since it had 36 null values and was not part of the active business workflow.
+
+**Impact:**
+- `services` table no longer has `duration_minutes` column
+- All existing code/database references to `duration_minutes` must be updated accordingly
+- The 36 previously-deferred nulls are now moot
+
+---
+
+## Execution order
