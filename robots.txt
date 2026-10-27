@@ -1,0 +1,12 @@
+# robots.txt for ZT Lounge Meru
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+
+# Sitemap
+Sitemap: https://ztlounge.co.ke/sitemap.xml
+
+# Crawl delay for heavy scraping
+Crawl-delay: 5

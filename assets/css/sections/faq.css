@@ -1,0 +1,14 @@
+/**
+ * ============================================================
+ * ZT Lounge Design System - Sections: FAQ
+ * ============================================================
+ */
+
+.faq-section {
+  padding: var(--spacing-20) 0;
+}
+
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+}

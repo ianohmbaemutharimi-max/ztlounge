@@ -36,7 +36,7 @@
     <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
     <meta name="theme-color" content="#f5f5f5" media="(prefers-color-scheme: light)" />
     <meta name="color-scheme" content="dark light" />
-    <link rel="canonical" href="https://ztlounge.co.ke/pages/experiences/lounge.html" />
+    <link rel="canonical" href="https://ztlounge.com/pages/experiences/lounge.html" />
     
     <!-- Open Graph -->
     <meta property="og:title" content="Premium Lounge & Bar – ZT Lounge Meru | Signature Cocktails & VIP Nightlife" />
@@ -44,7 +44,7 @@
     <meta property="og:image" content="https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/branding/og-image.webp" data-media-id="fa95e3b4-83c7-47ad-b689-4f3c8760855a" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:url" content="https://ztlounge.co.ke/pages/experiences/lounge.html" />
+    <meta property="og:url" content="https://ztlounge.com/pages/experiences/lounge.html" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="ZT Lounge Meru" />
     <meta property="og:locale" content="en_KE" />
@@ -63,7 +63,7 @@
             "name": "ZT Lounge Meru",
             "image": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/branding/logo.webp",
             "data-media-id": "79e60738-2a52-4b93-9a5c-5cbd7bed5603",
-            "url": "https://ztlounge.co.ke/pages/experiences/lounge.html",
+            "url": "https://ztlounge.com/pages/experiences/lounge.html",
             "telephone": "+254143542601",
             "priceRange": "$$$",
             "address": {
@@ -525,7 +525,7 @@
         "@type": "BarOrPub",
         "name": "ZT Lounge Bar",
         "description": "Meru's premier lounge and bar offering signature cocktails, premium spirits, live entertainment, and luxury ambiance.",
-        "url": "https://ztlounge.co.ke/pages/experiences/lounge.html",
+        "url": "https://ztlounge.com/pages/experiences/lounge.html",
         "telephone": "+254143542601",
         "email": "ztloungemeru@gmail.com",
         "address": {
@@ -566,9 +566,9 @@
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ztlounge.co.ke/" },
-            { "@type": "ListItem", "position": 2, "name": "Experiences", "item": "https://ztlounge.co.ke/pages/experiences/" },
-            { "@type": "ListItem", "position": 3, "name": "Lounge", "item": "https://ztlounge.co.ke/pages/experiences/lounge.html" }
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ztlounge.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Experiences", "item": "https://ztlounge.com/pages/experiences/" },
+            { "@type": "ListItem", "position": 3, "name": "Lounge", "item": "https://ztlounge.com/pages/experiences/lounge.html" }
         ]
     }
     </script>
@@ -888,19 +888,19 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label for="fullName">Full Name *</label>
-                            <input type="text" id="fullName" name="fullName" class="form-input" required aria-required="true" placeholder="John Doe" />
+                            <input type="text" id="fullName" name="fullName" class="form-input" required aria-required="true" placeholder="Ian Mutharimi" />
                             <div class="form-error" id="fullNameError">Please enter your full name.</div>
                         </div>
                         <div class="form-group">
                             <label for="phoneNumber">Phone Number *</label>
-                            <input type="tel" id="phoneNumber" name="phoneNumber" class="form-input" required aria-required="true" placeholder="+254 700 000 000" />
+                            <input type="tel" id="phoneNumber" name="phoneNumber" class="form-input" required aria-required="true" placeholder="+254798507736" />
                             <div class="form-error" id="phoneError">Please enter a valid phone number.</div>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" class="form-input" placeholder="john@example.com" />
+                        <input type="email" id="email" name="email" class="form-input" placeholder="mutharimiian259@gmail.com" />
                     </div>
 
                     <div class="form-row">
@@ -1021,7 +1021,7 @@
     </div>
 
     <!-- Canonical public shell: footer injected by assets/js/shared-components.js -->
-      <div id="site-footer"></div>
+      <footer id="site-footer"></footer>
 
     <!-- ============================================================
          SHARED JAVASCRIPT (Identical to index with Lounge specific additions)
@@ -1259,6 +1259,7 @@
     <script src="../../assets/js/repositories/BookingRepository.js" defer></script>
     <script src="../../assets/js/repositories/ContactRepository.js" defer></script>
     <script src="../../assets/js/repositories/SEORepository.js" defer></script>
+    <script src="../../assets/js/repositories/FeaturesRepository.js" defer></script>
     <script src="../../assets/js/services/BusinessService.js" defer></script>
     <script src="../../assets/js/hero.config.js" defer></script>
     <script src="../../assets/js/services.config.js" defer></script>
@@ -1270,6 +1271,7 @@
     <script src="../../assets/js/contact.config.js" defer></script>
     <script src="../../assets/js/seo.config.js" defer></script>
     <script src="../../assets/js/shared-components.js" defer></script>
+    <script src="../../assets/js/repositories/PackageRepository.js" defer></script>
     <script src="../../assets/js/content-loader.js" defer></script>
       <script>
           if (window.SupabaseClient) {
@@ -1277,6 +1279,26 @@
           }
       </script>
 <script src="assets/js/shared-components.js"></script></body>
+import os
+
+package_section = """        <!-- ===== PACKAGE PRICING SECTION - Commercial pricing for services (below gallery) ===== -->
+        <section id="package-pricing" class="section-padding bg-card" aria-label="Package pricing">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag">Package Pricing</span>
+                    <h2 class="section-title">Premium <span>Services</span></h2>
+                    <p class="section-subtitle">Commercial pricing for our signature services and experiences. Select your preferred option below.</p>
+                </div>
+                <div id="package-pricing-grid" class="package-pricing-grid" data-membership-grid></div>
+                <div id="membership-fee-banner" class="membership-fee-banner" style="margin-top:var(--space-lg);display:none;"></div>
+                <div class="text-center mt-4">
+                    <a href="#contact" class="btn btn-primary">Enquire About Packages</a>
+                </div>
+            </div>
+        </section>
+        <!-- ===== END PACKAGE PRICING SECTION ===== -->
+"""
+
 </html>
 
 

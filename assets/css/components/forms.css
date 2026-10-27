@@ -1,0 +1,76 @@
+/**
+ * ============================================================
+ * ZT Lounge Design System - Forms
+ * Shared form component styles
+ * ============================================================
+ */
+
+.form-group {
+  margin-bottom: var(--spacing-4);
+}
+
+.form-label {
+  display: block;
+  margin-bottom: var(--spacing-2);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+}
+
+.form-input {
+  width: 100%;
+  padding: var(--spacing-3) var(--spacing-4);
+  background: var(--color-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-md);
+  transition: var(--transition-fast);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+}
+
+.form-input::placeholder {
+  color: var(--color-text-tertiary);
+}
+
+.form-select {
+  width: 100%;
+  padding: var(--spacing-3) var(--spacing-4);
+  background: var(--color-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-md);
+  cursor: pointer;
+}
+
+.form-textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: var(--spacing-3) var(--spacing-4);
+  background: var(--color-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-md);
+  resize: vertical;
+}
+
+.form-error {
+  margin-top: var(--spacing-2);
+  color: #ef4444;
+  font-size: var(--font-size-sm);
+}
+
+.form-success {
+  margin-top: var(--spacing-2);
+  color: #22c55e;
+  font-size: var(--font-size-sm);
+}

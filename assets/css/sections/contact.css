@@ -1,0 +1,22 @@
+/**
+ * ============================================================
+ * ZT Lounge Design System - Sections: Contact
+ * ============================================================
+ */
+
+.contact-section {
+  padding: var(--spacing-20) 0;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-12);
+}
+
+/* Contact responsive */
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}

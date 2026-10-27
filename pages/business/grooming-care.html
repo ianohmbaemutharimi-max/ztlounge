@@ -71,7 +71,7 @@
     <link rel="stylesheet" href="../../assets/css/theme.css" />
     <meta name="description" content="Premium grooming and care services at ZT Lounge Meru. Professional barbershop grooming, auto spa car detailing, and thorough carpet cleaning services. Book your appointment today." />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://ztlounge.co.ke/pages/business/grooming-care.html" />
+    <link rel="canonical" href="https://ztlounge.com/pages/business/grooming-care.html" />
 
     <!-- Open Graph - Grooming & Care specific -->
     <meta property="og:title" content="Grooming &amp; Care Services - Barbershop, Auto Spa &amp; Carpet Cleaning | ZT Lounge Meru" />
@@ -79,7 +79,7 @@
     <meta property="og:image" content="https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/branding/og-image.webp" data-media-id="fa95e3b4-83c7-47ad-b689-4f3c8760855a" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:url" content="https://ztlounge.co.ke/pages/business/grooming-care.html" />
+    <meta property="og:url" content="https://ztlounge.com/pages/business/grooming-care.html" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="ZT Lounge Meru" />
     <meta property="og:locale" content="en_KE" />
@@ -96,7 +96,7 @@
             "name": "ZT Lounge Meru",
             "image": "https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/branding/logo.webp",
             "data-media-id": "79e60738-2a52-4b93-9a5c-5cbd7bed5603",
-            "url": "https://ztlounge.co.ke/pages/business/grooming-care.html",
+            "url": "https://ztlounge.com/pages/business/grooming-care.html",
             "telephone": "+254143542601",
             "priceRange": "$$$",
             "address": {
@@ -151,7 +151,7 @@
         "@type": "LocalBusiness",
         "name": "ZT Lounge Grooming & Care",
         "description": "Premium grooming and care services including barbershop grooming, auto spa car detailing, and professional carpet cleaning at ZT Lounge Meru.",
-        "url": "https://ztlounge.co.ke/pages/business/grooming-care.html",
+        "url": "https://ztlounge.com/pages/business/grooming-care.html",
         "telephone": "+254143542601",
         "email": "ztloungemeru@gmail.com",
         "address": {"@type": "PostalAddress", "streetAddress": "Milimani, Meru", "addressLocality": "Meru", "addressRegion": "Meru County", "postalCode": "60200", "addressCountry": "KE"},
@@ -164,9 +164,9 @@
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://ztlounge.co.ke/"},
-            {"@type": "ListItem", "position": 2, "name": "Business", "item": "https://ztlounge.co.ke/pages/business/"},
-            {"@type": "ListItem", "position": 3, "name": "Grooming & Care", "item": "https://ztlounge.co.ke/pages/business/grooming-care.html"}
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://ztlounge.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Business", "item": "https://ztlounge.com/pages/business/"},
+            {"@type": "ListItem", "position": 3, "name": "Grooming & Care", "item": "https://ztlounge.com/pages/business/grooming-care.html"}
         ]
     }
     </script>
@@ -227,6 +227,7 @@
     <script src="../../assets/js/repositories/ServicesRepository.js" defer></script>
     <script src="../../assets/js/repositories/GalleryRepository.js" defer></script>
     <script src="../../assets/js/repositories/BookingRepository.js" defer></script>
+    <script src="../../assets/js/repositories/PackageRepository.js" defer></script>
     <script src="../../assets/js/content-loader.js" defer></script>
     <main id="main" role="main">
         <section class="hero" id="hero" aria-label="Hero">
@@ -324,12 +325,12 @@
                         </ul>
                     </div>
                     <div>
-                        <form class="booking-form-grooming" id="autospaBookingForm" novalidate>
+                        <form class="booking-form-grooming" id="groomingBookingForm" novalidate>
                             <div class="form-error form-error-msg" id="formError" role="alert"></div>
                             <input type="hidden" id="bookingCategorySlug" name="bookingCategorySlug" value="" />
-                            <div class="form-group"><label for="fullName">Full Name *</label><input type="text" id="fullName" name="fullName" class="form-input" required aria-required="true" placeholder="John Doe" /><div class="form-error" id="fullNameError">Please enter your full name.</div></div>
-                            <div class="form-group"><label for="phoneNumber">Phone Number *</label><input type="tel" id="phoneNumber" name="phoneNumber" class="form-input" required aria-required="true" placeholder="+254 700 000 000" /><div class="form-error" id="phoneError">Please enter a valid phone number.</div></div>
-                            <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" class="form-input" placeholder="john@example.com" /></div>
+                            <div class="form-group"><label for="fullName">Full Name *</label><input type="text" id="fullName" name="fullName" class="form-input" required aria-required="true" placeholder="Ian Mutharimi" /><div class="form-error" id="fullNameError">Please enter your full name.</div></div>
+                            <div class="form-group"><label for="phoneNumber">Phone Number *</label><input type="tel" id="phoneNumber" name="phoneNumber" class="form-input" required aria-required="true" placeholder="+254798507736" /><div class="form-error" id="phoneError">Please enter a valid phone number.</div></div>
+                            <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" class="form-input" placeholder="mutharimiian259@gmail.com" /></div>
                             <div class="form-group" id="categoryGroup"><label for="serviceCategory">Service Category *</label><select id="serviceCategory" name="serviceCategory" class="form-select"><option value="">Select category...</option><option value="barbershop">Barbershop</option><option value="auto-spa">Auto Spa</option><option value="carpet-cleaning">Carpet Cleaning</option></select></div>
                             <div class="form-group" id="serviceGroup" style="display:none"><label for="serviceSelect">Service *</label><select id="serviceSelect" name="serviceSelect" class="form-select"><option value="">Select service...</option></select></div>
                             <div class="form-group" id="chargeGroup" style="display:none"><label for="serviceCharge">Package *</label><select id="serviceCharge" name="serviceCharge" class="form-select"><option value="">Select package...</option></select><div class="charge-price-display" id="chargePriceDisplay"></div><div class="charge-empty-state" id="chargeEmptyState" style="display:none">No packages currently available.</div></div>
@@ -389,7 +390,7 @@
     <!-- Canonical public shell (LOOP 47): shared CTA injected by shared-components.js -->
     <div id="site-cta-float"></div>
     <!-- Canonical public shell (LOOP 47): footer is injected by shared-components.js -->
-    <div id="site-footer"></div>
+    <footer id="site-footer"></footer>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Initialize Supabase client (sets window.supabaseClient) before any Supabase-dependent code runs
@@ -421,8 +422,8 @@
             ctas.forEach(function(cta){cta.addEventListener('click',function(){var cat=this.getAttribute('data-booking-category');var sm={'barbershop':'barbershop','auto-spa':'auto-spa','autospa':'auto-spa','carpet-cleaning':'carpet-cleaning'};var slug=sm[cat]||cat;if(categorySlugField)categorySlugField.value=slug;if(categoryGroup)categoryGroup.style.display='none';loadServices(slug);updateWhatsapp(slug);});});
             if(categorySlugField&&categorySlugField.value){updateWhatsapp(categorySlugField.value);}
 
-            // ---- Form submit handler for #autospaBookingForm ----
-            var form = document.getElementById('autospaBookingForm');
+            // ---- Form submit handler for #groomingBookingForm ----
+            var form = document.getElementById('groomingBookingForm');
             var formError = document.getElementById('formError');
             var formSuccess = document.getElementById('formSuccess');
             if (form) {
@@ -490,6 +491,26 @@
     <script src="../../assets/js/branding-init.js" defer></script>
 
 <script src="assets/js/shared-components.js"></script></body>
+import os
+
+package_section = """        <!-- ===== PACKAGE PRICING SECTION - Commercial pricing for services (below gallery) ===== -->
+        <section id="package-pricing" class="section-padding bg-card" aria-label="Package pricing">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag">Package Pricing</span>
+                    <h2 class="section-title">Premium <span>Services</span></h2>
+                    <p class="section-subtitle">Commercial pricing for our signature services and experiences. Select your preferred option below.</p>
+                </div>
+                <div id="package-pricing-grid" class="package-pricing-grid" data-membership-grid></div>
+                <div id="membership-fee-banner" class="membership-fee-banner" style="margin-top:var(--space-lg);display:none;"></div>
+                <div class="text-center mt-4">
+                    <a href="#contact" class="btn btn-primary">Enquire About Packages</a>
+                </div>
+            </div>
+        </section>
+        <!-- ===== END PACKAGE PRICING SECTION ===== -->
+"""
+
 </html>
 </html>
 

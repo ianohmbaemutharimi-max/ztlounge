@@ -1,0 +1,177 @@
+/**
+ * ============================================================
+ * ZT Lounge Meru - Shared canonical menu styles
+ * ============================================================
+ * Presentation only. No data, no values, no business records.
+ *
+ * Styles the markup emitted by content-loader.js populateMenu():
+ *   #menu-nav-container / .menu-nav a      (category navigation)
+ *   #menu-container   / .menu-category     (category sections)
+ *   .menu-items-grid  / .menu-item-card    (menu item cards)
+ *   .price-tag                           (canonical menu_items.price)
+ *
+ * Shared by every public menu surface so Restaurant Menu and Lounge Menu are
+ * rendered by the SAME pipeline with the SAME styles.
+ * Extracted verbatim from the Restaurant Menu page styles.
+ * ============================================================
+ */
+
+/* Menu Navigation */
+.menu-nav-section {
+    padding: var(--space-lg) 0;
+    background: var(--color-card-bg);
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: var(--header-height, 110px);
+    z-index: 100;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.menu-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-nav a {
+    padding: 8px 20px;
+    border-radius: 30px;
+    background: var(--color-bg);
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid var(--color-border);
+    white-space: nowrap;
+}
+
+.menu-nav a:hover,
+.menu-nav a.active {
+    background: rgba(201, 168, 76, 0.15);
+    color: var(--color-gold);
+    border-color: var(--color-gold);
+    transform: translateY(-2px);
+}
+
+/* Menu Items */
+.menu-items-section {
+    padding: var(--space-2xl) 0;
+    background: var(--color-bg);
+}
+
+.menu-category {
+    margin-bottom: var(--space-2xl);
+}
+
+.menu-category:last-child {
+    margin-bottom: 0;
+}
+
+.menu-category-title {
+    font-family: var(--font-family-serif);
+    font-size: var(--font-size-2xl);
+    color: var(--color-text);
+    margin-bottom: var(--space-sm);
+    text-align: center;
+}
+
+.menu-category-title span {
+    color: var(--color-gold);
+}
+
+.menu-category-divider {
+    width: 60px;
+    height: 3px;
+    background: var(--color-gold);
+    margin: 0 auto var(--space-xl);
+    border-radius: 2px;
+}
+
+.menu-items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-lg);
+}
+
+.menu-item-card {
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-item-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(201, 168, 76, 0.3);
+}
+
+.menu-item-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.menu-item-content {
+    padding: var(--space-lg);
+}
+
+.menu-item-content h3 {
+    font-family: var(--font-family-serif);
+    font-size: var(--font-size-md);
+    color: var(--color-text);
+    margin-bottom: var(--space-xs);
+}
+
+.menu-item-content p {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+    margin-bottom: var(--space-sm);
+}
+
+.price-tag {
+    display: inline-block;
+    padding: 4px 16px;
+    background: rgba(201, 168, 76, 0.12);
+    color: var(--color-gold);
+    border-radius: 20px;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    border: 1px solid rgba(201, 168, 76, 0.2);
+}
+
+/* Responsive - menu only */
+@media (max-width: 768px) {
+    .menu-nav-section {
+        top: var(--header-height-mobile, 76px);
+        padding: var(--space-md) 0;
+    }
+
+    .menu-nav {
+        gap: var(--space-xs);
+    }
+
+    .menu-nav a {
+        font-size: var(--font-size-xs);
+        padding: 6px 14px;
+    }
+
+    .menu-items-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-category-title {
+        font-size: var(--font-size-xl);
+    }
+
+    .menu-item-image {
+        height: 160px;
+    }
+}

@@ -1,0 +1,15 @@
+/**
+ * ============================================================
+ * ZT Lounge Design System - Sections: Testimonials
+ * ============================================================
+ */
+
+.testimonials-section {
+  padding: var(--spacing-20) 0;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-6);
+}
