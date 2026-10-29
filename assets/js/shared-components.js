@@ -48,8 +48,6 @@ function getBusinessConfig() {
             default: 'Mon - Sun: 10:00 AM - 2:00 AM'
         },
         logo: {
-             dark: 'https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/branding/logo.webp',
-             light: 'https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/branding/logo-white.webp',
              alt: 'ZT Lounge Meru - Premium Hospitality Logo'
         }
     };
@@ -61,8 +59,10 @@ window.injectHeader = function() {
             '<div class="container">' +
                 '<div class="nav-wrapper">' +
                     '<a href="/" class="logo" aria-label="ZT Lounge Home">' +
-                        '<img src="' + config.logo.dark + '" data-media-id="79e60738-2a52-4b93-9a5c-5cbd7bed5603" alt="' + config.logo.alt + '" class="logo-dark site-logo" height="62" width="auto" decoding="async" fetchpriority="high" />' +
-                        '<img src="' + config.logo.light + '" data-media-id="ebac626d-8849-4a8b-8613-f7663bd28eda" alt="' + config.logo.alt + '" class="logo-light site-logo" height="62" width="auto" decoding="async" fetchpriority="high" />' +
+                        '<img data-media-slot="logo-dark" alt="' + config.logo.alt + '" class="logo-dark site-logo" height="62" decoding="async" fetchpriority="high" />' +
+                        '<span class="logo-dark site-logo logo-media-missing" hidden>Logo unavailable</span>' +
+                        '<img data-media-slot="logo-light" alt="' + config.logo.alt + '" class="logo-light site-logo" height="62" decoding="async" fetchpriority="high" />' +
+                        '<span class="logo-light site-logo logo-media-missing" hidden>Logo unavailable</span>' +
                     '</a>' +
                     '<nav class="nav-menu" id="navMenu" role="navigation" aria-label="Main navigation">' +
                         '<ul class="nav-list" role="menubar">' +
@@ -115,8 +115,10 @@ window.injectFooter = function() {
                 '<div class="footer-grid">' +
                     '<div class="footer-brand">' +
                         '<a href="' + href('index.html') + '" class="logo" aria-label="ZT Lounge Home">' +
-                            '<img src="' + config.logo.dark + '" data-media-id="79e60738-2a52-4b93-9a5c-5cbd7bed5603" alt="' + config.logo.alt + '" class="logo-dark site-logo" height="48" width="auto" loading="lazy" decoding="async" />' +
-                            '<img src="' + config.logo.light + '" data-media-id="ebac626d-8849-4a8b-8613-f7663bd28eda" alt="' + config.logo.alt + '" class="logo-light site-logo" height="48" width="auto" loading="lazy" decoding="async" />' +
+                            '<img data-media-slot="logo-dark" alt="' + config.logo.alt + '" class="logo-dark site-logo" height="48" loading="lazy" decoding="async" />' +
+                            '<span class="logo-dark site-logo logo-media-missing" hidden>Logo unavailable</span>' +
+                            '<img data-media-slot="logo-light" alt="' + config.logo.alt + '" class="logo-light site-logo" height="48" loading="lazy" decoding="async" />' +
+                            '<span class="logo-light site-logo logo-media-missing" hidden>Logo unavailable</span>' +
                         '</a>' +
                         '<p data-business="description">Experience premium hospitality at ZT Lounge Meru — fine dining, exclusive lounges, pool table entertainment, Grooming &amp; Care, and world-class service in Milimani.</p>' +
                         '<div class="footer-social">' +
