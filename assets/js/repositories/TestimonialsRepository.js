@@ -58,17 +58,18 @@ window.TestimonialsRepository = (function() {
         };
     }
 
-    function getRepo() {
-        if (!repo) {
-            var config = window.SupabaseConfig || {};
-            var tableName = config.tables && config.tables.testimonials ? config.tables.testimonials : 'testimonials';
-            repo = window.BaseRepository.create(
-                tableName,
-                function() { return []; },
-                { cacheTTL: 300000 }
-            );
+    function getTableName() {
+        var config = window.SupabaseConfig || {};
+        return config.tables && config.tables.testimonials ? config.tables.testimonials : 'testimonials';
+    }
+
+    function resolveMedia(rows) {
+        var withMedia = (rows || []).filter(function(item) { return !!item.media_id; });
+        if (!withMedia.length) return Promise.resolve(rows || []);
+        if (!window.MediaResolver || typeof window.MediaResolver.resolveCollection !== 'function') {
+            return Promise.reject(new Error('MEDIA_RESOLVER_UNAVAILABLE'));
         }
-        return repo;
+        return window.MediaResolver.resolveCollection(withMedia).then(function() { return rows || []; });
     }
 
 /**
@@ -76,19 +77,16 @@ window.TestimonialsRepository = (function() {
      * @returns {Promise<Array>} Array of testimonial objects
      */
     function getAll() {
-        return getRepo().getAll({
-            eq: [{ column: 'approved', value: true }],
-            orderBy: 'created_at',
-            ascending: false
-        }).then(function(data) {
-            var rows = (data || []).map(mapToUI);
-            var withMedia = rows.filter(function(item) { return !!item.media_id; });
-            if (!withMedia.length) return rows;
-            if (!window.MediaResolver || typeof window.MediaResolver.resolveCollection !== 'function') {
-                return Promise.reject(new Error('MEDIA_RESOLVER_UNAVAILABLE'));
-            }
-            return window.MediaResolver.resolveCollection(withMedia).then(function() { return rows; });
-        });
+        var client = window.SupabaseClient && window.SupabaseClient.getClient();
+        if (!client) return Promise.reject(new Error('SUPABASE_CLIENT_UNAVAILABLE'));
+
+        return client.from(getTableName()).select('*').eq('approved', true)
+            .order('created_at', { ascending: false })
+            .then(function(result) {
+                if (result.error) throw result.error;
+                var rows = (result.data || []).map(mapToUI);
+                return resolveMedia(rows);
+            });
     }
 
     /**
@@ -96,22 +94,18 @@ window.TestimonialsRepository = (function() {
      * @returns {Promise<Array>} Array of featured testimonial objects
      */
     function getFeatured() {
-        return getRepo().getAll({
-            eq: [
-                { column: 'approved', value: true },
-                { column: 'is_featured', value: true }
-            ],
-            orderBy: 'created_at',
-            ascending: false
-        }).then(function(data) {
-            var rows = (data || []).map(mapToUI);
-            var withMedia = rows.filter(function(item) { return !!item.media_id; });
-            if (!withMedia.length) return rows;
-            if (!window.MediaResolver || typeof window.MediaResolver.resolveCollection !== 'function') {
-                return Promise.reject(new Error('MEDIA_RESOLVER_UNAVAILABLE'));
-            }
-            return window.MediaResolver.resolveCollection(withMedia).then(function() { return rows; });
-        });
+        var client = window.SupabaseClient && window.SupabaseClient.getClient();
+        if (!client) return Promise.reject(new Error('SUPABASE_CLIENT_UNAVAILABLE'));
+
+        return client.from(getTableName()).select('*')
+            .eq('approved', true)
+            .eq('is_featured', true)
+            .order('created_at', { ascending: false })
+            .then(function(result) {
+                if (result.error) throw result.error;
+                var rows = (result.data || []).map(mapToUI);
+                return resolveMedia(rows);
+            });
     }
 
     return {
