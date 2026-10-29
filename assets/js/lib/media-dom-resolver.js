@@ -92,10 +92,17 @@
             } else if (el.tagName === 'IMG') {
                 el.setAttribute('src', url);
                 el.style.display = '';
+                var imageWrapper = el.parentElement && el.parentElement.tagName.toLowerCase() === 'picture'
+                    ? el.parentElement.parentElement
+                    : el.parentElement;
+                var imagePlaceholder = imageWrapper && imageWrapper.querySelector(':scope > .zt-media-missing');
+                if (imagePlaceholder) imagePlaceholder.remove();
             } else if (el.getAttribute(BG_ATTR)) {
                 var gradient = el.getAttribute('data-media-bg-gradient') ||
                     'linear-gradient(135deg, rgba(10,10,10,0.75), rgba(10,10,10,0.4))';
                 el.style.background = gradient + ", url('" + url + "') center/cover no-repeat";
+                var bgPlaceholder = el.querySelector(':scope > .zt-media-missing');
+                if (bgPlaceholder) bgPlaceholder.remove();
             }
             el.setAttribute('data-media-status', 'resolved');
             return true;
