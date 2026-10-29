@@ -11,7 +11,7 @@
  * - BusinessRepository.getBusinessInfo()
  * - BusinessRepository.updateSettings() (admin-ready)
  * 
- * Data Source: Supabase (business_settings table) with local config fallback
+ * Data Source: Supabase business_settings; media URLs come only from canonical media IDs
  * ============================================================
  */
 
@@ -44,13 +44,13 @@ window.BusinessRepository = (function() {
             latitude: item.latitude || 0,
             longitude: item.longitude || 0,
             opening_hours: item.opening_hours || item.hours || {},
-                        logo_url: item.logo_url || item.logo || '',
+                        logo_url: null,
             logo_media_id: item.logo_media_id || null,
-            logo_light_media_id: item.logo_light_media_id || null,
+            logo_light_media_id: null,
             favicon_media_id: item.favicon_media_id || null,
-            resolved_logo_url: item.resolved_logo_url || null,
-            resolved_logo_light_url: item.resolved_logo_light_url || null,
-            resolved_favicon_url: item.resolved_favicon_url || null,
+            resolved_logo_url: null,
+            resolved_logo_light_url: null,
+            resolved_favicon_url: null,
             whatsapp: item.whatsapp || '',
             facebook: item.facebook || '',
             instagram: item.instagram || '',
@@ -79,50 +79,62 @@ window.BusinessRepository = (function() {
     }
 
         /**
-     * Resolve branding media_id -> public_url from media_assets.
-     * Writes the canonical DB-derived URLs onto settings.resolved_* , falling
-     * back to the legacy logo_url/favicon_url static values (or null) when the
-     * anon client cannot read media_assets. branding-init.js reads these.
+     * Resolve only canonical branding media IDs. Legacy logo_url/favicon_url
+     * fields and static image URLs are never used as fallback sources.
      */
     function resolveMediaIds(settings) {
-        settings.resolved_logo_url = settings.logo_url || null;
-        settings.resolved_logo_light_url = settings.logo_light_url || null;
-        settings.resolved_favicon_url = settings.favicon_url || null;
+        settings.resolved_logo_url = null;
+        settings.resolved_logo_light_url = null; // live schema has no logo_light_media_id
+        settings.resolved_favicon_url = null;
+        settings.media_resolution_error = null;
 
         var client = (typeof window !== 'undefined') && window.supabaseClient;
-        if (!client) {
-            return Promise.resolve(settings);
-        }
-
+        var ids = [];
         var idMap = {};
-        if (settings.logo_media_id) idMap[settings.logo_media_id] = 'logo';
-        if (settings.logo_light_media_id) idMap[settings.logo_light_media_id] = 'logo_light';
-        if (settings.favicon_media_id) idMap[settings.favicon_media_id] = 'favicon';
-        var ids = Object.keys(idMap);
+        if (settings.logo_media_id) {
+            idMap[settings.logo_media_id] = 'logo';
+            ids.push(settings.logo_media_id);
+        }
+        if (settings.favicon_media_id) {
+            idMap[settings.favicon_media_id] = 'favicon';
+            ids.push(settings.favicon_media_id);
+        }
         if (!ids.length) {
+            settings.media_resolution_error = 'CANONICAL_BRANDING_MEDIA_MISSING';
+            return Promise.resolve(settings);
+        }
+        if (!client) {
+            settings.media_resolution_error = 'SUPABASE_CLIENT_UNAVAILABLE';
             return Promise.resolve(settings);
         }
 
-        return client
-            .from('media_assets')
-            .select('id,public_url')
-            .in('id', ids)
+        return client.from('media_assets').select('id,public_url').in('id', ids)
             .then(function(res) {
-                if (res && Array.isArray(res.data)) {
-                    res.data.forEach(function(asset) {
-                        var kind = idMap[asset.id];
-                        var url = asset.public_url;
-                        if (!url) return;
-                        if (kind === 'logo') settings.resolved_logo_url = url;
-                        else if (kind === 'logo_light') settings.resolved_logo_light_url = url;
-                        else if (kind === 'favicon') settings.resolved_favicon_url = url;
-                    });
-                }
+                if (!res || res.error) throw (res && res.error) || new Error('MEDIA_LOOKUP_FAILED');
+                var found = {};
+                (res.data || []).forEach(function(asset) {
+                    var kind = idMap[asset.id];
+                    if (!kind) return;
+                    found[asset.id] = true;
+                    if (!window.MediaResolver || !window.MediaResolver.isCanonicalPublicUrl ||
+                        !window.MediaResolver.isCanonicalPublicUrl(asset.public_url)) {
+                        settings.media_resolution_error = 'NON_CANONICAL_BRANDING_URL';
+                        return;
+                    }
+                    if (kind === 'logo') settings.resolved_logo_url = asset.public_url;
+                    if (kind === 'favicon') settings.resolved_favicon_url = asset.public_url;
+                });
+                ids.forEach(function(id) {
+                    if (!found[id]) settings.media_resolution_error = 'CANONICAL_BRANDING_MEDIA_NOT_FOUND';
+                });
                 return settings;
             })
             .catch(function(err) {
-                console.warn('[BusinessRepository] media_assets resolution failed, keeping branding fallbacks:',
-                    (err && err.message) || err);
+                settings.resolved_logo_url = null;
+                settings.resolved_logo_light_url = null;
+                settings.resolved_favicon_url = null;
+                settings.media_resolution_error = (err && err.message) || 'CANONICAL_BRANDING_LOOKUP_FAILED';
+                console.error('[BusinessRepository] canonical branding resolution failed:', settings.media_resolution_error);
                 return settings;
             });
     }
@@ -145,11 +157,10 @@ window.BusinessRepository = (function() {
                 // Add backwards compatible camelCase aliases
                                 cachedData.businessName = cachedData.business_name;
                 cachedData.hours = cachedData.opening_hours;
-                cachedData.logo = cachedData.logo_url;
-                cachedData.logo_light = cachedData.logo_light_url || null;
-                cachedData.favicon = cachedData.favicon_url || null;
-                // Resolve media_id -> public_url so branding-init.js can apply
-                // canonical DB-driven logos/favicon. Falls back gracefully.
+                cachedData.logo = null;
+                cachedData.logo_light = null;
+                cachedData.favicon = null;
+                // Resolve only canonical media IDs. Invalid/missing references remain unset.
                 return resolveMediaIds(cachedData);
             }
             // Fallback to local config
