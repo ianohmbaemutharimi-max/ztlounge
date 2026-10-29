@@ -72,7 +72,11 @@
             placeholder.setAttribute('role', 'status');
             placeholder.textContent = 'Image unavailable';
             placeholder.style.cssText = 'display:flex;align-items:center;justify-content:center;min-height:4rem;padding:0.75rem;color:#a8a29e;background:rgba(28,25,23,.75);font-size:12px;text-align:center;';
-            img.insertAdjacentElement('afterend', placeholder);
+            if (img.parentElement === wrapper) {
+                img.insertAdjacentElement('afterend', placeholder);
+            } else {
+                wrapper.appendChild(placeholder);
+            }
         } else if (placeholder) {
             placeholder.hidden = false;
             placeholder.style.display = 'flex';
@@ -166,7 +170,7 @@
 
     function populateGallery() {
         var pageId = getPageId();
-        var grid = document.querySelector('.gallery-grid, .gallery-section, .grid');
+        var grid = document.querySelector('.gallery-grid, .gallery-section') || (document.querySelector('.grid-item') && document.querySelector('.grid-item').parentElement);
         if (!window.GalleryRepository) {
             clearContainerImages(grid);
             return;
