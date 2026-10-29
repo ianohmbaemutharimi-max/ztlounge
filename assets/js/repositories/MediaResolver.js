@@ -33,6 +33,26 @@ window.MediaResolver = (function() {
             : null;
     }
 
+    /**
+     * A canonical public URL must be an absolute HTTPS URL on the configured
+     * Supabase project host and use the public Storage URL path. Never repair
+     * a bad URL in the browser; report it so the registry data can be fixed.
+     */
+    function isCanonicalPublicUrl(url) {
+        if (typeof url !== 'string' || !url.trim()) return false;
+        try {
+            var parsed = new URL(url);
+            var configured = window.SupabaseConfig && window.SupabaseConfig.url;
+            if (!configured) return false;
+            var expected = new URL(configured);
+            return parsed.protocol === 'https:' &&
+                parsed.host === expected.host &&
+                parsed.pathname.indexOf('/storage/v1/object/public/') === 0;
+        } catch (error) {
+            return false;
+        }
+    }
+
     function fetchAssets(ids) {
         var client = getClient();
         if (!client) return Promise.reject(new Error('NO_SUPABASE_CLIENT'));
@@ -107,6 +127,12 @@ window.MediaResolver = (function() {
             throw new Error('MEDIA_INVALID: media_id ' + item.media_id + ' resolved but has no public_url');
         }
 
+        // CONTRACT ENFORCEMENT #4: URL must match the configured project's public Storage host.
+        // Do not rewrite the host or fall back to a stale URL.
+        if (!isCanonicalPublicUrl(asset.public_url)) {
+            throw new Error('MEDIA_INVALID_URL: media_id ' + item.media_id + ' has a non-canonical public_url');
+        }
+
         // CANONICAL ASSIGNMENT: Always from media_assets, never fallback to image_url
         item.image_url = asset.public_url;
         if (asset.alt_text) item.alt_text = asset.alt_text;
@@ -152,6 +178,7 @@ window.MediaResolver = (function() {
     return {
         resolveCollection: resolveCollection,
         resolveSingle: resolveSingle,
+        isCanonicalPublicUrl: isCanonicalPublicUrl,
         clearCache: function() { cache = {}; }
     };
 })();
