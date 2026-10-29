@@ -10,7 +10,7 @@
  * 1. Query business_settings - logo_media_id, favicon_media_id
  * 2. Resolve media_ids - media_assets.public_url
  * 3. Inject canonical URLs into DOM
- * 4. Maintain graceful fallback if database unavailable
+ * 4. Show an explicit missing-media state if canonical branding cannot be resolved
  *
  * Contract:
  * - Logo (dark): .logo-dark.site-logo
@@ -34,7 +34,8 @@
         try {
             // Require BusinessRepository
             if (!window.BusinessRepository) {
-                console.warn('[BrandingInit] BusinessRepository not available - using static fallback');
+                console.warn('[BrandingInit] BusinessRepository unavailable; clearing static branding');
+                clearBranding();
                 return;
             }
 
@@ -42,7 +43,8 @@
             const settings = await window.BusinessRepository.getAll();
 
             if (!settings) {
-                console.warn('[BrandingInit] No business settings found - using static fallback');
+                console.warn('[BrandingInit] No business settings found; clearing static branding');
+                clearBranding();
                 return;
             }
 
@@ -62,33 +64,32 @@
             // OG/Twitter/JSON-LD are theme-agnostic social cards (white bg) and
             // stay logo-driven (dark colorway). Only the header/footer slots need
             // distinct per-theme colorways.
+            // Always update every slot. Missing/invalid canonical media must not
+            // leave a hard-coded image from the HTML or shared header.
+            updateLogos(logoUrl, logoLightUrl);
             if (logoUrl) {
                 updateOGImage(logoUrl);
                 updateJSONLD(logoUrl);
-                console.log('[BrandingInit] ✅ Logo canonicalized:', logoUrl);
+                console.log('[BrandingInit] Canonical logo resolved');
             } else {
-                console.warn('[BrandingInit] Logo URL not resolved - keeping fallback');
-            }
-
-            // Fan distinct colorways to the correct CSS slots. CSS display is
-            // authoritative: .logo-dark  lives on the dark header  (dark colorway  -> logo.webp)
-            // and .logo-light on the light/white header (light colorway -> logo-white.webp).
-            if (logoUrl || logoLightUrl) {
-                updateLogos(logoUrl, logoLightUrl);
+                clearOGImage();
+                clearJSONLDImage();
+                console.warn('[BrandingInit] Canonical logo missing or invalid');
             }
 
             if (faviconUrl) {
                 updateFavicon(faviconUrl);
-                console.log('[BrandingInit] ✅ Favicon canonicalized:', faviconUrl);
+                console.log('[BrandingInit] Canonical favicon resolved');
             } else {
-                console.warn('[BrandingInit] Favicon URL not resolved - keeping fallback');
+                clearFavicon();
+                console.warn('[BrandingInit] Canonical favicon missing or invalid');
             }
 
             console.log('[BrandingInit] ✅ Canonical branding initialization complete');
 
         } catch (error) {
             console.error('[BrandingInit] Failed to load canonical branding:', error.message);
-            console.warn('[BrandingInit] Using static fallback branding');
+            clearBranding();
         }
     }
 
@@ -102,21 +103,33 @@
      * @param {string} darkUrl  - Dark colorway URL  (header/footer .logo-dark slot)
      * @param {string} lightUrl - Light colorway URL (header/footer .logo-light slot)
      */
+    function applyLogoSlot(selector, placeholderSelector, url) {
+        document.querySelectorAll(selector).forEach(function(img) {
+            if (url && window.MediaResolver && window.MediaResolver.isCanonicalPublicUrl(url)) {
+                img.src = url;
+                img.style.display = '';
+                img.setAttribute('data-media-status', 'resolved');
+            } else {
+                img.removeAttribute('src');
+                img.style.display = 'none';
+                img.setAttribute('data-media-status', 'missing');
+            }
+        });
+        document.querySelectorAll(placeholderSelector).forEach(function(placeholder) {
+            placeholder.hidden = !(url && window.MediaResolver && window.MediaResolver.isCanonicalPublicUrl(url));
+        });
+    }
+
     function updateLogos(darkUrl, lightUrl) {
-        // .logo-dark (dark header) <- dark colorway (darkUrl -> logo.webp)
-        var darkThemeLogos = document.querySelectorAll('.logo-dark.site-logo');
-        darkThemeLogos.forEach(function(img) {
-            if (darkUrl) { img.src = darkUrl; }
-        });
+        applyLogoSlot('img.logo-dark.site-logo', 'span.logo-dark.logo-media-missing', darkUrl);
+        applyLogoSlot('img.logo-light.site-logo', 'span.logo-light.logo-media-missing', lightUrl);
+    }
 
-        // .logo-light (light/white header) <- light colorway (lightUrl -> logo-white.webp)
-        var lightThemeLogos = document.querySelectorAll('.logo-light.site-logo');
-        lightThemeLogos.forEach(function(img) {
-            if (lightUrl) { img.src = lightUrl; }
-        });
-
-        console.log('[BrandingInit] Updated', darkThemeLogos.length + lightThemeLogos.length,
-            'logo elements (dark->.logo-dark, light->.logo-light)');
+    function clearBranding() {
+        updateLogos(null, null);
+        clearFavicon();
+        clearOGImage();
+        clearJSONLDImage();
     }
 
     /**
@@ -140,6 +153,13 @@
         // never receive the .ico payload (HARD RULE 2).
 
         console.log('[BrandingInit] ✅ Favicon canonicalized:', faviconUrl);
+    }
+
+    function clearFavicon() {
+        document.querySelectorAll('link[rel="icon"]').forEach(function(link) {
+            link.removeAttribute('href');
+            link.setAttribute('data-media-status', 'missing');
+        });
     }
 
     /**
@@ -178,6 +198,30 @@
         } catch (error) {
             console.warn('[BrandingInit] Failed to update JSON-LD:', error.message);
         }
+    }
+
+    function clearOGImage() {
+        ['meta[property="og:image"]', 'meta[name="twitter:image"]'].forEach(function(selector) {
+            var element = document.querySelector(selector);
+            if (element) {
+                element.removeAttribute('content');
+                element.setAttribute('data-media-status', 'missing');
+            }
+        });
+    }
+
+    function clearJSONLDImage() {
+        document.querySelectorAll('script[type="application/ld+json"]').forEach(function(script) {
+            try {
+                var data = JSON.parse(script.textContent);
+                if (data && Object.prototype.hasOwnProperty.call(data, 'image')) {
+                    delete data.image;
+                    script.textContent = JSON.stringify(data, null, 2);
+                }
+            } catch (error) {
+                console.warn('[BrandingInit] Failed to clear invalid JSON-LD image:', error.message);
+            }
+        });
     }
 
     // Initialize when DOM ready
