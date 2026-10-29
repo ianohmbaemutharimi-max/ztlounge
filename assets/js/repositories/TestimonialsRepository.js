@@ -9,7 +9,7 @@
  * - TestimonialsRepository.getAll()
  * - TestimonialsRepository.getFeatured()
  * 
- * Data Source: Supabase (testimonials table) with local config fallback
+ * Data Source: Supabase testimonials table only; media URLs resolved through MediaResolver
  * 
  * Field Mapping (Supabase -> UI):
  * - comment -> content
@@ -49,7 +49,8 @@ window.TestimonialsRepository = (function() {
             author: author,
             occupation: item.occupation || item.location || '',
             rating: item.rating || 5,
-            image_url: item.image_url || '',
+            image_url: null,
+            media_id: item.media_id || null,
             is_featured: item.is_featured || false,
             is_visible: item.is_visible !== undefined ? item.is_visible : true,
             approved: item.approved !== undefined ? item.approved : true,
@@ -63,11 +64,7 @@ window.TestimonialsRepository = (function() {
             var tableName = config.tables && config.tables.testimonials ? config.tables.testimonials : 'testimonials';
             repo = window.BaseRepository.create(
                 tableName,
-                function() {
-                    // Fallback to local config (TestimonialsConfig.items)
-                    var localConfig = window.TestimonialsConfig || {};
-                    return localConfig.items || localConfig.testimonials || [];
-                },
+                function() { return []; },
                 { cacheTTL: 300000 }
             );
         }
@@ -84,13 +81,13 @@ window.TestimonialsRepository = (function() {
             orderBy: 'created_at',
             ascending: false
         }).then(function(data) {
-            if (data && data.length > 0) {
-                return data.map(mapToUI);
+            var rows = (data || []).map(mapToUI);
+            var withMedia = rows.filter(function(item) { return !!item.media_id; });
+            if (!withMedia.length) return rows;
+            if (!window.MediaResolver || typeof window.MediaResolver.resolveCollection !== 'function') {
+                return Promise.reject(new Error('MEDIA_RESOLVER_UNAVAILABLE'));
             }
-            // Fallback to local config
-            var config = window.TestimonialsConfig || {};
-            var localItems = config.items || config.testimonials || [];
-            return localItems.map(mapToUI);
+            return window.MediaResolver.resolveCollection(withMedia).then(function() { return rows; });
         });
     }
 
@@ -107,15 +104,13 @@ window.TestimonialsRepository = (function() {
             orderBy: 'created_at',
             ascending: false
         }).then(function(data) {
-            if (data && data.length > 0) {
-                return data.map(mapToUI);
+            var rows = (data || []).map(mapToUI);
+            var withMedia = rows.filter(function(item) { return !!item.media_id; });
+            if (!withMedia.length) return rows;
+            if (!window.MediaResolver || typeof window.MediaResolver.resolveCollection !== 'function') {
+                return Promise.reject(new Error('MEDIA_RESOLVER_UNAVAILABLE'));
             }
-            // Fallback to local config
-            var config = window.TestimonialsConfig || {};
-            var localItems = (config.items || config.testimonials || []).filter(function(item) {
-                return item.featured || item.is_featured;
-            });
-            return localItems.map(mapToUI);
+            return window.MediaResolver.resolveCollection(withMedia).then(function() { return rows; });
         });
     }
 
