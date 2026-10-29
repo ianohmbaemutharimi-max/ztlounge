@@ -13,8 +13,7 @@
  *     data-media-id as the ownership marker. JS re-resolves after load for
  *     client-side consistency.
  *   - All media_ids are batched into ONE media_assets query (no N+1).
- *   - Graceful degradation: if MediaResolver is not yet loaded, elements
- *     keep their original attribute values unchanged.
+ *   - Fail closed: invalid or unresolved canonical media never keeps a stale URL.
  *
  * USAGE (on any page element):
  *   <meta property="og:image" content="https://.../og-image.webp"
@@ -47,27 +46,65 @@
             return null;
         }
 
+        function markMissing(el) {
+            el.setAttribute('data-media-status', 'missing');
+            if (el.tagName === 'META') {
+                el.removeAttribute('content');
+            } else if (el.tagName === 'LINK') {
+                el.removeAttribute('href');
+            } else if (el.tagName === 'IMG') {
+                el.removeAttribute('src');
+                el.removeAttribute('srcset');
+                el.alt = el.alt || 'Image unavailable';
+                el.style.display = 'none';
+                var wrapper = el.parentElement && el.parentElement.tagName.toLowerCase() === 'picture'
+                    ? el.parentElement.parentElement
+                    : el.parentElement;
+                if (wrapper) {
+                    var existing = wrapper.querySelector(':scope > .zt-media-missing');
+                    if (!existing) {
+                        existing = document.createElement('span');
+                        existing.className = 'zt-media-missing';
+                        existing.setAttribute('role', 'status');
+                        existing.textContent = 'Image unavailable';
+                        existing.style.cssText = 'display:flex;align-items:center;justify-content:center;min-height:4rem;padding:.75rem;color:#a8a29e;background:rgba(28,25,23,.75);font-size:12px;text-align:center;';
+                        if (el.parentElement === wrapper) el.insertAdjacentElement('afterend', existing);
+                        else wrapper.appendChild(existing);
+                    }
+                }
+            } else if (el.getAttribute(BG_ATTR)) {
+                el.style.backgroundImage = 'none';
+                el.style.background = 'none';
+            }
+        }
+
         function applyUrl(el, url) {
-            if (!url) return;
+            if (!url || !window.MediaResolver ||
+                typeof window.MediaResolver.isCanonicalPublicUrl !== 'function' ||
+                !window.MediaResolver.isCanonicalPublicUrl(url)) {
+                markMissing(el);
+                return false;
+            }
             if (el.tagName === 'META') {
                 el.setAttribute('content', url);
             } else if (el.tagName === 'LINK') {
                 el.setAttribute('href', url);
             } else if (el.tagName === 'IMG') {
                 el.setAttribute('src', url);
+                el.style.display = '';
             } else if (el.getAttribute(BG_ATTR)) {
-                // For CSS background-image elements: preserve any gradient overlay
-                // from the stylesheet by setting the full background shorthand.
-                // Gradient can be customized via data-media-bg-gradient attribute.
                 var gradient = el.getAttribute('data-media-bg-gradient') ||
                     'linear-gradient(135deg, rgba(10,10,10,0.75), rgba(10,10,10,0.4))';
                 el.style.background = gradient + ", url('" + url + "') center/cover no-repeat";
             }
+            el.setAttribute('data-media-status', 'resolved');
+            return true;
         }
 
         function resolve(elements) {
             if (!window.MediaResolver || !window.MediaResolver.resolveCollection) {
-                // MediaResolver not available — leave elements as-is (fallback URLs remain)
+                console.error('[MediaDomResolver] MediaResolver unavailable; clearing stale media URLs');
+                elements.forEach(markMissing);
                 return Promise.resolve();
             }
 
@@ -90,13 +127,16 @@
                 resolved.forEach(function(item) {
                     var els = idToEls[item.media_id] || [];
                     els.forEach(function(el) {
-                        applyUrl(el, item.image_url);
-                        el.setAttribute(RESOLVED_ATTR, 'true');
+                        if (applyUrl(el, item.image_url)) {
+                            el.setAttribute(RESOLVED_ATTR, 'true');
+                        }
                     });
                 });
             }).catch(function(err) {
-                // Resolution failed — elements keep their original URLs (fallback)
-                console.warn('[MediaDomResolver] resolution failed:', err.message);
+                console.warn('[MediaDomResolver] canonical resolution failed; clearing stale URLs:', err.message);
+                elements.forEach(function(el) {
+                    if (ids.indexOf(getMediaId(el)) !== -1 && !el.getAttribute(RESOLVED_ATTR)) markMissing(el);
+                });
             });
         }
 
