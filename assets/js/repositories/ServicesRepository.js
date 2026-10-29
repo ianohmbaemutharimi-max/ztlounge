@@ -11,15 +11,9 @@
  * - ServicesRepository.getExperiences(pageId)
  * - ServicesRepository.getFeatures(pageId)
  * 
- * Data Source: Supabase (services table) with local config fallback
- *
- * MEDIA RESOLUTION: every service discovered from the database or the
- * local config is normalized to the canonical media_id field through
- * resolveMedia (Supabase rows, exclusive gateway) and
- * resolveConfigMedia (legacy ServicesConfig rows). Consumers never see
- * image_url; they read media_id and let MediaResolver.applyResolved
- * mint the final URL. Failure in either resolver keeps the row
- * (catch-and-keep) so a bad asset never empties the card.
+ * Data Source: Supabase services table only; page slugs and card types match live schema.
+ * Every image-bearing row resolves through media_id -> media_assets.public_url.
+ * Invalid or missing media is never replaced with a local image URL.
  * ============================================================
  */
 
@@ -120,6 +114,7 @@ window.ServicesRepository = (function() {
         });
     }
 
+
     /**
      * Get all service cards for homepage
      * @returns {Promise<Array>} Array of service objects
@@ -155,75 +150,61 @@ window.ServicesRepository = (function() {
     /** Get all active services (no page filter) */
     function getAll() {
         return getRepo().getAll({
-            eq: [{ column: 'is_active', value: true }],
-            orderBy: 'display_order',
+            select: "*,service_card_types(slug)",
+            eq: [{ column: "is_active", value: true }],
+            orderBy: "display_order",
             ascending: true
         }).then(function(data) {
-            if (data && data.length > 0) {
-                var mapped = data.map(mapToUI);
-                return resolveMedia(mapped);
-            }
-            return [];
+            return resolveMedia((data || []).map(mapToUI));
         });
     }
+
 
     /** Get all active package-type services */
     function getPackages() {
         return getRepo().getAll({
-            eq: [
-                { column: 'is_active', value: true },
-                { column: 'type', value: 'packages' }
-            ],
-            orderBy: 'display_order',
+            select: "*,service_card_types(slug)",
+            eq: [{ column: "is_active", value: true }],
+            orderBy: "display_order",
             ascending: true
         }).then(function(data) {
-            if (data && data.length > 0) {
-                var mapped = data.map(mapToUI);
-                return resolveMedia(mapped);
-            }
-            return [];
+            var mapped = (data || []).map(mapToUI).filter(function(row) { return row.type === "package"; });
+            return resolveMedia(mapped);
         });
     }
 
-    /**
+
      * Get active services for a specific category (resolved by slug).
      * @param {string} categorySlug - Category slug (e.g. 'barbershop')
      * @returns {Promise<Array>} Array of mapped service objects
      */
     function getByCategory(categorySlug) {
         var client = window.SupabaseClient && window.SupabaseClient.getClient();
-        if (!client) {
-            console.warn('[ServicesRepository] Supabase client unavailable for category', categorySlug);
-            return Promise.resolve([]);
-        }
-        return client
-            .from(window.SupabaseConfig.tables.service_categories || 'service_categories')
-            .select('id')
-            .eq('slug', categorySlug)
-            .eq('is_active', true)
+        if (!client) return Promise.reject(new Error("SUPABASE_CLIENT_UNAVAILABLE"));
+
+        return client.from(window.SupabaseConfig.tables.serviceCategories || "service_categories")
+            .select("id")
+            .eq("slug", categorySlug)
+            .eq("is_active", true)
             .maybeSingle()
             .then(function(catRes) {
-                if (catRes.error || !catRes.data) {
-                    console.warn('[ServicesRepository] Could not resolve category slug to id:', categorySlug, catRes.error && catRes.error.message);
-                    return [];
-                }
+                if (catRes.error) throw catRes.error;
+                if (!catRes.data) return [];
                 return getRepo().getAll({
+                    select: "*,service_card_types(slug)",
                     eq: [
-                        { column: 'category_id', value: catRes.data.id },
-                        { column: 'is_active', value: true },
-                        { column: 'type', value: 'service' }
+                        { column: "category_id", value: catRes.data.id },
+                        { column: "is_active", value: true }
                     ],
-                    orderBy: 'display_order',
+                    orderBy: "display_order",
                     ascending: true
                 }).then(function(data) {
-                    if (data && data.length > 0) {
-                        var mapped = data.map(mapToUI);
-                        return resolveMedia(mapped);
-                    }
-                    return [];
+                    var mapped = (data || []).map(mapToUI).filter(function(row) { return row.type === "service"; });
+                    return resolveMedia(mapped);
                 });
             });
     }
+
 
     return {
         getByPage: getByPage,
