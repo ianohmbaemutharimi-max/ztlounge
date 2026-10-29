@@ -98,8 +98,12 @@ window.injectHeader = function() {
         '</header>';
 
         var placeholder = document.getElementById('site-header');
+        var existingHeader = document.getElementById('header');
         if (placeholder) {
             placeholder.innerHTML = headerHTML;
+        } else if (existingHeader) {
+            // Replace the page's static header instead of inserting a duplicate.
+            existingHeader.outerHTML = headerHTML;
         } else {
             document.body.insertAdjacentHTML('afterbegin', headerHTML);
         }
