@@ -32,40 +32,120 @@
         return 'home';
     }
 
+    function isCanonicalMediaUrl(url) {
+        return !!(url && window.MediaResolver &&
+            typeof window.MediaResolver.isCanonicalPublicUrl === 'function' &&
+            window.MediaResolver.isCanonicalPublicUrl(url));
+    }
+
+    function applyCanonicalImage(img, url, alt) {
+        if (!img) return;
+        var wrapper = img.parentElement && img.parentElement.tagName.toLowerCase() === 'picture'
+            ? img.parentElement.parentElement
+            : img.parentElement;
+        var placeholder = null;
+        if (wrapper) {
+            for (var i = 0; i < wrapper.children.length; i++) {
+                if (wrapper.children[i].classList && wrapper.children[i].classList.contains('zt-media-missing')) {
+                    placeholder = wrapper.children[i];
+                    break;
+                }
+            }
+        }
+        if (isCanonicalMediaUrl(url)) {
+            img.src = url;
+            img.alt = alt || img.alt || 'Image';
+            img.style.display = '';
+            img.setAttribute('data-media-status', 'resolved');
+            if (placeholder) placeholder.remove();
+            return;
+        }
+
+        img.removeAttribute('src');
+        img.removeAttribute('srcset');
+        img.alt = alt ? alt + ' image unavailable' : 'Image unavailable';
+        img.style.display = 'none';
+        img.setAttribute('data-media-status', 'missing');
+        if (wrapper && !placeholder) {
+            placeholder = document.createElement('span');
+            placeholder.className = 'zt-media-missing';
+            placeholder.setAttribute('role', 'status');
+            placeholder.textContent = 'Image unavailable';
+            placeholder.style.cssText = 'display:flex;align-items:center;justify-content:center;min-height:4rem;padding:0.75rem;color:#a8a29e;background:rgba(28,25,23,.75);font-size:12px;text-align:center;';
+            img.insertAdjacentElement('afterend', placeholder);
+        } else if (placeholder) {
+            placeholder.hidden = false;
+            placeholder.style.display = 'flex';
+        }
+    }
+
+    function clearContainerImages(container) {
+        if (!container) return;
+        container.querySelectorAll('img').forEach(function(img) {
+            applyCanonicalImage(img, null, img.alt || 'Content');
+        });
+        container.querySelectorAll('[style*="background-image"]').forEach(function(element) {
+            element.style.backgroundImage = 'none';
+            element.setAttribute('data-media-status', 'missing');
+        });
+    }
+
+    function applyCanonicalBackground(element, url) {
+        if (!element) return;
+        var existing = element.querySelector(':scope > .zt-media-missing');
+        if (isCanonicalMediaUrl(url)) {
+            element.style.backgroundImage = 'url("' + url.replace(/"/g, '%22') + '")';
+            element.setAttribute('data-media-status', 'resolved');
+            if (existing) existing.remove();
+            return;
+        }
+        element.style.backgroundImage = 'none';
+        element.setAttribute('data-media-status', 'missing');
+        if (!existing) {
+            existing = document.createElement('span');
+            existing.className = 'zt-media-missing';
+            existing.setAttribute('role', 'status');
+            existing.textContent = 'Hero image unavailable';
+            existing.style.cssText = 'position:absolute;left:1rem;bottom:1rem;z-index:2;padding:.5rem .75rem;background:rgba(28,25,23,.8);color:#d6d3d1;font-size:12px;';
+            element.appendChild(existing);
+        }
+    }
+
     /**
      * Populate hero section from HeroRepository (Supabase-first)
      */
     function populateHero() {
         var pageId = getPageId();
-        if (!window.HeroRepository) return;
+        var heroContainer = document.querySelector('.hero-slider, .hero-section, #hero');
+        if (!window.HeroRepository) {
+            clearContainerImages(heroContainer);
+            document.querySelectorAll('.hero-slide').forEach(function(slide) { applyCanonicalBackground(slide, null); });
+            return;
+        }
 
         window.HeroRepository.getByPage(pageId).then(function(heroData) {
-            if (!heroData || !heroData.slides || heroData.slides.length === 0) {
+            if (!heroData || !Array.isArray(heroData.slides) || heroData.slides.length === 0) {
+                document.querySelectorAll('.hero-slide').forEach(function(slide) { applyCanonicalBackground(slide, null); });
                 return;
             }
 
             heroData.slides.forEach(function(slide, index) {
                 var slideEl = document.querySelector('.hero-slide[data-index="' + index + '"], #hero-slide-' + index);
                 if (!slideEl) return;
+                applyCanonicalBackground(slideEl, slide.image_url);
 
                 var badgeEl = slideEl.querySelector('.hero-badge');
-                if (badgeEl && slide.badge) {
-                    badgeEl.textContent = slide.badge;
-                }
+                if (badgeEl && slide.badge) badgeEl.textContent = slide.badge;
 
                 var titleEl = slideEl.querySelector('.hero-title');
                 if (titleEl && slide.title) {
                     var html = slide.title;
-                    if (slide.highlight) {
-                        html = slide.title + ' <span>' + slide.highlight + '</span>';
-                    }
+                    if (slide.highlight) html = slide.title + ' <span>' + slide.highlight + '</span>';
                     titleEl.innerHTML = html;
                 }
 
                 var subtitleEl = slideEl.querySelector('.hero-subtitle');
-                if (subtitleEl && slide.subtitle) {
-                    subtitleEl.textContent = slide.subtitle;
-                }
+                if (subtitleEl && slide.subtitle) subtitleEl.textContent = slide.subtitle;
 
                 var buttonsContainer = slideEl.querySelector('.hero-buttons');
                 if (buttonsContainer && slide.buttons) {
@@ -78,46 +158,46 @@
                     });
                 }
             });
+        }).catch(function(error) {
+            console.error('[ContentLoader] Canonical hero media failed:', error.message);
+            document.querySelectorAll('.hero-slide').forEach(function(slide) { applyCanonicalBackground(slide, null); });
         });
     }
 
-    /**
-     * Populate gallery from GalleryRepository (Supabase-first)
-     */
     function populateGallery() {
         var pageId = getPageId();
-        if (!window.GalleryRepository) return;
+        var grid = document.querySelector('.gallery-grid, .gallery-section, .grid');
+        if (!window.GalleryRepository) {
+            clearContainerImages(grid);
+            return;
+        }
 
         window.GalleryRepository.getByPage(pageId).then(function(galleryData) {
-            if (!galleryData) return;
-
-            if (galleryData.items) {
-                galleryData.items.forEach(function(item, index) {
-                    var gridItem = document.querySelector('.grid-item[data-index="' + index + '"]');
-                    if (!gridItem) return;
-
-                    var img = gridItem.querySelector('img');
-                    if (img && item.image) {
-                        img.src = window.AssetUrl ? window.AssetUrl.resolve(item.image) : item.image;
-                        img.alt = item.alt || item.label || '';
-                    }
-
-                    var overlay = gridItem.querySelector('.overlay');
-                    if (overlay) {
-                        var h4 = overlay.querySelector('h4');
-                        var span = overlay.querySelector('span');
-                        if (h4 && item.label) h4.textContent = item.label;
-                        if (span && item.caption) span.textContent = item.caption;
-                    }
-                });
+            var items = galleryData && Array.isArray(galleryData.items) ? galleryData.items : [];
+            if (!items.length) {
+                clearContainerImages(grid);
+                return;
             }
+
+            items.forEach(function(item, index) {
+                var gridItem = document.querySelector('.grid-item[data-index="' + index + '"]');
+                if (!gridItem) return;
+                var img = gridItem.querySelector('img');
+                if (img) applyCanonicalImage(img, item.image_url, item.alt_text || item.label || item.title);
+                var overlay = gridItem.querySelector('.overlay');
+                if (overlay) {
+                    var h4 = overlay.querySelector('h4');
+                    var span = overlay.querySelector('span');
+                    if (h4 && item.label) h4.textContent = item.label;
+                    if (span && item.caption) span.textContent = item.caption;
+                }
+            });
+        }).catch(function(error) {
+            console.error('[ContentLoader] Canonical gallery media failed:', error.message);
+            clearContainerImages(grid);
         });
     }
 
-    /**
-     * Populate FAQ from FAQRepository (Supabase-first)
-     * Uses textContent to prevent XSS
-     */
     function populateFAQ() {
         var pageId = getPageId();
         if (!window.FAQRepository) return;
@@ -152,117 +232,91 @@
      * Targets .service-cards-grid .service-card
      */
     function populateServiceCards() {
-        if (!window.ServicesRepository) return;
-
         var pageId = getPageId();
         var grid = document.querySelector('.service-cards-grid');
         if (!grid) return;
+        if (!window.ServicesRepository) {
+            clearContainerImages(grid);
+            return;
+        }
 
         window.ServicesRepository.getByPage(pageId).then(function(servicesData) {
-            if (!servicesData || !servicesData.services || !servicesData.services.length) {
+            var services = servicesData && Array.isArray(servicesData.services) ? servicesData.services : [];
+            var cards = grid.querySelectorAll('.service-card');
+            if (!services.length) {
+                clearContainerImages(grid);
                 return;
             }
 
-            var services = servicesData.services;
-            var cards = grid.querySelectorAll('.service-card');
-
-            if (cards.length > 0) {
-                // Update existing cards in-place (homepage pattern)
-                services.forEach(function(service) {
-                    var card = null;
-
-                // Match by href or by order
-                if (service.href) {
-                    card = grid.querySelector('.service-card[href="' + service.href + '"]');
-                }
-                if (!card) {
-                    // Fallback: match by index
-                    var idx = service.display_order || 0;
-                    card = cards[idx];
-                }
+            services.forEach(function(service, index) {
+                var card = null;
+                if (service.href) card = grid.querySelector('.service-card[href="' + service.href + '"]');
+                if (!card) card = cards[index];
                 if (!card) return;
 
                 var img = card.querySelector('.card-image');
-                if (img && service.image_url) {
-                    img.src = window.AssetUrl ? window.AssetUrl.resolve(service.image_url) : service.image_url;
-                    img.alt = service.alt_text || service.name || '';
-                }
+                if (img) applyCanonicalImage(img, service.image_url, service.alt_text || service.name);
 
                 var tag = card.querySelector('.card-tag');
-                if (tag && service.tag) {
-                    tag.textContent = '\u2726 ' + service.tag;
-                }
-
+                if (tag && service.tag) tag.textContent = '\u2726 ' + service.tag;
                 var h3 = card.querySelector('h3');
-                if (h3 && service.name) {
-                    h3.textContent = service.name;
-                }
-
+                if (h3 && service.name) h3.textContent = service.name;
                 var p = card.querySelector('p');
-                if (p && service.description) {
-                    p.textContent = service.description;
-                }
+                if (p && service.description) p.textContent = service.description;
             });
+        }).catch(function(error) {
+            console.error('[ContentLoader] Canonical service media failed:', error.message);
+            clearContainerImages(grid);
         });
     }
 
-    /**
-     * Populate menu from MenuRepository (Supabase-first)
-     * Updates in-place .menu-item-card elements to preserve visual design.
-     * Matches DB category name to existing .menu-category section headings.
-     */
     function populateMenu() {
-        if (!window.MenuRepository) return;
+        var menuContainer = document.querySelector('.menu-section, .menu-grid, .menu-categories');
+        if (!window.MenuRepository) {
+            clearContainerImages(menuContainer);
+            return;
+        }
 
         window.MenuRepository.getMenu().then(function(menuData) {
-            if (!menuData || !menuData.categories || !menuData.categories.length) return;
+            if (!menuData || !Array.isArray(menuData.categories) || !menuData.categories.length) {
+                clearContainerImages(menuContainer);
+                return;
+            }
 
             var categories = document.querySelectorAll('.menu-category');
             if (!categories || categories.length === 0) return;
 
             menuData.categories.forEach(function(category) {
                 var catName = (category.name || '').toLowerCase();
-
-                // Find matching .menu-category section by heading text
                 var catSection = null;
                 categories.forEach(function(sec) {
                     var heading = sec.querySelector('.menu-category-title');
                     var headingText = heading ? heading.textContent.toLowerCase() : '';
-                    // Match "Signature Grills" -> section titled "Signature Grills", etc.
-                    if (headingText.indexOf(catName) !== -1) {
-                        catSection = sec;
-                    }
+                    if (headingText.indexOf(catName) !== -1) catSection = sec;
                 });
                 if (!catSection) return;
 
                 var cards = catSection.querySelectorAll('.menu-item-card');
                 var items = category.items || [];
-
                 items.forEach(function(item, index) {
                     var card = cards[index];
                     if (!card) return;
-
                     var h3 = card.querySelector('h3');
                     if (h3 && item.name) h3.textContent = item.name;
-
                     var p = card.querySelector('p');
                     if (p && item.description) p.textContent = item.description;
-
                     var priceTag = card.querySelector('.price-tag');
-                    if (priceTag && item.price) {
-                        priceTag.textContent = 'KES ' + Number(item.price).toLocaleString();
-                    }
-
+                    if (priceTag && item.price) priceTag.textContent = 'KES ' + Number(item.price).toLocaleString();
                     var img = card.querySelector('.menu-item-image');
-                    if (img && item.image_url) img.src = window.AssetUrl ? window.AssetUrl.resolve(item.image_url) : item.image_url;
+                    if (img) applyCanonicalImage(img, item.image_url, item.alt_text || item.name);
                 });
             });
+        }).catch(function(error) {
+            console.error('[ContentLoader] Canonical menu media failed:', error.message);
+            clearContainerImages(menuContainer);
         });
     }
 
-    /**
-     * Populate services experience highlights from ServicesRepository (Supabase-first)
-     */
     function populateServices() {
         var pageId = getPageId();
         if (!window.ServicesRepository) return;
@@ -305,20 +359,41 @@
      * Populate testimonials from TestimonialsRepository (Supabase-first)
      */
     function populateTestimonials() {
-        if (!window.TestimonialsRepository) return;
+        var container = document.querySelector('.testimonials-container, .testimonials-grid, .testimonial-list');
+        if (!container) return;
+        container.innerHTML = '';
+
+        function showUnavailable() {
+            container.innerHTML = '';
+            var message = document.createElement('p');
+            message.className = 'zt-media-missing';
+            message.setAttribute('role', 'status');
+            message.textContent = 'Testimonials are temporarily unavailable.';
+            container.appendChild(message);
+        }
+
+        if (!window.TestimonialsRepository) {
+            showUnavailable();
+            return;
+        }
 
         window.TestimonialsRepository.getAll().then(function(data) {
-            if (!data || !data.length) return;
-
-            var container = document.querySelector('.testimonials-container, .testimonials-grid, .testimonial-list');
-            if (!container) return;
-
-            // Only populate if container is empty or has placeholder content
-            if (container.children.length > 0) return;
+            if (!Array.isArray(data) || !data.length) {
+                showUnavailable();
+                return;
+            }
 
             data.forEach(function(item) {
                 var itemEl = document.createElement('div');
                 itemEl.className = 'testimonial-item';
+
+                if (item.image_url) {
+                    var img = document.createElement('img');
+                    img.className = 'testimonial-image';
+                    img.loading = 'lazy';
+                    applyCanonicalImage(img, item.image_url, item.customer_name || item.author || 'Customer');
+                    itemEl.appendChild(img);
+                }
 
                 var quote = document.createElement('blockquote');
                 quote.textContent = item.comment || item.content || item.text || item.review || '';
@@ -334,15 +409,14 @@
                     role.textContent = item.occupation || item.role || item.title || '';
                     itemEl.appendChild(role);
                 }
-
                 container.appendChild(itemEl);
             });
+        }).catch(function(error) {
+            console.error('[ContentLoader] Canonical testimonial media failed:', error.message);
+            showUnavailable();
         });
     }
 
-    /**
-     * Populate business contact info from BusinessService (Supabase-first)
-     */
     function populateBusinessInfo() {
         if (!window.BusinessService) return;
 
