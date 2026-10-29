@@ -2,18 +2,14 @@
  * ============================================================
  * ZT Lounge Meru - Business Configuration
  * Single Source of Truth for Business Information
- * Version: 1.2.0 (Legacy Media Fallback — behavior unchanged)
+ * Version: 1.3.0 (Canonical Media Only)
  * ============================================================
  *
  * This configuration maps directly to the business_settings table.
  * DO NOT hardcode these values in HTML - use this config instead.
  *
- * MEDIA NOTE: logo URLs below are the documented static fallback for
- * the BusinessRepository branding gateway (see docs/BUSINESS_SETTINGS.md:
- * media failure keeps branding fallbacks, catch-and-keep). Canonical
- * ownership for these assets lives on data-media-id attributes in
- * shared-components.js (logo -> 79e60738-*, logo-white -> ebac626d-*).
- * Keep these URLs in sync only if the storage paths change.
+ * MEDIA NOTE: Branding images are selected by business_settings media IDs.
+ * This configuration intentionally stores no logo or favicon URL fallback.
  * ============================================================
  */
 
@@ -61,10 +57,8 @@ window.BusinessConfig = Object.freeze({
     // Google Reviews (business_settings.google_review_url overrides this when set)
     googleReview: 'https://maps.app.goo.gl/HqTbiiU4q2jRFoPg6',
 
-    // Branding
+    // Branding: descriptive text only; image URLs come from canonical media IDs.
     logo: {
-        dark: 'https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/branding/logo.webp',
-        light: 'https://jczwilrysvnhcjzjztbi.supabase.co/storage/v1/object/public/public-assets/images/branding/logo-white.webp',
         alt: 'ZT Lounge Meru - Premium Hospitality Logo'
     },
 
