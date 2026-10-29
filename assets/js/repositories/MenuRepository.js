@@ -11,7 +11,7 @@
  * - MenuRepository.getItemsByCategory(categoryId)
  * - MenuRepository.getMenu()
  *
- * Data Source: Supabase (menu_categories + menu_items tables) with local config fallback
+ * Data Source: Supabase (menu_categories + menu_items); media URLs resolved only through MediaResolver
  * ============================================================
  */
 
@@ -33,7 +33,8 @@ window.MenuRepository = (function() {
             name: item.name || '',
             description: item.description || '',
             price: item.price || 0,
-            image_url: item.image_url || '',
+            image_url: null,
+            media_id: item.media_id || null,
             alt_text: item.alt_text || '',
             is_active: item.is_active !== undefined ? item.is_active : true,
             is_featured: item.is_featured || false,
@@ -63,14 +64,19 @@ window.MenuRepository = (function() {
     }
 
     /**
-     * Resolve media URLs for menu items.
-     * Menu items carry image_url directly on the row (not media_id),
-     * so this is a pass-through. Kept for API consistency with other repos.
-     * @param {Array} items - Array of mapped menu items
-     * @returns {Promise<Array>} Items unchanged
+     * Resolve menu imagery through the canonical media_id -> media_assets.public_url gateway.
+     * Rows with a media_id must resolve successfully; legacy URL columns are not used.
      */
     function resolveMedia(items) {
-        return Promise.resolve(items || []);
+        var rows = items || [];
+        var withMedia = rows.filter(function(item) { return !!item.media_id; });
+        if (!withMedia.length) return Promise.resolve(rows);
+        if (!window.MediaResolver || typeof window.MediaResolver.resolveCollection !== 'function') {
+            return Promise.reject(new Error('MEDIA_RESOLVER_UNAVAILABLE'));
+        }
+        return window.MediaResolver.resolveCollection(withMedia).then(function() {
+            return rows;
+        });
     }
 
     function getItemRepo() {
@@ -108,8 +114,7 @@ window.MenuRepository = (function() {
             if (data && data.length > 0) {
                 return data.map(mapCategoryToUI);
             }
-            var config = window.MenuConfig || {};
-            return config.categories || [];
+            return [];
         });
     }
 
@@ -127,10 +132,9 @@ window.MenuRepository = (function() {
             ascending: true
         }).then(function(data) {
             if (data && data.length > 0) {
-                return data.map(mapItemToUI);
+                return resolveMedia(data.map(mapItemToUI));
             }
-            var config = window.MenuConfig || {};
-            return config.signatureCollection || [];
+            return resolveMedia([]);
         });
     }
 
@@ -150,11 +154,9 @@ window.MenuRepository = (function() {
             ascending: true
         }).then(function(data) {
             if (data && data.length > 0) {
-                return data.map(mapItemToUI);
+                return resolveMedia(data.map(mapItemToUI));
             }
-            var config = window.MenuConfig || {};
-            var fullMenu = config.fullMenu || {};
-            return fullMenu[categoryId] || [];
+            return resolveMedia([]);
         });
     }
 
@@ -176,9 +178,10 @@ window.MenuRepository = (function() {
             }).then(function(items) {
                 var mappedItems = (items || []).map(mapItemToUI);
 
+                return resolveMedia(mappedItems).then(function(resolvedItems) {
                 // Group items by category_id
                 var categoriesWithItems = categories.map(function(cat) {
-                    var catItems = mappedItems.filter(function(item) {
+                    var catItems = resolvedItems.filter(function(item) {
                         return item.category_id === cat.id;
                     });
                     return {
@@ -192,6 +195,7 @@ window.MenuRepository = (function() {
                 });
 
                 return { categories: categoriesWithItems };
+                });
             });
         });
     }
@@ -204,7 +208,7 @@ window.MenuRepository = (function() {
                 return { categories: [], uncategorizedItems: [] };
             }
             return getItemRepo().getAll({
-                select: '*,menu_categories(id,name,slug,description,display_order,is_active),media_assets(public_url,alt_text)',
+                select: '*',
                 eq: [
                     { column: 'page_id', value: pageId },
                     { column: 'is_active', value: true }
