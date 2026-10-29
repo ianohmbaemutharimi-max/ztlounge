@@ -174,6 +174,7 @@ window.ServicesRepository = (function() {
     }
 
 
+    /**
      * Get active services for a specific category (resolved by slug).
      * @param {string} categorySlug - Category slug (e.g. 'barbershop')
      * @returns {Promise<Array>} Array of mapped service objects
