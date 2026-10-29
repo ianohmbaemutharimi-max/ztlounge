@@ -116,7 +116,7 @@
             }
         });
         document.querySelectorAll(placeholderSelector).forEach(function(placeholder) {
-            placeholder.hidden = !(url && window.MediaResolver && window.MediaResolver.isCanonicalPublicUrl(url));
+            placeholder.hidden = !!(url && window.MediaResolver && window.MediaResolver.isCanonicalPublicUrl(url));
         });
     }
 
